@@ -1,0 +1,19 @@
+:root {
+  --bg: #F9FBFE;
+  --text: #0B1220;
+  --muted: #595F68;
+  --border: #B0D1DC;
+
+  --primary: #0AAAE7;
+  --secondary: #6596F4;
+  --accent: #AB71F7;
+  --accent2: #CC54F7;
+
+  --hero-gradient-start: #0a173a;
+  --hero-gradient-end: #2c0950;
+  --accent-teal: #0AAAE7;
+  --accent-purple: #AB71F7;
+  --soft-bg: #F9FBFE;
+  --cta-bg: #EEF5FA;
+  --text-dark: #0B1220;
+}

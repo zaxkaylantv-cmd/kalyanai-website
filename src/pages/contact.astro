@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<main class="mx-auto w-full max-w-6xl space-y-8 px-6">
+		<header class="space-y-2">
+			<h1 class="text-3xl font-semibold text-[var(--text)]">Talk to us</h1>
+			<p class="max-w-2xl text-[var(--muted)]">
+				If something in your business feels heavier than it should, let’s look at it together.
+			</p>
+		</header>
+
+		<section class="grid gap-6 lg:grid-cols-[2fr,1fr]">
+			<div class="flex flex-col gap-4 rounded-2xl border border-[var(--border)] bg-white/80 p-6 shadow-sm backdrop-blur">
+				<h2 class="text-xl font-semibold text-[var(--text)]">How to book</h2>
+				<p class="text-[var(--muted)]">
+					Use the Book a call button to open our scheduler. We’ll come prepared with context on your business and a short agenda.
+				</p>
+				<a class="js-open-calendly inline-flex w-fit items-center justify-center rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/contact">
+					Book a call
+				</a>
+				<p class="text-sm text-[var(--muted)]">
+					Prefer email? <a class="text-[var(--primary)] hover:text-[var(--secondary)]" href="mailto:future@kalyanai.io">future@kalyanai.io</a>
+				</p>
+			</div>
+
+			<aside class="flex flex-col gap-4 rounded-2xl border border-[var(--border)] bg-white/80 p-5 shadow-sm backdrop-blur">
+				<h2 class="text-xl font-semibold text-[var(--text)]">What to expect</h2>
+				<ul class="space-y-3 text-[var(--muted)]">
+					<li>We map the business realities first—where time is lost and clarity is missing.</li>
+					<li>We design a hosted AI system that mirrors how you actually operate.</li>
+					<li>We build and run it end-to-end so outcomes stay predictable.</li>
+					<li>We keep controls, reporting, and accountability in your hands.</li>
+				</ul>
+			</aside>
+		</section>
+	</main>
+</Layout>

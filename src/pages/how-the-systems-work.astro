@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const videos = [
+  { title: 'Proposal Intelligence', id: 'tA_oaHU31s8', anchor: 'proposal-intelligence' },
+  { title: 'Document & Cashflow Copilot', id: 'lCd-j-67GPg', anchor: 'document-cashflow-copilot' },
+  { title: 'Lead Desk CRM (Part 1)', id: '_usfAyAskHU', anchor: 'lead-desk-crm-part-1' },
+  { title: 'Lead Desk CRM (Part 2)', id: 'd92wQRbmi_E', anchor: 'lead-desk-crm-part-2' },
+  { title: 'Lead Generation Engine (Part 1)', id: 'Bc7TVqknox8', anchor: 'lead-generation-engine-part-1' },
+  { title: 'Lead Generation Engine (Part 2)', id: '2pgWGk-V0nI', anchor: 'lead-generation-engine-part-2' },
+  { title: 'Discovery Intelligence (Part 1)', id: 'rT-7i8kY9uc', anchor: 'discovery-intelligence-part-1' },
+];
+---
+
+<Layout>
+	<main class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 pb-16">
+		<header class="space-y-3 pt-4">
+			<h1 class="text-3xl font-semibold text-[var(--text)]">How the Systems Work</h1>
+			<p class="max-w-3xl text-lg text-[var(--muted)]">
+				Longer walkthroughs showing how our systems operate in practice.
+			</p>
+		</header>
+
+		<section class="flex flex-col gap-10">
+			{videos.map((video) => (
+				<article class="space-y-4" id={video.anchor}>
+					<h2 class="text-xl font-semibold text-[var(--text)]">{video.title}</h2>
+					<div class="aspect-video overflow-hidden rounded-xl bg-black/5">
+						<iframe
+							class="h-full w-full"
+							src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
+							title={video.title}
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							loading="lazy"
+						></iframe>
+					</div>
+				</article>
+			))}
+		</section>
+	</main>
+</Layout>

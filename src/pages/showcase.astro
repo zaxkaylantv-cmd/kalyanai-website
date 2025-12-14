@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const systems = [
+  {
+    title: 'Proposal Intelligence',
+    description: 'Produces clear, on-brand proposals that reflect client needs and commercial guardrails.',
+    bullets: [
+      'Captures client requirements and constraints without rework.',
+      'Drafts structured proposals with pricing logic intact.',
+      'Tracks approvals and updates so nothing slips.',
+    ],
+  },
+  {
+    title: 'Lead Generation Engine',
+    description: 'Finds and prepares qualified conversations without spamming markets or wasting sales time.',
+    bullets: [
+      'Identifies the right targets with context your team trusts.',
+      'Scores and sequences outreach based on real signals.',
+      'Hands off ready conversations with clean notes.',
+    ],
+  },
+  {
+    title: 'Document & Cashflow Copilot',
+    description: 'Transforms documents and statements into daily clarity on obligations, cash, and risk.',
+    bullets: [
+      'Extracts key figures and dates from vendor and client docs.',
+      'Forecasts cash positions and flags variances early.',
+      'Feeds finance owners concise action lists each day.',
+    ],
+  },
+  {
+    title: 'Lead Desk CRM',
+    description: 'Keeps pipeline data current, highlights real opportunities, and reduces manual follow-ups.',
+    bullets: [
+      'Normalises inbound leads and enriches key fields automatically.',
+      'Flags stalled deals and suggests the next move.',
+      'Maintains a reliable source of truth for sales reviews.',
+    ],
+  },
+  {
+    title: 'Discovery Intelligence',
+    description: 'Turns calls, notes, and research into clear next steps so teams move with context and confidence.',
+    bullets: [
+      'Summarises signals from interviews and research into concise briefs.',
+      'Surfaces risks and priorities without adding noise.',
+      'Keeps owners aligned on where to act next.',
+    ],
+  },
+  {
+    title: 'Lead Desk CRM',
+    description: 'Keeps pipeline data current, highlights real opportunities, and reduces manual follow-ups.',
+    bullets: [
+      'Normalises inbound leads and enriches key fields automatically.',
+      'Flags stalled deals and suggests the next move.',
+      'Maintains a reliable source of truth for sales reviews.',
+    ],
+  },
+];
+
+const thumbnails = {
+  'Proposal Intelligence': 'tA_oaHU31s8',
+  'Document & Cashflow Copilot': 'lCd-j-67GPg',
+  'Lead Desk CRM': '_usfAyAskHU',
+  'Lead Generation Engine': 'Bc7TVqknox8',
+  'Discovery Intelligence': 'rT-7i8kY9uc',
+};
+
+const anchors = {
+  'Proposal Intelligence': 'proposal-intelligence',
+  'Document & Cashflow Copilot': 'document-cashflow-copilot',
+  'Lead Desk CRM': 'lead-desk-crm-part-1',
+  'Lead Generation Engine': 'lead-generation-engine-part-1',
+  'Discovery Intelligence': 'discovery-intelligence-part-1',
+};
+---
+
+<Layout>
+	<main class="mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-14">
+		<header class="space-y-3 pt-4">
+			<h1 class="text-3xl font-semibold text-[var(--text)]">Showcase</h1>
+			<p class="max-w-3xl text-lg text-[var(--muted)]">
+				A quick look at the systems we design, build, and host for SMEs.
+			</p>
+		</header>
+
+		<section class="space-y-8">
+			{systems.map((item) => (
+				<article class="grid gap-4 border-b border-[var(--border)] pb-8 last:border-b-0 last:pb-0 md:grid-cols-[1.2fr,1fr] md:items-start md:gap-6">
+					<div class="space-y-3">
+						<h2 class="text-xl font-semibold text-[var(--text)]">{item.title}</h2>
+						<p class="max-w-3xl text-[var(--muted)]">{item.description}</p>
+						<ul class="space-y-2 text-[var(--muted)]">
+							{item.bullets.map((point) => (
+								<li class="flex items-start gap-2">
+									<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
+									<span>{point}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+					<a
+						class="block w-full max-w-md overflow-hidden rounded-xl border border-[var(--border)] bg-white transition hover:-translate-y-0.5 hover:shadow-md md:max-w-[360px] lg:max-w-[420px]"
+						href={`/how-the-systems-work#${anchors[item.title]}`}
+					>
+						<img
+							class="h-full w-full object-cover"
+							src={`https://i.ytimg.com/vi/${thumbnails[item.title]}/hqdefault.jpg`}
+							loading="lazy"
+							alt={`${item.title} preview`}
+						/>
+					</a>
+				</article>
+			))}
+		</section>
+
+		<div class="pt-4">
+			<a
+				class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
+				href="https://calendly.com/zaxkalyan/30min"
+			>
+				Book a call
+			</a>
+		</div>
+	</main>
+</Layout>

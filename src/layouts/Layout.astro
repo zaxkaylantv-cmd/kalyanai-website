@@ -1,3 +1,14 @@
+---
+import "../styles/global.css";
+
+const navLinks = [
+	{ label: 'Showcase', href: '/showcase' },
+	{ label: 'How it works', href: '/how-the-systems-work' },
+	{ label: 'About', href: '/about' },
+	{ label: 'Contact', href: '/contact' },
+];
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +16,111 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Kalyan AI</title>
 	</head>
-	<body>
-		<slot />
+	<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
+		<div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8 md:px-10 lg:px-12">
+			<header class="gradient-frame mb-10 rounded-2xl p-[1.5px]">
+				<div class="ka-card rounded-[18px] border border-[var(--border)]/70 px-5 py-4 shadow-sm backdrop-blur">
+					<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+						<div class="leading-tight">
+							<p class="text-lg font-semibold tracking-tight text-[var(--text)]">
+								KALYAN <span class="text-[var(--primary)]">AI</span>
+							</p>
+							<p class="text-sm text-[var(--muted)]">Your AI Integration Partner</p>
+						</div>
+						<nav class="flex flex-wrap items-center gap-4 text-sm text-[var(--muted)]">
+							{navLinks.map((link) => (
+								<a class="transition hover:text-[var(--text)]" href={link.href}>{link.label}</a>
+							))}
+							<a
+								class="rounded-full bg-[var(--primary)] px-4 py-2 font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
+								href="/contact"
+								data-calendly-trigger
+							>
+								Book a call
+							</a>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<main class="flex-1 w-full">
+				<slot />
+			</main>
+
+			<section class="ka-card mt-16 rounded-3xl border border-[var(--border)] p-8 shadow-sm backdrop-blur">
+				<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+					<div class="space-y-2">
+						<h2 class="text-2xl font-semibold text-[var(--text)]">Tell us what’s slowing your business down.</h2>
+						<p class="text-lg font-medium text-[var(--text)]">We’ll solve it with AI.</p>
+					</div>
+					<div class="flex flex-wrap gap-3">
+						<a
+							class="js-open-calendly rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
+							href="/contact"
+						>
+							Book a call
+						</a>
+						<a
+							class="rounded-full border border-[var(--primary)]/25 bg-transparent px-5 py-3 text-sm font-medium text-[var(--primary)]/80 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--primary)]/35 hover:text-[var(--primary)] hover:shadow-md"
+							href="/contact#form"
+						>
+							Share a bottleneck
+						</a>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div
+			id="calendly-modal"
+			class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 px-4 py-10 backdrop-blur-sm"
+			role="dialog"
+			aria-modal="true"
+		>
+			<div class="relative w-full max-w-4xl rounded-2xl border border-white/15 bg-white/95 p-4 shadow-2xl">
+				<button
+					id="calendly-close"
+					class="absolute right-3 top-3 rounded-full border border-[var(--border)] bg-white px-2 py-1 text-sm text-[var(--muted)] transition hover:-translate-y-0.5 hover:shadow"
+					type="button"
+				>
+					Close
+				</button>
+				<div class="overflow-hidden rounded-xl border border-[var(--border)] bg-white">
+					<div
+						class="calendly-inline-widget w-full"
+						data-url="https://calendly.com/zaxkalyan/30min"
+						style="min-width:320px;height:650px;"
+					></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const modal = document.getElementById('calendly-modal');
+				const closeBtn = document.getElementById('calendly-close');
+				const triggers = document.querySelectorAll('[data-calendly-trigger], .js-open-calendly');
+
+				const openModal = (event) => {
+					event?.preventDefault();
+					modal?.classList.remove('hidden');
+					document.body.classList.add('overflow-hidden');
+				};
+
+				const closeModal = () => {
+					modal?.classList.add('hidden');
+					document.body.classList.remove('overflow-hidden');
+				};
+
+				triggers.forEach((el) => el.addEventListener('click', openModal));
+				closeBtn?.addEventListener('click', closeModal);
+				modal?.addEventListener('click', (event) => {
+					if (event.target === modal) closeModal();
+				});
+			});
+		</script>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
