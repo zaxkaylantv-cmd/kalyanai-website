@@ -1,16 +1,21 @@
 :root {
-  --bg: #F9FBFE;
+  --bg: #F5F7FB;
   --text: #0B1220;
   --muted: #595F68;
-  --border: #B0D1DC;
+  --border: rgba(15, 31, 58, 0.18);
+  --border-subtle: rgba(15, 31, 58, 0.18);
 
   --primary: #0AAAE7;
   --secondary: #6596F4;
   --accent: #AB71F7;
   --accent2: #CC54F7;
 
-  --hero-gradient-start: #0a173a;
-  --hero-gradient-end: #2c0950;
+  --brand-navy: #0F1F3A;
+  --brand-navy-light: #1c2f55;
+  --brand-accent: #0AAAE7;
+
+  --hero-gradient-start: #0c1633;
+  --hero-gradient-end: #15244a;
   --accent-teal: #0AAAE7;
   --accent-purple: #AB71F7;
   --soft-bg: #F9FBFE;

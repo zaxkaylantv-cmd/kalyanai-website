@@ -12,10 +12,13 @@ const videos = [
 ];
 ---
 
-<Layout>
+<Layout
+	title="How the Systems Work — Kalyan AI"
+	description="Longer walkthroughs showing how our hosted AI systems operate in practice."
+>
 	<main class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 pb-16">
 		<header class="space-y-3 pt-4">
-			<h1 class="text-3xl font-semibold text-[var(--text)]">How the Systems Work</h1>
+			<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">How the Systems Work</h1>
 			<p class="max-w-3xl text-lg text-[var(--muted)]">
 				Longer walkthroughs showing how our systems operate in practice.
 			</p>
@@ -24,7 +27,7 @@ const videos = [
 		<section class="flex flex-col gap-10">
 			{videos.map((video) => (
 				<article class="space-y-4" id={video.anchor}>
-					<h2 class="text-xl font-semibold text-[var(--text)]">{video.title}</h2>
+					<h2 class="text-xl font-semibold text-[var(--brand-navy)]">{video.title}</h2>
 					<div class="aspect-video overflow-hidden rounded-xl bg-black/5">
 						<iframe
 							class="h-full w-full"

@@ -16,7 +16,7 @@ body {
 }
 
 .gradient-frame {
-  background: linear-gradient(135deg, rgba(10, 170, 231, 0.4), rgba(171, 113, 247, 0.3), rgba(204, 84, 247, 0.35));
+  background: linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light), rgba(10, 170, 231, 0.45));
 }
 
 .ka-card {

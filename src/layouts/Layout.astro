@@ -1,6 +1,9 @@
 ---
 import "../styles/global.css";
 
+const { title = 'Kalyan AI — Bespoke, hosted AI systems', description = 'We design, build, and host bespoke AI systems that remove friction from core business workflows.' } = Astro.props;
+const pageUrl = Astro.url ? Astro.url.href : '';
+
 const navLinks = [
 	{ label: 'Showcase', href: '/showcase' },
 	{ label: 'How it works', href: '/how-the-systems-work' },
@@ -16,19 +19,28 @@ const navLinks = [
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Kalyan AI</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		{pageUrl && <meta property="og:url" content={pageUrl} />}
+		<meta property="og:site_name" content="Kalyan AI" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 	</head>
 	<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
 		<div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8 md:px-10 lg:px-12">
-			<header class="gradient-frame mb-10 rounded-2xl p-[1.5px]">
-				<div class="ka-card rounded-[18px] border border-[var(--border)]/70 px-5 py-4 shadow-sm backdrop-blur">
+			<header class="gradient-frame mb-10 rounded-2xl p-px">
+				<div class="ka-card rounded-[18px] border border-[var(--border-subtle)] px-5 py-4 shadow-sm backdrop-blur">
 					<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-						<div class="leading-tight">
-							<p class="text-lg font-semibold tracking-tight text-[var(--text)]">
+						<a class="leading-tight" href="/">
+							<p class="text-lg font-semibold tracking-tight text-[var(--brand-navy)]">
 								KALYAN <span class="text-[var(--primary)]">AI</span>
 							</p>
 							<p class="text-sm text-[var(--muted)]">Your AI Integration Partner</p>
-						</div>
+						</a>
 						<nav class="flex flex-wrap items-center gap-4 text-sm text-[var(--muted)]">
 							{navLinks.map((link) => (
 								<a class="transition hover:text-[var(--text)]" href={link.href}>{link.label}</a>
@@ -49,11 +61,11 @@ const navLinks = [
 				<slot />
 			</main>
 
-			<section class="ka-card mt-16 rounded-3xl border border-[var(--border)] p-8 shadow-sm backdrop-blur">
+			<section class="ka-card mt-16 rounded-3xl border border-[var(--border-subtle)] p-8 shadow-sm backdrop-blur">
 				<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 					<div class="space-y-2">
-						<h2 class="text-2xl font-semibold text-[var(--text)]">Tell us what’s slowing your business down.</h2>
-						<p class="text-lg font-medium text-[var(--text)]">We’ll solve it with AI.</p>
+						<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Tell us what’s slowing your business down.</h2>
+						<p class="text-lg font-medium text-[var(--muted)]">We’ll solve it with AI.</p>
 					</div>
 					<div class="flex flex-wrap gap-3">
 						<a
@@ -72,6 +84,24 @@ const navLinks = [
 				</div>
 			</section>
 		</div>
+
+		<footer class="mt-12 border-t border-[var(--border)] bg-[var(--brand-navy)] px-6 py-8 text-sm text-white md:px-10 lg:px-12">
+			<div class="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+				<div class="flex flex-wrap items-center gap-4">
+					<a class="transition hover:text-white/80" href="/">Home</a>
+					<a class="transition hover:text-white/80" href="/showcase">Showcase</a>
+					<a class="transition hover:text-white/80" href="/how-the-systems-work">How the systems work</a>
+					<a class="transition hover:text-white/80" href="/about">About</a>
+					<a class="transition hover:text-white/80" href="/contact">Contact</a>
+					<a class="transition hover:text-white/80" href="https://calendly.com/zaxkalyan/30min">Book a call</a>
+				</div>
+				<div class="flex flex-col gap-1 text-white/90">
+					<a class="transition hover:text-white" href="mailto:future@kalyanai.io">future@kalyanai.io</a>
+					<p>Bradford Business Court, 121–123 Bradford Street, Birmingham, B12 0NS</p>
+					<p>© {new Date().getFullYear()} Kalyan AI. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
 
 		<div
 			id="calendly-modal"

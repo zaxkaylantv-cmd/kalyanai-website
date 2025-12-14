@@ -2,10 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
+<Layout
+	title="Contact — Kalyan AI"
+	description="Book time with Kalyan AI to discuss where your business feels heavier than it should."
+>
 	<main class="mx-auto w-full max-w-6xl space-y-8 px-6">
 		<header class="space-y-2">
-			<h1 class="text-3xl font-semibold text-[var(--text)]">Talk to us</h1>
+			<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">Talk to us</h1>
 			<p class="max-w-2xl text-[var(--muted)]">
 				If something in your business feels heavier than it should, let’s look at it together.
 			</p>
@@ -13,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
 
 		<section class="grid gap-6 lg:grid-cols-[2fr,1fr]">
 			<div class="flex flex-col gap-4 rounded-2xl border border-[var(--border)] bg-white/80 p-6 shadow-sm backdrop-blur">
-				<h2 class="text-xl font-semibold text-[var(--text)]">How to book</h2>
+				<h2 class="text-xl font-semibold text-[var(--brand-navy)]">How to book</h2>
 				<p class="text-[var(--muted)]">
 					Use the Book a call button to open our scheduler. We’ll come prepared with context on your business and a short agenda.
 				</p>
@@ -21,12 +24,27 @@ import Layout from '../layouts/Layout.astro';
 					Book a call
 				</a>
 				<p class="text-sm text-[var(--muted)]">
-					Prefer email? <a class="text-[var(--primary)] hover:text-[var(--secondary)]" href="mailto:future@kalyanai.io">future@kalyanai.io</a>
+					Prefer email? <a class="text-[var(--brand-navy)] hover:text-[var(--brand-navy-light)]" href="mailto:future@kalyanai.io">future@kalyanai.io</a>
 				</p>
+
+				<div class="space-y-1 text-[var(--muted)]">
+					<p class="text-sm font-semibold text-[var(--text)]">Email</p>
+					<a class="text-[var(--brand-navy)] hover:text-[var(--brand-navy-light)]" href="mailto:future@kalyanai.io">future@kalyanai.io</a>
+				</div>
+
+				<div class="space-y-1 text-[var(--muted)]">
+					<p class="text-sm font-semibold text-[var(--text)]">Address</p>
+					<div class="text-[var(--muted)]">
+						<p>Bradford Business Court</p>
+						<p>121-123 Bradford Street</p>
+						<p>Birmingham</p>
+						<p>B12 0NS</p>
+					</div>
+				</div>
 			</div>
 
 			<aside class="flex flex-col gap-4 rounded-2xl border border-[var(--border)] bg-white/80 p-5 shadow-sm backdrop-blur">
-				<h2 class="text-xl font-semibold text-[var(--text)]">What to expect</h2>
+				<h2 class="text-xl font-semibold text-[var(--brand-navy)]">What to expect</h2>
 				<ul class="space-y-3 text-[var(--muted)]">
 					<li>We map the business realities first—where time is lost and clarity is missing.</li>
 					<li>We design a hosted AI system that mirrors how you actually operate.</li>

@@ -75,10 +75,13 @@ const anchors = {
 };
 ---
 
-<Layout>
+<Layout
+	title="Showcase — Kalyan AI"
+	description="A quick look at the hosted AI systems we design, build, and host for SMEs."
+>
 	<main class="mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-14">
 		<header class="space-y-3 pt-4">
-			<h1 class="text-3xl font-semibold text-[var(--text)]">Showcase</h1>
+			<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">Showcase</h1>
 			<p class="max-w-3xl text-lg text-[var(--muted)]">
 				A quick look at the systems we design, build, and host for SMEs.
 			</p>
@@ -88,7 +91,7 @@ const anchors = {
 			{systems.map((item) => (
 				<article class="grid gap-4 border-b border-[var(--border)] pb-8 last:border-b-0 last:pb-0 md:grid-cols-[1.2fr,1fr] md:items-start md:gap-6">
 					<div class="space-y-3">
-						<h2 class="text-xl font-semibold text-[var(--text)]">{item.title}</h2>
+						<h2 class="text-xl font-semibold text-[var(--brand-navy)]">{item.title}</h2>
 						<p class="max-w-3xl text-[var(--muted)]">{item.description}</p>
 						<ul class="space-y-2 text-[var(--muted)]">
 							{item.bullets.map((point) => (
