@@ -5,8 +5,8 @@
   --border: rgba(15, 31, 58, 0.18);
   --border-subtle: rgba(15, 31, 58, 0.18);
 
-  --primary: #0AAAE7;
-  --secondary: #6596F4;
+  --primary: #00B7C6;
+  --secondary: #009EAC;
   --accent: #AB71F7;
   --accent2: #CC54F7;
 
@@ -16,7 +16,7 @@
 
   --hero-gradient-start: #0c1633;
   --hero-gradient-end: #15244a;
-  --accent-teal: #0AAAE7;
+  --accent-teal: #00B7C6;
   --accent-purple: #AB71F7;
   --soft-bg: #F9FBFE;
   --cta-bg: #EEF5FA;

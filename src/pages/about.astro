@@ -101,5 +101,51 @@ import Layout from '../layouts/Layout.astro';
 				Book a call
 			</a>
 		</div>
+
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">FAQs</h2>
+			<div class="divide-y divide-[var(--border-subtle)] rounded-2xl border border-[var(--border-subtle)] bg-white/80">
+				{[
+					{
+						q: 'What types of businesses do you work with?',
+						a: 'SMEs where operations rely on people making repeat decisions from calls, documents, and pipelines. We focus on teams that value clarity and control.',
+					},
+					{
+						q: 'How quickly can we ship a first version?',
+						a: 'Most first versions go live in 2–4 weeks once we have access to your processes and data examples. We keep the initial scope tight to show value early.',
+					},
+					{
+						q: 'Do you host the system for us?',
+						a: 'Yes. We host, monitor, and maintain the system so you do not need extra infrastructure or support staff to keep it reliable.',
+					},
+					{
+						q: 'What about data security and access control?',
+						a: 'We set clear data boundaries, least-privilege access, and audit trails. Ownership and permissions stay defined for your team.',
+					},
+					{
+						q: 'Can this connect to our existing tools and workflows?',
+						a: 'Yes. We integrate with your current systems and processes so the hosted AI layer fits how you already work.',
+					},
+					{
+						q: 'How do pricing and ongoing support work?',
+						a: 'We scope a build fee for the first version, then provide a hosting and support plan that covers monitoring, fixes, and iterative improvements.',
+					},
+					{
+						q: 'What do you need from us to get started?',
+						a: 'Access to the people, examples, and systems that show how you work today, plus a clear owner for decisions. We handle the rest.',
+					},
+				].map((item) => (
+					<details class="group px-4 py-3 text-[var(--muted)]">
+						<summary class="flex cursor-pointer list-none items-center justify-between gap-3 text-[var(--brand-navy)] font-semibold transition hover:text-[var(--brand-navy-light)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-0">
+							<span>{item.q}</span>
+							<span class="text-sm text-[var(--muted)] group-open:rotate-45 transition">+</span>
+						</summary>
+						<div class="pt-2 text-[var(--muted)]">
+							<p>{item.a}</p>
+						</div>
+					</details>
+				))}
+			</div>
+		</section>
 	</main>
 </Layout>
