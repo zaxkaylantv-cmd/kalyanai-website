@@ -1,13 +1,18 @@
 ---
 import "../styles/global.css";
 
-const { title = 'Kalyan AI — Bespoke, hosted AI systems', description = 'We design, build, and host bespoke AI systems that remove friction from core business workflows.' } = Astro.props;
+const {
+	title = 'Kalyan AI — Bespoke, hosted AI systems',
+	description = 'We design, build, and host bespoke AI systems that remove friction from core business workflows.',
+	showFinalCta = true,
+} = Astro.props;
 const pageUrl = Astro.url ? Astro.url.href : '';
 
 const navLinks = [
+	{ label: 'Home', href: '/' },
+	{ label: 'About', href: '/about' },
 	{ label: 'Showcase', href: '/showcase' },
 	{ label: 'How it works', href: '/how-the-systems-work' },
-	{ label: 'About', href: '/about' },
 	{ label: 'Contact', href: '/contact' },
 ];
 ---
@@ -32,8 +37,8 @@ const navLinks = [
 	</head>
 	<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
 		<div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8 md:px-10 lg:px-12">
-			<header class="gradient-frame mb-10 rounded-2xl p-px">
-				<div class="ka-card rounded-[18px] border border-[var(--border-subtle)] px-5 py-4 shadow-sm backdrop-blur">
+			<header class="mb-10">
+				<div class="ka-card rounded-[18px] px-5 py-4 shadow-sm backdrop-blur">
 					<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 						<a class="leading-tight" href="/">
 							<p class="text-lg font-semibold tracking-tight text-[var(--brand-navy)]">
@@ -61,28 +66,30 @@ const navLinks = [
 				<slot />
 			</main>
 
-			<section class="ka-card mt-16 rounded-3xl border border-[var(--border-subtle)] p-8 shadow-sm backdrop-blur">
-				<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-					<div class="space-y-2">
-						<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Tell us what’s slowing your business down.</h2>
-						<p class="text-lg font-medium text-[var(--muted)]">We’ll solve it with AI.</p>
+			{showFinalCta && (
+				<section class="ka-card mt-16 rounded-3xl border border-[var(--border-subtle)] p-8 shadow-sm backdrop-blur">
+					<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+						<div class="space-y-2">
+							<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Tell us what’s slowing your business down.</h2>
+							<p class="text-lg font-medium text-[var(--muted)]">We’ll map the fastest path from idea to a working system.</p>
+						</div>
+						<div class="flex flex-wrap gap-3">
+							<a
+								class="js-open-calendly rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
+								href="/contact"
+							>
+								Book a call
+							</a>
+							<a
+								class="rounded-full border border-[var(--primary)]/25 bg-transparent px-5 py-3 text-sm font-medium text-[var(--primary)]/80 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--primary)]/35 hover:text-[var(--primary)] hover:shadow-md"
+								href="/contact#form"
+							>
+								Share a bottleneck
+							</a>
+						</div>
 					</div>
-					<div class="flex flex-wrap gap-3">
-						<a
-							class="js-open-calendly rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-							href="/contact"
-						>
-							Book a call
-						</a>
-						<a
-							class="rounded-full border border-[var(--primary)]/25 bg-transparent px-5 py-3 text-sm font-medium text-[var(--primary)]/80 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--primary)]/35 hover:text-[var(--primary)] hover:shadow-md"
-							href="/contact#form"
-						>
-							Share a bottleneck
-						</a>
-					</div>
-				</div>
-			</section>
+				</section>
+			)}
 		</div>
 
 		<footer class="mt-12 border-t border-[var(--border)] bg-[var(--brand-navy)] px-6 py-8 text-sm text-white md:px-10 lg:px-12">
@@ -99,6 +106,58 @@ const navLinks = [
 					<a class="transition hover:text-white" href="mailto:future@kalyanai.io">future@kalyanai.io</a>
 					<p>Bradford Business Court, 121–123 Bradford Street, Birmingham, B12 0NS</p>
 					<p>© {new Date().getFullYear()} Kalyan AI. All rights reserved.</p>
+				</div>
+				<div class="flex items-center gap-3">
+					<a
+						class="rounded-full p-2 text-[#0A66C2] transition hover:opacity-80 focus-visible:opacity-80 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-white"
+						href="#"
+						aria-label="LinkedIn"
+						title="Coming soon"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+							<path d="M19 0H5C2.238 0 0 2.238 0 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5V5c0-2.762-2.238-5-5-5ZM7.06 19H4.31V9h2.75v10ZM5.685 7.647a1.59 1.59 0 1 1 0-3.181 1.59 1.59 0 0 1 0 3.181ZM20 19h-2.75v-5.19c0-1.237-.025-2.828-1.722-2.828-1.725 0-1.99 1.35-1.99 2.74V19H10.8V9h2.64v1.368h.037c.368-.696 1.268-1.43 2.61-1.43 2.79 0 3.303 1.84 3.303 4.232V19Z" />
+						</svg>
+					</a>
+					<a
+						class="rounded-full p-2 text-[#E5E7EB] transition hover:opacity-80 focus-visible:opacity-80 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-white"
+						href="#"
+						aria-label="X"
+						title="Coming soon"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+							<path d="M13.865 10.704 20.41 3h-1.547l-5.692 6.656L8.5 3H3.25l6.86 10.086L3.25 21h1.547l6.04-7.058L15.5 21h5.25l-6.885-10.296Zm-2.138 2.497-.7-.996-5.45-7.75h2.35l4.4 6.248.7.996 5.713 8.115h-2.35l-4.662-6.613Z" />
+						</svg>
+					</a>
+					<a
+						class="rounded-full p-2 text-[#FF0000] transition hover:opacity-80 focus-visible:opacity-80 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-white"
+						href="#"
+						aria-label="YouTube"
+						title="Coming soon"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+							<path d="M21.8 6.5a2.753 2.753 0 0 0-1.94-1.95C18.25 4 12 4 12 4s-6.25 0-7.86.55A2.754 2.754 0 0 0 2.2 6.5C1.65 8.11 1.65 12 1.65 12s0 3.89.55 5.5a2.753 2.753 0 0 0 1.94 1.95C5.75 20 12 20 12 20s6.25 0 7.86-.55a2.753 2.753 0 0 0 1.94-1.95c.55-1.61.55-5.5.55-5.5s0-3.89-.55-5.5ZM9.75 15.5v-7l5.25 3.5-5.25 3.5Z" />
+						</svg>
+					</a>
+					<a
+						class="rounded-full p-2 text-[#1877F2] transition hover:opacity-80 focus-visible:opacity-80 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-white"
+						href="#"
+						aria-label="Facebook"
+						title="Coming soon"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+							<path d="M22 12a10 10 0 1 0-11.562 9.875v-6.988H7.078V12h3.36V9.797c0-3.316 1.976-5.156 5-5.156 1.45 0 2.965.258 2.965.258v3.258h-1.67c-1.647 0-2.16 1.022-2.16 2.07V12h3.674l-.587 2.887h-3.087v6.988A10.001 10.001 0 0 0 22 12Z" />
+						</svg>
+					</a>
+					<a
+						class="rounded-full p-2 text-[#E1306C] transition hover:opacity-80 focus-visible:opacity-80 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-white"
+						href="#"
+						aria-label="Instagram"
+						title="Coming soon"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+							<path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2A3.2 3.2 0 1 1 15.2 12 3.2 3.2 0 0 1 12 15.2Zm6.4-8.78a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0ZM22 12c0-1.636.015-3.262-.077-4.897-.09-1.83-.507-3.453-1.846-4.792C18.738.873 17.114.456 15.284.366 13.649.274 12.02.259 10.384.259c-1.636 0-3.263.015-4.898.107C3.656.456 2.033.873.694 2.211.355 2.55.086 2.959-.086 3.41c-.172.452-.28.931-.362 1.414C-.2 6.464-.215 8.09-.215 9.726c0 1.636-.015 3.263.107 4.898.09 1.83.508 3.454 1.846 4.792 1.339 1.339 2.962 1.756 4.792 1.846 1.636.092 3.263.107 4.898.107 1.636 0 3.263-.015 4.898-.107 1.83-.09 3.454-.507 4.792-1.846 1.339-1.338 1.756-2.962 1.846-4.792.092-1.636.107-3.263.107-4.898ZM20.3 17.7a4.127 4.127 0 0 1-2.32 2.32c-1.606.637-5.417.49-7.98.49-2.563 0-6.38.142-7.98-.49a4.127 4.127 0 0 1-2.32-2.32c-.637-1.606-.49-5.417-.49-7.98 0-2.563-.142-6.38.49-7.98A4.127 4.127 0 0 1 2.02 1.42c1.606-.637 5.417-.49 7.98-.49 2.563 0 6.38-.142 7.98.49a4.127 4.127 0 0 1 2.32 2.32c.637 1.606.49 5.417.49 7.98 0 2.563.142 6.38-.49 7.98Z" />
+						</svg>
+					</a>
 				</div>
 			</div>
 		</footer>

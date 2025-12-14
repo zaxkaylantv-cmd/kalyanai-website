@@ -26,16 +26,16 @@ const steps = [
 		<section class="relative overflow-hidden px-6 py-12 md:px-10 lg:px-12">
 			<div class="absolute inset-0 opacity-[0.2] blur-3xl glow-animate bg-[radial-gradient(circle_at_18%_30%,rgba(10,170,231,0.2),transparent_45%),radial-gradient(circle_at_78%_55%,rgba(171,113,247,0.18),transparent_42%)]"></div>
 			<div class="relative mx-auto max-w-5xl">
-				<div class="ka-card rounded-[22px] border border-[var(--border)]/60 p-8 shadow-[0_18px_60px_-45px_rgba(0,0,0,0.35)] backdrop-blur">
+				<div class="ka-card rounded-[22px] p-8 shadow-[0_18px_60px_-45px_rgba(0,0,0,0.35)] backdrop-blur">
 					<div class="space-y-6 text-[var(--text)]">
 						<p class="inline-flex items-center rounded-full border border-[var(--border)]/80 bg-white/70 px-3 py-1 text-xs font-medium text-[var(--muted)]">
 							Bespoke, hosted AI systems
 						</p>
-					<h1 class="text-4xl font-semibold leading-tight tracking-tight text-[var(--brand-navy)] md:text-5xl">
-						<span class="text-[var(--brand-navy)]">Bespoke, hosted AI systems</span> — built around how your business actually works.
-					</h1>
-						<p class="text-lg text-[var(--muted)] md:text-xl">
-							We design, build, and run end-to-end AI that removes manual work, interprets business data, and gives owners confident control over how the business runs.
+						<h1 class="text-4xl font-semibold leading-tight tracking-tight text-[var(--brand-navy)] md:text-5xl">
+							<span class="text-[var(--brand-navy)]">Bespoke, hosted AI systems</span> — built around how your business actually works.
+						</h1>
+						<p class="copy-narrow text-lg text-[var(--muted)] md:text-xl">
+							We design, build, and host bespoke AI systems that remove manual work, interpret business data, and give owners confident control over how the business runs.
 						</p>
 						<div class="flex flex-wrap gap-4">
 							<a class="js-open-calendly rounded-full bg-[var(--accent-teal)] px-5 py-3 text-sm font-medium text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/contact">
@@ -76,7 +76,7 @@ const steps = [
 								</div>
 							</div>
 							<a class="inline-flex w-fit items-center justify-center rounded-full border border-[var(--border)] bg-white px-4 py-2 text-sm font-medium text-[var(--text)] transition hover:-translate-y-0.5 hover:shadow-lg" href="/showcase">
-								Watch demo
+								Watch the walkthroughs
 							</a>
 						</div>
 					</div>
@@ -85,13 +85,13 @@ const steps = [
 		</section>
 
 		<section class="text-center space-y-3 px-4 md:px-10">
-			<p class="text-lg font-medium text-[var(--text)]">Systems you can trust, built around how your business truly runs.</p>
-			<p class="text-[var(--muted)]">Clear inputs, deliberate decisions, and steady ownership—no noise added.</p>
+			<p class="copy-narrow text-lg font-medium text-[var(--text)]">Systems you can trust, built around how your business truly runs.</p>
+			<p class="copy-narrow text-[var(--muted)]">Clear inputs, deliberate decisions, and steady ownership—no noise added.</p>
 		</section>
 
-		<section class="space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Examples of systems we build</h2>
-			<p class="text-[var(--muted)]">Every build is bespoke. These are common outcomes we deliver for SMEs.</p>
+			<p class="copy-narrow text-[var(--muted)]">Every build is bespoke. These are common outcomes we deliver for SMEs.</p>
 			<div class="grid gap-4 md:grid-cols-2">
 				<div class="space-y-1 rounded-2xl bg-white/70 p-4 shadow-sm backdrop-blur">
 					<p class="font-semibold text-[var(--brand-navy)]">Sales follow-up and proposals</p>
@@ -124,29 +124,55 @@ const steps = [
 			</div>
 		</section>
 
-		<section class="space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">How we work</h2>
 			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 				<div class="space-y-2">
 					<p class="text-sm font-semibold text-[var(--brand-navy)]">Discover</p>
-					<p class="text-[var(--muted)]">We learn how the business really runs and where friction slows work.</p>
+					<p class="copy-narrow text-[var(--muted)]">We learn how the business really runs and where friction slows work.</p>
 				</div>
 				<div class="space-y-2">
 					<p class="text-sm font-semibold text-[var(--brand-navy)]">Design</p>
-					<p class="text-[var(--muted)]">We outline a hosted AI system that mirrors your workflows with clear owners and guardrails.</p>
+					<p class="copy-narrow text-[var(--muted)]">We outline a hosted AI system that mirrors your workflows with clear owners and guardrails.</p>
 				</div>
 				<div class="space-y-2">
 					<p class="text-sm font-semibold text-[var(--brand-navy)]">Build</p>
-					<p class="text-[var(--muted)]">We assemble and test the hosted layer so decisions and handoffs happen reliably.</p>
+					<p class="copy-narrow text-[var(--muted)]">We assemble and test the hosted layer so decisions and handoffs happen reliably.</p>
 				</div>
 				<div class="space-y-2">
 					<p class="text-sm font-semibold text-[var(--brand-navy)]">Host &amp; Improve</p>
-					<p class="text-[var(--muted)]">We operate, monitor, and refine so performance and oversight stay aligned.</p>
+					<p class="copy-narrow text-[var(--muted)]">We operate, monitor, and refine so performance and oversight stay aligned.</p>
 				</div>
 			</div>
 		</section>
 
-		<section class="relative space-y-6 rounded-3xl bg-white/65 p-6 shadow-[0_10px_50px_-45px_rgba(0,0,0,0.45)] backdrop-blur md:p-8">
+		<section class="space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built for trust</h2>
+			<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+				<div class="space-y-1 rounded-2xl bg-white/70 p-4 shadow-sm backdrop-blur">
+					<p class="font-semibold text-[var(--brand-navy)]">Clear ownership and approvals</p>
+					<p class="text-[var(--muted)]">Every decision has an owner, approvals are explicit, and nothing moves without a named accountable person.</p>
+				</div>
+				<div class="space-y-1 rounded-2xl bg-white/70 p-4 shadow-sm backdrop-blur">
+					<p class="font-semibold text-[var(--brand-navy)]">Guardrails and auditability</p>
+					<p class="text-[var(--muted)]">Controls, logs, and checkpoints are built in so you can see what happened and why.</p>
+				</div>
+				<div class="space-y-1 rounded-2xl bg-white/70 p-4 shadow-sm backdrop-blur">
+					<p class="font-semibold text-[var(--brand-navy)]">Evidence and reporting</p>
+					<p class="text-[var(--muted)]">Signals and actions are summarised into concise reports that leaders can review quickly.</p>
+				</div>
+				<div class="space-y-1 rounded-2xl bg-white/70 p-4 shadow-sm backdrop-blur">
+					<p class="font-semibold text-[var(--brand-navy)]">Monitoring and support</p>
+					<p class="text-[var(--muted)]">We host and monitor the system, handle issues, and keep it aligned with your operating reality.</p>
+				</div>
+				<div class="space-y-1 rounded-2xl bg-white/70 p-4 shadow-sm backdrop-blur">
+					<p class="font-semibold text-[var(--brand-navy)]">Training and handover</p>
+					<p class="text-[var(--muted)]">We train your team and leave clear documentation so the system sticks.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="ka-card relative space-y-6 rounded-3xl bg-white/65 p-6 shadow-[0_10px_50px_-45px_rgba(0,0,0,0.45)] backdrop-blur md:p-8">
 			<div class="pointer-events-none absolute inset-0 opacity-[0.05]">
 				<div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(10,170,231,0.22),transparent_38%),radial-gradient(circle_at_85%_60%,rgba(171,113,247,0.2),transparent_36%)]"></div>
 				<div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,170,231,0.08)_1px,transparent_1px),linear-gradient(0deg,rgba(171,113,247,0.08)_1px,transparent_1px)] bg-[size:140px_140px]"></div>
@@ -157,11 +183,11 @@ const steps = [
 				<div class="absolute inset-x-4 top-1/2 hidden h-[2px] bg-gradient-to-r from-[var(--primary)]/30 via-[var(--accent)]/18 to-[var(--accent2)]/24 lg:block"></div>
 				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 					{steps.map((step, index) => (
-						<div class={`gradient-frame relative rounded-2xl p-px transition duration-200 ${
+						<div class={`relative rounded-2xl transition duration-200 ${
 							index === 0 ? 'lg:-translate-y-1' : index === 1 ? 'lg:-translate-y-2' : index === 2 ? 'lg:translate-y-2' : 'lg:translate-y-1'
 						}`}>
 							<div class="absolute -left-2 top-10 hidden h-3 w-3 -translate-y-1/2 rounded-full bg-[var(--primary)]/18 ring-2 ring-[var(--primary)]/20 lg:block"></div>
-						<div class="ka-card flex h-full flex-col gap-3 rounded-[18px] p-5 shadow-sm backdrop-blur">
+						<div class="ka-card flex h-full flex-col gap-3 rounded-[18px] border border-[var(--border-subtle)] p-5 shadow-sm backdrop-blur">
 								<div class="flex items-center gap-2 text-sm font-semibold text-[var(--brand-navy)]">
 									<span class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)]/12 text-[var(--brand-navy)] shadow-[0_0_0_8px_rgba(10,170,231,0.08)]">
 										{String(index + 1).padStart(2, '0')}
@@ -176,7 +202,7 @@ const steps = [
 			</div>
 		</section>
 
-		<section class="space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Outcomes you can measure</h2>
 			<ul class="space-y-2 text-[var(--muted)]">
 				<li class="flex items-start gap-2">
@@ -206,7 +232,7 @@ const steps = [
 			</div>
 		</section>
 
-		<section class="space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">FAQs</h2>
 			<div class="divide-y divide-[var(--border-subtle)] rounded-2xl border border-[var(--border-subtle)] bg-white/80">
 				{[
