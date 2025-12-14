@@ -11,7 +11,7 @@ const pageUrl = Astro.url ? Astro.url.href : '';
 const navLinks = [
 	{ label: 'Home', href: '/' },
 	{ label: 'About', href: '/about' },
-	{ label: 'How it works', href: '/how-the-systems-work' },
+	{ label: 'Walkthroughs', href: '/how-the-systems-work' },
 	{ label: 'Contact', href: '/contact' },
 ];
 ---
@@ -45,7 +45,7 @@ const navLinks = [
 							</p>
 							<p class="text-sm text-[var(--muted)]">Bespoke AI systems partner</p>
 						</a>
-						<nav class="flex flex-wrap items-center gap-4 text-sm text-[var(--muted)]">
+						<nav class="flex flex-wrap items-center gap-4 text-sm text-[var(--text)]">
 							{navLinks.map((link) => (
 								<a class="transition hover:text-[var(--text)]" href={link.href}>{link.label}</a>
 							))}

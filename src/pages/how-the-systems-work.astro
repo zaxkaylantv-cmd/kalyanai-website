@@ -18,22 +18,46 @@ const videos = [
 	description="Longer walkthroughs showing how our hosted AI systems operate in practice."
 >
 	<main class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 pb-16">
-		<section class="ka-card mx-auto max-w-5xl space-y-3 rounded-3xl bg-white/80 p-8 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
+		<section class="ka-card mx-auto max-w-5xl space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">How the Systems Work</h1>
 			<p class="copy-narrow max-w-3xl mx-auto text-lg text-[var(--primary)]">
 				Longer walkthroughs showing how our bespoke, hosted AI systems operate in practice—these are examples, not off-the-shelf products.
 			</p>
 		</section>
 
-		<section class="flex flex-col gap-10">
-			{videos.map((video) => (
-				<article class="space-y-4" id={video.anchor}>
-					<h2 class="text-xl font-semibold text-[var(--brand-navy)]">{video.title}</h2>
-					<div class="aspect-video overflow-hidden rounded-xl bg-black/5">
-						<iframe
-							class="h-full w-full"
-							src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
-							title={video.title}
+			<section class="flex flex-col gap-10">
+				{videos.map((video) => (
+					<article class="space-y-4" id={video.anchor}>
+						<h2 class="text-xl font-semibold text-[var(--brand-navy)]">{video.title}</h2>
+						{video.title === 'Proposal Intelligence' && (
+							<p class="text-sm text-[var(--primary)]">Walkthrough · capture requirements → draft proposal → follow-up email</p>
+						)}
+						{video.title === 'Document & Cashflow Copilot' && (
+							<p class="text-sm text-[var(--primary)]">Walkthrough · extract key figures → cash visibility → daily flags</p>
+						)}
+						{video.title === 'Lead Desk CRM (Part 1)' && (
+							<p class="text-sm text-[var(--primary)]">Walkthrough · pipeline → next steps → deal coaching</p>
+						)}
+						{video.title === 'Lead Desk CRM (Part 2)' && (
+							<p class="text-sm text-[var(--primary)]">Walkthrough · activity → follow-ups → daily action queue</p>
+						)}
+						{video.title === 'Lead Generation Engine (Part 1)' && (
+							<p class="text-sm text-[var(--primary)]">Walkthrough · sources → enrichment → fit scoring</p>
+						)}
+						{video.title === 'Lead Generation Engine (Part 2)' && (
+							<p class="text-sm text-[var(--primary)]">Walkthrough · outreach prep → messaging → handoff notes</p>
+						)}
+						{video.title === 'Discovery Intelligence (Part 1)' && (
+							<p class="text-sm text-[var(--primary)]">Walkthrough · call upload → analysis → structured summary</p>
+						)}
+						{video.title === 'Discovery Intelligence (Part 2)' && (
+							<p class="text-sm text-[var(--primary)]">Walkthrough · coaching → tone/sentiment → next steps</p>
+						)}
+						<div class="aspect-video overflow-hidden rounded-xl bg-black/5">
+							<iframe
+								class="h-full w-full"
+								src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
+								title={video.title}
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							allowfullscreen
 							loading="lazy"

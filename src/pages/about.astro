@@ -6,16 +6,16 @@ import Layout from '../layouts/Layout.astro';
 	title="About — Kalyan AI"
 	description="We build and host bespoke AI systems that remove friction from core business workflows."
 >
-	<main class="mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pb-14">
-		<header class="space-y-3 pt-4">
+	<main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 pb-14">
+		<section class="ka-card mx-auto max-w-5xl space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">About</h1>
-			<p class="copy-narrow max-w-3xl text-lg text-[var(--muted)]">
+			<p class="copy-narrow max-w-3xl mx-auto text-lg text-[var(--primary)]">
 				We build and host bespoke AI systems that remove friction from core business workflows.
 			</p>
-		</header>
+		</section>
 
-		<section class="grid gap-10 lg:grid-cols-[360px_1fr] lg:items-start">
-			<div class="mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm aspect-[4/4.5]">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<div class="mx-auto aspect-[4/4.5] w-full max-w-md overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm">
 				<img
 					class="h-full w-full object-cover"
 					src="/images/1761512653.png"
@@ -26,74 +26,74 @@ import Layout from '../layouts/Layout.astro';
 				/>
 			</div>
 
-			<div class="space-y-4">
+			<div class="space-y-3 text-center">
 				<h2 class="text-xl font-semibold text-[var(--brand-navy)]">Founder</h2>
-				<p class="copy-narrow text-[var(--muted)]">
-					I’m Zax Kalyan, founder of Kalyan AI. I’ve spent 15+ years leading and growing businesses under real-world pressure — owning P&L, building teams, and delivering results across industries.
+				<div class="space-y-3 !text-center">
+					<div class="space-y-1">
+						<p class="hidden text-xs font-bold text-[var(--primary)] md:hidden">Founder background</p>
+						<p class="copy-narrow mx-auto text-[var(--muted)]">
+							I’m Zax Kalyan, founder of Kalyan AI. I’ve spent <span class="font-bold">15+ years</span> leading and growing businesses under real-world pressure — <span class="font-bold">owning P&L</span>, building teams, and delivering results across industries.
+						</p>
+					</div>
+					<div class="space-y-1">
+						<p class="hidden text-xs font-bold text-[var(--primary)] md:hidden">The philosophy behind Kalyan AI</p>
+						<p class="copy-narrow mx-auto text-[var(--muted)]">
+							Kalyan AI is built around a simple idea: <span class="font-bold">bespoke AI systems</span> should fit the way your business actually runs. We design, build, and host systems that turn messy inputs into <span class="font-bold">clear outputs</span> — so decisions, follow-ups, and reporting happen reliably, with proper ownership and oversight.
+						</p>
+					</div>
+					<div class="space-y-1">
+						<p class="hidden text-xs font-bold text-[var(--primary)] md:hidden">Nuvo Labs and how it informs decisions</p>
+						<p class="copy-narrow mx-auto text-[var(--muted)]">
+							I’m also a contributor and shareholder at Nuvo Labs, a deep-tech AI research company. That proximity to research helps inform the technical choices we make, while keeping delivery focused on what matters day-to-day: <span class="font-bold">reliability, control, and measurable impact</span>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-xl font-semibold text-[var(--brand-navy)]">What we do</h2>
+			<div class="space-y-2 !text-center">
+				<p class="copy-narrow mx-auto text-[var(--muted)]">
+					We design, build, and operate hosted AI systems that respect how your business already works. Each system is <span class="font-bold">tailored to your data, decisions, and owners</span>—so your team gains clarity without more tools to manage.
 				</p>
-				<p class="copy-narrow text-[var(--muted)]">
-					Kalyan AI is built around a simple idea: bespoke AI systems should fit the way your business actually runs. We design, build, and host systems that turn messy inputs into clear outputs — so decisions, follow-ups, and reporting happen reliably, with proper ownership and oversight.
-				</p>
-				<p class="copy-narrow text-[var(--muted)]">
-					I’m also a contributor and shareholder at Nuvo Labs, a deep-tech AI research company. That proximity to research helps inform the technical choices we make, while keeping delivery focused on what matters day-to-day: reliability, control, and measurable impact.
+				<p class="copy-narrow mx-auto text-[var(--muted)]">
+					You keep control and oversight; we handle the <span class="font-bold">engineering, hosting, and steady improvements</span>.
 				</p>
 			</div>
 		</section>
 
-		<section class="space-y-8">
-			<div class="space-y-2">
-				<h2 class="text-xl font-semibold text-[var(--brand-navy)]">What we do</h2>
-				<p class="max-w-3xl text-[var(--muted)]">
-					We design, build, and operate hosted AI systems that respect how your business already works. Each system is tailored to your data, decisions, and owners—so your team gains clarity without more tools to manage.
-				</p>
-				<p class="max-w-3xl text-[var(--muted)]">
-					You keep control and oversight; we handle the engineering, hosting, and steady improvements.
-				</p>
-			</div>
-
-			<div class="space-y-3">
-				<h2 class="text-xl font-semibold text-[var(--brand-navy)]">How we work</h2>
-				<ol class="space-y-2 text-[var(--muted)]">
-					<li><span class="font-semibold text-[var(--text)]">Discover:</span> We map your current workflows, data, and decision points.</li>
-					<li><span class="font-semibold text-[var(--text)]">Build:</span> We assemble the hosted AI layer with safeguards and clear ownership.</li>
-					<li><span class="font-semibold text-[var(--text)]">Deploy:</span> We launch with you, monitor outcomes, and keep the system dependable.</li>
-					<li><span class="font-semibold text-[var(--text)]">Improve:</span> We refine prompts, data flows, and reporting based on real usage.</li>
-				</ol>
-			</div>
-
-			<!-- WHAT YOU GET START -->
-			<section class="mt-10 space-y-3">
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What you get</h2>
-				<ul class="space-y-2 text-[var(--muted)]">
-					<li><span class="font-medium text-[var(--text)]">Discovery and system design</span> — map workflows, inputs, decisions, and owners.</li>
-					<li><span class="font-medium text-[var(--text)]">Build and integration</span> — connect to your data and operational tools.</li>
-					<li><span class="font-medium text-[var(--text)]">Hosted operation</span> — monitoring, reliability, and steady improvements.</li>
-					<li><span class="font-medium text-[var(--text)]">Training and handover</span> — your team knows how to use it day one.</li>
-					<li><span class="font-medium text-[var(--text)]">Ongoing support</span> — fixes, refinements, and iteration based on real usage.</li>
-				</ul>
-			</section>
-			<!-- WHAT YOU GET END -->
-
-			<div class="space-y-3">
-				<h2 class="text-xl font-semibold text-[var(--brand-navy)]">What you can expect</h2>
-				<ul class="space-y-2 text-[var(--muted)]">
-					<li class="flex items-start gap-2">
-						<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
-						<span>Clarity on decisions, owners, and timing.</span>
-					</li>
-					<li class="flex items-start gap-2">
-						<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
-						<span>Speed without sacrificing oversight or compliance.</span>
-					</li>
-					<li class="flex items-start gap-2">
-						<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
-						<span>Reliability from a hosted system that stays maintained and supported.</span>
-					</li>
-				</ul>
-			</div>
+		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-xl font-semibold text-[var(--brand-navy)]">How we work</h2>
+			<ol class="space-y-2 text-[var(--muted)] text-center list-none">
+				<li><span class="font-bold text-[var(--primary)]">Discover:</span> We map your current workflows, data, and <span class="font-bold">decision points</span>.</li>
+				<li><span class="font-bold text-[var(--primary)]">Build:</span> We assemble the hosted AI layer with safeguards and <span class="font-bold">clear ownership</span>.</li>
+				<li><span class="font-bold text-[var(--primary)]">Deploy:</span> We launch with you, monitor outcomes, and keep the system dependable.</li>
+				<li><span class="font-bold text-[var(--primary)]">Improve:</span> We refine prompts, data flows, and <span class="font-bold">reporting based on real usage</span>.</li>
+			</ol>
 		</section>
 
-		<div>
+		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What you get</h2>
+			<ul class="space-y-2 text-[var(--muted)] text-center list-none">
+				<li><span class="font-medium text-[var(--primary)]">Discovery and system design</span> — map workflows, inputs, decisions, and <span class="font-bold">owners</span>.</li>
+				<li><span class="font-medium text-[var(--primary)]">Build and integration</span> — connect to your data and <span class="font-bold">operational tools</span>.</li>
+				<li><span class="font-medium text-[var(--primary)]">Hosted operation</span> — monitoring, reliability, and <span class="font-bold">steady improvements</span>.</li>
+				<li><span class="font-medium text-[var(--primary)]">Training and handover</span> — your team knows how to use it day one.</li>
+				<li><span class="font-medium text-[var(--primary)]">Ongoing support</span> — fixes, refinements, and <span class="font-bold">iteration</span> based on real usage.</li>
+			</ul>
+		</section>
+
+		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-xl font-semibold text-[var(--brand-navy)]">What you can expect</h2>
+			<ul class="space-y-2 text-[var(--muted)] text-center list-none">
+				<li><span class="font-bold text-[var(--text)]">Clarity</span> on decisions, owners, and timing.</li>
+				<li><span class="font-bold text-[var(--text)]">Speed</span> without sacrificing oversight or compliance.</li>
+				<li><span class="font-bold text-[var(--text)]">Reliability</span> from a hosted system that stays maintained and supported.</li>
+			</ul>
+		</section>
+
+		<div class="text-center">
 			<a
 				class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
 				href="https://calendly.com/zaxkalyan/30min"
@@ -102,9 +102,9 @@ import Layout from '../layouts/Layout.astro';
 			</a>
 		</div>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">FAQs</h2>
-			<div class="divide-y divide-[var(--border-subtle)] rounded-2xl border border-[var(--border-subtle)] bg-white/80">
+			<div class="divide-y divide-[var(--border-subtle)] rounded-2xl border border-[var(--border-subtle)] bg-white/80 text-center">
 				{[
 					{
 						q: 'What types of businesses do you work with?',
@@ -136,11 +136,11 @@ import Layout from '../layouts/Layout.astro';
 					},
 				].map((item) => (
 					<details class="group px-4 py-3 text-[var(--muted)]">
-						<summary class="flex cursor-pointer list-none items-center justify-between gap-3 text-[var(--brand-navy)] font-semibold transition hover:text-[var(--brand-navy-light)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-0">
+						<summary class="flex cursor-pointer list-none items-center justify-center gap-2 text-center text-[var(--brand-navy)] font-semibold transition hover:text-[var(--brand-navy-light)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-0">
 							<span>{item.q}</span>
 							<span class="text-sm text-[var(--muted)] group-open:rotate-45 transition">+</span>
 						</summary>
-						<div class="pt-2 text-[var(--muted)]">
+						<div class="pt-2 text-[var(--muted)] text-center">
 							<p>{item.a}</p>
 						</div>
 					</details>
