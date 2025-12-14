@@ -11,7 +11,6 @@ const pageUrl = Astro.url ? Astro.url.href : '';
 const navLinks = [
 	{ label: 'Home', href: '/' },
 	{ label: 'About', href: '/about' },
-	{ label: 'Showcase', href: '/showcase' },
 	{ label: 'How it works', href: '/how-the-systems-work' },
 	{ label: 'Contact', href: '/contact' },
 ];
@@ -44,7 +43,7 @@ const navLinks = [
 							<p class="text-lg font-semibold tracking-tight text-[var(--brand-navy)]">
 								KALYAN <span class="text-[var(--primary)]">AI</span>
 							</p>
-							<p class="text-sm text-[var(--muted)]">Your AI Integration Partner</p>
+							<p class="text-sm text-[var(--muted)]">Bespoke AI systems partner</p>
 						</a>
 						<nav class="flex flex-wrap items-center gap-4 text-sm text-[var(--muted)]">
 							{navLinks.map((link) => (
@@ -96,9 +95,8 @@ const navLinks = [
 			<div class="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
 				<div class="flex flex-wrap items-center gap-4">
 					<a class="transition hover:text-white/80" href="/">Home</a>
-					<a class="transition hover:text-white/80" href="/showcase">Showcase</a>
-					<a class="transition hover:text-white/80" href="/how-the-systems-work">How the systems work</a>
 					<a class="transition hover:text-white/80" href="/about">About</a>
+					<a class="transition hover:text-white/80" href="/how-the-systems-work">How the systems work</a>
 					<a class="transition hover:text-white/80" href="/contact">Contact</a>
 					<a class="transition hover:text-white/80" href="https://calendly.com/zaxkalyan/30min">Book a call</a>
 				</div>
