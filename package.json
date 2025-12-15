@@ -6,12 +6,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "gen:assets": "node scripts/generate-brand-assets.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.5",
+    "png-to-ico": "^2.1.8",
+    "to-ico": "^1.1.5",
+    "sharp": "^0.33.5",
     "tailwindcss": "^4.1.18"
   }
 }

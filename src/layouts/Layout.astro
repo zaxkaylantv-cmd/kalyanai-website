@@ -8,7 +8,7 @@ const {
 } = Astro.props;
 const siteUrl = Astro.site?.toString() ?? 'https://www.kalyanai.io';
 const canonicalUrl = Astro.url ? new URL(Astro.url.pathname, siteUrl).toString() : siteUrl;
-const ogImageUrl = new URL('/og-v2.png', siteUrl).toString();
+const ogImageUrl = new URL('/og-v3.png', siteUrl).toString();
 const ogTitle = 'Bespoke hosted AI systems';
 const ogDescription = 'Hosted AI systems built around your operations with oversight and clear ownership.';
 
@@ -25,10 +25,10 @@ const navLinks = [
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon-v3.ico" sizes="any" />
-		<link rel="icon" type="image/png" href="/favicon-32x32-v3.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="/favicon-16x16-v3.png" sizes="16x16" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon-v3.png" />
+		<link rel="icon" href="/favicon-v4.ico" sizes="any" />
+		<link rel="icon" type="image/png" href="/favicon-32x32-v4.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/favicon-16x16-v4.png" sizes="16x16" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon-v4.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
