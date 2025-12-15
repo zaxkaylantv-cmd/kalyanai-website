@@ -42,7 +42,7 @@ const navLinks = [
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageUrl} />
 		<meta name="twitter:url" content={canonicalUrl} />
-		<script defer data-domain="kalyanai.io" src="https://plausible.io/js/script.tagged-events.js"></script>
+		<script defer data-domain="www.kalyanai.io" src="https://plausible.io/js/script.js"></script>
 	</head>
 	<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
 		<div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8 md:px-10 lg:px-12">
@@ -67,6 +67,7 @@ const navLinks = [
 								<a
 									class="rounded-full bg-[var(--primary)] px-4 py-2 font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
 									href="/contact#book"
+									data-plausible="BookACall"
 								>
 								Book a call
 							</a>
@@ -90,6 +91,7 @@ const navLinks = [
 								<a
 									class="rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
 									href="/contact#book"
+									data-plausible="BookACall"
 								>
 								Book a call
 							</a>
@@ -106,10 +108,10 @@ const navLinks = [
 					<a class="transition hover:text-white/80" href="/about">About</a>
 					<a class="transition hover:text-white/80" href="/how-the-systems-work">How the systems work</a>
 					<a class="transition hover:text-white/80" href="/contact">Contact</a>
-						<a class="transition hover:text-white/80" href="/contact#book">Book a call</a>
+						<a class="transition hover:text-white/80" href="/contact#book" data-plausible="BookACall">Book a call</a>
 				</div>
 				<div class="flex flex-col gap-1 text-white/90">
-					<a class="transition hover:text-white" href="mailto:future@kalyanai.io">future@kalyanai.io</a>
+					<a class="transition hover:text-white" href="mailto:future@kalyanai.io" data-plausible="EmailClick">future@kalyanai.io</a>
 					<p>Bradford Business Court, 121–123 Bradford Street, Birmingham, B12 0NS</p>
 					<p>© {new Date().getFullYear()} Kalyan AI. All rights reserved.</p>
 				</div>
@@ -171,35 +173,14 @@ const navLinks = [
 		{/* Calendly popup removed; inline embed lives on /contact#book */}
 		<script is:inline>
 			if (typeof window !== 'undefined') {
-				const queue = (...args) => {
-					(window.plausible?.q = window.plausible?.q || []).push(args);
-				};
-
-				const trackEvents = () => {
-					const bookSelectors = [
-						'a[href="/contact#book"]',
-						'a[href$="#book"]',
-					];
-					const mailtoSelectors = ['a[href="mailto:future@kalyanai.io"]'];
-
-					bookSelectors.forEach((selector) => {
-						document.querySelectorAll(selector).forEach((node) => {
-							node.addEventListener('click', () => window.plausible?.('Book a call click') ?? queue('Book a call click'));
-						});
-					});
-
-					mailtoSelectors.forEach((selector) => {
-						document.querySelectorAll(selector).forEach((node) => {
-							node.addEventListener('click', () => window.plausible?.('Email click', { props: { recipient: 'future@kalyanai.io' } }) ?? queue('Email click', { props: { recipient: 'future@kalyanai.io' } }));
-						});
-					});
-				};
-
-				if (document.readyState === 'complete' || document.readyState === 'interactive') {
-					trackEvents();
-				} else {
-					document.addEventListener('DOMContentLoaded', trackEvents);
-				}
+				document.addEventListener('click', (event) => {
+					const target = event.target;
+					const node = target instanceof Element ? target.closest('[data-plausible]') : null;
+					const eventName = node?.getAttribute('data-plausible');
+					if (eventName && typeof window.plausible === 'function') {
+						window.plausible(eventName);
+					}
+				});
 			}
 		</script>
 	</body>
