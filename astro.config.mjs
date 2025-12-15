@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kalyanai.io',
+  site: 'https://www.kalyanai.io',
   integrations: [sitemap()],
   vite: {
     server: {

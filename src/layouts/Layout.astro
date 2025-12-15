@@ -6,7 +6,7 @@ const {
 	description = 'We design, build, and host bespoke AI systems that turn messy inputs into clear actions with proper oversight for your organisation.',
 	showFinalCta = true,
 } = Astro.props;
-const siteUrl = Astro.site?.toString() ?? 'https://kalyanai.io';
+const siteUrl = Astro.site?.toString() ?? 'https://www.kalyanai.io';
 const canonicalUrl = Astro.url ? new URL(Astro.url.pathname, siteUrl).toString() : siteUrl;
 const ogImageUrl = new URL('/og.png', siteUrl).toString();
 
@@ -42,6 +42,7 @@ const navLinks = [
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageUrl} />
 		<meta name="twitter:url" content={canonicalUrl} />
+		<script defer data-domain="kalyanai.io" src="https://plausible.io/js/script.tagged-events.js"></script>
 	</head>
 	<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
 		<div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8 md:px-10 lg:px-12">
@@ -168,5 +169,38 @@ const navLinks = [
 		</footer>
 
 		{/* Calendly popup removed; inline embed lives on /contact#book */}
+		<script is:inline>
+			if (typeof window !== 'undefined') {
+				const queue = (...args) => {
+					(window.plausible?.q = window.plausible?.q || []).push(args);
+				};
+
+				const trackEvents = () => {
+					const bookSelectors = [
+						'a[href="/contact#book"]',
+						'a[href$="#book"]',
+					];
+					const mailtoSelectors = ['a[href="mailto:future@kalyanai.io"]'];
+
+					bookSelectors.forEach((selector) => {
+						document.querySelectorAll(selector).forEach((node) => {
+							node.addEventListener('click', () => window.plausible?.('Book a call click') ?? queue('Book a call click'));
+						});
+					});
+
+					mailtoSelectors.forEach((selector) => {
+						document.querySelectorAll(selector).forEach((node) => {
+							node.addEventListener('click', () => window.plausible?.('Email click', { props: { recipient: 'future@kalyanai.io' } }) ?? queue('Email click', { props: { recipient: 'future@kalyanai.io' } }));
+						});
+					});
+				};
+
+				if (document.readyState === 'complete' || document.readyState === 'interactive') {
+					trackEvents();
+				} else {
+					document.addEventListener('DOMContentLoaded', trackEvents);
+				}
+			}
+		</script>
 	</body>
 </html>

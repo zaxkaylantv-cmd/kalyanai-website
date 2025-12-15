@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kalyanai.io/sitemap-index.xml
-Host: kalyanai.io
+Sitemap: https://www.kalyanai.io/sitemap-index.xml
+Host: www.kalyanai.io
