@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
 				<p class="text-[var(--muted)]">
 					Use the Book a call button to open our scheduler. We’ll come prepared with context on your business and a short agenda.
 				</p>
-				<a class="js-open-calendly inline-flex w-fit items-center justify-center rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/contact">
+				<a class="inline-flex w-fit items-center justify-center rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="#book">
 					Book a call
 				</a>
 				<p class="text-sm text-[var(--muted)]">
@@ -43,6 +43,13 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</div>
 			</div>
+		</section>
+
+		<section id="book" class="space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Book a call</h2>
+			<p class="text-[var(--muted)]">Choose a time that works for you.</p>
+			<div class="calendly-inline-widget w-full" data-url="https://calendly.com/zaxkalyan/30min" style="min-width:320px;height:700px;"></div>
+			<script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
 		</section>
 	</main>
 </Layout>

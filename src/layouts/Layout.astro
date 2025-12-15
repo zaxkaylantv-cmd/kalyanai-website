@@ -54,11 +54,10 @@ const navLinks = [
 									{link.label}
 								</a>
 							))}
-							<a
-								class="rounded-full bg-[var(--primary)] px-4 py-2 font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-								href="/contact"
-								data-calendly-trigger
-							>
+								<a
+									class="rounded-full bg-[var(--primary)] px-4 py-2 font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
+									href="/contact#book"
+								>
 								Book a call
 							</a>
 						</nav>
@@ -78,10 +77,10 @@ const navLinks = [
 							<p class="text-lg font-medium text-[var(--muted)]">We’ll map the fastest path from idea to a working system.</p>
 						</div>
 						<div class="flex flex-wrap gap-3">
-							<a
-								class="js-open-calendly rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-								href="/contact"
-							>
+								<a
+									class="rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
+									href="/contact#book"
+								>
 								Book a call
 							</a>
 							<a
@@ -103,7 +102,7 @@ const navLinks = [
 					<a class="transition hover:text-white/80" href="/about">About</a>
 					<a class="transition hover:text-white/80" href="/how-the-systems-work">How the systems work</a>
 					<a class="transition hover:text-white/80" href="/contact">Contact</a>
-					<a class="transition hover:text-white/80" href="https://calendly.com/zaxkalyan/30min">Book a call</a>
+						<a class="transition hover:text-white/80" href="/contact#book">Book a call</a>
 				</div>
 				<div class="flex flex-col gap-1 text-white/90">
 					<a class="transition hover:text-white" href="mailto:future@kalyanai.io">future@kalyanai.io</a>
@@ -165,54 +164,6 @@ const navLinks = [
 			</div>
 		</footer>
 
-		<div
-			id="calendly-modal"
-			class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 px-4 py-10 backdrop-blur-sm"
-			role="dialog"
-			aria-modal="true"
-		>
-			<div class="relative w-full max-w-4xl rounded-2xl border border-white/15 bg-white/95 p-4 shadow-2xl">
-				<button
-					id="calendly-close"
-					class="absolute right-3 top-3 rounded-full border border-[var(--border)] bg-white px-2 py-1 text-sm text-[var(--muted)] transition hover:-translate-y-0.5 hover:shadow"
-					type="button"
-				>
-					Close
-				</button>
-				<div class="overflow-hidden rounded-xl border border-[var(--border)] bg-white">
-					<div
-						class="calendly-inline-widget w-full"
-						data-url="https://calendly.com/zaxkalyan/30min"
-						style="min-width:320px;height:650px;"
-					></div>
-				</div>
-			</div>
-		</div>
-
-		<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-		<script>
-			document.addEventListener('DOMContentLoaded', () => {
-				const modal = document.getElementById('calendly-modal');
-				const closeBtn = document.getElementById('calendly-close');
-				const triggers = document.querySelectorAll('[data-calendly-trigger], .js-open-calendly');
-
-				const openModal = (event) => {
-					event?.preventDefault();
-					modal?.classList.remove('hidden');
-					document.body.classList.add('overflow-hidden');
-				};
-
-				const closeModal = () => {
-					modal?.classList.add('hidden');
-					document.body.classList.remove('overflow-hidden');
-				};
-
-				triggers.forEach((el) => el.addEventListener('click', openModal));
-				closeBtn?.addEventListener('click', closeModal);
-				modal?.addEventListener('click', (event) => {
-					if (event.target === modal) closeModal();
-				});
-			});
-		</script>
+		{/* Calendly popup removed; inline embed lives on /contact#book */}
 	</body>
 </html>
