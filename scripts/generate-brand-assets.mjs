@@ -3,17 +3,28 @@ import path from 'node:path';
 import sharp from 'sharp';
 import pngToIco from 'png-to-ico';
 import toIco from 'to-ico';
+import TextToSVG from 'text-to-svg';
 
 const root = path.resolve(new URL('.', import.meta.url).pathname, '..');
 const publicDir = path.join(root, 'public');
 const markPath = path.join(publicDir, 'ai-mark.svg');
 const transparent = { r: 0, g: 0, b: 0, alpha: 0 };
+const fontsDir = path.join(root, 'assets', 'fonts');
+const fontRegularPath = path.join(fontsDir, 'DejaVuSans.ttf');
+const fontBoldPath = path.join(fontsDir, 'DejaVuSans-Bold.ttf');
 
 async function ensureMarkExists() {
   try {
     await fs.access(markPath);
   } catch {
     throw new Error(`AI mark not found at ${markPath}`);
+  }
+  for (const font of [fontRegularPath, fontBoldPath]) {
+    try {
+      await fs.access(font);
+    } catch {
+      throw new Error(`Font not found at ${font}`);
+    }
   }
 }
 
@@ -64,13 +75,14 @@ function wrapLines(text, fontSize, maxWidth) {
 async function createOg() {
   const width = 1200;
   const height = 630;
-  const bg = await sharp(Buffer.from(gradientSvg(width, height))).png().toBuffer();
+  const textToSvgBold = TextToSVG.loadSync(fontBoldPath);
+  const textToSvgRegular = TextToSVG.loadSync(fontRegularPath);
 
-  const { buffer: trimmedMark } = await getTrimmedMark(1024);
-  const markHeight = 360;
-  const markPng = await sharp(trimmedMark).resize({ height: markHeight, fit: 'contain' }).png().toBuffer();
-  const markMeta = await sharp(markPng).metadata();
-
+  const markRender = await sharp(markPath)
+    .resize(360, 360, { fit: 'contain', background: transparent })
+    .png({ background: transparent })
+    .toBuffer();
+  const markMeta = await sharp(markRender).metadata();
   const markX = 110;
   const markY = Math.round((height - markMeta.height) / 2);
 
@@ -79,51 +91,59 @@ async function createOg() {
   const titleSize = 72;
   const subtitleSize = 52;
   const subtitle = 'Bespoke hosted AI systems';
-  const subtitleLines = wrapLines(subtitle, subtitleSize, maxTextWidth);
-  const lineGap = 18;
+  const subtitleLines = wrapLines(subtitle, subtitleSize, maxTextWidth).slice(0, 2);
+  const titleY = 285;
+  const subtitleStartY = 365;
   const subLineGap = 14;
-  const titleHeight = titleSize;
-  const subtitleBlockHeight = subtitleLines.length * subtitleSize + subLineGap * (subtitleLines.length - 1);
-  const startY = 260;
-  const subtitleStartY = startY + titleHeight + lineGap;
 
-  const subtitleSpans = subtitleLines
-    .map((line, idx) => {
-      const dy = idx === 0 ? 0 : subtitleSize + subLineGap;
-      return `<tspan x="${textStartX}" dy="${dy}px">${line}</tspan>`;
-    })
-    .join('');
+  const titlePath = textToSvgBold.getPath('Kalyan AI', {
+    x: textStartX,
+    y: titleY,
+    fontSize: titleSize,
+    anchor: 'left baseline',
+    attributes: { fill: '#F5F8FF' },
+  });
 
-  const textSvg = `
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <style>
-        .title { font-family: "DejaVu Sans", Arial, sans-serif; font-weight: 700; font-size: ${titleSize}px; fill: #F5F8FF; letter-spacing: 0; }
-        .subtitle { font-family: "DejaVu Sans", Arial, sans-serif; font-weight: 500; font-size: ${subtitleSize}px; fill: #F5F8FF; letter-spacing: 0; }
-      </style>
-      <text x="${textStartX}" y="${startY + titleHeight}" class="title">Kalyan AI</text>
-      <text x="${textStartX}" y="${subtitleStartY}" class="subtitle">${subtitleSpans}</text>
+  const subtitlePaths = subtitleLines
+    .map((line, idx) =>
+      textToSvgRegular.getPath(line, {
+        x: textStartX,
+        y: subtitleStartY + idx * (subtitleSize + subLineGap),
+        fontSize: subtitleSize,
+        anchor: 'left baseline',
+        attributes: { fill: '#F5F8FF' },
+      })
+    )
+    .join('\n');
+
+  const markBase64 = markRender.toString('base64');
+
+  const ogSvg = `
+    <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0F1F3A" />
+          <stop offset="100%" stop-color="#AB71F7" />
+        </linearGradient>
+      </defs>
+      <rect width="${width}" height="${height}" fill="url(#bg)" />
+      <image href="data:image/png;base64,${markBase64}" x="${markX}" y="${markY}" height="${markMeta.height}" width="${markMeta.width}" />
+      ${titlePath}
+      ${subtitlePaths}
     </svg>
   `;
 
-  const og = await sharp(bg)
-    .composite([
-      { input: markPng, top: markY, left: markX },
-      { input: Buffer.from(textSvg) },
-    ])
-    .png()
-    .toBuffer();
-
-  await fs.writeFile(path.join(publicDir, 'og-v6.png'), og);
+  const og = await sharp(Buffer.from(ogSvg)).png().toBuffer();
+  await fs.writeFile(path.join(publicDir, 'og-v7.png'), og);
 }
 
 async function createIcon(size, output) {
-  const target = Math.round(size * 0.86);
-  const { buffer: trimmedMark } = await getTrimmedMark(1024);
-  const markResized = await sharp(trimmedMark)
-    .resize({ width: target, height: target, fit: 'contain', background: transparent })
+  const target = Math.round(size * 0.9);
+  const markPng = await sharp(markPath)
+    .resize(target, target, { fit: 'contain', background: transparent })
     .png({ background: transparent })
     .toBuffer();
-  const markMeta = await sharp(markResized).metadata();
+  const markMeta = await sharp(markPng).metadata();
   const left = Math.round((size - markMeta.width) / 2);
   const top = Math.round((size - markMeta.height) / 2);
 
@@ -135,7 +155,7 @@ async function createIcon(size, output) {
       background: transparent,
     },
   })
-    .composite([{ input: markResized, top, left }])
+    .composite([{ input: markPng, top, left }])
     .png({ background: transparent })
     .toBuffer();
 
@@ -143,13 +163,13 @@ async function createIcon(size, output) {
 }
 
 async function createFavicons() {
-  await createIcon(16, 'favicon-16x16-v6.png');
-  await createIcon(32, 'favicon-32x32-v6.png');
-  await createIcon(48, 'favicon-48x48-v6.png');
-  await createIcon(180, 'apple-touch-icon-v6.png');
+  await createIcon(16, 'favicon-16x16-v7.png');
+  await createIcon(32, 'favicon-32x32-v7.png');
+  await createIcon(48, 'favicon-48x48-v7.png');
+  await createIcon(180, 'apple-touch-icon-v7.png');
 
   const icoBuffers = await Promise.all(
-    [16, 32, 48].map((size) => fs.readFile(path.join(publicDir, `favicon-${size}x${size}-v6.png`)))
+    [16, 32, 48].map((size) => fs.readFile(path.join(publicDir, `favicon-${size}x${size}-v7.png`)))
   );
   let icoBuffer;
   try {
@@ -157,7 +177,7 @@ async function createFavicons() {
   } catch {
     icoBuffer = await toIco(icoBuffers);
   }
-  await fs.writeFile(path.join(publicDir, 'favicon-v6.ico'), icoBuffer);
+  await fs.writeFile(path.join(publicDir, 'favicon-v7.ico'), icoBuffer);
 }
 
 async function main() {
