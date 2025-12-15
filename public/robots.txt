@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kalyanai.io/sitemap-index.xml
+Host: kalyanai.io

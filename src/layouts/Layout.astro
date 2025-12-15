@@ -2,11 +2,13 @@
 import "../styles/global.css";
 
 const {
-	title = 'Kalyan AI — Bespoke, hosted AI systems',
-	description = 'We design, build, and host bespoke AI systems that remove friction from core business workflows.',
+	title = 'Kalyan AI | Bespoke hosted AI systems',
+	description = 'We design, build, and host bespoke AI systems that turn messy inputs into clear actions with proper oversight for your organisation.',
 	showFinalCta = true,
 } = Astro.props;
-const pageUrl = Astro.url ? Astro.url.href : '';
+const siteUrl = Astro.site?.toString() ?? 'https://kalyanai.io';
+const canonicalUrl = Astro.url ? new URL(Astro.url.pathname, siteUrl).toString() : siteUrl;
+const ogImageUrl = new URL('/og.png', siteUrl).toString();
 
 const navLinks = [
 	{ label: 'Home', href: '/' },
@@ -22,30 +24,37 @@ const navLinks = [
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta property="og:locale" content="en_GB" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		{pageUrl && <meta property="og:url" content={pageUrl} />}
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={ogImageUrl} />
 		<meta property="og:site_name" content="Kalyan AI" />
-		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+		<meta name="twitter:url" content={canonicalUrl} />
 	</head>
 	<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
 		<div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8 md:px-10 lg:px-12">
 			<header class="mb-10">
 				<div class="ka-card rounded-[18px] px-5 py-4 shadow-sm backdrop-blur">
-					<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+					<div class="flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between md:text-left text-center">
 						<a class="leading-tight" href="/">
 							<p class="text-lg font-semibold tracking-tight text-[var(--brand-navy)]">
 								KALYAN <span class="text-[var(--primary)]">AI</span>
 							</p>
 							<p class="text-sm text-[var(--muted)]">Bespoke AI systems partner</p>
 						</a>
-						<nav class="flex flex-wrap items-center gap-4 text-sm text-[var(--brand-navy)]">
+						<nav class="flex flex-wrap items-center justify-center gap-4 text-sm text-[var(--brand-navy)] md:justify-start">
 							{navLinks.map((link) => (
 								<a
 									class="inline-flex items-center text-[var(--brand-navy)] transition hover:text-[var(--brand-navy)] hover:underline hover:decoration-[var(--primary)] hover:underline-offset-4"
@@ -82,12 +91,6 @@ const navLinks = [
 									href="/contact#book"
 								>
 								Book a call
-							</a>
-							<a
-								class="rounded-full border border-[var(--primary)]/25 bg-transparent px-5 py-3 text-sm font-medium text-[var(--primary)]/80 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--primary)]/35 hover:text-[var(--primary)] hover:shadow-md"
-								href="/contact#form"
-							>
-								Share a bottleneck
 							</a>
 						</div>
 					</div>
