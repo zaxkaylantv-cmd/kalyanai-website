@@ -5,19 +5,20 @@ import pngToIco from 'png-to-ico';
 
 const root = path.resolve(new URL('.', import.meta.url).pathname, '..');
 const publicDir = path.join(root, 'public');
-const markPath = path.join(publicDir, 'ai-mark.svg');
+const sourcePath = path.join(publicDir, 'ai-text.png');
+// Keep existing white background behaviour; do not switch to transparent unless the source already is.
 const background = { r: 255, g: 255, b: 255, alpha: 1 };
 
-async function ensureMark() {
+async function ensureSource() {
   try {
-    await fs.access(markPath);
+    await fs.access(sourcePath);
   } catch {
-    throw new Error(`Missing AI mark at ${markPath}`);
+    throw new Error(`Missing favicon source at ${sourcePath}`);
   }
 }
 
 async function renderMark(size) {
-  return sharp(markPath)
+  return sharp(sourcePath)
     .resize(size, size, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png({ background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .toBuffer();
@@ -54,13 +55,13 @@ async function createFaviconIco() {
 }
 
 async function main() {
-  await ensureMark();
+  await ensureSource();
   await createIcon(16, 'favicon-16x16.png');
   await createIcon(32, 'favicon-32x32.png');
   await createIcon(48, 'favicon-48x48.png');
   await createIcon(180, 'apple-touch-icon-180x180.png');
   await createFaviconIco();
-  console.log('Favicon set regenerated with scale 0.88');
+  console.log('Favicon set regenerated from ai-text.png with scale 0.88');
 }
 
 main().catch((err) => {
