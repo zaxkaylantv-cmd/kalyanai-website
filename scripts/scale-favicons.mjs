@@ -1,0 +1,69 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import sharp from 'sharp';
+import pngToIco from 'png-to-ico';
+
+const root = path.resolve(new URL('.', import.meta.url).pathname, '..');
+const publicDir = path.join(root, 'public');
+const markPath = path.join(publicDir, 'ai-mark.svg');
+const background = { r: 255, g: 255, b: 255, alpha: 1 };
+
+async function ensureMark() {
+  try {
+    await fs.access(markPath);
+  } catch {
+    throw new Error(`Missing AI mark at ${markPath}`);
+  }
+}
+
+async function renderMark(size) {
+  return sharp(markPath)
+    .resize(size, size, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .png({ background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .toBuffer();
+}
+
+async function createIcon(targetSize, outputName, scale = 0.88) {
+  const markSize = Math.round(targetSize * scale);
+  const markBuffer = await renderMark(markSize);
+  const markMeta = await sharp(markBuffer).metadata();
+  const left = Math.round((targetSize - markMeta.width) / 2);
+  const top = Math.round((targetSize - markMeta.height) / 2);
+
+  const canvas = await sharp({
+    create: {
+      width: targetSize,
+      height: targetSize,
+      channels: 4,
+      background,
+    },
+  })
+    .composite([{ input: markBuffer, top, left }])
+    .png({ background })
+    .toBuffer();
+
+  await fs.writeFile(path.join(publicDir, outputName), canvas);
+}
+
+async function createFaviconIco() {
+  const buffers = await Promise.all(
+    [16, 32, 48].map((size) => fs.readFile(path.join(publicDir, `favicon-${size}x${size}.png`)))
+  );
+  const ico = await pngToIco(buffers);
+  await fs.writeFile(path.join(publicDir, 'favicon.ico'), ico);
+}
+
+async function main() {
+  await ensureMark();
+  await createIcon(16, 'favicon-16x16.png');
+  await createIcon(32, 'favicon-32x32.png');
+  await createIcon(48, 'favicon-48x48.png');
+  await createIcon(180, 'apple-touch-icon-180x180.png');
+  await createFaviconIco();
+  console.log('Favicon set regenerated with scale 0.88');
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
