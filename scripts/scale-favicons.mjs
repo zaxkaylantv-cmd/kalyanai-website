@@ -18,10 +18,10 @@ async function ensureSource() {
 }
 
 async function renderMark(size) {
-  return sharp(sourcePath)
+  const base = sharp(sourcePath)
     .resize(size, size, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png({ background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .toBuffer();
+    .png({ background: { r: 0, g: 0, b: 0, alpha: 0 } });
+  return base.trim({ background: { r: 255, g: 255, b: 255, alpha: 0 } }).toBuffer();
 }
 
 async function createIcon(targetSize, outputName, scale = 0.88) {
@@ -56,12 +56,12 @@ async function createFaviconIco() {
 
 async function main() {
   await ensureSource();
-  await createIcon(16, 'favicon-16x16.png');
-  await createIcon(32, 'favicon-32x32.png');
-  await createIcon(48, 'favicon-48x48.png');
-  await createIcon(180, 'apple-touch-icon-180x180.png');
+  await createIcon(16, 'favicon-16x16.png', 0.97);
+  await createIcon(32, 'favicon-32x32.png', 0.97);
+  await createIcon(48, 'favicon-48x48.png', 0.97);
+  await createIcon(180, 'apple-touch-icon-180x180.png', 0.97);
   await createFaviconIco();
-  console.log('Favicon set regenerated from ai-text.png with scale 0.88');
+  console.log('Favicon set regenerated from ai-text.png with trim and scale 0.97');
 }
 
 main().catch((err) => {
