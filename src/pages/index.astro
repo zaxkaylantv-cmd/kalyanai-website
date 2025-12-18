@@ -53,27 +53,35 @@ const demos = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">90 Second System Examples</h2>
-			<p class="copy-narrow mx-auto max-w-3xl text-center text-[var(--primary)]">Three quick walkthroughs showing what bespoke, hosted systems can look like.</p>
-			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-				{demos.map((demo) => (
-					<div class="space-y-3 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-						<h3 class="text-base font-semibold text-[var(--brand-navy)]">{demo.title}</h3>
-						<div class="aspect-video overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-black/5">
-							<iframe
-								class="h-full w-full"
-								src={`https://www.youtube.com/embed/${demo.id}?rel=0&modestbranding=1`}
-								title={demo.title}
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-								loading="lazy"
-							></iframe>
+			<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">90-Second Highlights</h2>
+				<p class="copy-narrow mx-auto max-w-3xl text-center text-[var(--primary)]">Quick snapshots of what bespoke, hosted systems can look like.</p>
+				<p class="text-sm text-[var(--muted)] mx-auto max-w-3xl">
+					These clips show a moment in the workflow — the full end-to-end walkthroughs are in the Walkthroughs section.
+				</p>
+				<div class="flex justify-center">
+					<a class="inline-flex items-center justify-center rounded-full border border-transparent bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/how-the-systems-work">
+						View full walkthroughs
+					</a>
+				</div>
+				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+					{demos.map((demo) => (
+						<div class="space-y-3 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
+							<h3 class="text-base font-semibold text-[var(--brand-navy)]">{demo.title}</h3>
+							<div class="aspect-video overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-black/5">
+								<iframe
+									class="h-full w-full"
+									src={`https://www.youtube.com/embed/${demo.id}?rel=0&modestbranding=1`}
+									title={demo.title}
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+									loading="lazy"
+								></iframe>
+							</div>
 						</div>
-					</div>
-				))}
-			</div>
-		</section>
+					))}
+				</div>
+			</section>
 
 		<section class="ka-card text-center space-y-3 rounded-3xl bg-white/80 px-4 py-8 md:px-10">
 			<p class="copy-narrow text-3xl font-semibold text-[var(--text)]">Systems you can trust, built around how your business truly runs.</p>
