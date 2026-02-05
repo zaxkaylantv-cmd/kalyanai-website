@@ -37,34 +37,50 @@ const demos = [
 						<p class="inline-flex items-center rounded-full border border-[var(--border-subtle)] bg-slate-100/80 px-3 py-1 text-xs font-medium text-[var(--text)]">
 							Bespoke, hosted AI systems
 						</p>
-						<h1 class="text-4xl font-semibold leading-tight tracking-tight text-[var(--brand-navy)] md:text-5xl">
-							<span>Bespoke, hosted AI systems</span> <span class="text-[var(--primary)]">— built around how your business actually works.</span>
-						</h1>
-						<p class="copy-narrow text-lg text-[var(--muted)] md:text-xl">
-							We design, build, and host bespoke AI systems that turn messy inputs into clear outputs — so your team moves faster with control and oversight.
-						</p>
-						<div class="flex flex-wrap gap-4">
-							<a class="rounded-full bg-[var(--accent-teal)] px-5 py-3 text-sm font-medium text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/contact#book" data-plausible="BookACall">
-								Book a call
-							</a>
+							<h1 class="text-4xl font-semibold leading-tight tracking-tight text-[var(--brand-navy)] md:text-5xl">
+								<span>Bespoke, hosted AI systems</span> <span class="text-[var(--primary)]">— built around how your business actually works.</span>
+							</h1>
+							<p class="copy-narrow text-lg text-[var(--muted)] md:text-xl">
+								We design, build, and host bespoke AI systems that turn messy inputs into clear outputs — so your team moves faster with control and oversight.
+							</p>
+							<p class="text-base text-[var(--muted)] mt-3 max-w-2xl">For owner-led service businesses and ops-heavy teams who need faster follow-up, clearer reporting, and fewer missed details.</p>
+							<div class="flex flex-wrap gap-4">
+								<a class="rounded-full bg-[var(--accent-teal)] px-5 py-3 text-sm font-medium text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/contact#book" data-plausible="BookACall">
+									Book a call
+								</a>
+								<a href="/how-the-systems-work" class="inline-flex items-center justify-center px-6 py-3 border-2 border-[var(--primary)] text-[var(--primary)] rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors">Watch a walkthrough</a>
+							</div>
+							<div class="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
+								<span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-[var(--border)] text-[var(--text)]">First version in 2–4 weeks</span>
+								<span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-[var(--border)] text-[var(--text)]">Hosted + monitored</span>
+								<span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-[var(--border)] text-[var(--text)]">Audit trails + approvals</span>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Explainer Video</h2>
-			<p class="copy-narrow mx-auto max-w-3xl text-[var(--primary)]">
-				A short overview of Kalyan AI bespoke, hosted AI systems.
-			</p>
+			<section id="explainer" class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Explainer Video</h2>
+				<p class="copy-narrow mx-auto max-w-3xl text-[var(--primary)]">
+					A short overview of Kalyan AI bespoke, hosted AI systems.
+				</p>
 
 			<div class="overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-black/5 shadow-sm">
-				<video class="h-full w-full" controls preload="metadata">
-					<source src="/video/kalyan-explainer.mp4" type="video/mp4" />
-					Your browser does not support the video tag.
-				</video>
+				<div class="aspect-video w-full">
+					<video
+						class="h-full w-full"
+						controls
+						preload="metadata"
+						playsinline
+						poster="/video/kalyan-explainer.jpg"
+					>
+						<source src="/video/kalyan-explainer.mp4" type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+				</div>
 			</div>
+			<p class="text-sm text-[var(--muted)]">Tip: tap fullscreen for the best mobile view.</p>
 		</section>
 
 		<section class="ka-card text-center space-y-3 rounded-3xl bg-white/80 px-4 py-8 md:px-10">
@@ -76,30 +92,35 @@ const demos = [
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Examples of systems we build</h2>
 			<p class="copy-narrow text-lg text-[var(--primary)] text-center block mx-auto max-w-3xl -mt-1">Every build is bespoke. These are common outcomes we deliver for clients.</p>
 			<div class="grid justify-items-center gap-4 md:grid-cols-2">
-				<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-					<p class="font-semibold text-[var(--brand-navy)]">Sales follow-up and proposals</p>
-					<p class="text-[var(--muted)]">Keeps opportunities current, <span class="font-semibold text-[var(--text)]">drafts proposals</span> with guardrails, and prompts owners to close loops faster.</p>
+					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
+						<p class="font-semibold text-[var(--brand-navy)]">Sales follow-up and proposals</p>
+						<p class="text-[var(--muted)]">Keeps opportunities current, <span class="font-semibold text-[var(--text)]">drafts proposals</span> with guardrails, and prompts owners to close loops faster.</p>
+						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Cut follow-up lag from days to same-day.</p>
+					</div>
+					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
+						<p class="font-semibold text-[var(--brand-navy)]">Document intake and financial visibility</p>
+						<p class="text-[var(--muted)]"><span class="font-semibold text-[var(--text)]">Extracts key figures</span> and dates, rolls them into daily views, and flags cash or obligation risks early.</p>
+						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Daily cash visibility with exception flags.</p>
+					</div>
+					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
+						<p class="font-semibold text-[var(--brand-navy)]">Lead qualification and outreach preparation</p>
+						<p class="text-[var(--muted)]">Prepares short, contextual summaries so outreach focuses on <span class="font-semibold text-[var(--text)]">qualified leads</span> with the right next action.</p>
+						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Action queue with named owner per item.</p>
+					</div>
+					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
+						<p class="font-semibold text-[var(--brand-navy)]">Operational reporting and action queues</p>
+						<p class="text-[var(--muted)]">Turns scattered updates into concise reports with accountable <span class="font-semibold text-[var(--text)]">action lists</span> for operators and managers.</p>
+						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Clear accountability, fewer dropped balls.</p>
+					</div>
+					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur md:col-span-2">
+						<p class="font-semibold text-[var(--brand-navy)]">Client onboarding and service delivery</p>
+						<p class="text-[var(--muted)]">Guides teams through consistent onboarding, tracks service steps, and <span class="font-semibold text-[var(--text)]">keeps clients informed</span> without extra chasing.</p>
+						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Consistent delivery without manual chasing.</p>
+					</div>
 				</div>
-				<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-					<p class="font-semibold text-[var(--brand-navy)]">Document intake and financial visibility</p>
-					<p class="text-[var(--muted)]"><span class="font-semibold text-[var(--text)]">Extracts key figures</span> and dates, rolls them into daily views, and flags cash or obligation risks early.</p>
-				</div>
-				<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-					<p class="font-semibold text-[var(--brand-navy)]">Lead qualification and outreach preparation</p>
-					<p class="text-[var(--muted)]">Prepares short, contextual summaries so outreach focuses on <span class="font-semibold text-[var(--text)]">qualified leads</span> with the right next action.</p>
-				</div>
-				<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-					<p class="font-semibold text-[var(--brand-navy)]">Operational reporting and action queues</p>
-					<p class="text-[var(--muted)]">Turns scattered updates into concise reports with accountable <span class="font-semibold text-[var(--text)]">action lists</span> for operators and managers.</p>
-				</div>
-				<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur md:col-span-2">
-					<p class="font-semibold text-[var(--brand-navy)]">Client onboarding and service delivery</p>
-					<p class="text-[var(--muted)]">Guides teams through consistent onboarding, tracks service steps, and <span class="font-semibold text-[var(--text)]">keeps clients informed</span> without extra chasing.</p>
-				</div>
-			</div>
-			<div class="space-y-2 text-center">
-				<p class="text-sm text-[var(--muted)]">
-					The walkthroughs are examples of systems we’ve built — your system is designed around your operations.
+				<div class="space-y-2 text-center">
+					<p class="text-sm text-[var(--muted)]">
+						The walkthroughs are examples of systems we’ve built — your system is designed around your operations.
 				</p>
 				<a class="mx-auto inline-flex items-center justify-center rounded-full border border-transparent bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/how-the-systems-work">
 					Watch the walkthroughs
@@ -107,17 +128,18 @@ const demos = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">90-Second Highlights</h2>
-			<p class="copy-narrow mx-auto max-w-3xl text-center text-[var(--primary)]">Quick snapshots of what bespoke, hosted systems can look like.</p>
-			<p class="text-sm text-[var(--muted)] mx-auto max-w-3xl">
-				These clips show a moment in the workflow — the full end-to-end walkthroughs are in the Walkthroughs section.
-			</p>
-			<div class="flex justify-center">
-				<a class="inline-flex items-center justify-center rounded-full border border-transparent bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/how-the-systems-work">
-					View full walkthroughs
-				</a>
-			</div>
+			<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">90-Second Highlights</h2>
+				<p class="text-[var(--muted)] mt-2 mb-6">Watch these if you want the gist. Use Walkthroughs for the full end-to-end.</p>
+				<p class="copy-narrow mx-auto max-w-3xl text-center text-[var(--primary)]">Quick snapshots of what bespoke, hosted systems can look like.</p>
+				<p class="text-sm text-[var(--muted)] mx-auto max-w-3xl">
+					These clips show a moment in the workflow — the full end-to-end walkthroughs are in the Walkthroughs section.
+				</p>
+				<div class="flex justify-center">
+					<a class="inline-flex items-center justify-center rounded-full border border-transparent bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/how-the-systems-work">
+						See the full walkthroughs
+					</a>
+				</div>
 			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				{demos.map((demo) => (
 					<div class="space-y-3 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
@@ -185,78 +207,27 @@ const demos = [
 			</div>
 		</section>
 
-		<section class="ka-card relative space-y-6 rounded-3xl bg-white/65 p-6 text-center shadow-[0_10px_50px_-45px_rgba(0,0,0,0.45)] backdrop-blur md:p-8">
-			<div class="pointer-events-none absolute inset-0 opacity-[0.05]">
-				<div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(10,170,231,0.22),transparent_38%),radial-gradient(circle_at_85%_60%,rgba(171,113,247,0.2),transparent_36%)]"></div>
-				<div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,170,231,0.08)_1px,transparent_1px),linear-gradient(0deg,rgba(171,113,247,0.08)_1px,transparent_1px)] bg-[size:140px_140px]"></div>
-				<div class="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/10"></div>
-			</div>
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Process</h2>
-			<div class="relative">
-				<div class="absolute inset-x-4 top-1/2 hidden h-[2px] bg-gradient-to-r from-[var(--primary)]/30 via-[var(--accent)]/18 to-[var(--accent2)]/24 lg:block"></div>
-				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-					{steps.map((step, index) => (
-						<div class={`relative rounded-2xl transition duration-200 ${
-							index === 0 ? 'lg:-translate-y-1' : index === 1 ? 'lg:-translate-y-2' : index === 2 ? 'lg:translate-y-2' : 'lg:translate-y-1'
-						}`}>
-							<div class="absolute -left-2 top-10 hidden h-3 w-3 -translate-y-1/2 rounded-full bg-[var(--primary)]/18 ring-2 ring-[var(--primary)]/20 lg:block"></div>
-						<div class="ka-card flex h-full flex-col gap-3 rounded-[18px] border border-[var(--border-subtle)] p-5 text-center shadow-sm backdrop-blur">
-								<div class="flex items-center justify-center gap-2 text-sm font-semibold text-[var(--primary)]">
-									<span class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)]/12 text-[var(--brand-navy)] shadow-[0_0_0_8px_rgba(10,170,231,0.08)]">
-										{String(index + 1).padStart(2, '0')}
-									</span>
-									<span class="font-semibold">{step.title}</span>
-								</div>
-								<p class="text-[var(--muted)]">
-									{step.title === 'Diagnose' && (
-										<>
-											We study how the business really runs, <span class="font-semibold text-[var(--text)]">where time is lost</span>, and what clarity is missing.
-										</>
-									)}
-									{step.title === 'Design' && (
-										<>
-											We outline a system that mirrors your operations with <span class="font-semibold text-[var(--text)]">clear ownership</span> and guardrails.
-										</>
-									)}
-									{step.title === 'Build' && (
-										<>
-											We assemble the hosted AI layer so it interprets inputs and <span class="font-semibold text-[var(--text)]">returns decisive actions</span>.
-										</>
-									)}
-									{step.title === 'Deploy & Iterate' && (
-										<>
-											We run the system with you, refine it, and <span class="font-semibold text-[var(--text)]">keep it steady</span> as conditions change.
-										</>
-									)}
-								</p>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Outcomes you can measure</h2>
-			<ul class="mx-auto space-y-2 text-center text-[var(--muted)]">
-				<li class="flex items-start justify-center gap-2">
-					<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
-					<span><span class="font-semibold text-[var(--text)]">Hours back each week</span> through fewer manual handoffs and checks.</span>
-				</li>
-				<li class="flex items-start justify-center gap-2">
-					<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
-					<span><span class="font-semibold text-[var(--text)]">Fewer errors</span> because context stays consistent and reviews are baked in.</span>
-				</li>
-				<li class="flex items-start justify-center gap-2">
-					<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
-					<span><span class="font-semibold text-[var(--text)]">Faster follow-up</span> on leads and cases with clear ownership.</span>
-				</li>
-				<li class="flex items-start justify-center gap-2">
-					<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
-					<span><span class="font-semibold text-[var(--text)]">Clearer visibility</span> on progress, risks, and actions for leaders.</span>
-				</li>
-			</ul>
-		</section>
+			<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Outcomes you can measure</h2>
+				<ul class="mx-auto space-y-2 text-center text-[var(--muted)]">
+					<li class="flex items-start justify-center gap-2">
+						<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
+						<span><span class="font-semibold text-[var(--text)]">Hours back each week</span> by removing manual handoffs and checks.</span>
+					</li>
+					<li class="flex items-start justify-center gap-2">
+						<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
+						<span><span class="font-semibold text-[var(--text)]">Fewer dropped balls</span>: follow-ups become a system, not a memory test.</span>
+					</li>
+					<li class="flex items-start justify-center gap-2">
+						<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
+						<span><span class="font-semibold text-[var(--text)]">Faster response</span> on leads and cases with clear ownership.</span>
+					</li>
+					<li class="flex items-start justify-center gap-2">
+						<span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]/60"></span>
+						<span><span class="font-semibold text-[var(--text)]">Daily visibility</span> on progress, risks, and next actions for leaders.</span>
+					</li>
+				</ul>
+			</section>
 
 	</main>
 </Layout>
