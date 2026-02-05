@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Case Study: Spa by Kaajal | Kalyan AI" description="How we helped a beauty salon cut finance admin time from 4 hours to 30 minutes">
+	<section class="my-12 max-w-4xl mx-auto">
+		<p class="text-[var(--primary)] font-medium mb-2">Case Study</p>
+		<h1 class="text-4xl font-semibold text-[var(--text)] mb-4">Spa by Kaajal</h1>
+		<p class="text-xl text-[var(--muted)] mb-8">Beauty salon · London, UK</p>
+
+		<!-- Problem -->
+		<div class="ka-card p-8 mb-8">
+			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">The problem</h2>
+			<p class="text-[var(--muted)] mb-4">Finance admin was eating up around 4 hours every week. Invoices were buried in email. Receipts were scattered across inboxes, WhatsApp, and paper. Tips were tracked in notebooks with no clear system.</p>
+			<p class="text-[var(--muted)] mb-4">Missing receipts were a constant headache—there was no quick way to see what was due or what was missing until the accountant asked.</p>
+			<p class="text-[var(--muted)]">Beyond the time cost, the lack of visibility created constant stress. The owner needed one place to capture everything—without spending hours chasing paperwork.</p>
+		</div>
+
+		<!-- Solution -->
+		<div class="ka-card p-8 mb-8">
+			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">What we built</h2>
+			<p class="text-[var(--muted)] mb-6">A single Finance Admin Panel that captures invoices, receipts, and tips into one workflow—with clear status tracking and accountant-ready exports.</p>
+
+			<div class="grid md:grid-cols-2 gap-6">
+				<div>
+					<p class="text-[var(--primary)] font-semibold mb-2">Invoices</p>
+					<p class="text-[var(--muted)]">Pulled in automatically from email, or uploaded manually with drag and drop. No forwarding, no downloading, no chasing.</p>
+				</div>
+				<div>
+					<p class="text-[var(--primary)] font-semibold mb-2">Receipts</p>
+					<p class="text-[var(--muted)]">Quick photo upload from your phone. Captured in seconds, not minutes.</p>
+				</div>
+				<div>
+					<p class="text-[var(--primary)] font-semibold mb-2">Tips</p>
+					<p class="text-[var(--muted)]">Simple entry screen—what used to be a messy notebook is now a few taps.</p>
+				</div>
+				<div>
+					<p class="text-[var(--primary)] font-semibold mb-2">Exports</p>
+					<p class="text-[var(--muted)]">One-click CSV packs for the accountant: invoices, receipts, or tips—separately or all together.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Guardrails -->
+		<div class="ka-card p-8 mb-8">
+			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Built-in safeguards</h2>
+			<ul class="space-y-3 text-[var(--muted)]">
+				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Documents go straight to secure cloud storage (Google Drive)—nothing sensitive sits on a server</li>
+				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Duplicate prevention—if the same invoice comes in twice, it won't create a second entry</li>
+				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Clear workflow statuses (Captured / Needs info / Approved) so nothing falls through the cracks</li>
+				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Full record of what came in and when</li>
+				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Secure sign-in with locked-down access</li>
+			</ul>
+		</div>
+
+		<!-- Results -->
+		<div class="ka-card p-8 mb-8 bg-[var(--cta-bg)]">
+			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Results</h2>
+			<div class="grid md:grid-cols-3 gap-6 text-center">
+				<div>
+					<p class="text-3xl font-bold text-[var(--primary)]">4h → 30 mins</p>
+					<p class="text-[var(--muted)]">Weekly finance admin time</p>
+				</div>
+				<div>
+					<p class="text-3xl font-bold text-[var(--primary)]">100%</p>
+					<p class="text-[var(--muted)]">Capture into one queue</p>
+				</div>
+				<div>
+					<p class="text-3xl font-bold text-[var(--primary)]">Fewer</p>
+					<p class="text-[var(--muted)]">Missing receipts</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Timeline -->
+		<div class="ka-card p-8 mb-8">
+			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Delivery</h2>
+			<p class="text-[var(--muted)] mb-4"><span class="text-[var(--primary)] font-semibold">Slice 1</span> delivered in 4 weeks: invoice ingestion, receipt upload, tips entry, CSV exports, and all safeguards.</p>
+			<p class="text-[var(--muted)] mb-4"><span class="text-[var(--primary)] font-semibold">Next slices</span> planned: approval queue with human sign-off, weekly finance pack dashboard, automated reminders for missing items, connecting to Xero, card machine and bank for reconciliation.</p>
+			<p class="text-[var(--muted)]">Then moving onto AI assistance in other parts of the business.</p>
+		</div>
+
+		<!-- CTA -->
+		<div class="text-center mt-12">
+			<p class="text-[var(--muted)] mb-4">Want a system like this for your business?</p>
+			<a href="/contact#book" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[var(--accent-teal)] text-white font-medium hover:bg-[var(--secondary)] transition-colors" data-plausible="BookACall">Book a call</a>
+		</div>
+	</section>
+</Layout>
