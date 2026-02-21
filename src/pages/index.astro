@@ -1,22 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const showcase = [
-  { title: 'Core System', note: 'Your hosted AI backbone that reads, decides, and reports with control and safeguards.' },
-  { title: 'Lead Generation Engine', note: 'Signal-driven outreach that learns your markets and produces qualified conversations.' },
-  { title: 'Cashflow Copilot', note: 'Daily clarity on revenue, risk, and cash so owners act early with confidence.' },
-];
-const showcaseChips = {
-  'Core System': ['Reads', 'Decides', 'Reports'],
-  'Lead Generation Engine': ['Finds', 'Scores', 'Preps'],
-  'Cashflow Copilot': ['Extracts', 'Forecasts', 'Flags'],
-};
-const steps = [
-  { title: 'Diagnose', text: 'We study how the business really runs, where time is lost, and what clarity is missing.' },
-  { title: 'Design', text: 'We outline a system that mirrors your operations with clear ownership and guardrails.' },
-  { title: 'Build', text: 'We assemble the hosted AI layer so it interprets inputs and returns decisive actions.' },
-  { title: 'Deploy & Iterate', text: 'We run the system with you, refine it, and keep it steady as conditions change.' },
-];
-
 const demos = [
   { title: 'Reclaim Your Time with Kalyan AI', id: 'Sx6ZVQ_EYSg' },
   { title: 'Turn Cold Lists into Hot Leads', id: '0Am1DEJEY2k' },
@@ -25,8 +8,8 @@ const demos = [
 ---
 
 <Layout
-	title="Kalyan AI | Bespoke hosted AI systems"
-	description="We design, build, and host bespoke AI systems that turn messy inputs into decisive, well-governed outputs for your organisation."
+	title="Kalyan AI | AI systems that help run your business"
+	description="We design and run AI systems that bring in new opportunities and keep daily work under control — with people in the loop."
 >
 	<main class="flex flex-col gap-16">
 		<section class="relative overflow-hidden px-6 py-12 md:px-10 lg:px-12">
@@ -35,20 +18,20 @@ const demos = [
 				<div class="ka-card rounded-[22px] p-6 md:p-8 shadow-[0_18px_60px_-45px_rgba(0,0,0,0.35)] backdrop-blur">
 					<div class="space-y-6 text-[var(--text)]">
 						<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--primary)]">
-							Bespoke, hosted AI systems
+							AI systems, built and run with you
 						</p>
 							<h1 class="text-4xl font-semibold leading-tight tracking-tight text-[var(--brand-navy)] md:text-5xl">
-								<span>Bespoke, hosted AI systems</span> <span class="text-[var(--primary)]">— built around how your business actually works.</span>
+								<span>AI systems that help run your business</span> <span class="text-[var(--primary)]">— without the busywork.</span>
 							</h1>
 						<p class="copy-narrow text-lg text-[var(--muted)] md:text-xl">
-							We turn messy inputs into clear outputs — so your team moves faster with control and oversight.
+							We design and run AI systems that take care of two hard parts of running a business: bringing in new opportunities, and keeping day-to-day work under control — with human oversight built in.
 						</p>
 						<p class="text-base text-[var(--muted)] mt-3 max-w-2xl">For owner-led businesses and ops-heavy teams who need faster follow-up, clearer reporting, and fewer dropped balls.</p>
 							<div class="flex flex-wrap gap-4">
 								<a class="rounded-full bg-[var(--accent-teal)] px-5 py-3 text-sm font-medium text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/contact#book" data-plausible="BookACall">
 									Book a call
 								</a>
-								<a href="/how-the-systems-work" class="inline-flex items-center justify-center px-6 py-3 border-2 border-[var(--primary)] text-[var(--primary)] rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors">Watch a walkthrough</a>
+								<a href="/how-the-systems-work" class="inline-flex items-center justify-center px-6 py-3 border-2 border-[var(--primary)] text-[var(--primary)] rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors">See how the systems work</a>
 							</div>
 					<div class="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
 						<span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-[var(--border)] text-[var(--text)] border border-[var(--border)]">Live in 2–4 weeks</span>
@@ -90,43 +73,29 @@ const demos = [
 		</section>
 
 		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Examples of systems we build</h2>
-			<p class="copy-narrow text-lg text-[var(--primary)] text-center block mx-auto max-w-3xl -mt-1">Every build is bespoke. These are common outcomes we deliver for clients.</p>
-			<div class="grid justify-items-center gap-4 md:grid-cols-2">
-					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-						<p class="font-semibold text-[var(--brand-navy)]">Sales follow-up and proposals</p>
-						<p class="text-[var(--muted)]">Keeps opportunities current, <span class="font-semibold text-[var(--text)]">drafts proposals</span> with guardrails, and prompts owners to close loops faster.</p>
-						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Cut follow-up lag from days to same-day.</p>
-					</div>
-					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-						<p class="font-semibold text-[var(--brand-navy)]">Document intake and financial visibility</p>
-						<p class="text-[var(--muted)]"><span class="font-semibold text-[var(--text)]">Extracts key figures</span> and dates, rolls them into daily views, and flags cash or obligation risks early.</p>
-						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Daily cash visibility with exception flags.</p>
-					</div>
-					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-						<p class="font-semibold text-[var(--brand-navy)]">Lead qualification and outreach preparation</p>
-						<p class="text-[var(--muted)]">Prepares short, contextual summaries so outreach focuses on <span class="font-semibold text-[var(--text)]">qualified leads</span> with the right next action.</p>
-						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Action queue with named owner per item.</p>
-					</div>
-					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-						<p class="font-semibold text-[var(--brand-navy)]">Operational reporting and action queues</p>
-						<p class="text-[var(--muted)]">Turns scattered updates into concise reports with accountable <span class="font-semibold text-[var(--text)]">action lists</span> for operators and managers.</p>
-						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Clear accountability, fewer dropped balls.</p>
-					</div>
-					<div class="w-full max-w-xl space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur md:col-span-2">
-						<p class="font-semibold text-[var(--brand-navy)]">Client onboarding and service delivery</p>
-						<p class="text-[var(--muted)]">Guides teams through consistent onboarding, tracks service steps, and <span class="font-semibold text-[var(--text)]">keeps clients informed</span> without extra chasing.</p>
-						<p class="text-sm text-[var(--primary)] mt-2 font-medium">Consistent delivery without manual chasing.</p>
-					</div>
-				</div>
-				<div class="space-y-2 text-center">
-					<p class="text-sm text-[var(--muted)]">
-						The walkthroughs are examples of systems we’ve built — your system is designed around your operations.
-					</p>
-					<a class="mx-auto inline-flex items-center justify-center rounded-full border border-transparent bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/how-the-systems-work">
-						Watch the walkthroughs
-					</a>
-				</div>
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Systems that help bring in new business</h2>
+			<p class="copy-narrow text-lg text-[var(--primary)] text-center block mx-auto max-w-3xl -mt-1">These systems work quietly in the background to keep new opportunities coming in and moving forward — without relying on manual chasing.</p>
+			<ul class="mx-auto max-w-3xl space-y-3 text-left text-[var(--muted)]">
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Reach out to potential customers and respond to new enquiries</span></li>
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Keep conversations going so opportunities don’t go cold</span></li>
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Ask the right questions to understand fit early</span></li>
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Book meetings directly into the calendar</span></li>
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Keep track of who’s interested and what’s happening next</span></li>
+			</ul>
+		</section>
+
+		<p class="copy-narrow text-center text-lg text-[var(--primary)] px-4">Together, these systems mean growth doesn’t create more work — it removes it.</p>
+
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Systems that reduce admin and give clear visibility</h2>
+			<p class="copy-narrow text-lg text-[var(--primary)] text-center block mx-auto max-w-3xl -mt-1">As the business grows, these systems handle the work that normally creates noise, mess and manual effort.</p>
+			<ul class="mx-auto max-w-3xl space-y-3 text-left text-[var(--muted)]">
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Prepare proposals and documents consistently</span></li>
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Track activity and results without manual reporting</span></li>
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Keep cashflow and commitments visible</span></li>
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Reduce inbox and spreadsheet chaos</span></li>
+				<li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--primary)]"></span><span>Highlight what needs attention before it becomes a problem</span></li>
+			</ul>
 		</section>
 
 		<div class="ka-card p-8 mb-8 text-center">
@@ -171,7 +140,7 @@ const demos = [
 					</div>
 					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
 						<p class="text-sm font-semibold text-[var(--primary)]">Design</p>
-						<p class="copy-narrow text-[var(--muted)]">We outline a hosted AI system that mirrors your workflows with <span class="font-semibold text-[var(--text)]">clear owners</span> and guardrails.</p>
+						<p class="copy-narrow text-[var(--muted)]">We outline a hosted AI system that mirrors how you operate with <span class="font-semibold text-[var(--text)]">clear owners</span> and guardrails.</p>
 					</div>
 					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
 						<p class="text-sm font-semibold text-[var(--primary)]">Build</p>
@@ -188,7 +157,7 @@ const demos = [
 				<h3 class="text-xl font-semibold text-[var(--text)] mb-4">How engagements work</h3>
 				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
-						<p class="text-sm font-semibold text-[var(--primary)]">Slice 1</p>
+						<p class="text-sm font-semibold text-[var(--primary)]">Phase 1</p>
 						<p class="copy-narrow text-[var(--muted)]">First working system live in 2–4 weeks</p>
 					</div>
 					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
@@ -197,7 +166,7 @@ const demos = [
 					</div>
 					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
 						<p class="text-sm font-semibold text-[var(--primary)]">Expand</p>
-						<p class="copy-narrow text-[var(--muted)]">Add new slices as your needs grow</p>
+						<p class="copy-narrow text-[var(--muted)]">Add new areas as your needs grow</p>
 					</div>
 					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
 						<p class="text-sm font-semibold text-[var(--primary)]">Training</p>
