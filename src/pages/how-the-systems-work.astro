@@ -6,8 +6,8 @@ const videos = [
   { title: 'Document & Cashflow Copilot', id: 'lCd-j-67GPg', anchor: 'document-cashflow-copilot' },
   { title: 'Lead Desk CRM (Part 1)', id: '_usfAyAskHU', anchor: 'lead-desk-crm-part-1' },
   { title: 'Lead Desk CRM (Part 2)', id: 'd92wQRbmi_E', anchor: 'lead-desk-crm-part-2' },
-  { title: 'Lead Generation Engine (Part 1)', id: 'Bc7TVqknox8', anchor: 'lead-generation-engine-part-1' },
-  { title: 'Lead Generation Engine (Part 2)', id: '2pgWGk-V0nI', anchor: 'lead-generation-engine-part-2' },
+  { title: 'Opportunity Engine (Part 1)', id: 'Bc7TVqknox8', anchor: 'lead-generation-engine-part-1' },
+  { title: 'Opportunity Engine (Part 2)', id: '2pgWGk-V0nI', anchor: 'lead-generation-engine-part-2' },
   { title: 'Discovery Intelligence (Part 1)', id: 'rT-7i8kY9uc', anchor: 'discovery-intelligence-part-1' },
   { title: 'Discovery Intelligence (Part 2)', id: '3jo47IbhQDk', anchor: 'discovery-intelligence-part-2' },
 ];
@@ -15,15 +15,15 @@ const videos = [
 
 <Layout
 	title="Walkthroughs | How Kalyan AI systems work"
-	description="Watch longer walkthroughs showing how our hosted AI systems operate in practice—proposal intelligence, cashflow clarity, and lead generation."
+	description="Watch longer walkthroughs showing how our hosted AI systems operate in practice—proposal intelligence, cashflow clarity, and opportunity progression."
 >
 	<main class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 pb-16">
-			<section class="ka-card mx-auto max-w-5xl space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-				<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">How the Systems Work</h1>
-				<p class="copy-narrow max-w-3xl mx-auto text-lg text-[var(--primary)]">
-					Longer walkthroughs showing how our bespoke, hosted AI systems operate in practice—these are examples, not off-the-shelf products.
-				</p>
-			</section>
+				<section class="ka-card mx-auto max-w-5xl space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+					<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">How the Systems Work</h1>
+					<p class="copy-narrow max-w-3xl mx-auto text-lg text-[var(--primary)]">
+						Longer walkthroughs showing how our bespoke, hosted AI systems operate in practice across common starting points like opportunity follow-up, operational drag, and owner visibility.
+					</p>
+				</section>
 
 			<section class="flex flex-col gap-10">
 				{videos.map((video, index) => (
@@ -42,12 +42,12 @@ const videos = [
 							{video.title === 'Lead Desk CRM (Part 2)' && (
 								<p class="text-sm text-[var(--primary)]">Walkthrough · activity → follow-ups → daily action queue</p>
 							)}
-							{video.title === 'Lead Generation Engine (Part 1)' && (
-								<p class="text-sm text-[var(--primary)]">Walkthrough · sources → enrichment → fit scoring</p>
-							)}
-							{video.title === 'Lead Generation Engine (Part 2)' && (
-								<p class="text-sm text-[var(--primary)]">Walkthrough · outreach prep → messaging → handoff notes</p>
-							)}
+								{video.title === 'Opportunity Engine (Part 1)' && (
+									<p class="text-sm text-[var(--primary)]">Walkthrough · sources → enrichment → fit scoring</p>
+								)}
+								{video.title === 'Opportunity Engine (Part 2)' && (
+									<p class="text-sm text-[var(--primary)]">Walkthrough · outreach prep → messaging → handoff notes</p>
+								)}
 							{video.title === 'Discovery Intelligence (Part 1)' && (
 								<p class="text-sm text-[var(--primary)]">Walkthrough · call upload → analysis → structured summary</p>
 							)}
