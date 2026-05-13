@@ -2,15 +2,15 @@
 import "../styles/global.css";
 
 const {
-	title = 'Kalyan AI | Bespoke hosted AI systems',
-	description = 'We design, build, and host bespoke AI systems that turn messy inputs into clear actions with proper oversight for your organisation.',
+	title = 'Kalyan AI | AI systems that make business easier to run and grow',
+	description = 'We build AI systems that make your business easier to run and grow.',
 	showFinalCta = true,
 } = Astro.props;
 const siteUrl = Astro.site?.toString() ?? 'https://www.kalyanai.io';
 const canonicalUrl = Astro.url ? new URL(Astro.url.pathname, siteUrl).toString() : siteUrl;
 const ogImageUrl = new URL('/og-hero.png', siteUrl).toString();
-const ogTitle = 'Bespoke hosted AI systems';
-const ogDescription = 'Hosted AI systems built around your operations with oversight and clear ownership.';
+const ogTitle = 'AI systems that make business easier to run and grow';
+const ogDescription = 'AI systems built around how your business works, with owner control and ongoing support.';
 
 const navLinks = [
 	{ label: 'Home', href: '/' },
@@ -61,7 +61,7 @@ const navLinks = [
 							<p class="text-lg font-semibold tracking-tight text-[var(--brand-navy)]">
 								KALYAN <span class="text-[var(--primary)]">AI</span>
 							</p>
-							<p class="text-sm text-[var(--muted)]">Bespoke AI systems partner</p>
+							<p class="text-sm text-[var(--muted)]">AI systems partner</p>
 						</a>
 						<nav class="flex flex-wrap items-center justify-center gap-4 text-sm text-[var(--brand-navy)] md:justify-start">
 							{navLinks.map((link) => (
@@ -77,7 +77,7 @@ const navLinks = [
 									href="/contact#book"
 									data-plausible="BookACall"
 								>
-								Book a call
+								Book a conversation
 							</a>
 						</nav>
 					</div>
@@ -92,8 +92,8 @@ const navLinks = [
 				<section class="ka-card mt-16 rounded-3xl border border-[var(--border-subtle)] p-8 shadow-sm backdrop-blur">
 					<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 						<div class="space-y-2">
-							<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Tell us what’s slowing your business down.</h2>
-							<p class="text-lg font-medium text-[var(--muted)]">We’ll map the fastest path from idea to a working system.</p>
+							<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Let’s look at where the right system could help.</h2>
+							<p class="text-lg font-medium text-[var(--muted)]">Talk to us about where AI could make your business easier to run and grow.</p>
 						</div>
 						<div class="flex flex-wrap gap-3">
 								<a
@@ -101,7 +101,7 @@ const navLinks = [
 									href="/contact#book"
 									data-plausible="BookACall"
 								>
-								Book a call
+								Book a conversation
 							</a>
 						</div>
 					</div>
@@ -117,7 +117,7 @@ const navLinks = [
 							<a class="transition hover:text-white/80" href="/how-the-systems-work">How the systems work</a>
 							<a class="transition hover:text-white/80" href="/how-we-build">How we build</a>
 							<a class="transition hover:text-white/80" href="/contact">Contact</a>
-						<a class="transition hover:text-white/80" href="/contact#book" data-plausible="BookACall">Book a call</a>
+						<a class="transition hover:text-white/80" href="/contact#book" data-plausible="BookACall">Book a conversation</a>
 						<a class="transition hover:text-white/80" href="/privacy">Privacy</a>
 						<a class="transition hover:text-white/80" href="/terms">Terms</a>
 						<a class="transition hover:text-white/80" href="/cookies">Cookies</a>
