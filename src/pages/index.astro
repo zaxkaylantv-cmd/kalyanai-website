@@ -82,21 +82,23 @@ import Layout from '../layouts/Layout.astro';
 		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<div class="space-y-3">
 				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">See what this looks like in practice</h2>
-				<p class="copy-narrow mx-auto max-w-3xl text-[var(--primary)]">Examples of systems built around real business operations.</p>
+				<p class="copy-narrow mx-auto max-w-3xl text-[var(--primary)]">A real example of how a business system can bring everyday work into one clearer place.</p>
 			</div>
-			<div class="grid gap-6 md:grid-cols-3">
-				<div class="space-y-2 rounded-2xl bg-white/70 p-5 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
-					<h3 class="text-base font-semibold text-[var(--brand-navy)]">Kalyan AI internal system</h3>
-					<p class="text-[var(--muted)]">A working view of how enquiries, decisions, and owner review can sit in one system.</p>
+			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-left shadow-sm backdrop-blur lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
+				<div class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-white shadow-sm">
+					<img
+						class="h-full w-full object-cover"
+						src="/images/case-studies/after-dashboard.png"
+						alt="Spa by Kaajal finance dashboard showing invoices, receipts, cashflow, tips and overdue items in one place."
+						loading="lazy"
+					/>
 				</div>
-				<div class="space-y-2 rounded-2xl bg-white/70 p-5 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
-					<h3 class="text-base font-semibold text-[var(--brand-navy)]">Spa by Kaajal</h3>
-					<p class="text-[var(--muted)]">Finance admin reduced from around 4 hours weekly to around 30 minutes.</p>
-					<a href="/case-studies" class="text-sm font-semibold text-[var(--primary)] hover:text-[var(--secondary)]">Read the case study</a>
-				</div>
-				<div class="space-y-2 rounded-2xl bg-white/70 p-5 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
-					<h3 class="text-base font-semibold text-[var(--brand-navy)]">Client booking and operations</h3>
-					<p class="text-[var(--muted)]">A client booking and operations system we recently built and tested.</p>
+				<div class="space-y-4 p-2 text-center md:p-4">
+					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Spa by Kaajal finance system</h3>
+					<p class="text-[var(--muted)]">
+						A clear finance system bringing invoices, receipts, cashflow, tips and gratuities into one place. The owner can see what is due, what is overdue, open the saved invoice behind each row when needed, and export a clean CSV for the accountant in one click.
+					</p>
+					<a href="/case-studies" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">Read the case study</a>
 				</div>
 			</div>
 		</section>
