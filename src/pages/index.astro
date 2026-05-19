@@ -1,11 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const demos = [
-	{ title: 'Spa by Kaajal finance system example', id: 'Sx6ZVQ_EYSg' },
-	{ title: 'Business system walkthrough', id: '0Am1DEJEY2k' },
-	{ title: 'Systems we built', id: '1c0JG1CSYLg' },
-];
 ---
 
 <Layout
@@ -103,69 +97,6 @@ const demos = [
 				<div class="space-y-2 rounded-2xl bg-white/70 p-5 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
 					<h3 class="text-base font-semibold text-[var(--brand-navy)]">Client booking and operations</h3>
 					<p class="text-[var(--muted)]">A client booking and operations system we recently built and tested.</p>
-				</div>
-			</div>
-			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-				{demos.map((demo) => (
-					<div class="space-y-3 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur">
-						<h3 class="text-base font-semibold text-[var(--brand-navy)]">{demo.title}</h3>
-						<div class="aspect-video overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-black/5">
-							<iframe
-								class="h-full w-full"
-								src={`https://www.youtube.com/embed/${demo.id}?rel=0&modestbranding=1`}
-								title={demo.title}
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-								loading="lazy"
-							></iframe>
-						</div>
-					</div>
-				))}
-			</div>
-		</section>
-
-		<section id="local-examples" class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<div class="space-y-3">
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Short overview videos</h2>
-				<p class="copy-narrow mx-auto max-w-3xl text-[var(--primary)]">Introductory videos about Kalyan AI and the kind of systems we build.</p>
-			</div>
-			<div class="grid gap-6 md:grid-cols-2">
-				<div id="new-business" class="space-y-4 rounded-2xl bg-white/70 p-4 text-center shadow-sm border border-[var(--border-subtle)]">
-					<h3 class="text-base font-semibold text-[var(--brand-navy)]">Kalyan AI overview</h3>
-					<div class="overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-black/5 shadow-sm">
-						<div class="aspect-video w-full">
-							<video
-								class="h-full w-full object-cover"
-								controls
-								preload="metadata"
-								playsinline
-								poster="/video/automation-showcase-thumb.jpg"
-							>
-								<source src="/video/automation-showcase.mp4" type="video/mp4" />
-								Your browser does not support the video tag.
-							</video>
-						</div>
-					</div>
-					<p class="text-sm text-[var(--muted)]">Tip: tap fullscreen for the best mobile view.</p>
-				</div>
-
-				<div id="explainer" class="space-y-4 rounded-2xl bg-white/70 p-4 text-center shadow-sm border border-[var(--border-subtle)]">
-					<h3 class="text-base font-semibold text-[var(--brand-navy)]">What Kalyan AI builds</h3>
-					<div class="overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-black/5 shadow-sm">
-						<div class="aspect-video w-full">
-							<video
-								class="h-full w-full"
-								controls
-								preload="metadata"
-								playsinline
-								poster="/video/kalyan-explainer.jpg"
-							>
-								<source src="/video/kalyan-explainer.mp4" type="video/mp4" />
-								Your browser does not support the video tag.
-							</video>
-						</div>
-					</div>
-					<p class="text-sm text-[var(--muted)]">Tip: tap fullscreen for the best mobile view.</p>
 				</div>
 			</div>
 		</section>
