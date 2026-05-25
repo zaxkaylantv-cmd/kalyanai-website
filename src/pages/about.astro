@@ -3,18 +3,25 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-	title="About Kalyan AI | AI systems built around your business"
-	description="Why Kalyan AI builds AI systems around how each business works, with owner control and ongoing support after delivery."
+	title="About Kalyan AI | Built by an operator"
+	description="About Kalyan AI, founded by Zax Kalyan to build practical AI systems for owner-led businesses."
 >
 	<main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 pb-14">
-		<section class="ka-card mx-auto max-w-5xl space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">About Kalyan AI</h1>
-			<p class="copy-narrow max-w-3xl mx-auto text-lg text-[var(--primary)]">We build AI systems that make your business easier to run and grow.</p>
-			<p class="copy-narrow max-w-3xl mx-auto text-[var(--muted)]">Kalyan AI exists because useful AI is not a fixed product you drop into a company. It has to be shaped around how the business works, where decisions are made, and where the right system can have the biggest impact.</p>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<div class="mx-auto aspect-[4/4.5] w-full max-w-md overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm">
+		<section class="ka-card mx-auto grid max-w-5xl gap-8 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:grid-cols-[1.1fr_0.9fr] md:p-8">
+			<div class="space-y-5 text-center md:text-left">
+				<p class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">About Kalyan AI</p>
+				<div class="space-y-3">
+					<h1 class="text-3xl font-semibold text-[var(--brand-navy)] md:text-5xl">Built by an operator, not an AI trend-chaser</h1>
+					<p class="text-lg text-[var(--primary)]">Kalyan AI builds and runs AI systems for owner-led businesses.</p>
+				</div>
+				<div class="space-y-3 text-[var(--muted)]">
+					<p>The company was founded by Zax Kalyan after more than 15 years in business and over a decade before that in sales, sales leadership, team management and commercial growth.</p>
+					<p>Zax's background is not theoretical. He has built sales channels, led teams, trained people, created incentives, carried targets, managed pressure and worked inside competitive markets where the business only survives if it performs.</p>
+					<p>That experience shapes how Kalyan AI works today.</p>
+					<p>The aim is not to impress people with AI. The aim is to build systems that make a business easier to run, easier to control and easier to grow.</p>
+				</div>
+			</div>
+			<div class="mx-auto aspect-[4/4.5] w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm md:max-w-none">
 				<img
 					class="h-full w-full object-cover"
 					src="/images/1761512653.png"
@@ -24,139 +31,81 @@ import Layout from '../layouts/Layout.astro';
 					style="object-position: 50% 12%;"
 				/>
 			</div>
-
-			<div class="space-y-3 text-center">
-				<h2 class="text-xl font-semibold text-[var(--primary)]">Founder</h2>
-				<div class="space-y-3 !text-center">
-					<p class="copy-narrow mx-auto text-[var(--muted)] text-center">I'm Zax Kalyan, founder of Kalyan AI. I've spent 15+ years leading and growing businesses under real-world pressure, owning P&amp;L, building teams, and delivering results across industries.</p>
-					<p class="copy-narrow mx-auto text-[var(--muted)] text-center">Before Kalyan AI, I started using AI systems inside my own businesses to support the work that mattered: reporting, customer communication, marketing content, finance tasks, and day-to-day operating decisions.</p>
-					<p class="copy-narrow mx-auto text-[var(--muted)] text-center">The useful part was not the technology by itself. It was having systems that understood the business context and supported better decisions without taking control away from the owner.</p>
-					<p class="copy-narrow mx-auto text-[var(--muted)] text-center">I'm also a contributor and shareholder at Nuvo Labs, a deep-tech AI research company. That keeps us close to what is coming next, while staying focused on what matters day to day: reliability, usefulness, and measurable business impact.</p>
-				</div>
-			</div>
 		</section>
 
-		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-xl font-semibold text-[var(--primary)]">Built around the business</h2>
-			<div class="space-y-2 !text-center">
-				<p class="copy-narrow mx-auto text-[var(--muted)]">We learn how your business runs before deciding what the system should do. That includes the tools, data, people, approvals, edge cases, and decisions that shape the real operating environment.</p>
-				<p class="copy-narrow mx-auto text-[var(--muted)]">The result is not a generic layer added on top. It is a system designed around the work it needs to support.</p>
-			</div>
-		</section>
-
-		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-xl font-semibold text-[var(--primary)]">Owner control matters</h2>
-			<div class="space-y-2 !text-center">
-				<p class="copy-narrow mx-auto text-[var(--muted)]">It is your business, your decisions. We make sure the system behind it supports you properly.</p>
-				<p class="copy-narrow mx-auto text-[var(--muted)]">That means clear ownership, explicit approvals where they matter, traceable actions, and people involved when judgment is needed.</p>
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Why Kalyan AI exists</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p>Before starting Kalyan AI, Zax began using AI inside his own business.</p>
+				<p>Like many business owners, he had reached the point where too much depended on him. The knowledge, judgement, follow-up, visibility and decision-making were often sitting in his head.</p>
+				<p>He used to describe the problem simply:</p>
+				<blockquote class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-lg font-semibold italic text-[var(--primary)] shadow-sm">
+					&ldquo;I needed more of me in the business.&rdquo;
+				</blockquote>
+				<p>The challenge was that another person with the same experience, urgency and understanding of the business was almost impossible to find.</p>
+				<p>AI changed that.</p>
+				<p>Used properly, it allowed parts of the business to work with more structure, more visibility and less reliance on everything passing through the owner. It helped turn knowledge into systems, reduce manual pressure, and show where attention was needed without digging through spreadsheets, inboxes or scattered records.</p>
+				<p>That is where Kalyan AI came from.</p>
+				<p>Not from chasing an AI trend, but from seeing how much stronger a business can become when the right systems are built around how it actually works.</p>
 			</div>
 		</section>
 
 		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-xl font-semibold text-[var(--primary)]">We stay involved</h2>
-			<p class="copy-narrow mx-auto text-[var(--muted)]">A serious business system needs more than a handover. We host, monitor, support, and improve systems as real usage shows what needs adjusting.</p>
-			<p class="copy-narrow mx-auto text-[var(--muted)]">That ongoing involvement helps the system remain useful as the business changes.</p>
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What makes the work different</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p>Kalyan AI does not build demo systems that look good for a presentation and then break when real people use them.</p>
+				<p>Every serious system is approached with the expectation that it needs to work in the real world.</p>
+				<p>That means understanding the business first, defining what the system is meant to improve, planning the build properly, testing the important failure points, protecting the data, and supporting the system after it goes live.</p>
+				<p>Kalyan AI's focus is on production-grade business systems, not quick experiments.</p>
+				<p>The work is planned, reviewed, tested and delivered in controlled phases so the business owner knows what is being built, why it matters, and how it will be used.</p>
+			</div>
 		</section>
 
 		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-xl font-semibold text-[var(--primary)]">Different from fixed products</h2>
-			<p class="copy-narrow mx-auto text-[var(--muted)]">Fixed products expect the business to adapt to them. Generic automation often connects tasks without enough thought about ownership, risk, exceptions, or long-term support.</p>
-			<p class="copy-narrow mx-auto text-[var(--muted)]">Kalyan AI is built around controlled delivery. Every serious system is scoped, risk-assessed, tested beyond the happy path, documented, deployed carefully, and supported after go-live.</p>
-			<a href="/how-we-build/" class="inline-flex items-center justify-center px-6 py-3 border-2 border-[var(--primary)] text-[var(--primary)] rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors">See how we build</a>
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built around value, not hype</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p>Kalyan AI will not recommend a system just because AI can be used somewhere.</p>
+				<p>Before any meaningful project starts, the outcome is agreed clearly: what the system should improve, what it should make easier, and what success should look like when the work is complete.</p>
+				<p>That agreement becomes the delivery target.</p>
+				<p>Kalyan AI does not treat delivery as &ldquo;build it and disappear.&rdquo; Real systems often need small adjustments once they meet real users, so support after delivery is part of making sure the agreed outcome is actually achieved.</p>
+			</div>
 		</section>
 
-		<section class="ka-card p-8 my-16 text-center">
-			<h2 class="text-2xl font-semibold text-[var(--primary)] mb-6">Why hosted?</h2>
-			<p class="text-[var(--muted)] mb-6 max-w-2xl mx-auto">Because you want the system to keep working, not another technical responsibility to manage.</p>
-			<ul class="space-y-3 text-[var(--muted)]">
-				<li class="flex items-start justify-center gap-3"><span class="text-[var(--primary)]">✓</span> Reliability: monitored, maintained, and supported so issues are not left to drift.</li>
-				<li class="flex items-start justify-center gap-3"><span class="text-[var(--primary)]">✓</span> Security and control: least-privilege access, clear data boundaries, and traceability.</li>
-			</ul>
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Where Kalyan AI can help</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p>Kalyan AI does not start by assuming what your business needs.</p>
+				<p>The first step is to understand how your business actually operates: how work moves, where decisions happen, what information people rely on, where time is lost, and where better systems could create real value.</p>
+				<p>The opportunity could be in any part of the business. What matters is not fitting your business into a preset category. What matters is finding where AI can make a practical difference, create measurable value, and make the business easier to run and grow.</p>
+				<p>The point is to understand the business first, then decide what system, if any, is worth building.</p>
+			</div>
 		</section>
 
-		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-xl font-semibold text-[var(--primary)]">How we work</h2>
-			<ol class="space-y-2 text-[var(--muted)] text-center list-none">
-				<li><span class="font-bold text-[var(--primary)]">Discover -</span> understand how the business runs today, the data involved, and the key decisions.</li>
-				<li><span class="font-bold text-[var(--primary)]">Build -</span> implement the first high-impact phase with safeguards and clear ownership.</li>
-				<li><span class="font-bold text-[var(--primary)]">Deploy -</span> launch with you, monitor outcomes, and stabilise fast.</li>
-				<li><span class="font-bold text-[var(--primary)]">Improve -</span> refine the system based on real usage and business feedback.</li>
-			</ol>
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Close to where AI is going</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p>Alongside Kalyan AI, Zax is also a shareholder and contributor at Nuvo Labs, a deep-tech AI company working on breakthrough AI infrastructure and compute architecture.</p>
+				<p>That connection keeps Kalyan AI close to where AI is heading, while the client work remains focused on what is practical, reliable and useful today.</p>
+				<p>Zax also keeps daily track of new AI models, tools and capabilities, testing what is relevant against real business use cases. The aim is not to chase every new release, but to separate useful progress from noise.</p>
+			</div>
 		</section>
 
-		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--primary)]">What you get</h2>
-			<ul class="space-y-2 text-[var(--muted)] text-center list-none">
-				<li>A working system shaped around a real business need</li>
-				<li>Integration into your current tools where the project calls for it</li>
-				<li>Ongoing hosting, monitoring, and improvements</li>
-				<li>Training so your team can use it from day one</li>
-			</ul>
-		</section>
-
-		<section class="ka-card space-y-3 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-xl font-semibold text-[var(--primary)]">What you can expect</h2>
-			<ul class="space-y-2 text-[var(--muted)] text-center list-none">
-				<li><span class="font-bold text-[var(--primary)]">Clarity</span> on who decides what, and what happens next</li>
-				<li><span class="font-bold text-[var(--primary)]">Momentum</span> without losing control</li>
-				<li><span class="font-bold text-[var(--primary)]">Reliability</span> from a system that is maintained and supported</li>
-			</ul>
-		</section>
-
-		<div class="text-center">
+		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Start with the right first step</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p>Most businesses do not need to start with a large AI build.</p>
+				<p>They need to understand where AI can genuinely earn its keep.</p>
+				<p>That is why Kalyan AI starts with the Business AI Blueprint: a focused paid review showing where AI can make the business easier to run and grow, what system would be worth building first, and where the return can come from.</p>
+				<p>There is no obligation to continue after the Blueprint. The first goal is clarity.</p>
+				<p>If there is a strong business case and Kalyan AI is the right partner to build the recommended system, the next step can be discussed from there.</p>
+			</div>
 			<a
 				class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-				href="/contact#book"
+				href="/blueprint"
 				data-plausible="BookACall"
 			>
-				Book a conversation
+				Book your Business AI Blueprint
 			</a>
-		</div>
-
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--primary)]">FAQs</h2>
-			<div class="divide-y divide-[var(--border-subtle)] rounded-2xl border border-[var(--border-subtle)] bg-white/80 text-center">
-				{[
-					{
-						q: 'What types of businesses do you work with?',
-						a: 'Owner-led organisations where the right AI system can support decisions, customers, operations, or growth without taking control away from the people running the business.',
-					},
-					{
-						q: 'How quickly can we ship a first version?',
-						a: 'Most first versions are delivered in 2-4 weeks once we have access to the right people, examples, and systems. We keep the initial scope tight to show value early.',
-					},
-					{
-						q: 'Do you host the system for us?',
-						a: 'Yes. We host, monitor, and maintain the system so you do not need extra infrastructure or support staff to keep it reliable.',
-					},
-					{
-						q: 'What about data security and access control?',
-						a: 'We set clear data boundaries, least-privilege access, and audit trails. Ownership and permissions stay defined for your team.',
-					},
-					{
-						q: 'Can this connect to our existing tools and processes?',
-						a: 'Yes. We integrate with your current systems and processes where that is the right way to make the system fit how you already work.',
-					},
-					{
-						q: 'How do pricing and ongoing support work?',
-						a: 'We scope a build fee for the first version, then provide a hosting and support plan that covers monitoring, fixes, and iterative improvements.',
-					},
-					{
-						q: 'What do you need from us to get started?',
-						a: 'Access to the people, examples, and systems that show how you work today, plus a clear owner for decisions. We handle the build and support around that.',
-					},
-				].map((item) => (
-					<details class="group px-4 py-3 text-[var(--muted)]">
-						<summary class="flex cursor-pointer list-none items-center justify-center gap-2 text-center text-[var(--brand-navy)] font-semibold transition hover:text-[var(--brand-navy-light)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-0">
-							<span>{item.q}</span>
-							<span class="text-sm text-[var(--muted)] group-open:rotate-45 transition">+</span>
-						</summary>
-						<div class="pt-2 text-[var(--muted)] text-center">
-							<p>{item.a}</p>
-						</div>
-					</details>
-				))}
-			</div>
 		</section>
 	</main>
 </Layout>

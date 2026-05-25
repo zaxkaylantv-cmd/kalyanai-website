@@ -3,18 +3,18 @@ import Layout from '../layouts/Layout.astro';
 
 const calendlyUrl = 'https://calendly.com/zaxkalyan/new-meeting';
 
-const steps = [
+const firstSystemPrinciples = [
 	{
-		title: 'Call 1: Discovery and workflow review',
-		copy: 'A 30-minute session to understand how your business works, what tools you use, where the pressure sits, and what is currently manual, slow, repetitive or difficult to control.',
+		title: 'It should solve a real business problem.',
+		copy: 'The recommendation should be tied to a real operational pressure, not an AI idea looking for somewhere to fit.',
 	},
 	{
-		title: 'Between the calls',
-		copy: 'Kalyan AI reviews the findings and prepares your recommended first system.',
+		title: 'It should fit the way your team already works.',
+		copy: 'The best first system should support the way the business already runs, rather than forcing people into a completely new process.',
 	},
 	{
-		title: 'Call 2: Blueprint presentation',
-		copy: 'A 30-minute session walking you through where AI fits, what system would be worth building first, why that system matters, and where the return can come from.',
+		title: 'It should have a clear reason to exist before anything is built.',
+		copy: 'Before build work starts, there should be a clear business reason, expected value, and practical use case.',
 	},
 ];
 
@@ -99,13 +99,13 @@ const proofPoints = [
 		</section>
 
 		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">How it works</h2>
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The right first system</h2>
 			<div class="grid gap-4 md:grid-cols-3">
-				{steps.map((step, index) => (
+				{firstSystemPrinciples.map((principle, index) => (
 					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-left shadow-sm">
-						<p class="text-sm font-semibold text-[var(--primary)]">Step {index + 1}</p>
-						<h3 class="mt-1 text-base font-semibold text-[var(--brand-navy)]">{step.title}</h3>
-						<p class="mt-2 text-[var(--muted)]">{step.copy}</p>
+						<p class="text-sm font-semibold text-[var(--primary)]">Principle {index + 1}</p>
+						<h3 class="mt-1 text-base font-semibold text-[var(--brand-navy)]">{principle.title}</h3>
+						<p class="mt-2 text-[var(--muted)]">{principle.copy}</p>
 					</div>
 				))}
 			</div>
