@@ -75,7 +75,7 @@ const navLinks = [
 							))}
 								<a
 									class="rounded-full bg-[var(--primary)] px-4 py-2 font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-									href="/contact#book"
+									href="/blueprint"
 									data-plausible="BookACall"
 								>
 								Book a conversation
@@ -99,7 +99,7 @@ const navLinks = [
 						<div class="flex flex-wrap gap-3">
 								<a
 									class="rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-									href="/contact#book"
+									href="/blueprint"
 									data-plausible="BookACall"
 								>
 								Book a conversation
@@ -119,7 +119,7 @@ const navLinks = [
 							<a class="transition hover:text-white/80" href="/how-the-systems-work">System examples</a>
 							<a class="transition hover:text-white/80" href="/how-we-build">How we build</a>
 							<a class="transition hover:text-white/80" href="/contact">Contact</a>
-						<a class="transition hover:text-white/80" href="/contact#book" data-plausible="BookACall">Book a conversation</a>
+						<a class="transition hover:text-white/80" href="/blueprint" data-plausible="BookACall">Book a conversation</a>
 						<a class="transition hover:text-white/80" href="/privacy">Privacy</a>
 						<a class="transition hover:text-white/80" href="/terms">Terms</a>
 						<a class="transition hover:text-white/80" href="/cookies">Cookies</a>
@@ -132,7 +132,7 @@ const navLinks = [
 			</div>
 		</footer>
 
-		{/* Calendly popup removed; inline embed lives on /contact#book */}
+		{/* Calendly popup removed; booking starts on /blueprint */}
 		<script is:inline>
 			if (typeof window !== 'undefined') {
 				document.addEventListener('click', (event) => {

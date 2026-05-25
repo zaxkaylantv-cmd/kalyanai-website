@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
 				<p class="text-[var(--muted)]">
 					Use the Book a conversation button to open our scheduler. We’ll come prepared to understand your business and where the right system could help.
 				</p>
-				<a class="inline-flex w-fit items-center justify-center rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="#book" data-plausible="BookACall">
+				<a class="inline-flex w-fit items-center justify-center rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/blueprint" data-plausible="BookACall">
 					Book a conversation
 				</a>
 				<p class="text-sm text-[var(--muted)]">
@@ -46,10 +46,11 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 
 		<section id="book" class="space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Book a conversation</h2>
-			<p class="text-[var(--muted)]">Choose a time that works for you.</p>
-			<div class="calendly-inline-widget w-full" data-url="https://calendly.com/zaxkalyan/30min" style="min-width:320px;height:700px;"></div>
-			<script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Start with the Business AI Blueprint</h2>
+			<p class="copy-narrow mx-auto text-[var(--muted)]">A focused paid review showing where AI can make your business easier to run, control and grow, what system would be worth building first, and where the return can come from.</p>
+			<a class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/blueprint" data-plausible="BookACall">
+				Start with the Business AI Blueprint
+			</a>
 		</section>
 	</main>
 </Layout>
