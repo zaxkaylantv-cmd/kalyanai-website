@@ -20,6 +20,15 @@ const caseStudies = [
 		alt: 'Jas’s School of Spice customer homepage showing class booking options.',
 		href: '/case-studies/jas-school-of-spice',
 	},
+	{
+		label: 'Internal proof system',
+		title: 'Kalyan AI Internal Operating Stack',
+		business: 'Kalyan AI',
+		copy: 'How Kalyan AI runs its own commercial activity through a controlled internal system covering lead generation, outreach, replies, CRM handoff, follow-up and business visibility.',
+		image: '/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png',
+		alt: 'Kalyan AI internal operating dashboard showing business activity and system health.',
+		href: '/case-studies/kalyan-ai-internal-stack',
+	},
 ];
 ---
 
@@ -35,7 +44,7 @@ const caseStudies = [
 			</p>
 		</div>
 
-		<div class="grid items-stretch gap-6 lg:grid-cols-2">
+		<div class="grid items-stretch gap-6 lg:grid-cols-3">
 			{caseStudies.map((study) => (
 				<article class="ka-card flex h-full min-h-full flex-col overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
 					<a href={study.href} class="block shrink-0">
@@ -49,7 +58,7 @@ const caseStudies = [
 						</div>
 					</a>
 					<div class="flex min-h-0 flex-1 flex-col p-6">
-						<div class="flex-1 space-y-4 md:min-h-[13.5rem] lg:min-h-[15rem]">
+						<div class="flex-1 space-y-4 md:min-h-[13.5rem] lg:min-h-[18rem]">
 							<p class="text-sm font-semibold text-[var(--primary)]">{study.label}</p>
 							<div class="space-y-2">
 								<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">{study.title}</h2>
