@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 <Layout
 	title="Kalyan AI | AI systems that make business easier to run, control and grow"
 	description="We build AI systems that make your business easier to run, control and grow, shaped around how your business works and supported after delivery."
+	showFinalCta={false}
 >
 	<main class="flex flex-col gap-16">
 		<section class="relative overflow-hidden px-6 py-12 md:px-10 lg:px-12">
@@ -16,72 +17,74 @@ import Layout from '../layouts/Layout.astro';
 							Systems, built and run with you
 						</p>
 						<h1 class="text-3xl font-semibold leading-tight tracking-tight text-[var(--brand-navy)] md:text-5xl">
-							We build AI systems that make your business easier to <span class="text-[var(--primary)]">run</span>, <span class="text-[var(--primary)]">control</span> and <span class="text-[var(--primary)]">grow</span>.
+							We build AI systems that make your business easier to <span class="text-[var(--primary)]">run,</span> <span class="text-[var(--primary)]">control,</span> and <span class="text-[var(--primary)]">grow</span>.
 						</h1>
 						<p class="copy-narrow max-w-3xl text-sm text-[var(--muted)] md:text-xl">
-							We learn how your business works, find where AI will have the biggest impact, and build the right system around it.
+							We learn how your business works, find where AI can create real value, and build the right system around it.
 						</p>
 						<div class="flex flex-wrap gap-3 md:gap-3.5">
 							<a class="rounded-full bg-[var(--accent-teal)] px-4 py-2 text-sm text-center font-medium text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-[var(--secondary)] md:px-5 md:py-3 md:text-base" href="/blueprint" data-plausible="BookACall">
-								Book a conversation
+								Start with the Blueprint
 							</a>
-							<a href="/how-we-build/" class="inline-flex items-center justify-center px-5 py-2 border-2 border-[var(--primary)] text-sm text-[var(--primary)] rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors md:px-6 md:py-3 md:text-base">See how we build</a>
+							<a href="/case-studies/" class="inline-flex items-center justify-center px-5 py-2 border-2 border-[var(--primary)] text-sm text-[var(--primary)] rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors md:px-6 md:py-3 md:text-base">See case studies</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="ka-card text-center space-y-3 rounded-3xl bg-white/80 px-4 py-8 md:px-10">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The Kalyan AI approach</h2>
-			<p class="copy-narrow text-lg text-[var(--primary)] text-center mx-auto max-w-3xl">We do not come in with a fixed product.</p>
-			<p class="copy-narrow text-[var(--muted)] text-center mx-auto max-w-3xl">We look at how your business actually runs, where decisions get stuck, where growth is being held back, and where AI can support the work properly.</p>
-		</section>
-
-		<div class="mx-auto max-w-5xl px-6 flex flex-col gap-6">
+		<div class="mx-auto grid max-w-5xl gap-6 px-6 md:grid-cols-2">
 			<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built around how your business actually works</h2>
-				<p class="copy-narrow mx-auto text-lg text-[var(--primary)]">The system should fit the business, not force the business to fit the system.</p>
-				<p class="copy-narrow mx-auto text-[var(--muted)]">That means understanding the people, tools, data, handoffs, approvals, and customer moments that matter before deciding what to build.</p>
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">AI is everywhere. Useful AI is harder to identify.</h2>
+				<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+					<p class="text-lg text-[var(--primary)]">Business owners are surrounded by AI tools, demos, promises and noise.</p>
+					<p>Every week there is a new platform, a new model, a new claim, and another reason to feel like the business should be doing something with AI.</p>
+					<p>But doing something is not the same as doing the right thing.</p>
+					<p>The real opportunity is not chasing tools.</p>
+					<p>It is knowing where AI can genuinely improve how the business runs.</p>
+				</div>
 			</section>
 
 			<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Your business, your decisions</h2>
-				<p class="copy-narrow mx-auto text-[var(--muted)]">We make sure the system behind it supports you properly, with clear ownership, sensible approvals, and people involved where judgment matters.</p>
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Buying tools is not the same as building capability.</h2>
+				<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+					<p class="text-lg text-[var(--primary)]">Most businesses do not need another disconnected subscription.</p>
+					<p>They need a system that fits the way the business actually operates.</p>
+					<p>A tool might solve one task.</p>
+					<p>A system connects the work, the people, the decisions and the outcome.</p>
+					<p>That is the difference between trying AI and turning it into something useful.</p>
+				</div>
 			</section>
 
-			<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-				<div class="space-y-3">
-					<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">How we build and support the system</h2>
-					<p class="copy-narrow mx-auto text-lg text-[var(--primary)]">Every serious system we deliver is planned, risk-assessed, built in controlled phases, tested, documented, and supported after go-live.</p>
-					<p class="copy-narrow mx-auto text-[var(--muted)]">That is what separates a reliable business system from a demo that only works in simple conditions.</p>
+			<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The risk is not only being left behind.</h2>
+				<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+					<p class="text-lg text-[var(--primary)]">The bigger risk is spending time and money on the wrong thing.</p>
+					<p>An AI project can look impressive in a demo and still create more complexity inside the business.</p>
+					<p>It can confuse the team.</p>
+					<p>It can duplicate work.</p>
+					<p>It can produce outputs nobody trusts.</p>
+					<p>It can sit outside the real operation and quietly stop being used.</p>
+					<p>That is why the first step matters.</p>
 				</div>
-				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
-						<p class="text-sm font-semibold text-[var(--primary)]">Discover</p>
-						<p class="copy-narrow text-[var(--muted)]">We learn how the business runs, what matters most, and where the right system could help.</p>
-					</div>
-					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
-						<p class="text-sm font-semibold text-[var(--primary)]">Scope</p>
-						<p class="copy-narrow text-[var(--muted)]">We define the outcome, risks, dependencies, success criteria, and what is deliberately out of scope.</p>
-					</div>
-					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
-						<p class="text-sm font-semibold text-[var(--primary)]">Build</p>
-						<p class="copy-narrow text-[var(--muted)]">We deliver in controlled phases, with clear boundaries, testing, and human review at each step.</p>
-					</div>
-					<div class="space-y-2 text-center rounded-2xl bg-white/80 p-5 shadow-sm border border-[var(--border-subtle)]">
-						<p class="text-sm font-semibold text-[var(--primary)]">Operate</p>
-						<p class="copy-narrow text-[var(--muted)]">We host, monitor, support, and improve the system after go-live.</p>
-					</div>
+			</section>
+
+			<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The opportunity for owner-led businesses</h2>
+				<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+					<p class="text-lg text-[var(--primary)]">Owner-led businesses have an advantage.</p>
+					<p>They can move faster than larger companies when the right opportunity is clear.</p>
+					<p>They know where the pressure is.</p>
+					<p>They know where the business is slowed down.</p>
+					<p>They know where better systems could make a real difference.</p>
+					<p>Kalyan AI helps turn that understanding into a practical AI system that can be built, used and supported properly.</p>
 				</div>
-				<a href="/how-we-build/" class="inline-flex items-center justify-center px-6 py-3 border-2 border-[var(--primary)] text-[var(--primary)] rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors">See how we build</a>
 			</section>
 		</div>
 
 		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<div class="space-y-3">
 				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">See what this looks like in practice</h2>
-				<p class="copy-narrow mx-auto max-w-3xl text-[var(--primary)]">A real example of how a business system can bring everyday work into one clearer place.</p>
 			</div>
 			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-left shadow-sm backdrop-blur lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
 				<div class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-white shadow-sm">
@@ -94,9 +97,10 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="space-y-4 p-2 text-center md:p-4">
 					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Spa by Kaajal finance system</h3>
-					<p class="text-[var(--muted)]">
-						A clear finance system bringing invoices, receipts, cashflow, tips and gratuities into one place. The owner can see what is due, what is overdue, open the saved invoice behind each row when needed, and export a clean CSV for the accountant in one click.
-					</p>
+					<div class="space-y-3 text-[var(--muted)]">
+						<p>A finance admin and visibility system built around how finance work moved through the salon.</p>
+						<p>It reduced weekly finance admin from around 4 hours to around 30 minutes, with invoices, receipts, tips and accountant-ready exports in one place.</p>
+					</div>
 					<a href="/case-studies" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">Read the case study</a>
 				</div>
 			</div>
@@ -114,9 +118,10 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="space-y-4 p-2 text-center md:p-4">
 					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Another example: Jas’s School of Spice</h3>
-					<p class="text-[var(--muted)]">
-						A live booking and operations system helping customers book, pay, buy vouchers and ask questions online, with Kalyan AI supporting the system behind the scenes.
-					</p>
+					<div class="space-y-3 text-[var(--muted)]">
+						<p>A live client booking and operations system for a cookery school.</p>
+						<p>Customers can book classes, pay online, buy vouchers, ask questions and receive confirmation and reminder emails, while the owner has clearer control behind the scenes.</p>
+					</div>
 					<a href="/case-studies/jas-school-of-spice/" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">Read the case study</a>
 				</div>
 			</div>
@@ -134,39 +139,34 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="space-y-4 p-2 text-center md:p-4">
 					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">How Kalyan AI runs its own systems</h3>
-					<p class="text-[var(--muted)]">
-						Kalyan AI uses its own internal operating stack to manage lead generation, outreach, replies, booked meetings, CRM follow-up, business visibility and system health from one controlled place.
-					</p>
+					<div class="space-y-3 text-[var(--muted)]">
+						<p>The internal system Kalyan AI uses to manage its own commercial activity.</p>
+						<p>It brings together prospect preparation, controlled outreach, reply handling, Telegram alerts, booked meeting handoff, CRM follow-up, business visibility and system health.</p>
+					</div>
 					<a href="/case-studies/kalyan-ai-internal-stack/" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">Read the case study</a>
 				</div>
 			</div>
 		</section>
 
-		<section class="space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built for trust</h2>
-			<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-				<div class="space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
-					<p class="font-semibold text-[var(--primary)]">Clear ownership and approvals</p>
-					<p class="text-[var(--muted)]"><span class="font-semibold text-[var(--text)]">Every decision has an owner</span>, approvals are explicit, and nothing moves without a named accountable person.</p>
-				</div>
-				<div class="space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
-					<p class="font-semibold text-[var(--primary)]">Guardrails and auditability</p>
-					<p class="text-[var(--muted)]"><span class="font-semibold text-[var(--text)]">Controls, logs, and checkpoints</span> are built in so you can see what happened and why.</p>
-				</div>
-				<div class="space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
-					<p class="font-semibold text-[var(--primary)]">Evidence and reporting</p>
-					<p class="text-[var(--muted)]"><span class="font-semibold text-[var(--text)]">Signals and actions</span> are summarised into concise reports that leaders can review quickly.</p>
-				</div>
-				<div class="space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
-					<p class="font-semibold text-[var(--primary)]">Monitoring and support</p>
-					<p class="text-[var(--muted)]"><span class="font-semibold text-[var(--text)]">We host and monitor</span> the system, handle issues, and keep it aligned with your operating reality.</p>
-				</div>
-				<div class="space-y-1 rounded-2xl bg-white/70 p-4 text-center shadow-sm backdrop-blur border border-[var(--border-subtle)]">
-					<p class="font-semibold text-[var(--primary)]">Training and handover</p>
-					<p class="text-[var(--muted)]"><span class="font-semibold text-[var(--text)]">We train your team</span> and leave clear documentation so the system sticks.</p>
-				</div>
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">From AI noise to a clear business system.</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p class="text-lg text-[var(--primary)]">Kalyan AI helps business owners cut through AI noise and find the practical system worth building first.</p>
+				<p>We connect what AI can now do with how the business actually runs, so capability turns into useful business value rather than another disconnected tool.</p>
+				<p>Then we build and support the system around the business, with the same aim every time:</p>
+				<p class="text-lg font-semibold text-[var(--brand-navy)]">make the business easier to run, control and grow.</p>
 			</div>
 		</section>
 
+		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Start with the Business AI Blueprint.</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p class="text-lg text-[var(--primary)]">Before spending money on a larger system, start with clarity.</p>
+				<p>The Business AI Blueprint is a focused paid review that helps you understand where AI can create value, what is worth building first, and whether there is a clear business case.</p>
+			</div>
+			<a href="/blueprint" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">
+				Start with the Blueprint
+			</a>
+		</section>
 	</main>
 </Layout>
