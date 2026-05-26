@@ -1,115 +1,70 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const caseStudies = [
+	{
+		label: 'Finance admin and visibility system',
+		title: 'Spa by Kaajal finance system',
+		business: 'Beauty salon · London, UK',
+		copy: 'A finance system built around how salon finance work actually moved, bringing invoices, receipts, tips, missing items and accountant-ready exports into one clearer place.',
+		image: '/images/case-studies/after-dashboard.png',
+		alt: 'Spa by Kaajal finance dashboard showing invoices, receipts, cashflow, tips and overdue items in one place.',
+		href: '/case-studies/spa-by-kaajal',
+	},
+	{
+		label: 'Live client booking and operations system',
+		title: 'Jas’s School of Spice Booking System',
+		business: 'Cookery school',
+		copy: 'A live booking and operations system helping customers book, pay, buy vouchers and ask questions online, with clearer owner control behind the scenes.',
+		image: '/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png',
+		alt: 'Jas’s School of Spice customer homepage showing class booking options.',
+		href: '/case-studies/jas-school-of-spice',
+	},
+];
 ---
 
 <Layout title="Case Studies | Kalyan AI" description="Proof of AI systems built around real business operations, including Spa by Kaajal and a client booking and operations system.">
-	<section class="my-12 max-w-4xl mx-auto">
-		<p class="text-[var(--primary)] font-medium mb-2">Case Study</p>
-		<h1 class="text-4xl font-semibold text-[var(--text)] mb-4">A system built around how finance work moved through the salon.</h1>
-		<p class="text-xl text-[var(--muted)] mb-8">Spa by Kaajal · Beauty salon · London, UK</p>
-
-		<div class="ka-card p-8 mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">The business context</h2>
-			<p class="text-[var(--muted)] mb-4">Spa by Kaajal needed a better way to handle invoices, receipts, tips, accountant exports, and the decisions around what had been captured or still needed attention.</p>
-			<p class="text-[var(--muted)] mb-4">The work was spread across email, WhatsApp, paper, notebooks, and existing files. The owner needed one place to understand what had come in, what was missing, and what needed action.</p>
-			<p class="text-[var(--muted)]">The goal was not to force a new way of running the salon. It was to build a system around how the finance work already moved through the business, with clearer status, stronger owner control, and accountant-ready outputs.</p>
+	<section class="mx-auto flex max-w-5xl flex-col gap-8 px-6 pb-16">
+		<div class="ka-card space-y-5 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
+				Case studies
+			</p>
+			<h1 class="mx-auto max-w-3xl text-3xl font-semibold text-[var(--brand-navy)] md:text-5xl">Business systems built around real operations.</h1>
+			<p class="copy-narrow mx-auto text-[var(--muted)] md:text-lg">
+				Examples of Kalyan AI systems built around how a business actually works, with owner control, visibility and support after delivery.
+			</p>
 		</div>
 
-		<div class="ka-card p-8 mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">What we built</h2>
-			<p class="text-[var(--muted)] mb-6">A single finance system that captures invoices, receipts, and tips into one place, with clear status tracking, owner review, and exports the accountant can use.</p>
-
-			<div class="grid md:grid-cols-2 gap-6">
-				<div>
-					<p class="text-[var(--primary)] font-semibold mb-2">Invoices</p>
-					<p class="text-[var(--muted)]">Pulled in from email or uploaded manually with drag and drop, so documents could be handled consistently.</p>
-				</div>
-				<div>
-					<p class="text-[var(--primary)] font-semibold mb-2">Receipts</p>
-					<p class="text-[var(--muted)]">Quick photo upload from a phone, so items could be captured close to the moment they happened.</p>
-				</div>
-				<div>
-					<p class="text-[var(--primary)] font-semibold mb-2">Tips</p>
-					<p class="text-[var(--muted)]">A simple entry screen to replace informal notes with a clearer record.</p>
-				</div>
-				<div>
-					<p class="text-[var(--primary)] font-semibold mb-2">Exports</p>
-					<p class="text-[var(--muted)]">CSV packs for the accountant: invoices, receipts, or tips, separately or together.</p>
-				</div>
-			</div>
+		<div class="grid items-stretch gap-6 lg:grid-cols-2">
+			{caseStudies.map((study) => (
+				<article class="ka-card flex h-full min-h-full flex-col overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
+					<a href={study.href} class="block shrink-0">
+						<div class="aspect-[16/11] overflow-hidden border-b border-[var(--border-subtle)] bg-white">
+							<img
+								src={study.image}
+								alt={study.alt}
+								class="h-full w-full object-cover"
+								loading="lazy"
+							/>
+						</div>
+					</a>
+					<div class="flex min-h-0 flex-1 flex-col p-6">
+						<div class="flex-1 space-y-4 md:min-h-[13.5rem] lg:min-h-[15rem]">
+							<p class="text-sm font-semibold text-[var(--primary)]">{study.label}</p>
+							<div class="space-y-2">
+								<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">{study.title}</h2>
+								<p class="text-sm font-medium text-[var(--muted)]">{study.business}</p>
+							</div>
+							<p class="text-[var(--muted)]">{study.copy}</p>
+						</div>
+						<div class="mt-auto pt-6">
+							<a href={study.href} class="inline-flex h-11 w-full items-center justify-center rounded-full bg-[var(--primary)] px-5 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)] sm:w-48">
+								Read the case study
+							</a>
+						</div>
+					</div>
+				</article>
+			))}
 		</div>
-
-		<div class="ka-card p-8 mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-6">Before and after</h2>
-			<p class="text-[var(--primary)] text-base font-medium mb-6">Images blurred for privacy - layouts reflect the real pain and system we delivered.</p>
-
-			<div class="mb-8">
-				<h3 class="text-lg font-semibold text-[var(--text)] mb-4">Before: fragmented finance records</h3>
-				<div class="grid md:grid-cols-2 gap-4">
-					<img src="/images/case-studies/before-tips.jpg" alt="Tips tracking before" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/before-expenses.jpg" alt="Expenses before" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/before-vouchers.jpg" alt="Gift voucher tracking before" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/before-kpi.jpg" alt="Monthly KPI tracking before" class="rounded-lg border border-[var(--border)]" />
-				</div>
-				<p class="text-[var(--muted)] text-sm mt-3 text-center">Multiple files and notes, no single source of truth</p>
-			</div>
-
-			<div>
-				<h3 class="text-lg font-semibold text-[var(--text)] mb-4">
-					After: one clean system
-					<span class="ml-2 text-xs font-normal bg-[var(--primary)] text-white px-2 py-1 rounded">Demo data</span>
-				</h3>
-				<div class="grid md:grid-cols-2 gap-4 rounded-xl bg-white/70 p-4 shadow-sm">
-					<img src="/images/case-studies/after-dashboard.png" alt="Finance system overview after" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/after-documents.png" alt="Documents view after" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/after-tips.png" alt="Tips tracking after" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/after-cashflow.png" alt="Cashflow view after" class="rounded-lg border border-[var(--border)]" />
-				</div>
-				<p class="text-[var(--muted)] text-sm mt-3 text-center">Everything in one place with clear status tracking, owner review, and accountant-ready exports</p>
-			</div>
-		</div>
-
-		<div class="ka-card p-8 mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Built-in safeguards</h2>
-			<ul class="space-y-3 text-[var(--muted)]">
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Documents go straight to secure cloud storage (Google Drive), so nothing sensitive sits on a server</li>
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Duplicate prevention if the same invoice comes in twice</li>
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Clear statuses (Captured / Needs info / Approved) so items are easier to review</li>
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Full record of what came in and when</li>
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Secure sign-in with locked-down access</li>
-			</ul>
-		</div>
-
-		<div class="ka-card p-8 mb-8 bg-[var(--cta-bg)]">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Results</h2>
-			<p class="text-[var(--muted)] mb-6 text-center">Finance admin reduced from around 4 hours weekly to around 30 minutes.</p>
-			<div class="grid md:grid-cols-3 gap-6 text-center">
-				<div>
-					<p class="text-3xl font-bold text-[var(--primary)]">4h → 30 mins</p>
-					<p class="text-[var(--muted)]">Weekly finance admin time</p>
-				</div>
-				<div>
-					<p class="text-3xl font-bold text-[var(--primary)]">One</p>
-					<p class="text-[var(--muted)]">Place to capture and review items</p>
-				</div>
-				<div>
-					<p class="text-3xl font-bold text-[var(--primary)]">Clearer</p>
-					<p class="text-[var(--muted)]">View of missing receipts and open items</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="ka-card p-8 mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Delivery</h2>
-			<p class="text-[var(--muted)] mb-4"><span class="text-[var(--primary)] font-semibold">Slice 1</span> delivered in 4 weeks: invoice ingestion, receipt upload, tips entry, CSV exports, and the core safeguards.</p>
-			<p class="text-[var(--muted)] mb-4"><span class="text-[var(--primary)] font-semibold">Next slices</span> planned: approval queue with human sign-off, weekly finance pack, reminders for missing items, and connections to accounting and reconciliation tools.</p>
-			<p class="text-[var(--muted)]">Then moving onto AI assistance in other parts of the business.</p>
-		</div>
-
-		<div class="ka-card p-8 mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Another example</h2>
-			<p class="text-[var(--muted)]">A client booking and operations system we recently built and tested.</p>
-		</div>
-
 	</section>
 </Layout>
