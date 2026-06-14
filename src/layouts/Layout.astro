@@ -9,8 +9,8 @@ const {
 const siteUrl = Astro.site?.toString() ?? 'https://www.kalyanai.io';
 const canonicalUrl = Astro.url ? new URL(Astro.url.pathname, siteUrl).toString() : siteUrl;
 const ogImageUrl = new URL('/og-hero.png', siteUrl).toString();
-const ogTitle = 'AI systems that make business easier to run, control and grow';
-const ogDescription = 'AI systems built around how your business works, with owner control and ongoing support.';
+const ogTitle = title;
+const ogDescription = description;
 
 const navLinks = [
 	{ label: 'Home', href: '/' },
