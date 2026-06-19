@@ -54,10 +54,10 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">The business problem</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Jas’s School of Spice needed more than a simple booking page.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
 				<p>The school needed a cleaner way for customers to view class dates, book places, pay securely, buy vouchers and ask questions without every step depending on manual messages.</p>
 				<p>Behind the scenes, the system also needed to support class dates, capacity, vouchers, booking changes and customer communication, with Kalyan AI supporting the system after launch.</p>
 			</div>
@@ -65,7 +65,7 @@ const customerSteps = [
 
 		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
 			<div class="grid gap-8 p-6 md:p-8 lg:grid-cols-[1fr,0.95fr] lg:items-center">
-				<div class="space-y-5">
+				<div class="space-y-5 text-center">
 					<div class="space-y-2">
 						<p class="text-sm font-semibold text-[var(--primary)]">What we built</p>
 						<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">A live booking and operations system.</h2>
@@ -75,8 +75,8 @@ const customerSteps = [
 					</p>
 					<ul class="grid gap-3 text-[var(--muted)] md:grid-cols-2">
 						{features.map((feature) => (
-							<li class="flex items-start gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm">
-								<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]"></span>
+							<li class="flex flex-col items-center gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-center shadow-sm">
+								<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]"></span>
 								<span>{feature}</span>
 							</li>
 						))}
@@ -108,10 +108,10 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Voucher handling</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Vouchers are part of the customer journey, without removing owner control.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
 				<p>The system supports online voucher purchase as part of the customer journey.</p>
 				<p>Class-specific vouchers can be linked to a particular class.</p>
 				<p>Custom-value vouchers can be purchased online, while class placement is still handled personally so the school stays in control of availability.</p>
@@ -120,7 +120,7 @@ const customerSteps = [
 
 		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
 			<div class="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
-				<div class="space-y-4">
+				<div class="space-y-4 text-center">
 					<p class="text-sm font-semibold text-[var(--primary)]">Owner control behind the scenes</p>
 					<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The public booking journey is only one part of the system.</h2>
 					<div class="space-y-3 text-[var(--muted)]">
@@ -139,22 +139,44 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Built for real-world use</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built for real customer use, not just as a demo.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
 				<p>Before go-live, the live booking flow, payment flow, voucher purchase, customer emails, Telegram alerts, booking tracking and backups were tested.</p>
 				<p>Payments are handled by Stripe, card details are not stored by the system, and bookings are confirmed only after payment has properly gone through.</p>
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<p class="text-sm font-semibold text-[var(--primary)]">Owner view</p>
+			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What changed for the owner</h2>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+				<p>Before this system, enquiries and bookings depended on manual back and forth. A customer could be interested in a class, but the booking still relied on messages being answered, availability being checked and payment being arranged at the right moment.</p>
+				<p>Now a customer can find the class, book a place and pay while the interest is there. Gift vouchers can be bought online, and Jas receives Telegram alerts when a booking or enquiry lands, so she knows what is happening without watching an inbox all evening.</p>
+				<p>The result is a calmer day to day operation. More of the repeated booking work is handled at the point the customer is ready, and Jas keeps clearer control over classes, capacity and customer communication.</p>
+			</div>
+		</section>
+
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Why this matters</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">This was not a generic booking tool dropped into the business.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
 				<p>It was a practical business system built around how a cookery school actually works: class dates, spaces, payments, vouchers, customer questions, reminders, owner alerts and operational changes.</p>
 				<p>It shows the kind of first practical system the Business AI Blueprint is designed to uncover: not a generic AI idea, but a real operational system tied to how the business actually works.</p>
 			</div>
+		</section>
+
+		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+			<div class="space-y-2">
+				<p class="text-sm font-semibold text-[var(--primary)]">Client proof</p>
+				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What Jas said after launch</h2>
+			</div>
+			<blockquote class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-5 shadow-sm backdrop-blur md:p-6">
+				<p class="text-xl text-yellow-500" aria-label="Five star review">★★★★★</p>
+				<p class="mt-4 text-lg italic text-[var(--muted)]">“Zax took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble.”</p>
+				<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Jas, Jas's School of Spice</footer>
+			</blockquote>
 		</section>
 
 		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">

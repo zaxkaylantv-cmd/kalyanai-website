@@ -8,14 +8,14 @@ import Layout from '../../layouts/Layout.astro';
 		<h1 class="text-4xl font-semibold text-[var(--text)] mb-4">A system built around how finance work moved through the salon.</h1>
 		<p class="text-xl text-[var(--muted)] mb-8">Spa by Kaajal · Beauty salon · London, UK</p>
 
-		<div class="ka-card p-8 mb-8">
+		<div class="ka-card p-8 mb-8 text-center">
 			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">The business context</h2>
 			<p class="text-[var(--muted)] mb-4">Spa by Kaajal needed a better way to handle invoices, receipts, tips, accountant exports, and the decisions around what had been captured or still needed attention.</p>
 			<p class="text-[var(--muted)] mb-4">The work was spread across email, WhatsApp, paper, notebooks, and existing files. The owner needed one place to understand what had come in, what was missing, and what needed action.</p>
 			<p class="text-[var(--muted)]">The goal was not to force a new way of running the salon. It was to build a system around how the finance work already moved through the business, with clearer status, stronger owner control, and accountant-ready outputs.</p>
 		</div>
 
-		<div class="ka-card p-8 mb-8">
+		<div class="ka-card p-8 mb-8 text-center">
 			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">What we built</h2>
 			<p class="text-[var(--muted)] mb-6">A single finance system that captures invoices, receipts, and tips into one place, with clear status tracking, owner review, and exports the accountant can use.</p>
 
@@ -39,7 +39,7 @@ import Layout from '../../layouts/Layout.astro';
 			</div>
 		</div>
 
-		<div class="ka-card p-8 mb-8">
+		<div class="ka-card p-8 mb-8 text-center">
 			<h2 class="text-2xl font-semibold text-[var(--text)] mb-6">Before and after</h2>
 			<p class="text-[var(--primary)] text-base font-medium mb-6">Images blurred for privacy - layouts reflect the real pain and system we delivered.</p>
 
@@ -69,9 +69,9 @@ import Layout from '../../layouts/Layout.astro';
 			</div>
 		</div>
 
-		<div class="ka-card p-8 mb-8">
+		<div class="ka-card p-8 mb-8 text-center">
 			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Built-in safeguards</h2>
-			<ul class="space-y-3 text-[var(--muted)]">
+			<ul class="mx-auto max-w-2xl space-y-3 text-left text-[var(--muted)]">
 				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Documents go straight to secure cloud storage (Google Drive), so nothing sensitive sits on a server</li>
 				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Duplicate prevention if the same invoice comes in twice</li>
 				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Clear statuses (Captured / Needs info / Approved) so items are easier to review</li>
@@ -80,7 +80,7 @@ import Layout from '../../layouts/Layout.astro';
 			</ul>
 		</div>
 
-		<div class="ka-card p-8 mb-8 bg-[var(--cta-bg)]">
+		<div class="ka-card p-8 mb-8 bg-[var(--cta-bg)] text-center">
 			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Results</h2>
 			<p class="text-[var(--muted)] mb-6 text-center">Finance admin reduced from around 4 hours weekly to around 30 minutes.</p>
 			<div class="grid md:grid-cols-3 gap-6 text-center">
@@ -99,14 +99,26 @@ import Layout from '../../layouts/Layout.astro';
 			</div>
 		</div>
 
-		<div class="ka-card p-8 mb-8">
+		<div class="ka-card p-8 mb-8 text-center">
+			<div class="mb-5">
+				<p class="text-[var(--primary)] font-semibold mb-2">Client proof</p>
+				<h2 class="text-2xl font-semibold text-[var(--text)]">What Kaajal said after launch</h2>
+			</div>
+			<blockquote class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-5 shadow-sm backdrop-blur md:p-6">
+				<p class="text-xl text-yellow-500" aria-label="Five star review">★★★★★</p>
+				<p class="mt-4 text-lg italic text-[var(--muted)]">“I was spending 4 to 6 hours a week on finance admin. Zax took the time to understand how my salon works and built a system around it. Now everything is in one place, I know what's going on, and getting things ready for my accountant is so much easier. He made sure I was comfortable using it and was always available when I had questions.”</p>
+				<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Kaajal Malik, Spa by Kaajal</footer>
+			</blockquote>
+		</div>
+
+		<div class="ka-card p-8 mb-8 text-center">
 			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Delivery</h2>
 			<p class="text-[var(--muted)] mb-4"><span class="text-[var(--primary)] font-semibold">Slice 1</span> delivered in 4 weeks: invoice ingestion, receipt upload, tips entry, CSV exports, and the core safeguards.</p>
 			<p class="text-[var(--muted)] mb-4"><span class="text-[var(--primary)] font-semibold">Next slices</span> planned: approval queue with human sign-off, weekly finance pack, reminders for missing items, and connections to accounting and reconciliation tools.</p>
 			<p class="text-[var(--muted)]">Then moving onto AI assistance in other parts of the business.</p>
 		</div>
 
-		<div class="ka-card p-8 mb-8">
+		<div class="ka-card p-8 mb-8 text-center">
 			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Another example</h2>
 			<p class="text-[var(--muted)] mb-5">A live booking and operations system for a cookery school, covering bookings, payments, vouchers, customer questions, owner alerts and protected operational controls.</p>
 			<a href="/case-studies/jas-school-of-spice" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">
