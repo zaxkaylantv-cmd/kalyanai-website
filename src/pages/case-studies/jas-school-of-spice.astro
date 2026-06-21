@@ -29,9 +29,9 @@ const customerSteps = [
 	description="A live booking and operations system for a cookery school, built around bookings, payments, vouchers, customer questions and owner control."
 	showFinalCta={false}
 >
-	<main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 pb-16">
-		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
-			<div class="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
+	<main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-16 md:px-6">
+		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
+			<div class="grid gap-8 p-4 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
 				<div class="space-y-5">
 					<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
 						Live client booking and operations system
@@ -54,7 +54,7 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">The business problem</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Jas’s School of Spice needed more than a simple booking page.</h2>
 			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
@@ -63,8 +63,8 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
-			<div class="grid gap-8 p-6 md:p-8 lg:grid-cols-[1fr,0.95fr] lg:items-center">
+		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
+			<div class="grid gap-8 p-4 md:p-8 lg:grid-cols-[1fr,0.95fr] lg:items-center">
 				<div class="space-y-5 text-center">
 					<div class="space-y-2">
 						<p class="text-sm font-semibold text-[var(--primary)]">What we built</p>
@@ -75,7 +75,7 @@ const customerSteps = [
 					</p>
 					<ul class="grid gap-3 text-[var(--muted)] md:grid-cols-2">
 						{features.map((feature) => (
-							<li class="flex flex-col items-center gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-center shadow-sm">
+							<li class="flex flex-col items-center gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-center shadow-sm md:p-4">
 								<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]"></span>
 								<span>{feature}</span>
 							</li>
@@ -93,14 +93,14 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<div class="space-y-2 text-center">
 				<p class="text-sm font-semibold text-[var(--primary)]">Customer journey</p>
 				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The customer can move from interest to booking online.</h2>
 			</div>
 			<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
 				{customerSteps.map((step, index) => (
-					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-center shadow-sm">
+					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-center shadow-sm md:p-4">
 						<p class="text-sm font-semibold text-[var(--primary)]">Step {index + 1}</p>
 						<p class="mt-1 text-[var(--muted)]">{step}</p>
 					</div>
@@ -108,7 +108,7 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Voucher handling</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Vouchers are part of the customer journey, without removing owner control.</h2>
 			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
@@ -118,8 +118,8 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
-			<div class="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
+		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
+			<div class="grid gap-8 p-4 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
 				<div class="space-y-4 text-center">
 					<p class="text-sm font-semibold text-[var(--primary)]">Owner control behind the scenes</p>
 					<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The public booking journey is only one part of the system.</h2>
@@ -139,7 +139,7 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Built for real-world use</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built for real customer use, not just as a demo.</h2>
 			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
@@ -148,7 +148,7 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Owner view</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What changed for the owner</h2>
 			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
@@ -158,7 +158,7 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Why this matters</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">This was not a generic booking tool dropped into the business.</h2>
 			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
@@ -167,19 +167,19 @@ const customerSteps = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<div class="space-y-2">
 				<p class="text-sm font-semibold text-[var(--primary)]">Client proof</p>
 				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What Jas said after launch</h2>
 			</div>
-			<blockquote class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-5 shadow-sm backdrop-blur md:p-6">
+			<blockquote class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur md:p-6">
 				<p class="text-xl text-yellow-500" aria-label="Five star review">★★★★★</p>
-				<p class="mt-4 text-lg italic text-[var(--muted)]">“Zax took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble.”</p>
+				<p class="mt-4 text-lg italic text-[var(--muted)]">"I cannot recommend Zax highly enough. He exceeded my expectations in every way and genuinely went above and beyond throughout the entire process. From the very beginning, he took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. Most importantly, the system has freed up a significant amount of my time. Instead of spending hours answering the same questions and responding to enquiries, I can focus on the parts of my business that I truly enjoy. Because the system works 24/7, customers can get the information they need and make bookings at any time, meaning I no longer lose potential customers who might otherwise have moved on while waiting for a reply. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble."</p>
 				<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Jas, Jas's School of Spice</footer>
 			</blockquote>
 		</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Want to find the right first system for your business?</h2>
 			<p class="copy-narrow mx-auto text-[var(--muted)]">
 				The Business AI Blueprint is a focused paid review that helps identify where AI can create real value in your business, what system is worth building first, and whether there is a clear business case before you invest in a larger build.

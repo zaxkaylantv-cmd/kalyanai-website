@@ -37,15 +37,15 @@ const commercialFlow = [
 	description="A live internal operating system used by Kalyan AI to manage commercial activity, follow-up, business visibility and system health from one controlled place."
 	showFinalCta={false}
 >
-	<main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 pb-16">
-		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
-			<div class="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
+	<main class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 pb-10 md:gap-10 md:px-6 md:pb-16">
+		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
+			<div class="grid gap-6 p-4 md:gap-8 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
 				<div class="space-y-5">
 					<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
 						Internal proof system
 					</p>
 					<h1 class="text-3xl font-semibold text-[var(--brand-navy)] md:text-5xl">Kalyan AI Internal Operating Stack</h1>
-					<p class="text-[var(--muted)] md:text-lg">
+					<p class="text-[var(--muted)] max-md:text-[15px] md:text-lg">
 						A live internal operating system used by Kalyan AI to manage lead generation, outreach, replies, booked meetings, CRM follow-up, business visibility and system health from one controlled place.
 					</p>
 					<a href="/blueprint" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">
@@ -62,10 +62,10 @@ const commercialFlow = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Why we built it</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Kalyan AI needed the same thing many owner-led businesses need.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow space-y-3 text-[var(--muted)] max-md:text-[15px]">
 				<p>Kalyan AI needed a clearer way to see what is happening, what needs attention, what is moving forward and what is slipping.</p>
 				<p>Instead of relying on scattered tools, inboxes, memory and disconnected spreadsheets, we built an internal operating system around how the business actually works.</p>
 				<p>The aim was simple: keep lead generation, outreach, replies, booked meetings, CRM follow-up, reminders, business activity and system health visible in one controlled place.</p>
@@ -73,30 +73,30 @@ const commercialFlow = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<div class="space-y-2">
 				<p class="text-sm font-semibold text-[var(--primary)]">What the system brings together</p>
 				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">One operating view for commercial activity.</h2>
 			</div>
 			<ul class="grid gap-3 text-[var(--muted)] md:grid-cols-2">
 				{operatingAreas.map((area) => (
-					<li class="flex items-start gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm">
+					<li class="flex items-start gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm max-md:text-[15px] md:p-4">
 						<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]"></span>
 						<span>{area}</span>
 					</li>
 				))}
 			</ul>
-			<p class="copy-narrow text-[var(--muted)]">
+			<p class="copy-narrow text-[var(--muted)] max-md:text-[15px]">
 				Behind the scenes, there is technical infrastructure making this work. But the important point is not the tools themselves. The important point is that the business has one clear operating view.
 			</p>
 		</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<div class="space-y-2">
 				<p class="text-sm font-semibold text-[var(--primary)]">Commercial activity, opt-outs and follow-up control</p>
 				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The internal stack supports the commercial side of Kalyan AI.</h2>
 			</div>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow space-y-3 text-[var(--muted)] max-md:text-[15px]">
 				<p>The internal stack supports the commercial side of Kalyan AI from lead generation through to CRM follow-up.</p>
 				<p>It helps manage lead generation, prepares useful prospect information, supports controlled outreach sends, monitors replies, tracks bounce behaviour, and records when someone is not suitable or does not want to be contacted again.</p>
 				<p>That means unsuitable contacts, bounced emails and opt-outs are handled properly, so they are not repeatedly contacted.</p>
@@ -106,28 +106,28 @@ const commercialFlow = [
 			</div>
 			<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 				{commercialFlow.map((step, index) => (
-					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm">
+					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm md:p-4">
 						<p class="text-sm font-semibold text-[var(--primary)]">Step {index + 1}</p>
-						<p class="mt-1 text-[var(--muted)]">{step}</p>
+						<p class="mt-1 text-[var(--muted)] max-md:text-[15px]">{step}</p>
 					</div>
 				))}
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Alerts and control away from the desk</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Important activity can reach the owner quickly.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow space-y-3 text-[var(--muted)] max-md:text-[15px]">
 				<p>The system also uses Telegram alerts so important activity can reach Zax when he is not sitting at the dashboard.</p>
 				<p>That means replies, booked meetings, reminders and items needing attention can be surfaced quickly.</p>
 				<p>The point is not to remove human control. The point is to keep control available wherever the owner is, so important decisions and follow-up do not wait until they are back at their desk.</p>
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">CRM handoff when a meeting is booked</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">A booked meeting becomes part of the follow-up system.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow space-y-3 text-[var(--muted)] max-md:text-[15px]">
 				<p>When a meeting is booked, the opportunity is handed into Kalyan AI’s CRM so the relationship can be managed properly from there.</p>
 				<p>That means the opportunity does not disappear into an inbox or calendar.</p>
 				<p>It becomes part of the commercial follow-up system, with notes, tasks, reminders and next steps visible in one place.</p>
@@ -135,12 +135,12 @@ const commercialFlow = [
 			</div>
 		</section>
 
-		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur">
-			<div class="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
+		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
+			<div class="grid gap-6 p-4 md:gap-8 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
 				<div class="space-y-4">
 					<p class="text-sm font-semibold text-[var(--primary)]">Activity visibility</p>
 					<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">A clearer view of activity over time.</h2>
-					<div class="space-y-3 text-[var(--muted)]">
+					<div class="space-y-3 text-[var(--muted)] max-md:text-[15px]">
 						<p>The system gives Kalyan AI a clearer view of activity over time, helping show what is being worked, where follow-up is needed, and where attention should go next.</p>
 						<p>This is not about replacing judgement. It is about making sure the right information is visible before decisions are made.</p>
 					</div>
@@ -156,19 +156,19 @@ const commercialFlow = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Why this matters for clients</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">This internal system proves the same principle Kalyan AI applies for clients.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow space-y-3 text-[var(--muted)] max-md:text-[15px]">
 				<p>Before building anything, Kalyan AI looks at how the business actually works, where visibility is weak, where follow-up can slip, and where a practical system could make the business easier to run, control and grow.</p>
 				<p>The Kalyan AI internal stack is not a generic tool. It is a working example of a business system designed around real operating needs.</p>
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">Built with control, not chaos</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Clear boundaries, human approval and ongoing monitoring.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow space-y-3 text-[var(--muted)] max-md:text-[15px]">
 				<p>The system is operated with clear boundaries, human approval, source-of-truth ownership and ongoing monitoring.</p>
 				<p>It is not built around the idea that everything should be automated blindly.</p>
 				<p>It is built around the idea that the right information should be visible, the right actions should be tracked, and the right decisions should stay under human control.</p>
@@ -176,10 +176,10 @@ const commercialFlow = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<p class="text-sm font-semibold text-[var(--primary)]">What this shows</p>
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Systems should be built around the business, not the other way round.</h2>
-			<div class="copy-narrow space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow space-y-3 text-[var(--muted)] max-md:text-[15px]">
 				<p>This case study shows what Kalyan AI means by building systems around how a business actually works.</p>
 				<p>For Kalyan AI, that means commercial activity, outreach, replies, meetings, CRM follow-up, reminders and system health.</p>
 				<p>For another business, it may be bookings, finance, customer communication, operations, reporting or delivery control.</p>
@@ -188,9 +188,9 @@ const commercialFlow = [
 			</div>
 		</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Want to find the right first system for your business?</h2>
-			<p class="copy-narrow mx-auto text-[var(--muted)]">
+			<p class="copy-narrow mx-auto text-[var(--muted)] max-md:text-left max-md:text-[15px]">
 				The Business AI Blueprint is a focused paid review that helps identify where AI can create real value in your business, what system is worth building first, and whether there is a clear business case before you invest in a larger build.
 			</p>
 			<a href="/blueprint" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">

@@ -7,11 +7,11 @@ import Layout from '../layouts/Layout.astro';
 	description="We build AI systems that make your business easier to run, control and grow, shaped around how your business works and supported after delivery."
 	showFinalCta={false}
 >
-	<main class="flex flex-col gap-16">
-		<section class="relative overflow-hidden px-6 py-12 md:px-10 lg:px-12">
+	<main class="flex flex-col gap-4 md:gap-16">
+		<section class="relative overflow-hidden px-0 pt-0 pb-2 md:px-10 md:py-12 lg:px-12">
 			<div class="pointer-events-none absolute inset-0 opacity-[0.2] blur-3xl glow-animate bg-[radial-gradient(circle_at_18%_30%,rgba(10,170,231,0.2),transparent_45%),radial-gradient(circle_at_78%_55%,rgba(171,113,247,0.18),transparent_42%)]"></div>
 			<div class="relative z-10 mx-auto max-w-5xl">
-				<div class="ka-card rounded-[22px] p-6 md:p-8 shadow-[0_18px_60px_-45px_rgba(0,0,0,0.35)] backdrop-blur">
+				<div class="ka-card rounded-[22px] p-4 md:p-8 shadow-[0_18px_60px_-45px_rgba(0,0,0,0.35)] backdrop-blur">
 					<div class="space-y-4 text-[var(--text)] md:space-y-5">
 						<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
 							Systems, built and run with you
@@ -33,20 +33,20 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built around how the business works.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
 				<p>Every system below was shaped around a real business, how it operates, where the pressure is, and what would actually make a difference.</p>
-				<p class="text-lg text-[var(--primary)]">No templates. No generic tools.</p>
+				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">No templates. No generic tools.</p>
 				<p>Each one was built, hosted and supported by Kalyan AI.</p>
 			</div>
 		</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<div class="space-y-3">
 				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">See what this looks like in practice</h2>
 			</div>
-			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-left shadow-sm backdrop-blur lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
+			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm backdrop-blur md:p-4 lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
 				<div class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-white shadow-sm">
 					<img
 						class="h-full w-full object-cover"
@@ -57,7 +57,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="space-y-4 p-2 text-center md:p-4">
 					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Jas’s School of Spice</h3>
-					<div class="space-y-3 text-[var(--muted)]">
+					<div class="space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
 						<p>A live client booking and operations system for a cookery school.</p>
 						<p>Customers can book classes, pay online, buy vouchers, ask questions and receive confirmation and reminder emails, while the owner has clearer control behind the scenes.</p>
 					</div>
@@ -65,7 +65,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 
-			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-left shadow-sm backdrop-blur lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
+			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm backdrop-blur md:p-4 lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
 				<div class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-white shadow-sm">
 					<img
 						class="h-full w-full object-cover"
@@ -76,7 +76,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="space-y-4 p-2 text-center md:p-4">
 					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Spa by Kaajal</h3>
-					<div class="space-y-3 text-[var(--muted)]">
+					<div class="space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
 						<p>A finance admin and visibility system built around how finance work moved through the salon.</p>
 						<p>It reduced weekly finance admin from around 4 hours to around 30 minutes, with invoices, receipts, tips and accountant-ready exports in one place.</p>
 					</div>
@@ -84,7 +84,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 
-			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 text-left shadow-sm backdrop-blur lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
+			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm backdrop-blur md:p-4 lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
 				<div class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-white shadow-sm">
 					<img
 						class="h-full w-full object-cover"
@@ -95,7 +95,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="space-y-4 p-2 text-center md:p-4">
 					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Kalyan AI Internal Operating Stack</h3>
-					<div class="space-y-3 text-[var(--muted)]">
+					<div class="space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
 						<p>The internal system Kalyan AI uses to manage its own commercial activity.</p>
 						<p>It brings together prospect preparation, controlled outreach, reply handling, Telegram alerts, booked meeting handoff, CRM follow-up, business visibility and system health.</p>
 					</div>
@@ -104,54 +104,54 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What clients say after the system is live</h2>
 			<div class="grid gap-5 text-left lg:grid-cols-2">
-				<blockquote class="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-5 shadow-sm backdrop-blur md:p-6">
+				<blockquote class="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur md:p-6">
 					<p class="text-xl text-yellow-500" aria-label="Five-star review">★★★★★</p>
-					<p class="mt-4 flex-1 text-lg italic text-[var(--primary)]">“I was spending 4 to 6 hours a week on finance admin. Zax took the time to understand how my salon works and built a system around it. Now everything is in one place, I know what’s going on, and getting things ready for my accountant is so much easier. He made sure I was comfortable using it and was always available when I had questions.”</p>
+					<p class="mt-4 flex-1 text-lg italic text-[var(--primary)] max-md:text-[15px]">“I was spending 4 to 6 hours a week on finance admin. Zax took the time to understand how my salon works and built a system around it. Now everything is in one place, I know what’s going on, and getting things ready for my accountant is so much easier. He made sure I was comfortable using it and was always available when I had questions.”</p>
 					<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Kaajal Malik, Spa by Kaajal</footer>
 				</blockquote>
-				<blockquote class="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-5 shadow-sm backdrop-blur md:p-6">
+				<blockquote class="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur md:p-6">
 					<p class="text-xl text-yellow-500" aria-label="Five-star review">★★★★★</p>
-					<p class="mt-4 flex-1 text-lg italic text-[var(--primary)]">“Zax took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble.”</p>
+					<p class="mt-4 flex-1 text-lg italic text-[var(--primary)] max-md:text-[15px]">“Zax took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble.”</p>
 					<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Jas, Jas’s School of Spice</footer>
 				</blockquote>
 			</div>
 		</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">AI is everywhere. Useful AI is harder to identify.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
 				<p>Business owners are surrounded by tools, demos, promises and noise.</p>
 				<p>But doing something with AI is not the same as doing the right thing.</p>
 				<p>Most businesses do not need another disconnected subscription. They need a system that fits how the business actually works.</p>
 				<p>The risk is not only being left behind. It is spending time and money on something impressive that never becomes useful.</p>
-				<p class="text-lg text-[var(--primary)]">Kalyan AI helps business owners cut through that noise and find the practical system worth building first.</p>
+				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Kalyan AI helps business owners cut through that noise and find the practical system worth building first.</p>
 			</div>
 		</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<div class="space-y-3">
 				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">From AI noise to a working system.</h2>
 			</div>
 			<div class="grid gap-4 text-left md:grid-cols-4">
-				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur">
+				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm backdrop-blur md:p-4">
 					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">01</p>
 					<h3 class="mt-2 text-lg font-semibold text-[var(--brand-navy)]">Blueprint</h3>
 					<p class="mt-2 text-sm text-[var(--muted)]">Find where AI can create value and whether there is a clear business case.</p>
 				</div>
-				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur">
+				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm backdrop-blur md:p-4">
 					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">02</p>
 					<h3 class="mt-2 text-lg font-semibold text-[var(--brand-navy)]">Build</h3>
 					<p class="mt-2 text-sm text-[var(--muted)]">Create the right system around the way the business actually works.</p>
 				</div>
-				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur">
+				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm backdrop-blur md:p-4">
 					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">03</p>
 					<h3 class="mt-2 text-lg font-semibold text-[var(--brand-navy)]">Deploy</h3>
 					<p class="mt-2 text-sm text-[var(--muted)]">Put the system into real use with sensible checks, testing and handover.</p>
 				</div>
-				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur">
+				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm backdrop-blur md:p-4">
 					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">04</p>
 					<h3 class="mt-2 text-lg font-semibold text-[var(--brand-navy)]">Support</h3>
 					<p class="mt-2 text-sm text-[var(--muted)]">Stay involved after delivery so the system keeps working in real business conditions.</p>
@@ -159,10 +159,10 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
+		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
 			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Start with the Business AI Blueprint.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
-				<p class="text-lg text-[var(--primary)]">Before spending money on a larger system, start with clarity.</p>
+			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
+				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Before spending money on a larger system, start with clarity.</p>
 				<p>The Business AI Blueprint is a focused paid review that helps you understand where AI can create value, what is worth building first, and whether there is a clear business case.</p>
 			</div>
 			<a href="/blueprint" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">
