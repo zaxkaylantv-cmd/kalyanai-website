@@ -1,0 +1,44 @@
+---
+interface Props {
+	href: string;
+	label?: string;
+	class?: string;
+	[key: string]: unknown;
+}
+
+const { href, label = 'See how we work', class: className = '', ...attrs } = Astro.props as Props;
+---
+
+<a {...attrs} href={href} class:list={['ka-button-ghost', className]}>
+	<span><slot>{label}</slot></span>
+	<span class="ka-button-ghost__arrow" aria-hidden="true">-&gt;</span>
+</a>
+
+<style>
+	.ka-button-ghost {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		min-height: 54px;
+		padding: 15px 4px;
+		color: inherit;
+		font-size: 16px;
+		font-weight: 600;
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition: border-color 150ms ease;
+	}
+
+	.ka-button-ghost:hover {
+		border-color: var(--teal-soft);
+	}
+
+	.ka-button-ghost__arrow {
+		color: var(--teal-soft);
+		transition: transform 150ms ease;
+	}
+
+	.ka-button-ghost:hover .ka-button-ghost__arrow {
+		transform: translateX(4px);
+	}
+</style>

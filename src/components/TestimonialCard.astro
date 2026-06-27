@@ -1,0 +1,116 @@
+---
+interface Props {
+	name: string;
+	business: string;
+	initial: string;
+	quote: string;
+	variant?: 'blue' | 'green';
+}
+
+const { name, business, initial, quote, variant = 'blue' } = Astro.props as Props;
+---
+
+<article class="ka-review">
+	<div class="ka-review__top">
+		<div class="ka-review__person">
+			<div class:list={['ka-review__avatar', `ka-review__avatar--${variant}`]}>{initial}</div>
+			<div>
+				<strong>{name}</strong>
+				<span>{business}</span>
+			</div>
+		</div>
+		<svg class="ka-review__google" viewBox="0 0 48 48" aria-label="Google">
+			<path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path>
+			<path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path>
+			<path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path>
+			<path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path>
+		</svg>
+	</div>
+	<p class="ka-review__stars" aria-label="Five star review">*****</p>
+	<p class="ka-review__quote">{quote}</p>
+	<p class="ka-review__foot">Verified Google review</p>
+</article>
+
+<style>
+	.ka-review {
+		padding: 28px;
+		border: 1px solid var(--line-dark);
+		border-radius: 14px;
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.ka-review__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 18px;
+		margin-bottom: 15px;
+	}
+
+	.ka-review__person {
+		display: flex;
+		align-items: center;
+		gap: 13px;
+	}
+
+	.ka-review__avatar {
+		display: flex;
+		width: 44px;
+		height: 44px;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		color: var(--white);
+		font-size: 17px;
+		font-weight: 700;
+	}
+
+	.ka-review__avatar--blue {
+		background: #2f6e8f;
+	}
+
+	.ka-review__avatar--green {
+		background: #22675c;
+	}
+
+	.ka-review strong {
+		display: block;
+		color: var(--white);
+		font-size: 14.5px;
+		font-weight: 700;
+		line-height: 1.3;
+	}
+
+	.ka-review span {
+		display: block;
+		color: var(--body-light);
+		font-size: 12.5px;
+	}
+
+	.ka-review__google {
+		width: 21px;
+		height: 21px;
+		flex: 0 0 auto;
+	}
+
+	.ka-review__stars {
+		margin-bottom: 13px;
+		color: #fbbc05;
+		font-size: 15px;
+		letter-spacing: 2px;
+	}
+
+	.ka-review__quote {
+		color: #d6e2ee;
+		font-size: 14.5px;
+		line-height: 1.65;
+	}
+
+	.ka-review__foot {
+		margin-top: 17px;
+		color: #7c8b9c;
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11.5px;
+		letter-spacing: 0.03em;
+	}
+</style>

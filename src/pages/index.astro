@@ -1,5 +1,58 @@
 ---
+import ButtonGhost from '../components/ButtonGhost.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import CTASection from '../components/CTASection.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Frame from '../components/Frame.astro';
+import HomepageHero from '../components/HomepageHero.astro';
 import Layout from '../layouts/Layout.astro';
+import ProcessFlow from '../components/ProcessFlow.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+
+const trustItems = [
+	{ lead: 'Real systems', rest: 'running live today' },
+	{ lead: 'Production grade', rest: 'not demos' },
+	{ lead: 'Supported', rest: 'after delivery' },
+	{ lead: 'Built around', rest: 'how your business works' },
+];
+
+const approachItems = [
+	{
+		tag: 'Run',
+		title: 'Easier to operate, day to day.',
+		copy: 'Fewer loose ends and less repeated manual work, with clearer structure around how the business runs.',
+	},
+	{
+		tag: 'Control',
+		title: 'Clearer visibility and ownership.',
+		copy: 'You see what is happening and where decisions are needed. Control stays with you, not the system.',
+	},
+	{
+		tag: 'Grow',
+		title: 'A stronger position to build from.',
+		copy: 'More capacity, better follow through and clearer reporting, so the business is set up for progress.',
+	},
+];
+
+const processSteps = [
+	{
+		title: 'Blueprint',
+		copy: 'Find where AI can create value and whether there is a clear business case.',
+	},
+	{
+		title: 'Build',
+		copy: 'Create the right system around the way the business actually works.',
+	},
+	{
+		title: 'Deploy',
+		copy: 'Put it into real use with sensible checks, testing and a proper handover.',
+	},
+	{
+		title: 'Support',
+		copy: 'Stay involved after delivery so the system keeps working over time.',
+	},
+];
 ---
 
 <Layout
@@ -7,167 +60,378 @@ import Layout from '../layouts/Layout.astro';
 	description="We build AI systems that make your business easier to run, control and grow, shaped around how your business works and supported after delivery."
 	showFinalCta={false}
 >
-	<main class="flex flex-col gap-4 md:gap-16">
-		<section class="relative overflow-hidden px-0 pt-0 pb-2 md:px-10 md:py-12 lg:px-12">
-			<div class="pointer-events-none absolute inset-0 opacity-[0.2] blur-3xl glow-animate bg-[radial-gradient(circle_at_18%_30%,rgba(10,170,231,0.2),transparent_45%),radial-gradient(circle_at_78%_55%,rgba(171,113,247,0.18),transparent_42%)]"></div>
-			<div class="relative z-10 mx-auto max-w-5xl">
-				<div class="ka-card rounded-[22px] p-4 md:p-8 shadow-[0_18px_60px_-45px_rgba(0,0,0,0.35)] backdrop-blur">
-					<div class="space-y-4 text-[var(--text)] md:space-y-5">
-						<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
-							Systems, built and run with you
-						</p>
-						<h1 class="text-3xl font-semibold leading-tight tracking-tight text-[var(--brand-navy)] md:text-5xl">
-							We build AI systems that make your business easier to <span class="text-[var(--primary)]">run,</span> <span class="text-[var(--primary)]">control,</span> and <span class="text-[var(--primary)]">grow</span>.
-						</h1>
-						<p class="copy-narrow max-w-3xl text-sm text-[var(--muted)] md:text-xl">
-							We learn how your business works, find where AI can create real value, and build the right system around it.
-						</p>
-						<div class="flex flex-wrap gap-3 md:gap-3.5">
-							<a class="rounded-full bg-[var(--accent-teal)] px-4 py-2 text-sm text-center font-medium text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-[var(--secondary)] md:px-5 md:py-3 md:text-base" href="/blueprint" data-plausible="BookACall">
-								Start with the Blueprint
-							</a>
-							<a href="/case-studies/" class="inline-flex items-center justify-center px-5 py-2 border-2 border-[var(--primary)] text-sm text-[var(--primary)] rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-colors md:px-6 md:py-3 md:text-base">See case studies</a>
-						</div>
+	<HomepageHero />
+
+	<section class="ka-trust-strip" aria-label="Kalyan AI proof points">
+		<div class="ka-wrap">
+			<div class="ka-trust-strip__inner">
+				{trustItems.map((item) => (
+					<p><strong>{item.lead}</strong>, {item.rest}</p>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-paper ka-approach">
+		<div class="ka-wrap">
+			<div class="ka-approach__grid">
+				<div>
+					<Eyebrow>The approach</Eyebrow>
+					<h2>The starting point is your business, <span>not the tool.</span></h2>
+				</div>
+				<div>
+					<p class="ka-approach__lead">
+						AI is everywhere now, but doing something with AI is not the same as doing the right thing. We start by understanding how your business actually runs, then find where a system would earn its keep. Whatever shape your business is in, there is usually value worth building toward.
+					</p>
+					<div class="ka-approach__points">
+						{approachItems.map((item) => (
+							<article>
+								<p>{item.tag}</p>
+								<h3>{item.title}</h3>
+								<span>{item.copy}</span>
+							</article>
+						))}
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built around how the business works.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p>Every system below was shaped around a real business, how it operates, where the pressure is, and what would actually make a difference.</p>
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">No templates. No generic tools.</p>
-				<p>Each one was built, hosted and supported by Kalyan AI.</p>
-			</div>
-		</section>
+	<section class="ka-section ka-section-white ka-proof">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="Real systems, not slides"
+				title="See what this looks like in practice."
+				highlight="in practice."
+				lead="Each system below was built, hosted and supported by Kalyan AI, shaped around how a real business works. No templates, no generic tools."
+				class="ka-proof__heading"
+			/>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<div class="space-y-3">
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">See what this looks like in practice</h2>
-			</div>
-			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm backdrop-blur md:p-4 lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
-				<div class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-white shadow-sm">
-					<img
-						class="h-full w-full object-cover"
-						src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png"
-						alt="Jas’s School of Spice customer homepage showing class booking options."
-						loading="lazy"
-					/>
-				</div>
-				<div class="space-y-4 p-2 text-center md:p-4">
-					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Jas’s School of Spice</h3>
-					<div class="space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-						<p>A live client booking and operations system for a cookery school.</p>
-						<p>Customers can book classes, pay online, buy vouchers, ask questions and receive confirmation and reminder emails, while the owner has clearer control behind the scenes.</p>
+			<div class="ka-proof__item">
+				<div class="ka-proof__copy">
+					<p class="ka-proof__sector">Finance operations</p>
+					<h3>Spa by Kaajal</h3>
+					<div class="ka-proof__stat" aria-label="Weekly finance admin reduced from 4 hours to 30 minutes">
+						<span class="ka-proof__from">4 hrs</span>
+						<span class="ka-proof__to">30 min</span>
+						<span class="ka-proof__unit">weekly admin, after launch</span>
 					</div>
-					<a href="/case-studies/jas-school-of-spice/" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">Read the case study</a>
+					<p>
+						A finance and visibility system that brought invoices, receipts and accountant ready exports into one place, with the owner in clear control of what matters.
+					</p>
+					<ButtonGhost href="/case-studies/spa-by-kaajal" label="Read the case study" />
 				</div>
+				<Frame
+					src="/images/case-studies/after-dashboard.png"
+					alt="Spa by Kaajal finance dashboard showing invoices, receipts, cashflow, tips and overdue items in one place."
+					label="Real sanitised screenshot"
+					loading="eager"
+				/>
 			</div>
 
-			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm backdrop-blur md:p-4 lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
-				<div class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-white shadow-sm">
-					<img
-						class="h-full w-full object-cover"
-						src="/images/case-studies/after-dashboard.png"
-						alt="Spa by Kaajal finance dashboard showing invoices, receipts, cashflow, tips and overdue items in one place."
-						loading="lazy"
-					/>
+			<div class="ka-proof__item ka-proof__item--flip">
+				<div class="ka-proof__copy">
+					<p class="ka-proof__sector">Bookings and operations</p>
+					<h3>Jas's School of Spice</h3>
+					<p>
+						A live booking and operations system: customers book and pay online and the owner keeps clear control behind the scenes, with the whole operation running on one system.
+					</p>
+					<ButtonGhost href="/case-studies/jas-school-of-spice/" label="Read the case study" />
 				</div>
-				<div class="space-y-4 p-2 text-center md:p-4">
-					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Spa by Kaajal</h3>
-					<div class="space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-						<p>A finance admin and visibility system built around how finance work moved through the salon.</p>
-						<p>It reduced weekly finance admin from around 4 hours to around 30 minutes, with invoices, receipts, tips and accountant-ready exports in one place.</p>
-					</div>
-					<a href="/case-studies" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">Read the case study</a>
-				</div>
+				<Frame
+					src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png"
+					alt="Jas's School of Spice customer homepage showing class booking options."
+					label="Live client system screenshot"
+					badge="Live system"
+					imageFit="contain"
+					loading="eager"
+				/>
 			</div>
 
-			<div class="grid gap-6 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm backdrop-blur md:p-4 lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
-				<div class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-white shadow-sm">
-					<img
-						class="h-full w-full object-cover"
-						src="/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png"
-						alt="Kalyan AI internal operating dashboard showing business activity and system health."
-						loading="lazy"
-					/>
+			<div class="ka-proof__item">
+				<div class="ka-proof__copy">
+					<p class="ka-proof__sector">Kalyan AI, internal</p>
+					<h3>Internal Operating Stack</h3>
+					<p>
+						The system Kalyan AI runs its own business on, bringing commercial activity, follow through, visibility and system health together in one controlled place. The same thinking, applied to ourselves.
+					</p>
+					<ButtonGhost href="/case-studies/kalyan-ai-internal-stack/" label="Read the case study" />
 				</div>
-				<div class="space-y-4 p-2 text-center md:p-4">
-					<h3 class="text-xl font-semibold text-[var(--brand-navy)]">Kalyan AI Internal Operating Stack</h3>
-					<div class="space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-						<p>The internal system Kalyan AI uses to manage its own commercial activity.</p>
-						<p>It brings together prospect preparation, controlled outreach, reply handling, Telegram alerts, booked meeting handoff, CRM follow-up, business visibility and system health.</p>
-					</div>
-					<a href="/case-studies/kalyan-ai-internal-stack/" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">Read the case study</a>
-				</div>
+				<Frame
+					src="/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png"
+					alt="Kalyan AI internal operating dashboard showing business activity and system health."
+					label="Sanitised internal operating screenshot"
+					loading="eager"
+				/>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What clients say after the system is live</h2>
-			<div class="grid gap-5 text-left lg:grid-cols-2">
-				<blockquote class="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur md:p-6">
-					<p class="text-xl text-yellow-500" aria-label="Five-star review">★★★★★</p>
-					<p class="mt-4 flex-1 text-lg italic text-[var(--primary)] max-md:text-[15px]">“I was spending 4 to 6 hours a week on finance admin. Zax took the time to understand how my salon works and built a system around it. Now everything is in one place, I know what’s going on, and getting things ready for my accountant is so much easier. He made sure I was comfortable using it and was always available when I had questions.”</p>
-					<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Kaajal Malik, Spa by Kaajal</footer>
-				</blockquote>
-				<blockquote class="flex h-full flex-col rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur md:p-6">
-					<p class="text-xl text-yellow-500" aria-label="Five-star review">★★★★★</p>
-					<p class="mt-4 flex-1 text-lg italic text-[var(--primary)] max-md:text-[15px]">“Zax took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble.”</p>
-					<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Jas, Jas’s School of Spice</footer>
-				</blockquote>
+	<section class="ka-section ka-section-dark ka-reviews">
+		<div class="ka-wrap">
+			<div class="ka-reviews__heading">
+				<Eyebrow tone="dark">In their words</Eyebrow>
+				<h2>What owners say after the system is live.</h2>
+				<p class="ka-reviews__verified">
+					<svg viewBox="0 0 48 48" aria-label="Google">
+						<path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path>
+						<path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path>
+						<path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path>
+						<path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path>
+					</svg>
+					Verified on the Kalyan AI Google Business Profile
+				</p>
 			</div>
-		</section>
+			<div class="ka-reviews__grid">
+				<TestimonialCard
+					name="Kaajal Malik"
+					business="Spa by Kaajal"
+					initial="K"
+					quote="I was spending 4 to 6 hours a week on finance admin. Zax took the time to understand how my salon works and built a system around it. Now everything is in one place, I know what's going on, and getting things ready for my accountant is so much easier. He made sure I was comfortable using it and was always available when I had questions."
+				/>
+				<TestimonialCard
+					name="Jas"
+					business="Jas's School of Spice"
+					initial="J"
+					variant="green"
+					quote="Zax took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble."
+				/>
+			</div>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">AI is everywhere. Useful AI is harder to identify.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p>Business owners are surrounded by tools, demos, promises and noise.</p>
-				<p>But doing something with AI is not the same as doing the right thing.</p>
-				<p>Most businesses do not need another disconnected subscription. They need a system that fits how the business actually works.</p>
-				<p>The risk is not only being left behind. It is spending time and money on something impressive that never becomes useful.</p>
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Kalyan AI helps business owners cut through that noise and find the practical system worth building first.</p>
-			</div>
-		</section>
+	<section class="ka-section ka-section-deep ka-process">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="How we work"
+				title="From a clear starting point to a working system."
+				lead="A controlled path from first conversation to a system that keeps working in real conditions."
+				tone="dark"
+			/>
+			<ProcessFlow steps={processSteps} />
+		</div>
+	</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<div class="space-y-3">
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">From AI noise to a working system.</h2>
-			</div>
-			<div class="grid gap-4 text-left md:grid-cols-4">
-				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm backdrop-blur md:p-4">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">01</p>
-					<h3 class="mt-2 text-lg font-semibold text-[var(--brand-navy)]">Blueprint</h3>
-					<p class="mt-2 text-sm text-[var(--muted)]">Find where AI can create value and whether there is a clear business case.</p>
-				</div>
-				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm backdrop-blur md:p-4">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">02</p>
-					<h3 class="mt-2 text-lg font-semibold text-[var(--brand-navy)]">Build</h3>
-					<p class="mt-2 text-sm text-[var(--muted)]">Create the right system around the way the business actually works.</p>
-				</div>
-				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm backdrop-blur md:p-4">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">03</p>
-					<h3 class="mt-2 text-lg font-semibold text-[var(--brand-navy)]">Deploy</h3>
-					<p class="mt-2 text-sm text-[var(--muted)]">Put the system into real use with sensible checks, testing and handover.</p>
-				</div>
-				<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm backdrop-blur md:p-4">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">04</p>
-					<h3 class="mt-2 text-lg font-semibold text-[var(--brand-navy)]">Support</h3>
-					<p class="mt-2 text-sm text-[var(--muted)]">Stay involved after delivery so the system keeps working in real business conditions.</p>
-				</div>
-			</div>
-		</section>
-
-		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Start with the Business AI Blueprint.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Before spending money on a larger system, start with clarity.</p>
-				<p>The Business AI Blueprint is a focused paid review that helps you understand where AI can create value, what is worth building first, and whether there is a clear business case.</p>
-			</div>
-			<a href="/blueprint" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">
-				Start with the Blueprint
-			</a>
-		</section>
-	</main>
+	<CTASection />
 </Layout>
+
+<style>
+	.ka-trust-strip {
+		background: var(--white);
+		border-bottom: 1px solid var(--line-light);
+	}
+
+	.ka-trust-strip__inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 18px 40px;
+		padding: 26px 0;
+	}
+
+	.ka-trust-strip p {
+		color: var(--body);
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	.ka-trust-strip strong {
+		color: var(--ink);
+		font-weight: 700;
+	}
+
+	.ka-approach__grid {
+		display: grid;
+		grid-template-columns: 0.85fr 1fr;
+		gap: 60px;
+		align-items: start;
+	}
+
+	.ka-approach h2 {
+		max-width: 20ch;
+		margin: 0;
+		color: var(--ink);
+		font-size: clamp(30px, 3.7vw, 42px);
+		font-weight: 500;
+	}
+
+	.ka-approach h2 span {
+		color: var(--teal-deep);
+	}
+
+	.ka-approach__lead {
+		max-width: 50ch;
+		margin-bottom: 8px;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.62;
+	}
+
+	.ka-approach__points {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.ka-approach article {
+		padding: 26px 0;
+		border-top: 1px solid var(--line-light);
+		text-align: left;
+	}
+
+	.ka-approach article:last-child {
+		border-bottom: 1px solid var(--line-light);
+	}
+
+	.ka-approach article p {
+		margin-bottom: 10px;
+		color: var(--teal-deep);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.ka-approach article h3 {
+		margin: 0 0 7px;
+		color: var(--ink);
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.ka-approach article span {
+		display: block;
+		max-width: 46ch;
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.6;
+	}
+
+	.ka-proof__heading {
+		margin-bottom: 60px;
+	}
+
+	.ka-proof__item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 54px;
+		align-items: center;
+		margin-bottom: 76px;
+	}
+
+	.ka-proof__item:last-child {
+		margin-bottom: 0;
+	}
+
+	.ka-proof__item--flip .ka-proof__copy {
+		order: 2;
+	}
+
+	.ka-proof__copy {
+		text-align: left;
+	}
+
+	.ka-proof__sector {
+		margin-bottom: 13px;
+		color: var(--teal-deep);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+	}
+
+	.ka-proof h3 {
+		margin: 0 0 14px;
+		color: var(--ink);
+		font-size: 26px;
+		font-weight: 600;
+	}
+
+	.ka-proof__copy > p:not(.ka-proof__sector) {
+		max-width: 44ch;
+		margin-bottom: 20px;
+		color: var(--body);
+		font-size: 15.5px;
+		line-height: 1.65;
+	}
+
+	.ka-proof__stat {
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 9px 13px;
+		margin-bottom: 20px;
+	}
+
+	.ka-proof__from {
+		color: #8a9aac;
+		font-family: "Fraunces", Georgia, serif;
+		font-size: 23px;
+		text-decoration: line-through;
+		text-decoration-color: rgba(138, 154, 172, 0.55);
+	}
+
+	.ka-proof__to {
+		color: var(--ink);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	.ka-proof__unit {
+		color: var(--body);
+		font-size: 13.5px;
+	}
+
+	.ka-reviews h2 {
+		max-width: 19ch;
+		margin: 0 0 14px;
+		color: var(--white);
+		font-size: clamp(30px, 3.7vw, 42px);
+		font-weight: 500;
+	}
+
+	.ka-reviews__verified {
+		display: inline-flex;
+		align-items: center;
+		gap: 9px;
+		margin-bottom: 40px;
+		color: var(--body-light);
+		font-size: 14px;
+	}
+
+	.ka-reviews__verified svg {
+		width: 17px;
+		height: 17px;
+		flex: 0 0 auto;
+	}
+
+	.ka-reviews__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px;
+	}
+
+	@media (max-width: 860px) {
+		.ka-approach__grid,
+		.ka-proof__item {
+			grid-template-columns: 1fr;
+		}
+
+		.ka-proof__item {
+			gap: 28px;
+		}
+
+		.ka-proof__item--flip .ka-proof__copy {
+			order: 0;
+		}
+	}
+
+	@media (max-width: 760px) {
+		.ka-reviews__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

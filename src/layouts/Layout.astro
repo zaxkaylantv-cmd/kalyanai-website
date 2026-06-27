@@ -1,25 +1,20 @@
 ---
-import "../styles/global.css";
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+import CTASection from '../components/CTASection.astro';
+import '../styles/global.css';
 
 const {
 	title = 'Kalyan AI | AI systems that make business easier to run, control and grow',
 	description = 'We build AI systems that make your business easier to run, control and grow.',
 	showFinalCta = true,
 } = Astro.props;
+
 const siteUrl = Astro.site?.toString() ?? 'https://www.kalyanai.io';
 const canonicalUrl = Astro.url ? new URL(Astro.url.pathname, siteUrl).toString() : siteUrl;
 const ogImageUrl = new URL('/og-kalyan-ai-2026-v5.png', siteUrl).toString();
 const ogTitle = title;
 const ogDescription = description;
-
-const navLinks = [
-	{ label: 'Home', href: '/' },
-	{ label: 'About', href: '/about' },
-	{ label: 'Blueprint', href: '/blueprint' },
-	{ label: 'Case studies', href: '/case-studies/' },
-	{ label: 'How we build', href: '/how-we-build' },
-	{ label: 'Contact', href: '/contact' },
-];
 ---
 
 <!doctype html>
@@ -31,6 +26,12 @@ const navLinks = [
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
@@ -53,85 +54,14 @@ const navLinks = [
 		<meta name="twitter:url" content={canonicalUrl} />
 		<script defer data-domain="www.kalyanai.io" src="https://plausible.io/js/script.js"></script>
 	</head>
-	<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
-		<div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8 md:px-10 lg:px-12">
-			<header class="mb-6 md:mb-10">
-				<div class="ka-card rounded-[18px] px-5 py-4 shadow-sm backdrop-blur">
-					<div class="flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between md:text-left text-center">
-						<a class="leading-tight" href="/">
-							<p class="text-lg font-semibold tracking-tight text-[var(--brand-navy)]">
-								KALYAN <span class="text-[var(--primary)]">AI</span>
-							</p>
-							<p class="text-sm text-[var(--muted)]">AI systems partner</p>
-						</a>
-						<nav class="flex flex-wrap items-center justify-center gap-4 text-sm text-[var(--brand-navy)] md:justify-start">
-							{navLinks.map((link) => (
-								<a
-									class="inline-flex items-center text-[var(--brand-navy)] transition hover:text-[var(--brand-navy)] hover:underline hover:decoration-[var(--primary)] hover:underline-offset-4"
-									href={link.href}
-								>
-									{link.label}
-								</a>
-							))}
-								<a
-									class="rounded-full bg-[var(--primary)] px-4 py-2 font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-									href="/blueprint"
-									data-plausible="BookACall"
-								>
-								Start with the Blueprint
-							</a>
-						</nav>
-					</div>
-				</div>
-			</header>
+	<body>
+		<Nav />
+		<main id="content">
+			<slot />
+		</main>
+		{showFinalCta && <CTASection />}
+		<Footer />
 
-			<main class="flex-1 w-full">
-				<slot />
-			</main>
-
-			{showFinalCta && (
-				<section class="ka-card mt-8 rounded-3xl border border-[var(--border-subtle)] p-4 shadow-sm backdrop-blur md:mt-16 md:p-8">
-					<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-						<div class="space-y-2">
-							<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Let’s look at where the right system could help.</h2>
-							<p class="text-lg font-medium text-[var(--muted)]">Talk to us about where AI could make your business easier to run, control and grow.</p>
-						</div>
-						<div class="flex flex-wrap gap-3">
-								<a
-									class="rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-									href="/blueprint"
-									data-plausible="BookACall"
-								>
-								Start with the Blueprint
-							</a>
-						</div>
-					</div>
-				</section>
-			)}
-		</div>
-
-		<footer class="mt-8 border-t border-[var(--border)] bg-[var(--brand-navy)] px-6 py-8 text-sm text-white md:mt-12 md:px-10 lg:px-12">
-			<div class="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-					<div class="flex flex-wrap items-center gap-4">
-							<a class="transition hover:text-white/80" href="/">Home</a>
-							<a class="transition hover:text-white/80" href="/about">About</a>
-							<a class="transition hover:text-white/80" href="/blueprint">Blueprint</a>
-							<a class="transition hover:text-white/80" href="/case-studies/">Case studies</a>
-							<a class="transition hover:text-white/80" href="/how-we-build">How we build</a>
-							<a class="transition hover:text-white/80" href="/contact">Contact</a>
-						<a class="transition hover:text-white/80" href="/blueprint" data-plausible="BookACall">Start with the Blueprint</a>
-						<a class="transition hover:text-white/80" href="/privacy">Privacy</a>
-						<a class="transition hover:text-white/80" href="/terms">Terms</a>
-						<a class="transition hover:text-white/80" href="/cookies">Cookies</a>
-					</div>
-				<div class="flex flex-col gap-1 text-white/90">
-					<a class="transition hover:text-white" href="mailto:hello@kalyanai.io" data-plausible="EmailClick">hello@kalyanai.io</a>
-					<p>© {new Date().getFullYear()} Kalyan AI. All rights reserved.</p>
-                                        <p>Kalyan AI Ltd. Company Number 17046832</p>
-			</div>
-		</footer>
-
-		{/* Calendly popup removed; booking starts on /blueprint */}
 		<script is:inline>
 			if (typeof window !== 'undefined') {
 				document.addEventListener('click', (event) => {

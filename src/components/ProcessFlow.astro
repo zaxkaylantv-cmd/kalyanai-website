@@ -1,0 +1,98 @@
+---
+interface Step {
+	title: string;
+	copy: string;
+}
+
+interface Props {
+	steps: Step[];
+}
+
+const { steps } = Astro.props as Props;
+---
+
+<div class="ka-flow">
+	{steps.map((step, index) => (
+		<article class="ka-flow__step">
+			<div class="ka-flow__num">{String(index + 1).padStart(2, '0')}</div>
+			<h3>{step.title}</h3>
+			<p>{step.copy}</p>
+		</article>
+	))}
+</div>
+
+<style>
+	.ka-flow {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		margin-top: 60px;
+	}
+
+	.ka-flow__step {
+		position: relative;
+		padding: 0 28px;
+	}
+
+	.ka-flow__step:not(:last-child)::after {
+		content: "";
+		position: absolute;
+		top: 23px;
+		left: calc(50% + 26px);
+		width: calc(100% - 52px);
+		height: 1.5px;
+		background: linear-gradient(90deg, rgba(0, 183, 198, 0.55), rgba(0, 183, 198, 0.12));
+	}
+
+	.ka-flow__num {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		width: 46px;
+		height: 46px;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 22px;
+		border: 1px solid rgba(0, 183, 198, 0.40);
+		border-radius: 12px;
+		background: rgba(0, 183, 198, 0.12);
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 15px;
+		font-weight: 500;
+	}
+
+	.ka-flow h3 {
+		margin: 0 0 10px;
+		color: var(--white);
+		font-size: 19px;
+		font-weight: 600;
+	}
+
+	.ka-flow p {
+		color: var(--body-light);
+		font-size: 14px;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 820px) {
+		.ka-flow {
+			grid-template-columns: 1fr 1fr;
+			gap: 34px 24px;
+		}
+
+		.ka-flow__step::after {
+			display: none;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.ka-flow {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+
+		.ka-flow__step {
+			padding: 0;
+		}
+	}
+</style>

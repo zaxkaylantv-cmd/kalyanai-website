@@ -1,0 +1,48 @@
+---
+interface Props {
+	href?: string;
+	label?: string;
+	class?: string;
+	[key: string]: unknown;
+}
+
+const { href = '/blueprint', label = 'Start with the Blueprint', class: className = '', ...attrs } = Astro.props as Props;
+---
+
+<a {...attrs} href={href} class:list={['ka-button-primary', className]}>
+	<slot>{label}</slot>
+</a>
+
+<style>
+	.ka-button-primary {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 54px;
+		padding: 15px 30px;
+		border-radius: 11px;
+		background: var(--teal);
+		color: #04222a;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 1;
+		text-decoration: none;
+		box-shadow: 0 14px 36px -12px rgba(0, 183, 198, 0.55);
+		transition:
+			transform 150ms ease,
+			box-shadow 150ms ease,
+			background 150ms ease;
+	}
+
+	.ka-button-primary:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 20px 44px -12px rgba(0, 183, 198, 0.70);
+	}
+
+	@media (max-width: 480px) {
+		.ka-button-primary {
+			width: 100%;
+			padding-inline: 22px;
+		}
+	}
+</style>

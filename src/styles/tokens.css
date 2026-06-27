@@ -1,24 +1,33 @@
 :root {
-  --bg: #F5F7FB;
-  --text: #0B1220;
-  --muted: #595F68;
-  --border: rgba(15, 31, 58, 0.18);
-  --border-subtle: rgba(15, 31, 58, 0.18);
+  --navy: #0F1F3A;
+  --navy-2: #0B1B36;
+  --navy-deep: #081428;
+  --ink: #0B1220;
+  --teal: #00B7C6;
+  --teal-soft: #3FD8E3;
+  --teal-deep: #067E8A;
+  --white: #FFFFFF;
+  --paper: #F7F9FC;
+  --line-light: #E2E9F0;
+  --line-dark: rgba(255, 255, 255, 0.10);
+  --body: #48586A;
+  --body-light: #AEC1D6;
+  --focus: #3FD8E3;
 
-  --primary: #00B7C6;
-  --secondary: #009EAC;
-  --accent: #AB71F7;
-  --accent2: #CC54F7;
-
-  --brand-navy: #0F1F3A;
-  --brand-navy-light: #1c2f55;
-  --brand-accent: #0AAAE7;
-
-  --hero-gradient-start: #0c1633;
-  --hero-gradient-end: #15244a;
-  --accent-teal: #00B7C6;
-  --accent-purple: #AB71F7;
-  --soft-bg: #F9FBFE;
-  --cta-bg: #EEF5FA;
-  --text-dark: #0B1220;
+  /* Compatibility aliases for pages that will be rebuilt after the homepage. */
+  --bg: var(--paper);
+  --text: var(--ink);
+  --text-dark: var(--ink);
+  --muted: var(--body);
+  --border: var(--line-light);
+  --border-subtle: var(--line-light);
+  --primary: var(--teal);
+  --secondary: var(--teal-deep);
+  --brand-navy: var(--navy);
+  --brand-navy-light: var(--navy-2);
+  --brand-accent: var(--teal);
+  --hero-gradient-start: var(--navy-deep);
+  --hero-gradient-end: var(--navy);
+  --soft-bg: var(--paper);
+  --cta-bg: var(--paper);
 }

@@ -1,0 +1,72 @@
+---
+import ButtonPrimary from './ButtonPrimary.astro';
+import Eyebrow from './Eyebrow.astro';
+
+interface Props {
+	eyebrow?: string;
+	title?: string;
+	copy?: string;
+	href?: string;
+	label?: string;
+}
+
+const {
+	eyebrow = 'Start here',
+	title = 'Start with the Business AI Blueprint.',
+	copy = 'Before committing to a larger system, start with clarity. A focused paid review of where AI can create value in your business, what is worth building first, and whether there is a clear business case.',
+	href = '/blueprint',
+	label = 'Start with the Blueprint',
+} = Astro.props as Props;
+---
+
+<section class="ka-section ka-section-paper ka-final-cta">
+	<div class="ka-wrap">
+		<div class="ka-final-cta__inner">
+			<Eyebrow>{eyebrow}</Eyebrow>
+			<h2>{title}</h2>
+			<p>{copy}</p>
+			<ButtonPrimary href={href} label={label} data-plausible="BookACall" />
+		</div>
+	</div>
+</section>
+
+<style>
+	.ka-final-cta {
+		position: relative;
+		overflow: hidden;
+		border-top: 1px solid var(--line-light);
+	}
+
+	.ka-final-cta::before {
+		content: "";
+		position: absolute;
+		bottom: -220px;
+		left: 50%;
+		width: 780px;
+		height: 540px;
+		transform: translateX(-50%);
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.10), transparent 64%);
+		pointer-events: none;
+	}
+
+	.ka-final-cta__inner {
+		position: relative;
+		z-index: 2;
+		max-width: 44ch;
+		text-align: left;
+	}
+
+	.ka-final-cta h2 {
+		margin: 0 0 18px;
+		color: var(--ink);
+		font-size: clamp(30px, 3.7vw, 42px);
+		font-weight: 500;
+	}
+
+	.ka-final-cta p {
+		margin-bottom: 30px;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.62;
+	}
+</style>

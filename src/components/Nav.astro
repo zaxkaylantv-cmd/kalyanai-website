@@ -1,0 +1,104 @@
+---
+const navLinks = [
+	{ label: 'About', href: '/about' },
+	{ label: 'Blueprint', href: '/blueprint' },
+	{ label: 'Case studies', href: '/case-studies/' },
+	{ label: 'How we build', href: '/how-we-build' },
+	{ label: 'Contact', href: '/contact' },
+];
+---
+
+<header class="ka-nav-shell">
+	<div class="ka-wrap">
+		<nav class="ka-nav" aria-label="Main navigation">
+			<a class="ka-brand" href="/" aria-label="Kalyan AI home">
+				<span class="ka-brand__logo">KALYAN <span>AI</span></span>
+				<span class="ka-brand__tag">Your Implementation Partner</span>
+			</a>
+			<div class="ka-nav__links">
+				{navLinks.map((link) => (
+					<a href={link.href}>{link.label}</a>
+				))}
+			</div>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.ka-nav-shell {
+		position: relative;
+		z-index: 20;
+		background: var(--navy-deep);
+	}
+
+	.ka-nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 28px;
+		padding: 24px 0;
+	}
+
+	.ka-brand {
+		display: flex;
+		flex: 0 0 auto;
+		flex-direction: column;
+		gap: 4px;
+		color: var(--white);
+		line-height: 1;
+		text-decoration: none;
+	}
+
+	.ka-brand__logo {
+		font-family: "Fraunces", Georgia, serif;
+		font-size: 22px;
+		font-weight: 600;
+		letter-spacing: 0;
+	}
+
+	.ka-brand__logo span {
+		color: var(--teal-soft);
+	}
+
+	.ka-brand__tag {
+		color: var(--body-light);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+	}
+
+	.ka-nav__links {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 34px;
+	}
+
+	.ka-nav__links a {
+		color: var(--body-light);
+		font-size: 14.5px;
+		font-weight: 600;
+		text-decoration: none;
+		transition: color 150ms ease;
+	}
+
+	.ka-nav__links a:hover {
+		color: var(--white);
+	}
+
+	@media (max-width: 860px) {
+		.ka-nav {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.ka-nav__links {
+			width: 100%;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			gap: 14px 22px;
+		}
+	}
+</style>

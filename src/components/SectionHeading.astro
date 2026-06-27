@@ -1,0 +1,68 @@
+---
+import Eyebrow from './Eyebrow.astro';
+
+interface Props {
+	eyebrow?: string;
+	title: string;
+	highlight?: string;
+	lead?: string;
+	tone?: 'light' | 'dark';
+	class?: string;
+}
+
+const { eyebrow, title, highlight, lead, tone = 'light', class: className = '' } = Astro.props as Props;
+
+const titleParts = highlight && title.includes(highlight) ? title.split(highlight) : null;
+---
+
+<div class:list={['ka-section-heading', `ka-section-heading--${tone}`, className]}>
+	{eyebrow && <Eyebrow tone={tone}>{eyebrow}</Eyebrow>}
+	<h2>
+		{titleParts ? (
+			<>
+				{titleParts[0]}<span>{highlight}</span>{titleParts.slice(1).join(highlight)}
+			</>
+		) : (
+			title
+		)}
+	</h2>
+	{lead && <p>{lead}</p>}
+</div>
+
+<style>
+	.ka-section-heading {
+		text-align: left;
+	}
+
+	.ka-section-heading h2 {
+		max-width: 20ch;
+		margin: 0;
+		color: var(--ink);
+		font-size: clamp(30px, 3.7vw, 42px);
+		font-weight: 500;
+	}
+
+	.ka-section-heading h2 span {
+		color: var(--teal-deep);
+	}
+
+	.ka-section-heading p {
+		max-width: 50ch;
+		margin-top: 16px;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.62;
+	}
+
+	.ka-section-heading--dark h2 {
+		color: var(--white);
+	}
+
+	.ka-section-heading--dark h2 span {
+		color: var(--teal-soft);
+	}
+
+	.ka-section-heading--dark p {
+		color: var(--body-light);
+	}
+</style>

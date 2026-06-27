@@ -1,0 +1,32 @@
+---
+interface Props {
+	tone?: 'light' | 'dark';
+	class?: string;
+}
+
+const { tone = 'light', class: className = '' } = Astro.props as Props;
+---
+
+<p class:list={['ka-eyebrow', `ka-eyebrow--${tone}`, className]}>
+	<slot />
+</p>
+
+<style>
+	.ka-eyebrow {
+		margin: 0 0 16px;
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: 0.13em;
+		line-height: 1.3;
+		text-transform: uppercase;
+	}
+
+	.ka-eyebrow--light {
+		color: var(--teal-deep);
+	}
+
+	.ka-eyebrow--dark {
+		color: var(--teal-soft);
+	}
+</style>

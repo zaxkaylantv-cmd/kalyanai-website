@@ -1,0 +1,131 @@
+---
+const primaryLinks = [
+	{ label: 'About', href: '/about' },
+	{ label: 'Blueprint', href: '/blueprint' },
+	{ label: 'Case studies', href: '/case-studies/' },
+	{ label: 'How we build', href: '/how-we-build' },
+	{ label: 'Contact', href: '/contact' },
+	{ label: 'Privacy', href: '/privacy' },
+	{ label: 'Terms', href: '/terms' },
+	{ label: 'Cookies', href: '/cookies' },
+];
+---
+
+<footer class="ka-footer">
+	<div class="ka-wrap">
+		<div class="ka-footer__grid">
+			<div class="ka-footer__brand">
+				<a class="ka-footer__logo" href="/" aria-label="Kalyan AI home">KALYAN <span>AI</span></a>
+				<p class="ka-footer__tag">Your Implementation Partner</p>
+				<p class="ka-footer__line">AI systems that make your business easier to run, control and grow.</p>
+			</div>
+			<nav class="ka-footer__links" aria-label="Footer navigation">
+				{primaryLinks.map((link) => (
+					<a href={link.href}>{link.label}</a>
+				))}
+			</nav>
+		</div>
+		<div class="ka-footer__meta">
+			<a href="mailto:hello@kalyanai.io" data-plausible="EmailClick">hello@kalyanai.io</a>
+			<p>Kalyan AI Ltd. Company Number 17046832. (c) 2026 Kalyan AI.</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.ka-footer {
+		padding: 56px 0 40px;
+		background: #06101f;
+		color: var(--body-light);
+	}
+
+	.ka-footer__grid {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 40px;
+	}
+
+	.ka-footer__brand {
+		max-width: 32ch;
+	}
+
+	.ka-footer__logo {
+		display: inline-flex;
+		margin-bottom: 10px;
+		color: var(--white);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: 22px;
+		font-weight: 600;
+		line-height: 1;
+		text-decoration: none;
+	}
+
+	.ka-footer__logo span {
+		margin-left: 6px;
+		color: var(--teal-soft);
+	}
+
+	.ka-footer__tag {
+		margin: 0 0 12px;
+		color: var(--body-light);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+	}
+
+	.ka-footer__line {
+		color: var(--body-light);
+		font-size: 14px;
+		line-height: 1.6;
+	}
+
+	.ka-footer__links {
+		display: flex;
+		max-width: 640px;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 18px 28px;
+	}
+
+	.ka-footer__links a,
+	.ka-footer__meta a {
+		color: var(--body-light);
+		font-size: 14px;
+		text-decoration: none;
+		transition: color 150ms ease;
+	}
+
+	.ka-footer__links a:hover,
+	.ka-footer__meta a:hover {
+		color: var(--white);
+	}
+
+	.ka-footer__meta {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		margin-top: 34px;
+		padding-top: 22px;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		color: #7c8b9c;
+		font-size: 12.5px;
+	}
+
+	.ka-footer__meta p {
+		margin: 0;
+	}
+
+	@media (max-width: 760px) {
+		.ka-footer__grid,
+		.ka-footer__meta {
+			flex-direction: column;
+		}
+
+		.ka-footer__links {
+			justify-content: flex-start;
+		}
+	}
+</style>
