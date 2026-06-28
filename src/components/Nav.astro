@@ -15,14 +15,53 @@ const navLinks = [
 				<span class="ka-brand__logo">KALYAN <span>AI</span></span>
 				<span class="ka-brand__tag">Your Implementation Partner</span>
 			</a>
-			<div class="ka-nav__links">
+			<div class="ka-nav__links ka-nav__links--desktop">
 				{navLinks.map((link) => (
 					<a href={link.href}>{link.label}</a>
 				))}
 			</div>
+			<div class="ka-nav__mobile">
+				<button class="ka-nav__toggle" type="button" aria-expanded="false" aria-controls="ka-mobile-nav">
+					<span>Menu</span>
+					<span class="ka-nav__icon" aria-hidden="true">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</button>
+				<div class="ka-nav__panel" id="ka-mobile-nav" hidden>
+					{navLinks.map((link) => (
+						<a href={link.href}>{link.label}</a>
+					))}
+				</div>
+			</div>
 		</nav>
 	</div>
 </header>
+
+<script is:inline>
+	if (typeof window !== 'undefined') {
+		const toggle = document.querySelector('.ka-nav__toggle');
+		const panel = document.getElementById('ka-mobile-nav');
+		if (toggle && panel) {
+			const setOpen = (open) => {
+				toggle.setAttribute('aria-expanded', String(open));
+				panel.hidden = !open;
+			};
+			toggle.addEventListener('click', () => {
+				const open = toggle.getAttribute('aria-expanded') === 'true';
+				setOpen(!open);
+			});
+			panel.addEventListener('click', (event) => {
+				const target = event.target;
+				if (target instanceof HTMLAnchorElement) setOpen(false);
+			});
+			window.addEventListener('resize', () => {
+				if (window.innerWidth > 860) setOpen(false);
+			});
+		}
+	}
+</script>
 
 <style>
 	.ka-nav-shell {
@@ -69,14 +108,15 @@ const navLinks = [
 		text-transform: uppercase;
 	}
 
-	.ka-nav__links {
+	.ka-nav__links--desktop {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
 		gap: 34px;
 	}
 
-	.ka-nav__links a {
+	.ka-nav__links--desktop a,
+	.ka-nav__panel a {
 		color: var(--body-light);
 		font-size: 14.5px;
 		font-weight: 600;
@@ -84,21 +124,75 @@ const navLinks = [
 		transition: color 150ms ease;
 	}
 
-	.ka-nav__links a:hover {
+	.ka-nav__links--desktop a:hover,
+	.ka-nav__panel a:hover {
 		color: var(--white);
+	}
+
+	.ka-nav__mobile {
+		display: none;
+	}
+
+	.ka-nav__toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		min-height: 44px;
+		padding: 10px 14px;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.04);
+		color: var(--white);
+		font-family: inherit;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.ka-nav__icon {
+		display: grid;
+		gap: 3px;
+		width: 16px;
+	}
+
+	.ka-nav__icon span {
+		display: block;
+		height: 2px;
+		border-radius: 999px;
+		background: var(--teal-soft);
+	}
+
+	.ka-nav__panel {
+		display: grid;
+		gap: 12px;
+		padding: 14px 0 18px;
+	}
+
+	.ka-nav__panel a {
+		display: block;
+		padding: 4px 0;
 	}
 
 	@media (max-width: 860px) {
 		.ka-nav {
 			align-items: flex-start;
 			flex-direction: column;
+			gap: 14px;
+			padding-bottom: 14px;
 		}
 
-		.ka-nav__links {
+		.ka-nav__links--desktop {
+			display: none;
+		}
+
+		.ka-nav__mobile {
+			display: block;
 			width: 100%;
-			flex-wrap: wrap;
-			justify-content: flex-start;
-			gap: 14px 22px;
+		}
+
+		.ka-nav__toggle {
+			margin-left: auto;
 		}
 	}
 </style>
