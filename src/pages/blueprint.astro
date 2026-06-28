@@ -9,17 +9,17 @@ const calendlyUrl = 'https://calendly.com/zaxkalyan/new-meeting';
 
 const firstSystemPrinciples = [
 	{
-		label: 'Principle 01',
+		label: '01',
 		title: 'It should solve a real business problem.',
 		copy: 'The recommendation should be tied to a real operational pressure, not an AI idea looking for somewhere to fit.',
 	},
 	{
-		label: 'Principle 02',
+		label: '02',
 		title: 'It should fit the way your team already works.',
 		copy: 'The best first system should support the way the business already runs, rather than forcing people into a completely new process.',
 	},
 	{
-		label: 'Principle 03',
+		label: '03',
 		title: 'It should have a clear reason to exist before anything is built.',
 		copy: 'Before build work starts, there should be a clear business reason, expected value, and practical use case.',
 	},
@@ -63,18 +63,19 @@ const proofPoints = [
 				<h1>Business AI Blueprint</h1>
 				<p class="blueprint-hero__core">Find where AI earns its keep in your business.</p>
 				<p class="blueprint-hero__copy">A focused diagnostic showing where AI can make your business easier to run, control and grow, what system would be worth building first, and where the return can come from.</p>
-				<ButtonPrimary href={calendlyUrl} label="Book your Blueprint" data-plausible="BookACall" />
+				<ButtonPrimary href={calendlyUrl} label="Start with the Blueprint" data-plausible="BookACall" />
 			</div>
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-white blueprint-owners">
+	<section class="ka-section ka-section-dark blueprint-owners">
 		<div class="ka-wrap">
 			<div class="blueprint-two-col">
 				<SectionHeading
 					eyebrow="Why owners book a Blueprint"
 					title="AI matters. The hard part is knowing where it belongs."
 					highlight="where it belongs."
+					tone="dark"
 				/>
 				<div class="blueprint-copy-stack">
 					<p>Most business owners can see that AI could help, but they are not always clear where it fits, what would be worth building first, or whether the return would justify the investment.</p>
@@ -85,7 +86,7 @@ const proofPoints = [
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-paper blueprint-start">
+	<section class="ka-section ka-section-dark blueprint-start">
 		<div class="ka-wrap">
 			<div class="blueprint-two-col blueprint-two-col--reverse">
 				<div class="blueprint-callout">
@@ -97,32 +98,13 @@ const proofPoints = [
 						title="The Blueprint is a practical first step before you spend on the wrong thing."
 						highlight="before you spend on the wrong thing."
 						lead="We do not start by selling a fixed product. Every business works differently, so the first step is to understand how yours actually runs."
+						tone="dark"
 					/>
 					<div class="blueprint-copy-stack blueprint-copy-stack--compact">
 						<p>The Blueprint gives you clear, practical direction before committing to a larger AI system build.</p>
 						<p>You do not need to know what system you need before we speak. That is the point of the Blueprint.</p>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ka-section ka-section-deep blueprint-system">
-		<div class="ka-wrap">
-			<SectionHeading
-				eyebrow="The right first system"
-				title="A useful first system has to earn its place."
-				lead="The recommendation should be practical, specific to the business, and clear enough to justify build work before anything is started."
-				tone="dark"
-			/>
-			<div class="blueprint-principles">
-				{firstSystemPrinciples.map((principle, index) => (
-					<article class:list={['blueprint-principle', index === 0 && 'blueprint-principle--wide']}>
-						<p>{principle.label}</p>
-						<h3>{principle.title}</h3>
-						<span>{principle.copy}</span>
-					</article>
-				))}
 			</div>
 		</div>
 	</section>
@@ -148,17 +130,39 @@ const proofPoints = [
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-paper blueprint-proof">
+	<section class="ka-section ka-section-deep blueprint-system">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="The right first system"
+				title="A useful first system has to earn its place."
+				lead="The recommendation should be practical, specific to the business, and clear enough to justify build work before anything is started."
+				tone="dark"
+			/>
+			<div class="blueprint-principles">
+				{firstSystemPrinciples.map((principle, index) => (
+					<article class:list={['blueprint-principle', index === 0 && 'blueprint-principle--wide']}>
+						<p>{principle.label}</p>
+						<h3>{principle.title}</h3>
+						<span>{principle.copy}</span>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-dark blueprint-proof">
 		<div class="ka-wrap">
 			<SectionHeading
 				eyebrow="Built from real delivery experience"
 				title="The Blueprint comes from building systems that are already in use."
 				highlight="already in use."
 				lead="Kalyan AI builds systems around how real businesses actually work. The Blueprint uses the same delivery thinking in a focused first step."
+				tone="dark"
 			/>
 			<div class="blueprint-proof__grid">
 				<article class="blueprint-proof__lead">
 					<h3>{proofPoints[0].title}</h3>
+					<strong class="blueprint-proof__stat">30 min</strong>
 					<p>{proofPoints[0].copy}</p>
 				</article>
 				<div class="blueprint-proof__stack">
@@ -188,6 +192,7 @@ const proofPoints = [
 			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 20%, rgba(8, 20, 40, 0.78) 60%, rgba(8, 20, 40, 0.98) 100%),
 			radial-gradient(circle at 78% 24%, rgba(0, 183, 198, 0.23), transparent 36%),
 			var(--navy-deep);
+		border-bottom: 1px solid var(--line-dark);
 		color: var(--white);
 	}
 
@@ -208,7 +213,7 @@ const proofPoints = [
 	.blueprint-hero__core {
 		max-width: 24ch;
 		margin-bottom: 18px;
-		color: var(--teal-soft);
+		color: var(--gold-soft);
 		font-family: "Fraunces", Georgia, serif;
 		font-size: clamp(26px, 3vw, 36px);
 		font-weight: 500;
@@ -238,7 +243,7 @@ const proofPoints = [
 		display: grid;
 		gap: 18px;
 		max-width: 58ch;
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 17px;
 		line-height: 1.68;
 		text-align: left;
@@ -250,24 +255,35 @@ const proofPoints = [
 
 	.blueprint-callout {
 		padding: 34px;
-		border: 1px solid var(--line-light);
+		border: 1px solid var(--line-dark);
 		border-radius: 16px;
-		background: linear-gradient(135deg, rgba(0, 183, 198, 0.10), var(--white) 62%);
-		box-shadow: 0 28px 58px -44px rgba(11, 18, 32, 0.30);
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.12), rgba(255, 255, 255, 0.04) 62%);
 	}
 
 	.blueprint-callout p {
 		max-width: 14ch;
-		color: var(--ink);
+		color: var(--white);
 		font-family: "Fraunces", Georgia, serif;
 		font-size: clamp(30px, 4vw, 44px);
 		font-weight: 500;
 		line-height: 1.08;
 	}
 
+	.blueprint-owners {
+		background: var(--navy);
+		border-bottom: 1px solid var(--line-dark);
+	}
+
+	.blueprint-start {
+		background: var(--navy-2);
+		border-bottom: 1px solid var(--line-dark);
+	}
+
 	.blueprint-system {
 		position: relative;
 		overflow: hidden;
+		border-bottom: 1px solid var(--line-dark);
+		background: var(--navy-deep);
 	}
 
 	.blueprint-system::before {
@@ -307,11 +323,11 @@ const proofPoints = [
 
 	.blueprint-principle p {
 		margin-bottom: 14px;
-		color: var(--teal-soft);
+		color: var(--gold-soft);
 		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-		font-size: 11px;
+		font-size: 18px;
 		font-weight: 500;
-		letter-spacing: 0.08em;
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
 	}
 
@@ -369,6 +385,16 @@ const proofPoints = [
 		line-height: 1.58;
 	}
 
+	.blueprint-deliverables {
+		border-bottom: 1px solid var(--line-light);
+	}
+
+	.blueprint-proof {
+		background: var(--navy-2);
+		border-bottom: 1px solid var(--line-dark);
+		color: var(--white);
+	}
+
 	.blueprint-proof__grid {
 		display: grid;
 		grid-template-columns: 1.15fr 0.85fr;
@@ -378,16 +404,15 @@ const proofPoints = [
 
 	.blueprint-proof__lead,
 	.blueprint-proof__stack article {
-		border: 1px solid var(--line-light);
+		border: 1px solid var(--line-dark);
 		border-radius: 16px;
-		background: var(--white);
+		background: rgba(255, 255, 255, 0.04);
 		text-align: left;
-		box-shadow: 0 26px 56px -48px rgba(11, 18, 32, 0.28);
 	}
 
 	.blueprint-proof__lead {
 		padding: 34px;
-		background: linear-gradient(135deg, rgba(0, 183, 198, 0.09), var(--white) 56%);
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.10), rgba(255, 255, 255, 0.04) 56%);
 	}
 
 	.blueprint-proof__stack {
@@ -401,15 +426,43 @@ const proofPoints = [
 
 	.blueprint-proof h3 {
 		margin: 0 0 12px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: 24px;
 		font-weight: 600;
 	}
 
+	.blueprint-proof__stat {
+		display: inline-flex;
+		margin-bottom: 14px;
+		color: var(--gold-soft);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: 38px;
+		font-weight: 700;
+		line-height: 1;
+	}
+
 	.blueprint-proof p {
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 15.5px;
 		line-height: 1.64;
+	}
+
+	.blueprint-proof__lead p {
+		max-width: 56ch;
+	}
+
+	:global(.ka-final-cta) {
+		background: var(--paper);
+		border-top: 1px solid var(--line-light);
+		color: var(--ink);
+	}
+
+	:global(.ka-final-cta h2) {
+		color: var(--ink) !important;
+	}
+
+	:global(.ka-final-cta p) {
+		color: var(--body) !important;
 	}
 
 	@media (max-width: 860px) {
