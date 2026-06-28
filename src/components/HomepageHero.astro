@@ -21,9 +21,6 @@ import ButtonPrimary from './ButtonPrimary.astro';
 				We build AI systems that make your business easier to
 				<span>run</span>, <span>control</span> and <span>grow</span>.
 			</h1>
-			<p class="ka-home-hero__lead">
-				We learn how your business works, find where AI can create real value, and build the right system around it.
-			</p>
 			<div class="ka-home-hero__actions">
 				<ButtonPrimary href="/blueprint" label="Start with the Blueprint" data-plausible="BookACall" />
 				<ButtonGhost href="/how-we-build" label="See how we work" />
@@ -62,13 +59,13 @@ import ButtonPrimary from './ButtonPrimary.astro';
 		position: relative;
 		z-index: 4;
 		max-width: 820px;
-		padding: 96px 0 128px;
+		padding: 96px 0 112px;
 		text-align: left;
 	}
 
 	.ka-home-hero h1 {
 		max-width: 16ch;
-		margin: 0 0 30px;
+		margin: 0 0 26px;
 		color: var(--white);
 		font-size: clamp(44px, 6vw, 74px);
 		font-weight: 500;
@@ -79,14 +76,6 @@ import ButtonPrimary from './ButtonPrimary.astro';
 	.ka-home-hero h1 span {
 		color: var(--teal-soft);
 		font-weight: 600;
-	}
-
-	.ka-home-hero__lead {
-		max-width: 44ch;
-		margin-bottom: 38px;
-		color: var(--body-light);
-		font-size: 19px;
-		line-height: 1.62;
 	}
 
 	.ka-home-hero__actions {
@@ -102,7 +91,7 @@ import ButtonPrimary from './ButtonPrimary.astro';
 		}
 
 		.ka-home-hero__content {
-			padding: 72px 0 96px;
+			padding: 72px 0 84px;
 		}
 
 		.ka-home-hero h1 {
