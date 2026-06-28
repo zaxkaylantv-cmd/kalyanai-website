@@ -1,79 +1,477 @@
 ---
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Frame from '../components/Frame.astro';
 import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 
 const caseStudies = [
 	{
-		label: 'Finance admin and visibility system',
-		title: 'Spa by Kaajal finance system',
-		business: 'Beauty salon · London, UK',
-		copy: 'A finance system built around how salon finance work actually moved, bringing invoices, receipts, tips, missing items and accountant-ready exports into one clearer place.',
+		sector: 'Finance operations',
+		title: 'Spa by Kaajal',
+		system: 'Finance admin and visibility system',
+		summary: 'A system built around salon finance work, bringing invoices, receipts, tips, missing items and accountant-ready exports into one clearer place.',
+		proof: 'Finance admin reduced from around 4 hours weekly to around 30 minutes.',
+		href: '/case-studies/spa-by-kaajal',
 		image: '/images/case-studies/after-dashboard.png',
 		alt: 'Spa by Kaajal finance dashboard showing invoices, receipts, cashflow, tips and overdue items in one place.',
-		href: '/case-studies/spa-by-kaajal',
+		label: 'Finance dashboard with demo data',
 	},
 	{
-		label: 'Live client booking and operations system',
-		title: 'Jas’s School of Spice Booking System',
-		business: 'Cookery school',
-		copy: 'A live booking and operations system helping customers book, pay, buy vouchers and ask questions online, with clearer owner control behind the scenes.',
+		sector: 'Live booking and operations',
+		title: 'Jas’s School of Spice',
+		system: 'Customer booking and operations system',
+		summary: 'A live system for cookery classes covering bookings, payments, vouchers, reminders, customer messages, owner alerts and protected operational controls.',
+		proof: 'Live booking and operations flow for customers and the owner behind the scenes.',
+		href: '/case-studies/jas-school-of-spice',
 		image: '/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png',
 		alt: 'Jas’s School of Spice customer homepage showing class booking options.',
-		href: '/case-studies/jas-school-of-spice',
+		label: 'Live customer booking homepage',
+		badge: 'Live system',
 	},
 	{
-		label: 'Internal proof system',
+		sector: 'Internal operating proof',
 		title: 'Kalyan AI Internal Operating Stack',
-		business: 'Kalyan AI',
-		copy: 'How Kalyan AI runs its own commercial activity through a controlled internal system covering lead generation, outreach, replies, CRM handoff, follow-up and business visibility.',
-		image: '/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png',
-		alt: 'Kalyan AI internal operating dashboard showing business activity and system health.',
+		system: 'Controlled commercial operating system',
+		summary: 'Kalyan AI’s own system for lead generation, outreach, replies, CRM, business visibility, RAG, system health and owner control.',
+		proof: 'Internal proof that the same operating principles are used inside Kalyan AI.',
 		href: '/case-studies/kalyan-ai-internal-stack',
+		image: '/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png',
+		alt: 'Sanitised Kalyan AI internal operating dashboard showing business activity and system health.',
+		label: 'Sanitised internal operating dashboard',
+		badge: 'Sanitised',
+	},
+];
+
+const commonThreads = [
+	{
+		title: 'Built around how the business works',
+		copy: 'The system starts with the real operating pattern, not a template looking for somewhere to fit.',
+	},
+	{
+		title: 'Owner stays in control',
+		copy: 'Each system keeps the owner closer to the work, the exceptions, the approvals and the visibility that matter.',
+	},
+	{
+		title: 'Proof before promises',
+		copy: 'The work is judged against real systems, real screens and specific operating problems, not broad claims.',
+	},
+	{
+		title: 'Supported after delivery',
+		copy: 'Where support is part of the engagement, Kalyan AI stays involved after launch so the system can settle into real use.',
 	},
 ];
 ---
 
-<Layout title="Kalyan AI Case Studies" description="See real proof of AI systems built around how businesses actually work, including Spa by Kaajal and the live booking system for Jas's School of Spice.">
-	<section class="mx-auto flex max-w-5xl flex-col gap-6 px-4 pb-10 md:gap-8 md:px-6 md:pb-16">
-		<div class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
-				Case studies
-			</p>
-			<h1 class="mx-auto max-w-3xl text-3xl font-semibold text-[var(--brand-navy)] md:text-5xl">Business systems <span class="text-[var(--primary)]">built around real operations.</span></h1>
-			<p class="copy-narrow mx-auto text-[var(--muted)] max-md:text-left max-md:text-[15px] md:text-lg">
-				Examples of Kalyan AI systems built around how a business actually works, with owner control, visibility and support after delivery.
-			</p>
+<Layout
+	title="Kalyan AI Case Studies"
+	description="See real proof of AI systems built around how businesses actually work, including Spa by Kaajal, Jas's School of Spice and Kalyan AI's internal operating stack."
+	showFinalCta={false}
+>
+	<section class="cases-hero">
+		<div class="ka-wrap">
+			<div class="cases-hero__inner">
+				<Eyebrow tone="dark">Case studies</Eyebrow>
+				<h1>Business systems built around real operations</h1>
+				<p>Real systems built, hosted and supported by Kalyan AI around how businesses actually work, with owner control, practical visibility and clear proof from delivery.</p>
+			</div>
 		</div>
+	</section>
 
-		<div class="grid items-stretch gap-6 lg:grid-cols-3">
-			{caseStudies.map((study) => (
-				<article class="ka-card flex h-full min-h-full flex-col overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
-					<a href={study.href} class="block shrink-0">
-						<div class="aspect-[16/11] overflow-hidden border-b border-[var(--border-subtle)] bg-white">
-							<img
+	<section class="ka-section ka-section-white cases-overview">
+		<div class="ka-wrap">
+			<div class="cases-overview__grid">
+				<SectionHeading
+					eyebrow="Proof overview"
+					title="The proof comes from real client systems and Kalyan AI’s own operating stack."
+					highlight="real client systems"
+				/>
+				<div class="cases-copy-stack">
+					<p>These case studies show systems built around real business operations: finance admin, customer booking, owner alerts, protected controls, commercial visibility and ongoing operational support.</p>
+					<p>The point is not to show generic AI concepts. The point is to show how a business problem becomes a system that works inside the way the business already runs.</p>
+					<p>The internal operating stack is included because Kalyan AI applies the same principle to its own commercial activity: controlled systems, clear visibility and human judgement kept in the loop.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-paper cases-selection">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="Selected systems"
+				title="Three examples of systems built for real operational use."
+				highlight="real operational use."
+				lead="Each example is tied to a specific business setting, a specific operating need and a factual proof point."
+			/>
+			<div class="cases-editorial">
+				<article class="case-feature case-feature--lead">
+					<div class="case-feature__content">
+						<p class="case-feature__sector">{caseStudies[0].sector}</p>
+						<h2>{caseStudies[0].title}</h2>
+						<p class="case-feature__system">{caseStudies[0].system}</p>
+						<p class="case-feature__summary">{caseStudies[0].summary}</p>
+						<div class="case-feature__proof">
+							<span>Proof point</span>
+							<strong>{caseStudies[0].proof}</strong>
+						</div>
+						<a href={caseStudies[0].href}>Read the case study</a>
+					</div>
+					<Frame
+						src={caseStudies[0].image}
+						alt={caseStudies[0].alt}
+						label={caseStudies[0].label}
+						loading="eager"
+					/>
+				</article>
+
+				<div class="cases-side-stack">
+					{caseStudies.slice(1).map((study) => (
+						<article class="case-feature case-feature--compact">
+							<div class="case-feature__content">
+								<p class="case-feature__sector">{study.sector}</p>
+								<h2>{study.title}</h2>
+								<p class="case-feature__system">{study.system}</p>
+								<p class="case-feature__summary">{study.summary}</p>
+								<div class="case-feature__proof">
+									<span>Proof point</span>
+									<strong>{study.proof}</strong>
+								</div>
+								<a href={study.href}>Read the case study</a>
+							</div>
+							<Frame
 								src={study.image}
 								alt={study.alt}
-								class="h-full w-full object-cover"
-								loading="lazy"
+								label={study.label}
+								badge={study.badge}
+								loading="eager"
+								imageFit="contain"
 							/>
-						</div>
-					</a>
-					<div class="flex min-h-0 flex-1 flex-col p-4 md:p-6">
-						<div class="flex-1 space-y-4 md:min-h-[13.5rem] lg:min-h-[18rem]">
-							<p class="text-sm font-semibold text-[var(--primary)]">{study.label}</p>
-							<div class="space-y-2">
-								<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">{study.title}</h2>
-								<p class="text-sm font-medium text-[var(--muted)]">{study.business}</p>
-							</div>
-							<p class="text-[var(--muted)] max-md:text-[15px]">{study.copy}</p>
-						</div>
-						<div class="mt-auto pt-6">
-							<a href={study.href} class="inline-flex h-11 w-full items-center justify-center rounded-full bg-[var(--primary)] px-5 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)] sm:w-48">
-								Read the case study
-							</a>
-						</div>
-					</div>
-				</article>
-			))}
+						</article>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-deep cases-thread">
+		<div class="ka-wrap">
+			<div class="cases-thread__grid">
+				<SectionHeading
+					eyebrow="Common thread"
+					title="The pattern is controlled delivery around the way the business already runs."
+					lead="Different businesses need different systems. The shared principle is that each system should earn its place inside the operation and keep the owner closer to what matters."
+					tone="dark"
+				/>
+				<div class="cases-thread__items">
+					{commonThreads.map((item, index) => (
+						<article>
+							<span>{String(index + 1).padStart(2, '0')}</span>
+							<h3>{item.title}</h3>
+							<p>{item.copy}</p>
+						</article>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-paper cases-cta">
+		<div class="ka-wrap">
+			<div class="cases-cta__inner">
+				<Eyebrow>Start here</Eyebrow>
+				<h2>Find the right first system for your business.</h2>
+				<p>The Business AI Blueprint is a focused paid review that helps identify where AI can create real value, what system is worth building first, and whether there is a clear business case before a larger build.</p>
+				<ButtonPrimary href="/blueprint" label="Start with the Blueprint" data-plausible="BookACall" />
+			</div>
 		</div>
 	</section>
 </Layout>
+
+<style>
+	.cases-hero {
+		background:
+			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 20%, rgba(8, 20, 40, 0.78) 62%, rgba(8, 20, 40, 0.98) 100%),
+			radial-gradient(circle at 78% 24%, rgba(0, 183, 198, 0.23), transparent 36%),
+			var(--navy-deep);
+		color: var(--white);
+	}
+
+	.cases-hero__inner {
+		max-width: 900px;
+		padding: 116px 0 132px;
+		text-align: left;
+	}
+
+	.cases-hero h1 {
+		max-width: 15ch;
+		margin: 0 0 24px;
+		color: var(--white);
+		font-size: clamp(48px, 6vw, 78px);
+		font-weight: 500;
+	}
+
+	.cases-hero p {
+		max-width: 54ch;
+		color: var(--body-light);
+		font-size: 18px;
+		line-height: 1.66;
+	}
+
+	.cases-overview__grid,
+	.cases-thread__grid {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 64px;
+		align-items: start;
+	}
+
+	.cases-copy-stack {
+		display: grid;
+		gap: 18px;
+		max-width: 60ch;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.68;
+		text-align: left;
+	}
+
+	.cases-editorial {
+		display: grid;
+		grid-template-columns: minmax(0, 1.28fr) minmax(330px, 0.72fr);
+		gap: 22px;
+		margin-top: 54px;
+		align-items: start;
+	}
+
+	.cases-side-stack {
+		display: grid;
+		gap: 22px;
+	}
+
+	.case-feature {
+		display: grid;
+		gap: 24px;
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: var(--white);
+		box-shadow: 0 30px 62px -48px rgba(11, 18, 32, 0.34);
+		text-align: left;
+	}
+
+	.case-feature--lead {
+		padding: 34px;
+	}
+
+	.case-feature--compact {
+		padding: 24px;
+	}
+
+	.case-feature__content {
+		display: grid;
+		gap: 14px;
+	}
+
+	.case-feature__sector,
+	.case-feature__proof span {
+		margin: 0;
+		color: var(--teal-deep);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.11em;
+		text-transform: uppercase;
+	}
+
+	.case-feature h2 {
+		max-width: 13ch;
+		margin: 0;
+		color: var(--ink);
+		font-size: clamp(31px, 4vw, 48px);
+		font-weight: 500;
+	}
+
+	.case-feature--compact h2 {
+		font-size: clamp(26px, 3vw, 34px);
+	}
+
+	.case-feature__system {
+		color: var(--ink);
+		font-size: 15px;
+		font-weight: 700;
+		line-height: 1.5;
+	}
+
+	.case-feature__summary {
+		max-width: 56ch;
+		color: var(--body);
+		font-size: 16px;
+		line-height: 1.66;
+	}
+
+	.case-feature__proof {
+		display: grid;
+		gap: 8px;
+		margin-top: 4px;
+		padding: 18px;
+		border: 1px solid rgba(0, 183, 198, 0.22);
+		border-radius: 12px;
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.08), rgba(255, 255, 255, 0.86));
+	}
+
+	.case-feature__proof strong {
+		color: var(--ink);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1.12;
+	}
+
+	.case-feature a {
+		justify-self: start;
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
+		padding: 12px 18px;
+		border-radius: 10px;
+		background: var(--teal);
+		color: #04222a;
+		font-size: 14px;
+		font-weight: 800;
+		line-height: 1;
+		text-decoration: none;
+		box-shadow: 0 14px 34px -16px rgba(0, 183, 198, 0.58);
+		transition:
+			transform 150ms ease,
+			box-shadow 150ms ease;
+	}
+
+	.case-feature a:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 20px 44px -16px rgba(0, 183, 198, 0.70);
+	}
+
+	.cases-thread {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.cases-thread::before {
+		content: "";
+		position: absolute;
+		inset: auto -8% -34% 48%;
+		width: 760px;
+		height: 560px;
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.14), transparent 68%);
+		pointer-events: none;
+	}
+
+	.cases-thread__items {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+	}
+
+	.cases-thread__items article {
+		padding: 24px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.045);
+		text-align: left;
+	}
+
+	.cases-thread__items span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 34px;
+		height: 34px;
+		margin-bottom: 22px;
+		border: 1px solid rgba(63, 216, 227, 0.34);
+		border-radius: 9px;
+		background: rgba(0, 183, 198, 0.13);
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+	}
+
+	.cases-thread__items h3 {
+		margin: 0 0 10px;
+		color: var(--white);
+		font-size: 23px;
+		font-weight: 600;
+	}
+
+	.cases-thread__items p {
+		color: var(--body-light);
+		font-size: 15px;
+		line-height: 1.62;
+	}
+
+	.cases-cta {
+		position: relative;
+		overflow: hidden;
+		border-top: 1px solid var(--line-light);
+	}
+
+	.cases-cta::before {
+		content: "";
+		position: absolute;
+		bottom: -220px;
+		left: 50%;
+		width: 780px;
+		height: 540px;
+		transform: translateX(-50%);
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.10), transparent 64%);
+		pointer-events: none;
+	}
+
+	.cases-cta__inner {
+		position: relative;
+		z-index: 2;
+		max-width: 46ch;
+		padding: 34px;
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: var(--white);
+		box-shadow: 0 28px 58px -48px rgba(11, 18, 32, 0.28);
+		text-align: left;
+	}
+
+	.cases-cta h2 {
+		margin: 0 0 18px;
+		color: var(--ink);
+		font-size: clamp(30px, 3.7vw, 42px);
+		font-weight: 500;
+	}
+
+	.cases-cta p {
+		margin-bottom: 30px;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.62;
+	}
+
+	@media (max-width: 980px) {
+		.cases-overview__grid,
+		.cases-thread__grid,
+		.cases-editorial,
+		.cases-thread__items {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.cases-hero__inner {
+			padding: 78px 0 92px;
+		}
+
+		.case-feature--lead,
+		.case-feature--compact,
+		.cases-thread__items article,
+		.cases-cta__inner {
+			padding: 22px;
+		}
+	}
+</style>
