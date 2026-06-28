@@ -1,5 +1,9 @@
 ---
+import ButtonPrimary from '../../components/ButtonPrimary.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import Frame from '../../components/Frame.astro';
 import Layout from '../../layouts/Layout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
 
 const features = [
 	'class browsing and online booking',
@@ -13,180 +17,431 @@ const features = [
 ];
 
 const customerSteps = [
-	'view available classes',
-	'choose a date',
-	'book a place',
-	'pay online',
-	'receive confirmation',
-	'receive a reminder before the class',
-	'buy vouchers',
-	'ask a question before booking',
+	'View available classes',
+	'Choose a date',
+	'Book a place',
+	'Pay online',
+	'Receive confirmation',
+	'Receive a reminder before the class',
+	'Buy vouchers',
+	'Ask a question before booking',
 ];
 ---
 
 <Layout
-	title="Jas’s School of Spice Booking System | Kalyan AI"
+	title="Jas's School of Spice Booking System | Kalyan AI"
 	description="A live booking and operations system for a cookery school, built around bookings, payments, vouchers, customer questions and owner control."
 	showFinalCta={false}
 >
-	<main class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-16 md:px-6">
-		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
-			<div class="grid gap-8 p-4 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
-				<div class="space-y-5">
-					<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
-						Live client booking and operations system
-					</p>
-					<h1 class="text-3xl font-semibold text-[var(--brand-navy)] md:text-5xl">Jas’s School of Spice Booking System</h1>
-					<p class="text-[var(--muted)] md:text-lg">
-						A live booking and operations system for a cookery school, built to help customers book, pay, buy vouchers and ask questions online, while giving the owner clearer control behind the scenes.
-					</p>
-					<a href="/blueprint" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">
-						View the Blueprint process →
-					</a>
+	<section class="case-hero">
+		<div class="ka-wrap">
+			<div class="case-hero__grid">
+				<div>
+					<Eyebrow tone="dark">Live booking and operations</Eyebrow>
+					<h1>Jas's School of Spice booking system</h1>
+					<p>A live booking and operations system built to help customers book, pay, buy vouchers and ask questions online, while giving the owner clearer control behind the scenes.</p>
 				</div>
-				<div class="overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white shadow-sm">
-					<img
-						src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png"
-						alt="Jas’s School of Spice customer homepage showing class options and booking calls to action."
-						class="h-full w-full object-cover"
+				<div class="case-hero__panel">
+					<span>Live system</span>
+					<strong>Bookings, payments, vouchers and owner controls in one operating flow.</strong>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-white">
+		<div class="ka-wrap">
+			<div class="case-two-col">
+				<SectionHeading
+					eyebrow="Business context"
+					title="The school needed more than a simple booking page."
+					highlight="more than a simple booking page."
+				/>
+				<div class="case-copy">
+					<p>The school needed a cleaner way for customers to view class dates, book places, pay securely, buy vouchers and ask questions without every step depending on manual messages.</p>
+					<p>Behind the scenes, the system also needed to support class dates, capacity, vouchers, booking changes and customer communication, with Kalyan AI supporting the system after launch.</p>
+					<p>The result needed to work for customers while keeping practical owner control over the operation.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-paper">
+		<div class="ka-wrap">
+			<div class="case-built-grid">
+				<div>
+					<SectionHeading
+						eyebrow="What we built"
+						title="A live booking and operations system."
+						highlight="operations system."
+						lead="Kalyan AI built a live system covering the customer journey and the protected controls needed to run it properly."
 					/>
-				</div>
-			</div>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<p class="text-sm font-semibold text-[var(--primary)]">The business problem</p>
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Jas’s School of Spice needed more than a simple booking page.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
-				<p>The school needed a cleaner way for customers to view class dates, book places, pay securely, buy vouchers and ask questions without every step depending on manual messages.</p>
-				<p>Behind the scenes, the system also needed to support class dates, capacity, vouchers, booking changes and customer communication, with Kalyan AI supporting the system after launch.</p>
-			</div>
-		</section>
-
-		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
-			<div class="grid gap-8 p-4 md:p-8 lg:grid-cols-[1fr,0.95fr] lg:items-center">
-				<div class="space-y-5 text-center">
-					<div class="space-y-2">
-						<p class="text-sm font-semibold text-[var(--primary)]">What we built</p>
-						<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">A live booking and operations system.</h2>
-					</div>
-					<p class="text-[var(--muted)]">
-						Kalyan AI built a live booking and operations system covering the customer journey and the protected controls needed to run it properly.
-					</p>
-					<ul class="grid gap-3 text-[var(--muted)] md:grid-cols-2">
+					<ul class="case-feature-list">
 						{features.map((feature) => (
-							<li class="flex flex-col items-center gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-center shadow-sm md:p-4">
-								<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]"></span>
-								<span>{feature}</span>
-							</li>
+							<li><span></span>{feature}</li>
 						))}
 					</ul>
 				</div>
-				<div class="overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white shadow-sm">
-					<img
+				<div class="case-frame-stack">
+					<Frame
+						src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png"
+						alt="Jas's School of Spice customer homepage showing class options and booking calls to action."
+						label="Customer booking homepage"
+						badge="Live system"
+						imageFit="contain"
+						loading="eager"
+					/>
+					<Frame
 						src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-gift-voucher-page.png"
-						alt="Jas’s School of Spice gift voucher page showing online voucher purchase options."
-						class="h-full w-full object-cover"
-						loading="lazy"
+						alt="Jas's School of Spice gift voucher page showing online voucher purchase options."
+						label="Gift voucher page"
+						imageFit="contain"
+						loading="eager"
 					/>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<div class="space-y-2 text-center">
-				<p class="text-sm font-semibold text-[var(--primary)]">Customer journey</p>
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The customer can move from interest to booking online.</h2>
-			</div>
-			<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+	<section class="ka-section ka-section-deep case-flow-band">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="Customer journey"
+				title="The customer can move from interest to booking online."
+				lead="The public journey is connected to protected operational controls behind the scenes, so the owner keeps clearer control of classes, capacity and communication."
+				tone="dark"
+			/>
+			<div class="jas-flow">
 				{customerSteps.map((step, index) => (
-					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-center shadow-sm md:p-4">
-						<p class="text-sm font-semibold text-[var(--primary)]">Step {index + 1}</p>
-						<p class="mt-1 text-[var(--muted)]">{step}</p>
-					</div>
+					<article>
+						<span>{String(index + 1).padStart(2, '0')}</span>
+						<p>{step}</p>
+					</article>
 				))}
 			</div>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<p class="text-sm font-semibold text-[var(--primary)]">Voucher handling</p>
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Vouchers are part of the customer journey, without removing owner control.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
-				<p>The system supports online voucher purchase as part of the customer journey.</p>
-				<p>Class-specific vouchers can be linked to a particular class.</p>
-				<p>Custom-value vouchers can be purchased online, while class placement is still handled personally so the school stays in control of availability.</p>
+			<div class="case-dark-feature">
+				<div>
+					<Eyebrow tone="dark">Owner control</Eyebrow>
+					<h3>The public booking journey is only one part of the system.</h3>
+					<p>Behind it sits protected operational control for class dates, booking visibility, booking changes, voucher handling and customer communication.</p>
+				</div>
+				<Frame
+					src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-ops-class-dates.png"
+					alt="Protected operations screen for Jas's School of Spice class dates and availability."
+					label="Protected operations screen"
+					imageFit="cover"
+					loading="eager"
+				/>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card overflow-hidden rounded-3xl bg-white/80 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2">
-			<div class="grid gap-8 p-4 md:p-8 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
-				<div class="space-y-4 text-center">
-					<p class="text-sm font-semibold text-[var(--primary)]">Owner control behind the scenes</p>
-					<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The public booking journey is only one part of the system.</h2>
-					<div class="space-y-3 text-[var(--muted)]">
-						<p>Behind it sits protected operational control for class dates, booking visibility, booking changes, voucher handling and customer communication.</p>
-						<p>Kalyan AI supports and manages the system behind the scenes, so the owner does not need to manage the technical side day to day.</p>
+	<section class="ka-section ka-section-white case-results">
+		<div class="ka-wrap">
+			<div class="case-results__grid">
+				<div>
+					<SectionHeading
+						eyebrow="Owner view"
+						title="More of the repeated booking work is handled when the customer is ready."
+						highlight="when the customer is ready."
+					/>
+					<div class="case-copy">
+						<p>Before this system, enquiries and bookings depended on manual back and forth. A customer could be interested in a class, but the booking still relied on messages being answered, availability being checked and payment being arranged at the right moment.</p>
+						<p>Now a customer can find the class, book a place and pay while the interest is there. Gift vouchers can be bought online, and Jas receives Telegram alerts when a booking or enquiry lands.</p>
+						<p>The system works as a practical business system tied to how the cookery school actually operates.</p>
 					</div>
 				</div>
-				<div class="overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-white shadow-sm">
-					<img
-						src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-ops-class-dates.png"
-						alt="Protected operations screen for Jas’s School of Spice class dates and availability."
-						class="h-full w-full object-cover"
-						loading="lazy"
-					/>
-				</div>
+				<article class="case-review">
+					<p class="case-stars" aria-label="Five star review">*****</p>
+					<blockquote>I cannot recommend Zax highly enough. He exceeded my expectations in every way and genuinely went above and beyond throughout the entire process. From the very beginning, he took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. Most importantly, the system has freed up a significant amount of my time. Instead of spending hours answering the same questions and responding to enquiries, I can focus on the parts of my business that I truly enjoy. Because the system works 24/7, customers can get the information they need and make bookings at any time, meaning I no longer lose potential customers who might otherwise have moved on while waiting for a reply. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble.</blockquote>
+					<footer>Jas, Jas's School of Spice</footer>
+				</article>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<p class="text-sm font-semibold text-[var(--primary)]">Built for real-world use</p>
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built for real customer use, not just as a demo.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
-				<p>Before go-live, the live booking flow, payment flow, voucher purchase, customer emails, Telegram alerts, booking tracking and backups were tested.</p>
-				<p>Payments are handled by Stripe, card details are not stored by the system, and bookings are confirmed only after payment has properly gone through.</p>
+	<section class="ka-section ka-section-paper case-cta">
+		<div class="ka-wrap">
+			<div class="case-cta__inner">
+				<Eyebrow>Start here</Eyebrow>
+				<h2>Want to find the right first system for your business?</h2>
+				<p>The Business AI Blueprint is a focused paid review that helps identify where AI can create real value, what system is worth building first, and whether there is a clear business case before a larger build.</p>
+				<ButtonPrimary href="/blueprint" label="Start with the Business AI Blueprint" data-plausible="BookACall" />
 			</div>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<p class="text-sm font-semibold text-[var(--primary)]">Owner view</p>
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What changed for the owner</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
-				<p>Before this system, enquiries and bookings depended on manual back and forth. A customer could be interested in a class, but the booking still relied on messages being answered, availability being checked and payment being arranged at the right moment.</p>
-				<p>Now a customer can find the class, book a place and pay while the interest is there. Gift vouchers can be bought online, and Jas receives Telegram alerts when a booking or enquiry lands, so she knows what is happening without watching an inbox all evening.</p>
-				<p>The result is a calmer day to day operation. More of the repeated booking work is handled at the point the customer is ready, and Jas keeps clearer control over classes, capacity and customer communication.</p>
-			</div>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<p class="text-sm font-semibold text-[var(--primary)]">Why this matters</p>
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">This was not a generic booking tool dropped into the business.</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)]">
-				<p>It was a practical business system built around how a cookery school actually works: class dates, spaces, payments, vouchers, customer questions, reminders, owner alerts and operational changes.</p>
-				<p>It shows the kind of first practical system the Business AI Blueprint is designed to uncover: not a generic AI idea, but a real operational system tied to how the business actually works.</p>
-			</div>
-		</section>
-
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<div class="space-y-2">
-				<p class="text-sm font-semibold text-[var(--primary)]">Client proof</p>
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What Jas said after launch</h2>
-			</div>
-			<blockquote class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur md:p-6">
-				<p class="text-xl text-yellow-500" aria-label="Five star review">★★★★★</p>
-				<p class="mt-4 text-lg italic text-[var(--muted)]">"I cannot recommend Zax highly enough. He exceeded my expectations in every way and genuinely went above and beyond throughout the entire process. From the very beginning, he took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. Most importantly, the system has freed up a significant amount of my time. Instead of spending hours answering the same questions and responding to enquiries, I can focus on the parts of my business that I truly enjoy. Because the system works 24/7, customers can get the information they need and make bookings at any time, meaning I no longer lose potential customers who might otherwise have moved on while waiting for a reply. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble."</p>
-				<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Jas, Jas's School of Spice</footer>
-			</blockquote>
-		</section>
-
-		<section class="ka-card space-y-5 rounded-3xl bg-[var(--cta-bg)] p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Want to find the right first system for your business?</h2>
-			<p class="copy-narrow mx-auto text-[var(--muted)]">
-				The Business AI Blueprint is a focused paid review that helps identify where AI can create real value in your business, what system is worth building first, and whether there is a clear business case before you invest in a larger build.
-			</p>
-			<a href="/blueprint" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">
-				Start with the Business AI Blueprint →
-			</a>
-		</section>
-	</main>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.case-hero {
+		background:
+			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 22%, rgba(8, 20, 40, 0.76) 62%, rgba(8, 20, 40, 0.98) 100%),
+			radial-gradient(circle at 80% 24%, rgba(0, 183, 198, 0.22), transparent 34%),
+			var(--navy-deep);
+		color: var(--white);
+	}
+
+	.case-hero__grid {
+		display: grid;
+		grid-template-columns: 1fr 0.75fr;
+		gap: 64px;
+		align-items: end;
+		padding: 116px 0 132px;
+	}
+
+	.case-hero h1 {
+		max-width: 13ch;
+		margin: 0 0 24px;
+		color: var(--white);
+		font-size: clamp(46px, 6vw, 76px);
+		font-weight: 500;
+	}
+
+	.case-hero p {
+		max-width: 54ch;
+		color: var(--body-light);
+		font-size: 18px;
+		line-height: 1.66;
+	}
+
+	.case-hero__panel {
+		padding: 30px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.05);
+		text-align: left;
+	}
+
+	.case-hero__panel span {
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+	}
+
+	.case-hero__panel strong {
+		display: block;
+		margin-top: 14px;
+		color: var(--white);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: clamp(28px, 3vw, 42px);
+		font-weight: 600;
+		line-height: 1.08;
+	}
+
+	.case-two-col,
+	.case-built-grid,
+	.case-results__grid,
+	.case-dark-feature {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 64px;
+		align-items: start;
+	}
+
+	.case-copy {
+		display: grid;
+		gap: 18px;
+		max-width: 58ch;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.68;
+		text-align: left;
+	}
+
+	.case-feature-list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 14px;
+		margin: 34px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.case-feature-list li {
+		display: grid;
+		grid-template-columns: 16px 1fr;
+		gap: 12px;
+		padding: 18px;
+		border: 1px solid var(--line-light);
+		border-radius: 14px;
+		background: var(--white);
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.55;
+		text-align: left;
+	}
+
+	.case-feature-list span {
+		width: 8px;
+		height: 8px;
+		margin-top: 0.62em;
+		border-radius: 999px;
+		background: var(--teal);
+	}
+
+	.case-frame-stack {
+		display: grid;
+		gap: 22px;
+	}
+
+	.case-flow-band {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.case-flow-band::before {
+		content: "";
+		position: absolute;
+		inset: auto -8% -30% 48%;
+		height: 520px;
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.14), transparent 68%);
+		pointer-events: none;
+	}
+
+	.jas-flow {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 16px;
+		margin-top: 58px;
+	}
+
+	.jas-flow article {
+		position: relative;
+		min-height: 132px;
+		padding: 22px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.04);
+		text-align: left;
+	}
+
+	.jas-flow span {
+		display: inline-flex;
+		width: 38px;
+		height: 38px;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 18px;
+		border: 1px solid rgba(63, 216, 227, 0.34);
+		border-radius: 10px;
+		background: rgba(0, 183, 198, 0.10);
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 12px;
+	}
+
+	.jas-flow p,
+	.case-dark-feature p {
+		color: var(--body-light);
+		font-size: 15px;
+		line-height: 1.62;
+	}
+
+	.case-dark-feature {
+		position: relative;
+		z-index: 2;
+		margin-top: 64px;
+		padding-top: 46px;
+		border-top: 1px solid var(--line-dark);
+	}
+
+	.case-dark-feature h3 {
+		max-width: 16ch;
+		margin: 0 0 16px;
+		color: var(--white);
+		font-size: clamp(30px, 4vw, 44px);
+		font-weight: 500;
+	}
+
+	.case-review,
+	.case-cta__inner {
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: var(--white);
+		box-shadow: 0 28px 58px -48px rgba(11, 18, 32, 0.28);
+		text-align: left;
+	}
+
+	.case-review {
+		padding: 30px;
+	}
+
+	.case-stars {
+		margin-bottom: 16px;
+		color: #fbbc05;
+		font-size: 16px;
+		letter-spacing: 2px;
+	}
+
+	.case-review blockquote {
+		margin: 0;
+		color: var(--body);
+		font-size: 16px;
+		font-style: italic;
+		line-height: 1.66;
+	}
+
+	.case-review footer {
+		margin-top: 20px;
+		color: var(--teal-deep);
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	.case-cta__inner {
+		max-width: 56ch;
+		padding: 34px;
+	}
+
+	.case-cta h2 {
+		margin: 0 0 18px;
+		color: var(--ink);
+		font-size: clamp(30px, 4vw, 44px);
+		font-weight: 500;
+	}
+
+	.case-cta p {
+		margin-bottom: 28px;
+		color: var(--body);
+		font-size: 16px;
+		line-height: 1.66;
+	}
+
+	@media (max-width: 960px) {
+		.jas-flow {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	@media (max-width: 860px) {
+		.case-hero__grid,
+		.case-two-col,
+		.case-built-grid,
+		.case-results__grid,
+		.case-dark-feature,
+		.case-feature-list {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.case-hero__grid {
+			padding: 78px 0 92px;
+		}
+
+		.jas-flow {
+			grid-template-columns: 1fr;
+		}
+
+		.case-hero__panel,
+		.jas-flow article,
+		.case-review,
+		.case-cta__inner {
+			padding: 22px;
+		}
+	}
+</style>

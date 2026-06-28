@@ -1,130 +1,426 @@
 ---
+import ButtonPrimary from '../../components/ButtonPrimary.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import Frame from '../../components/Frame.astro';
 import Layout from '../../layouts/Layout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+
+const builtItems = [
+	{
+		title: 'Invoices',
+		copy: 'Pulled in from email or uploaded manually with drag and drop, so documents could be handled consistently.',
+	},
+	{
+		title: 'Receipts',
+		copy: 'Quick photo upload from a phone, so items could be captured close to the moment they happened.',
+	},
+	{
+		title: 'Tips',
+		copy: 'A simple entry screen to replace informal notes with a clearer record.',
+	},
+	{
+		title: 'Exports',
+		copy: 'CSV packs for the accountant: invoices, receipts, or tips, separately or together.',
+	},
+];
+
+const safeguards = [
+	'Documents go straight to secure cloud storage, so nothing sensitive sits on a server.',
+	'Duplicate prevention if the same invoice comes in twice.',
+	'Clear statuses so items are easier to review.',
+	'Full record of what came in and when.',
+	'Secure sign-in with locked-down access.',
+];
 ---
 
-<Layout title="Case Study: Spa by Kaajal | Kalyan AI" description="How Kalyan AI built a finance admin and visibility system around real salon operations.">
-	<section class="my-6 max-w-4xl mx-auto max-md:-mx-2 md:my-12">
-		<p class="text-[var(--primary)] font-medium mb-2">Case Study</p>
-		<h1 class="text-4xl font-semibold text-[var(--text)] mb-4">A system built around how finance work moved through the salon.</h1>
-		<p class="text-xl text-[var(--muted)] mb-6 max-md:text-[15px] md:mb-8">Spa by Kaajal · Beauty salon · London, UK</p>
-
-		<div class="ka-card p-4 mb-6 text-center md:p-8 md:mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">The business context</h2>
-			<p class="text-[var(--muted)] mb-4 max-md:text-left max-md:text-[15px]">Spa by Kaajal needed a better way to handle invoices, receipts, tips, accountant exports, and the decisions around what had been captured or still needed attention.</p>
-			<p class="text-[var(--muted)] mb-4 max-md:text-left max-md:text-[15px]">The work was spread across email, WhatsApp, paper, notebooks, and existing files. The owner needed one place to understand what had come in, what was missing, and what needed action.</p>
-			<p class="text-[var(--muted)] max-md:text-left max-md:text-[15px]">The goal was not to force a new way of running the salon. It was to build a system around how the finance work already moved through the business, with clearer status, stronger owner control, and accountant-ready outputs.</p>
-		</div>
-
-		<div class="ka-card p-4 mb-6 text-center md:p-8 md:mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">What we built</h2>
-			<p class="text-[var(--muted)] mb-6 max-md:text-left max-md:text-[15px]">A single finance system that captures invoices, receipts, and tips into one place, with clear status tracking, owner review, and exports the accountant can use.</p>
-
-			<div class="grid md:grid-cols-2 gap-6">
+<Layout title="Case Study: Spa by Kaajal | Kalyan AI" description="How Kalyan AI built a finance admin and visibility system around real salon operations." showFinalCta={false}>
+	<section class="case-hero">
+		<div class="ka-wrap">
+			<div class="case-hero__grid">
 				<div>
-					<p class="text-[var(--primary)] font-semibold mb-2">Invoices</p>
-					<p class="text-[var(--muted)] max-md:text-left max-md:text-[15px]">Pulled in from email or uploaded manually with drag and drop, so documents could be handled consistently.</p>
+					<Eyebrow tone="dark">Finance operations</Eyebrow>
+					<h1>Spa by Kaajal finance system</h1>
+					<p>A system built around how finance work moved through the salon, giving the owner one clearer place for invoices, receipts, tips and accountant-ready exports.</p>
 				</div>
-				<div>
-					<p class="text-[var(--primary)] font-semibold mb-2">Receipts</p>
-					<p class="text-[var(--muted)] max-md:text-left max-md:text-[15px]">Quick photo upload from a phone, so items could be captured close to the moment they happened.</p>
-				</div>
-				<div>
-					<p class="text-[var(--primary)] font-semibold mb-2">Tips</p>
-					<p class="text-[var(--muted)] max-md:text-left max-md:text-[15px]">A simple entry screen to replace informal notes with a clearer record.</p>
-				</div>
-				<div>
-					<p class="text-[var(--primary)] font-semibold mb-2">Exports</p>
-					<p class="text-[var(--muted)] max-md:text-left max-md:text-[15px]">CSV packs for the accountant: invoices, receipts, or tips, separately or together.</p>
+				<div class="case-hero__stat" aria-label="Finance admin reduced from around 4 hours weekly to around 30 minutes">
+					<span>Weekly finance admin</span>
+					<strong>4 hours to 30 minutes</strong>
+					<p>Reduced from around 4 hours weekly to around 30 minutes after the system went live.</p>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<div class="ka-card p-4 mb-6 text-center md:p-8 md:mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-6">Before and after</h2>
-			<p class="text-[var(--primary)] text-base font-medium mb-6 max-md:text-left max-md:text-[15px]">Images blurred for privacy - layouts reflect the real pain and system we delivered.</p>
-
-			<div class="mb-6 md:mb-8">
-				<h3 class="text-lg font-semibold text-[var(--text)] mb-4">Before: fragmented finance records</h3>
-				<div class="grid md:grid-cols-2 gap-4">
-					<img src="/images/case-studies/before-tips.jpg" alt="Tips tracking before" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/before-expenses.jpg" alt="Expenses before" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/before-vouchers.jpg" alt="Gift voucher tracking before" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/before-kpi.jpg" alt="Monthly KPI tracking before" class="rounded-lg border border-[var(--border)]" />
+	<section class="ka-section ka-section-white">
+		<div class="ka-wrap">
+			<div class="case-two-col">
+				<SectionHeading
+					eyebrow="Business context"
+					title="Finance work needed one clearer source of truth."
+					highlight="one clearer source of truth."
+				/>
+				<div class="case-copy">
+					<p>Spa by Kaajal needed a better way to handle invoices, receipts, tips, accountant exports, and the decisions around what had been captured or still needed attention.</p>
+					<p>The work was spread across email, WhatsApp, paper, notebooks, and existing files. The owner needed one place to understand what had come in, what was missing, and what needed action.</p>
+					<p>The goal was not to force a new way of running the salon. It was to build a system around how the finance work already moved through the business, with clearer status, stronger owner control, and accountant-ready outputs.</p>
 				</div>
-				<p class="text-[var(--muted)] text-sm mt-3 text-center">Multiple files and notes, no single source of truth</p>
-			</div>
-
-			<div>
-				<h3 class="text-lg font-semibold text-[var(--text)] mb-4">
-					After: one clean system
-					<span class="ml-2 text-xs font-normal bg-[var(--primary)] text-white px-2 py-1 rounded">Demo data</span>
-				</h3>
-				<div class="grid md:grid-cols-2 gap-4 rounded-xl bg-white/70 p-3 shadow-sm md:p-4">
-					<img src="/images/case-studies/after-dashboard.png" alt="Finance system overview after" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/after-documents.png" alt="Documents view after" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/after-tips.png" alt="Tips tracking after" class="rounded-lg border border-[var(--border)]" />
-					<img src="/images/case-studies/after-cashflow.png" alt="Cashflow view after" class="rounded-lg border border-[var(--border)]" />
-				</div>
-				<p class="text-[var(--muted)] text-sm mt-3 text-center">Everything in one place with clear status tracking, owner review, and accountant-ready exports</p>
 			</div>
 		</div>
+	</section>
 
-		<div class="ka-card p-4 mb-6 text-center md:p-8 md:mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Built-in safeguards</h2>
-			<ul class="mx-auto max-w-2xl space-y-3 text-left text-[var(--muted)] max-md:text-[15px]">
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Documents go straight to secure cloud storage (Google Drive), so nothing sensitive sits on a server</li>
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Duplicate prevention if the same invoice comes in twice</li>
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Clear statuses (Captured / Needs info / Approved) so items are easier to review</li>
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Full record of what came in and when</li>
-				<li class="flex items-start gap-3"><span class="text-[var(--primary)]">✓</span> Secure sign-in with locked-down access</li>
-			</ul>
-		</div>
-
-		<div class="ka-card p-4 mb-6 bg-[var(--cta-bg)] text-center md:p-8 md:mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Results</h2>
-			<p class="text-[var(--muted)] mb-6 text-center max-md:text-left max-md:text-[15px]">Finance admin reduced from around 4 hours weekly to around 30 minutes.</p>
-			<div class="grid md:grid-cols-3 gap-6 text-center">
+	<section class="ka-section ka-section-paper">
+		<div class="ka-wrap">
+			<div class="case-built-grid">
 				<div>
-					<p class="text-3xl font-bold text-[var(--primary)]">4h → 30 mins</p>
-					<p class="text-[var(--muted)]">Weekly finance admin time</p>
+					<SectionHeading
+						eyebrow="What we built"
+						title="A finance system for capture, review and export."
+						highlight="capture, review and export."
+						lead="A single finance system that captures invoices, receipts, and tips into one place, with clear status tracking, owner review, and exports the accountant can use."
+					/>
+					<div class="case-feature-list">
+						{builtItems.map((item) => (
+							<article>
+								<h3>{item.title}</h3>
+								<p>{item.copy}</p>
+							</article>
+						))}
+					</div>
 				</div>
-				<div>
-					<p class="text-3xl font-bold text-[var(--primary)]">One</p>
-					<p class="text-[var(--muted)]">Place to capture and review items</p>
+				<Frame
+					src="/images/case-studies/after-dashboard.png"
+					alt="Spa by Kaajal finance dashboard showing invoices, receipts, cashflow, tips and overdue items in one place."
+					label="Finance dashboard with demo data"
+					loading="eager"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-deep case-proof-band">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="Before and after"
+				title="From scattered records to one controlled finance view."
+				lead="Images are blurred or use demo data for privacy. The layout shows the real operating problem and the system delivered."
+				tone="dark"
+			/>
+			<div class="spa-before-after">
+				<div class="spa-proof-column">
+					<div>
+						<span>Before</span>
+						<h3>Fragmented finance records</h3>
+						<p>Multiple files and notes, with no single source of truth.</p>
+					</div>
+					<div class="spa-frame-grid">
+						<Frame src="/images/case-studies/before-tips.jpg" alt="Tips tracking before the Spa by Kaajal finance system." label="Tips tracking before" imageFit="cover" loading="eager" />
+						<Frame src="/images/case-studies/before-expenses.jpg" alt="Expenses tracking before the Spa by Kaajal finance system." label="Expenses before" imageFit="cover" loading="eager" />
+					</div>
 				</div>
-				<div>
-					<p class="text-3xl font-bold text-[var(--primary)]">Clearer</p>
-					<p class="text-[var(--muted)]">View of missing receipts and open items</p>
+				<div class="spa-proof-column">
+					<div>
+						<span>After</span>
+						<h3>One clean system</h3>
+						<p>Everything in one place with clear status tracking, owner review, and accountant-ready exports.</p>
+					</div>
+					<div class="spa-frame-grid">
+						<Frame src="/images/case-studies/after-documents.png" alt="Documents view after the Spa by Kaajal finance system was built." label="Documents view after" imageFit="cover" loading="eager" />
+						<Frame src="/images/case-studies/after-cashflow.png" alt="Cashflow view after the Spa by Kaajal finance system was built." label="Cashflow view after" imageFit="cover" loading="eager" />
+					</div>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<div class="ka-card p-4 mb-6 text-center md:p-8 md:mb-8">
-			<div class="mb-4 md:mb-5">
-				<p class="text-[var(--primary)] font-semibold mb-2">Client proof</p>
-				<h2 class="text-2xl font-semibold text-[var(--text)]">What Kaajal said after launch</h2>
+	<section class="ka-section ka-section-white case-results">
+		<div class="ka-wrap">
+			<div class="case-results__grid">
+				<div>
+					<SectionHeading
+						eyebrow="Results and safeguards"
+						title="The result was clearer finance control with less weekly admin."
+						highlight="less weekly admin."
+						lead="Finance admin reduced from around 4 hours weekly to around 30 minutes."
+					/>
+					<ul class="case-check-list">
+						{safeguards.map((item) => (
+							<li><span></span>{item}</li>
+						))}
+					</ul>
+				</div>
+				<article class="case-review">
+					<p class="case-stars" aria-label="Five star review">*****</p>
+					<blockquote>I was spending 4 to 6 hours a week on finance admin. Zax took the time to understand how my salon works and built a system around it. Now everything is in one place, I know what's going on, and getting things ready for my accountant is so much easier. He made sure I was comfortable using it and was always available when I had questions.</blockquote>
+					<footer>Kaajal Malik, Spa by Kaajal</footer>
+				</article>
 			</div>
-			<blockquote class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-4 shadow-sm backdrop-blur md:p-6">
-				<p class="text-xl text-yellow-500" aria-label="Five star review">★★★★★</p>
-				<p class="mt-4 text-lg italic text-[var(--muted)] max-md:text-left max-md:text-[15px]">“I was spending 4 to 6 hours a week on finance admin. Zax took the time to understand how my salon works and built a system around it. Now everything is in one place, I know what's going on, and getting things ready for my accountant is so much easier. He made sure I was comfortable using it and was always available when I had questions.”</p>
-				<footer class="mt-5 text-sm font-semibold text-[var(--primary)]">Kaajal Malik, Spa by Kaajal</footer>
-			</blockquote>
 		</div>
+	</section>
 
-		<div class="ka-card p-4 mb-6 text-center md:p-8 md:mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Delivery</h2>
-			<p class="text-[var(--muted)] mb-4 max-md:text-left max-md:text-[15px]"><span class="text-[var(--primary)] font-semibold">Slice 1</span> delivered in 4 weeks: invoice ingestion, receipt upload, tips entry, CSV exports, and the core safeguards.</p>
-			<p class="text-[var(--muted)] mb-4 max-md:text-left max-md:text-[15px]"><span class="text-[var(--primary)] font-semibold">Next slices</span> planned: approval queue with human sign-off, weekly finance pack, reminders for missing items, and connections to accounting and reconciliation tools.</p>
-			<p class="text-[var(--muted)] max-md:text-left max-md:text-[15px]">Then moving onto AI assistance in other parts of the business.</p>
+	<section class="ka-section ka-section-paper case-cta">
+		<div class="ka-wrap">
+			<div class="case-cta__inner">
+				<Eyebrow>Start here</Eyebrow>
+				<h2>Want to find the right first system for your business?</h2>
+				<p>The Business AI Blueprint is a focused paid review that helps identify where AI can create real value, what system is worth building first, and whether there is a clear business case before a larger build.</p>
+				<ButtonPrimary href="/blueprint" label="Start with the Business AI Blueprint" data-plausible="BookACall" />
+			</div>
 		</div>
-
-		<div class="ka-card p-4 mb-6 text-center md:p-8 md:mb-8">
-			<h2 class="text-2xl font-semibold text-[var(--text)] mb-4">Another example</h2>
-			<p class="text-[var(--muted)] mb-5 max-md:text-left max-md:text-[15px]">A live booking and operations system for a cookery school, covering bookings, payments, vouchers, customer questions, owner alerts and protected operational controls.</p>
-			<a href="/case-studies/jas-school-of-spice" class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]">
-				Read the Jas’s School of Spice case study
-			</a>
-		</div>
-
 	</section>
 </Layout>
+
+<style>
+	.case-hero {
+		background:
+			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 22%, rgba(8, 20, 40, 0.76) 62%, rgba(8, 20, 40, 0.98) 100%),
+			radial-gradient(circle at 80% 24%, rgba(0, 183, 198, 0.22), transparent 34%),
+			var(--navy-deep);
+		color: var(--white);
+	}
+
+	.case-hero__grid {
+		display: grid;
+		grid-template-columns: 1fr 0.75fr;
+		gap: 64px;
+		align-items: end;
+		padding: 116px 0 132px;
+	}
+
+	.case-hero h1 {
+		max-width: 13ch;
+		margin: 0 0 24px;
+		color: var(--white);
+		font-size: clamp(46px, 6vw, 76px);
+		font-weight: 500;
+	}
+
+	.case-hero p,
+	.case-hero__stat p {
+		color: var(--body-light);
+		font-size: 18px;
+		line-height: 1.66;
+	}
+
+	.case-hero__stat {
+		padding: 30px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.05);
+		text-align: left;
+	}
+
+	.case-hero__stat span,
+	.spa-proof-column span {
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+	}
+
+	.case-hero__stat strong {
+		display: block;
+		margin: 14px 0 12px;
+		color: var(--white);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: clamp(34px, 4vw, 52px);
+		font-weight: 600;
+		line-height: 1;
+	}
+
+	.case-two-col,
+	.case-built-grid,
+	.case-results__grid {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 64px;
+		align-items: start;
+	}
+
+	.case-copy {
+		display: grid;
+		gap: 18px;
+		max-width: 58ch;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.68;
+		text-align: left;
+	}
+
+	.case-feature-list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 14px;
+		margin-top: 34px;
+	}
+
+	.case-feature-list article,
+	.case-review,
+	.case-cta__inner {
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: var(--white);
+		box-shadow: 0 28px 58px -48px rgba(11, 18, 32, 0.28);
+		text-align: left;
+	}
+
+	.case-feature-list article {
+		padding: 22px;
+	}
+
+	.case-feature-list h3,
+	.spa-proof-column h3 {
+		margin: 0 0 8px;
+		color: var(--ink);
+		font-size: 21px;
+		font-weight: 600;
+	}
+
+	.case-feature-list p {
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.6;
+	}
+
+	.case-proof-band {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.case-proof-band::before {
+		content: "";
+		position: absolute;
+		inset: auto -8% -30% 48%;
+		height: 520px;
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.14), transparent 68%);
+		pointer-events: none;
+	}
+
+	.spa-before-after {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 22px;
+		margin-top: 58px;
+	}
+
+	.spa-proof-column {
+		padding: 26px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.04);
+		text-align: left;
+	}
+
+	.spa-proof-column h3 {
+		margin-top: 12px;
+		color: var(--white);
+	}
+
+	.spa-proof-column p {
+		color: var(--body-light);
+		font-size: 15px;
+		line-height: 1.62;
+	}
+
+	.spa-frame-grid {
+		display: grid;
+		gap: 18px;
+		margin-top: 24px;
+	}
+
+	.case-check-list {
+		display: grid;
+		gap: 14px;
+		margin: 32px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.case-check-list li {
+		display: grid;
+		grid-template-columns: 18px 1fr;
+		gap: 12px;
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.58;
+	}
+
+	.case-check-list span {
+		width: 8px;
+		height: 8px;
+		margin-top: 0.62em;
+		border-radius: 999px;
+		background: var(--teal);
+	}
+
+	.case-review {
+		padding: 30px;
+	}
+
+	.case-stars {
+		margin-bottom: 16px;
+		color: #fbbc05;
+		font-size: 16px;
+		letter-spacing: 2px;
+	}
+
+	.case-review blockquote {
+		margin: 0;
+		color: var(--body);
+		font-size: 17px;
+		font-style: italic;
+		line-height: 1.68;
+	}
+
+	.case-review footer {
+		margin-top: 20px;
+		color: var(--teal-deep);
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	.case-cta__inner {
+		max-width: 56ch;
+		padding: 34px;
+	}
+
+	.case-cta h2 {
+		margin: 0 0 18px;
+		color: var(--ink);
+		font-size: clamp(30px, 4vw, 44px);
+		font-weight: 500;
+	}
+
+	.case-cta p {
+		margin-bottom: 28px;
+		color: var(--body);
+		font-size: 16px;
+		line-height: 1.66;
+	}
+
+	@media (max-width: 860px) {
+		.case-hero__grid,
+		.case-two-col,
+		.case-built-grid,
+		.case-results__grid,
+		.spa-before-after,
+		.case-feature-list {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.case-hero__grid {
+			padding: 78px 0 92px;
+		}
+
+		.case-hero__stat,
+		.spa-proof-column,
+		.case-review,
+		.case-cta__inner {
+			padding: 22px;
+		}
+	}
+</style>
