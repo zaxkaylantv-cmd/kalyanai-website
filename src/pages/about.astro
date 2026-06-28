@@ -161,6 +161,7 @@ const credibilityPoints = [
 			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 20%, rgba(8, 20, 40, 0.78) 62%, rgba(8, 20, 40, 0.98) 100%),
 			radial-gradient(circle at 78% 24%, rgba(0, 183, 198, 0.23), transparent 36%),
 			var(--navy-deep);
+		border-bottom: 1px solid var(--line-dark);
 		color: var(--white);
 	}
 
@@ -245,6 +246,26 @@ const credibilityPoints = [
 
 	.about-copy-stack--compact {
 		margin-top: 22px;
+	}
+
+	.about-origin {
+		background: var(--navy);
+		border-top: 1px solid var(--line-dark);
+		border-bottom: 1px solid var(--line-dark);
+		color: var(--white);
+	}
+
+	.about-origin :global(.ka-section-heading h2) {
+		color: var(--white) !important;
+	}
+
+	.about-origin :global(.ka-section-heading h2 span) {
+		color: var(--teal-soft) !important;
+	}
+
+	.about-origin :global(.ka-section-heading--light p),
+	.about-origin .about-copy-stack {
+		color: var(--body-light);
 	}
 
 	.about-origin__grid {
@@ -375,7 +396,8 @@ const credibilityPoints = [
 	.about-cta {
 		position: relative;
 		overflow: hidden;
-		border-top: 1px solid var(--line-light);
+		background: var(--navy-deep);
+		border-top: 1px solid var(--line-dark);
 	}
 
 	.about-cta::before {
@@ -395,20 +417,31 @@ const credibilityPoints = [
 		z-index: 2;
 		max-width: 46ch;
 		padding: 34px;
+		border-color: var(--line-dark);
+		background: rgba(255, 255, 255, 0.04);
+		box-shadow: none;
 	}
 
 	.about-cta h2 {
 		margin: 0 0 18px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: clamp(30px, 3.7vw, 42px);
 		font-weight: 500;
 	}
 
 	.about-cta p {
 		margin-bottom: 30px;
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 17px;
 		line-height: 1.62;
+	}
+
+	.about-cta :global(.ka-eyebrow--light) {
+		color: var(--teal-soft);
+	}
+
+	.about-cta :global(.ka-eyebrow--light)::before {
+		background: var(--gold-soft);
 	}
 
 	@media (max-width: 900px) {
