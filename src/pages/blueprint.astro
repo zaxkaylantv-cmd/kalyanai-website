@@ -1,18 +1,25 @@
 ---
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import CTASection from '../components/CTASection.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 
 const calendlyUrl = 'https://calendly.com/zaxkalyan/new-meeting';
 
 const firstSystemPrinciples = [
 	{
+		label: 'Principle 01',
 		title: 'It should solve a real business problem.',
 		copy: 'The recommendation should be tied to a real operational pressure, not an AI idea looking for somewhere to fit.',
 	},
 	{
+		label: 'Principle 02',
 		title: 'It should fit the way your team already works.',
 		copy: 'The best first system should support the way the business already runs, rather than forcing people into a completely new process.',
 	},
 	{
+		label: 'Principle 03',
 		title: 'It should have a clear reason to exist before anything is built.',
 		copy: 'Before build work starts, there should be a clear business reason, expected value, and practical use case.',
 	},
@@ -34,11 +41,11 @@ const proofPoints = [
 		copy: 'A finance admin and visibility system that reduced weekly finance admin from around 4 hours to around 30 minutes, with invoices, receipts, tips, missing items and accountant ready exports in one place.',
 	},
 	{
-		title: 'Jas’s School of Spice',
+		title: 'Jas\'s School of Spice',
 		copy: 'A booking and operations system for cookery classes, covering bookings, payments, vouchers, reminders, customer communication, owner alerts and protected operations management.',
 	},
 	{
-		title: 'Kalyan AI internal systems',
+		title: 'Kalyan AI Internal Operating Stack',
 		copy: 'Kalyan AI also runs its own business through controlled AI systems for managing relationships, outreach, reminders, reporting and owner visibility.',
 	},
 ];
@@ -49,107 +56,387 @@ const proofPoints = [
 	description="A focused diagnostic showing where AI can make your business easier to run, control and grow, what system would be worth building first, and where the return can come from."
 	showFinalCta={false}
 >
-	<main class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 pb-10 md:gap-10 md:px-6 md:pb-16">
-		<section class="ka-card mx-auto max-w-5xl space-y-5 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
-				Focused paid diagnostic
-			</p>
-			<h1 class="text-3xl font-semibold text-[var(--brand-navy)] md:text-5xl">Business AI Blueprint</h1>
-			<p class="copy-narrow mx-auto text-[var(--primary)] max-md:text-left max-md:text-[15px] md:text-lg">
-				A focused diagnostic showing where AI can make your business easier to run, control and grow, what system would be worth building first, and where the return can come from.
-			</p>
-			<p class="copy-narrow mx-auto text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				Built by Kalyan AI, a team that designs, builds, deploys and supports production grade AI systems around how businesses actually work.
-			</p>
-			<div class="flex flex-wrap justify-center gap-3">
-				<a
-					class="rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-					href={calendlyUrl}
-					data-plausible="BookACall"
-				>
-					Book your Blueprint
-				</a>
+	<section class="blueprint-hero">
+		<div class="ka-wrap">
+			<div class="blueprint-hero__inner">
+				<Eyebrow tone="dark">Focused paid review</Eyebrow>
+				<h1>Business AI Blueprint</h1>
+				<p class="blueprint-hero__core">Find where AI earns its keep in your business.</p>
+				<p class="blueprint-hero__copy">A focused diagnostic showing where AI can make your business easier to run, control and grow, what system would be worth building first, and where the return can come from.</p>
+				<ButtonPrimary href={calendlyUrl} label="Book your Blueprint" data-plausible="BookACall" />
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">A focused paid diagnostic</h2>
-			<p class="copy-narrow mx-auto text-[var(--primary)] max-md:text-left max-md:text-[15px]">
-				The Business AI Blueprint is designed to give you clear, practical direction before committing to a larger AI system build.
-			</p>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Why business owners start with a Blueprint</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-[var(--primary)]">Most business owners can see that AI could help, but they are not always clear where it fits, what would be worth building first, or whether the return would justify the investment.</p>
-				<p>The Business AI Blueprint is a focused diagnostic that looks at how your business actually runs, where time is being lost, where decisions are being made without the full picture, and where the right AI system could create real value.</p>
-				<p>You do not need to know what system you need before we speak. That is the point of the Blueprint.</p>
+	<section class="ka-section ka-section-white blueprint-owners">
+		<div class="ka-wrap">
+			<div class="blueprint-two-col">
+				<SectionHeading
+					eyebrow="Why owners book a Blueprint"
+					title="AI matters. The hard part is knowing where it belongs."
+					highlight="where it belongs."
+				/>
+				<div class="blueprint-copy-stack">
+					<p>Most business owners can see that AI could help, but they are not always clear where it fits, what would be worth building first, or whether the return would justify the investment.</p>
+					<p>The Business AI Blueprint looks at how your business actually runs, where time is being lost, where decisions are being made without the full picture, and where the right AI system could create real value.</p>
+					<p>It also helps identify what not to build yet, so effort and spend are not pulled toward something impressive that does not become useful.</p>
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">The right first system</h2>
-			<div class="grid gap-4 md:grid-cols-3">
+	<section class="ka-section ka-section-paper blueprint-start">
+		<div class="ka-wrap">
+			<div class="blueprint-two-col blueprint-two-col--reverse">
+				<div class="blueprint-callout">
+					<p>Start with clarity before committing to a larger system.</p>
+				</div>
+				<div>
+					<SectionHeading
+						eyebrow="Why we start here"
+						title="The Blueprint is a practical first step before you spend on the wrong thing."
+						highlight="before you spend on the wrong thing."
+						lead="We do not start by selling a fixed product. Every business works differently, so the first step is to understand how yours actually runs."
+					/>
+					<div class="blueprint-copy-stack blueprint-copy-stack--compact">
+						<p>The Blueprint gives you clear, practical direction before committing to a larger AI system build.</p>
+						<p>You do not need to know what system you need before we speak. That is the point of the Blueprint.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-deep blueprint-system">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="The right first system"
+				title="A useful first system has to earn its place."
+				lead="The recommendation should be practical, specific to the business, and clear enough to justify build work before anything is started."
+				tone="dark"
+			/>
+			<div class="blueprint-principles">
 				{firstSystemPrinciples.map((principle, index) => (
-					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm md:p-4">
-						<p class="text-sm font-semibold text-[var(--primary)]">Principle {index + 1}</p>
-						<h3 class="mt-1 text-base font-semibold text-[var(--brand-navy)]">{principle.title}</h3>
-							<p class="mt-2 text-[var(--muted)] max-md:text-[15px]">{principle.copy}</p>
-					</div>
+					<article class:list={['blueprint-principle', index === 0 && 'blueprint-principle--wide']}>
+						<p>{principle.label}</p>
+						<h3>{principle.title}</h3>
+						<span>{principle.copy}</span>
+					</article>
 				))}
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What you get</h2>
-			<ul class="mx-auto grid max-w-4xl gap-3 text-left text-[var(--muted)] md:grid-cols-2">
-				{deliverables.map((item) => (
-					<li class="flex items-start gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm max-md:text-[15px] md:p-4">
-						<span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]"></span>
-						<span>{item}</span>
-					</li>
-				))}
-			</ul>
-		</section>
-
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<div class="space-y-3">
-				<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built from real delivery experience</h2>
-				<p class="copy-narrow mx-auto text-[var(--primary)] max-md:text-left max-md:text-[15px]">
-					Kalyan AI builds systems around how real businesses actually work. The Blueprint is not theory. It comes from the same delivery approach used to build working systems for real business operations.
-				</p>
+	<section class="ka-section ka-section-white blueprint-deliverables">
+		<div class="ka-wrap">
+			<div class="blueprint-two-col">
+				<SectionHeading
+					eyebrow="What you get"
+					title="A clear view of what is worth building first."
+					highlight="worth building first."
+					lead="The output is specific to your business, not a generic template or a list of tools."
+				/>
+				<ul class="blueprint-checklist">
+					{deliverables.map((item) => (
+						<li>
+							<span aria-hidden="true">✓</span>
+							<p>{item}</p>
+						</li>
+					))}
+				</ul>
 			</div>
-			<div class="grid gap-4 md:grid-cols-3">
-				{proofPoints.map((proof) => (
-					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm md:p-4">
-						<h3 class="text-base font-semibold text-[var(--brand-navy)]">{proof.title}</h3>
-						<p class="mt-2 text-[var(--muted)] max-md:text-[15px]">{proof.copy}</p>
-					</div>
-				))}
-			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What happens after the Blueprint</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-[var(--primary)]">After the Blueprint, you will have a clear view of where AI can help your business and what system would be worth building first.</p>
-				<p>There is no obligation to continue. If there is a strong business case and you want Kalyan AI to build the recommended system, we can discuss the next step from there.</p>
+	<section class="ka-section ka-section-paper blueprint-proof">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="Built from real delivery experience"
+				title="The Blueprint comes from building systems that are already in use."
+				highlight="already in use."
+				lead="Kalyan AI builds systems around how real businesses actually work. The Blueprint uses the same delivery thinking in a focused first step."
+			/>
+			<div class="blueprint-proof__grid">
+				<article class="blueprint-proof__lead">
+					<h3>{proofPoints[0].title}</h3>
+					<p>{proofPoints[0].copy}</p>
+				</article>
+				<div class="blueprint-proof__stack">
+					{proofPoints.slice(1).map((proof) => (
+						<article>
+							<h3>{proof.title}</h3>
+							<p>{proof.copy}</p>
+						</article>
+					))}
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Ready to see where AI fits in your business?</h2>
-			<p class="copy-narrow mx-auto text-[var(--primary)] max-md:text-left max-md:text-[15px]">
-				Book your Business AI Blueprint and we will show you where AI can create the most value in your business, what system would be worth building first, and where the return can come from.
-			</p>
-			<a
-				class="inline-flex rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-				href={calendlyUrl}
-				data-plausible="BookACall"
-			>
-				Book your Business AI Blueprint
-			</a>
-		</section>
-	</main>
+	<CTASection
+		eyebrow="Ready to see where AI fits?"
+		title="Book your Business AI Blueprint."
+		copy="After the Blueprint, you will have a clear view of where AI can help your business and what system would be worth building first. There is no obligation to continue."
+		href={calendlyUrl}
+		label="Book your Business AI Blueprint"
+	/>
 </Layout>
+
+<style>
+	.blueprint-hero {
+		background:
+			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 20%, rgba(8, 20, 40, 0.78) 60%, rgba(8, 20, 40, 0.98) 100%),
+			radial-gradient(circle at 78% 24%, rgba(0, 183, 198, 0.23), transparent 36%),
+			var(--navy-deep);
+		color: var(--white);
+	}
+
+	.blueprint-hero__inner {
+		max-width: 860px;
+		padding: 116px 0 132px;
+		text-align: left;
+	}
+
+	.blueprint-hero h1 {
+		max-width: 14ch;
+		margin: 0 0 24px;
+		color: var(--white);
+		font-size: clamp(48px, 6vw, 78px);
+		font-weight: 500;
+	}
+
+	.blueprint-hero__core {
+		max-width: 24ch;
+		margin-bottom: 18px;
+		color: var(--teal-soft);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: clamp(26px, 3vw, 36px);
+		font-weight: 500;
+		line-height: 1.12;
+	}
+
+	.blueprint-hero__copy {
+		max-width: 52ch;
+		margin-bottom: 34px;
+		color: var(--body-light);
+		font-size: 18px;
+		line-height: 1.66;
+	}
+
+	.blueprint-two-col {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 64px;
+		align-items: start;
+	}
+
+	.blueprint-two-col--reverse {
+		grid-template-columns: 0.85fr 1.15fr;
+	}
+
+	.blueprint-copy-stack {
+		display: grid;
+		gap: 18px;
+		max-width: 58ch;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.68;
+		text-align: left;
+	}
+
+	.blueprint-copy-stack--compact {
+		margin-top: 22px;
+	}
+
+	.blueprint-callout {
+		padding: 34px;
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.10), var(--white) 62%);
+		box-shadow: 0 28px 58px -44px rgba(11, 18, 32, 0.30);
+	}
+
+	.blueprint-callout p {
+		max-width: 14ch;
+		color: var(--ink);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: clamp(30px, 4vw, 44px);
+		font-weight: 500;
+		line-height: 1.08;
+	}
+
+	.blueprint-system {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.blueprint-system::before {
+		content: "";
+		position: absolute;
+		inset: auto -8% -28% 45%;
+		height: 520px;
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.14), transparent 68%);
+		pointer-events: none;
+	}
+
+	.blueprint-principles {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 18px;
+		margin-top: 58px;
+	}
+
+	.blueprint-principle {
+		padding: 28px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.04);
+		text-align: left;
+	}
+
+	.blueprint-principle--wide {
+		display: grid;
+		grid-column: span 2;
+		grid-template-columns: 0.45fr 1fr;
+		gap: 28px;
+		align-items: start;
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.13), rgba(255, 255, 255, 0.04) 58%);
+	}
+
+	.blueprint-principle p {
+		margin-bottom: 14px;
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.blueprint-principle h3 {
+		margin: 0 0 10px;
+		color: var(--white);
+		font-size: 25px;
+		font-weight: 600;
+	}
+
+	.blueprint-principle span {
+		display: block;
+		color: var(--body-light);
+		font-size: 15px;
+		line-height: 1.62;
+	}
+
+	.blueprint-checklist {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 14px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.blueprint-checklist li {
+		display: grid;
+		grid-template-columns: 28px 1fr;
+		gap: 13px;
+		align-items: start;
+		padding: 20px;
+		border: 1px solid var(--line-light);
+		border-radius: 14px;
+		background: var(--white);
+		box-shadow: 0 24px 54px -46px rgba(11, 18, 32, 0.24);
+	}
+
+	.blueprint-checklist span {
+		display: flex;
+		width: 26px;
+		height: 26px;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		background: rgba(0, 183, 198, 0.12);
+		color: var(--teal-deep);
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	.blueprint-checklist p {
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.58;
+	}
+
+	.blueprint-proof__grid {
+		display: grid;
+		grid-template-columns: 1.15fr 0.85fr;
+		gap: 18px;
+		margin-top: 54px;
+	}
+
+	.blueprint-proof__lead,
+	.blueprint-proof__stack article {
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: var(--white);
+		text-align: left;
+		box-shadow: 0 26px 56px -48px rgba(11, 18, 32, 0.28);
+	}
+
+	.blueprint-proof__lead {
+		padding: 34px;
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.09), var(--white) 56%);
+	}
+
+	.blueprint-proof__stack {
+		display: grid;
+		gap: 18px;
+	}
+
+	.blueprint-proof__stack article {
+		padding: 26px;
+	}
+
+	.blueprint-proof h3 {
+		margin: 0 0 12px;
+		color: var(--ink);
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.blueprint-proof p {
+		color: var(--body);
+		font-size: 15.5px;
+		line-height: 1.64;
+	}
+
+	@media (max-width: 860px) {
+		.blueprint-two-col,
+		.blueprint-two-col--reverse,
+		.blueprint-principles,
+		.blueprint-principle--wide,
+		.blueprint-checklist,
+		.blueprint-proof__grid {
+			grid-template-columns: 1fr;
+		}
+
+		.blueprint-principle--wide {
+			grid-column: auto;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.blueprint-hero__inner {
+			padding: 78px 0 92px;
+		}
+
+		.blueprint-callout,
+		.blueprint-principle,
+		.blueprint-proof__lead,
+		.blueprint-proof__stack article {
+			padding: 22px;
+		}
+	}
+</style>
