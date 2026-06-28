@@ -1,111 +1,449 @@
 ---
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const deliveryPrinciples = [
+	{
+		title: 'Built for real use',
+		copy: 'The work is planned around how the business actually operates, so the system has a useful role beyond a demo or presentation.',
+	},
+	{
+		title: 'Agreed before build',
+		copy: 'Before meaningful build work starts, the outcome, boundaries and success criteria are made clear enough for the owner to judge the work.',
+	},
+	{
+		title: 'Supported after delivery',
+		copy: 'Real systems often need adjustment once people use them, so Kalyan AI stays involved after launch where support is part of the engagement.',
+	},
+];
+
+const credibilityPoints = [
+	{
+		title: 'Nuvo Labs connection',
+		copy: 'Alongside Kalyan AI, Zax is also a shareholder and contributor at Nuvo Labs, a deep-tech AI company working on AI infrastructure and compute architecture.',
+	},
+	{
+		title: 'Daily capability testing',
+		copy: 'New models, tools and capabilities are tested against practical business use cases, with attention on what is useful, reliable and commercially relevant.',
+	},
+	{
+		title: 'Useful progress over noise',
+		copy: 'The aim is not to chase every AI release. It is to adopt what can be trusted in real business work and ignore what does not yet earn its place.',
+	},
+];
 ---
 
 <Layout
 	title="About Kalyan AI | Built by an operator"
 	description="About Kalyan AI, founded by Zax Kalyan to build practical AI systems for owner-led businesses."
+	showFinalCta={false}
 >
-	<main class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 pb-10 md:gap-10 md:px-6 md:pb-14">
-		<section class="ka-card mx-auto grid max-w-5xl gap-6 rounded-3xl bg-white/80 p-4 shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:p-8">
-			<div class="space-y-5 text-center md:text-left">
-				<p class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">About Kalyan AI</p>
-				<div class="space-y-3">
-					<h1 class="text-3xl font-semibold text-[var(--brand-navy)] md:text-5xl">Built by an operator, not an AI trend-chaser</h1>
-					<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Kalyan AI builds and runs AI systems for owner-led businesses.</p>
-				</div>
-				<div class="space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-					<p>The company was founded by Zax Kalyan after more than 15 years in business and over a decade before that in sales, sales leadership, team management and commercial growth.</p>
-					<p>Zax's background is not theoretical. He has built sales channels, led teams, trained people, created incentives, carried targets, managed pressure and worked inside competitive markets where the business only survives if it performs.</p>
-					<p>That experience shapes how Kalyan AI works today.</p>
-					<p>The aim is not to impress people with AI. The aim is to build systems that make a business easier to run, easier to control and easier to grow.</p>
+	<section class="about-hero">
+		<div class="ka-wrap">
+			<div class="about-hero__inner">
+				<Eyebrow tone="dark">About Kalyan AI</Eyebrow>
+				<h1>Built by an operator, not an AI trend chaser</h1>
+				<p class="about-hero__line">Kalyan AI builds and runs AI systems for owner-led businesses.</p>
+				<p class="about-hero__copy">The aim is not to impress people with AI. The aim is to build systems that make a business easier to run, easier to control and easier to grow.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-white about-founder">
+		<div class="ka-wrap">
+			<div class="about-founder__grid">
+				<figure class="about-founder__photo">
+					<img
+						src="/images/1761512653.png"
+						alt="Zax Kalyan"
+						loading="eager"
+						decoding="async"
+					/>
+				</figure>
+				<div>
+					<SectionHeading
+						eyebrow="Founder"
+						title="Commercial experience shapes how the systems are built."
+						highlight="Commercial experience"
+					/>
+					<div class="about-copy-stack">
+						<p>Kalyan AI was founded by Zax Kalyan after more than 15 years in business and over a decade before that in sales, sales leadership, team management and commercial growth.</p>
+						<p>Zax's background is not theoretical. He has built sales channels, led teams, trained people, created incentives, carried targets, managed pressure and worked inside competitive markets where the business only survives if it performs.</p>
+						<p>That experience shapes how Kalyan AI works today. The starting point is always the business, the owner, the team, the pressure, and the outcome the system needs to support.</p>
+					</div>
 				</div>
 			</div>
-			<div class="mx-auto aspect-[4/4.5] w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm md:max-w-none">
-				<img
-					class="h-full w-full object-cover"
-					src="/images/1761512653.png"
-					alt="Zax Kalyan"
-					loading="lazy"
-					decoding="async"
-					style="object-position: 50% 12%;"
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-paper about-origin">
+		<div class="ka-wrap">
+			<div class="about-origin__grid">
+				<div class="about-origin__quote">
+					<p>I needed more of me in the business.</p>
+				</div>
+				<div>
+					<SectionHeading
+						eyebrow="Why Kalyan AI exists"
+						title="The idea came from a real operator problem."
+						highlight="real operator problem."
+					/>
+					<div class="about-copy-stack about-copy-stack--compact">
+						<p>Before starting Kalyan AI, Zax began using AI inside his own business. Like many business owners, he had reached the point where too much depended on him.</p>
+						<p>The knowledge, judgement, follow-up, visibility and decision-making were often sitting in his head. Another person with the same experience, urgency and understanding of the business was almost impossible to find.</p>
+						<p>Used properly, AI allowed parts of the business to work with more structure, more visibility and less reliance on everything passing through the owner. That is where Kalyan AI came from: not from chasing a trend, but from seeing how much stronger a business can become when the right systems are built around how it actually works.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-deep about-anchor">
+		<div class="ka-wrap">
+			<div class="about-anchor__head">
+				<SectionHeading
+					eyebrow="What makes the work different"
+					title="Production-grade systems, not presentation-only builds."
+					lead="Kalyan AI focuses on practical business systems that need to work in real conditions, with clear scope, controlled delivery and support after launch where the system needs it."
+					tone="dark"
 				/>
 			</div>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Why Kalyan AI exists</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Before starting Kalyan AI, Zax began using AI inside his own business.</p>
-				<p>Like many business owners, he had reached the point where too much depended on him. The knowledge, judgement, follow-up, visibility and decision-making were often sitting in his head.</p>
-				<p>He used to describe the problem simply:</p>
-				<blockquote class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-lg font-semibold italic text-[var(--primary)] shadow-sm max-md:text-[15px] md:p-4">
-					&ldquo;I needed more of me in the business.&rdquo;
-				</blockquote>
-				<p>The challenge was that another person with the same experience, urgency and understanding of the business was almost impossible to find.</p>
-				<p>AI changed that.</p>
-				<p>Used properly, it allowed parts of the business to work with more structure, more visibility and less reliance on everything passing through the owner. It helped turn knowledge into systems, reduce manual pressure, and show where attention was needed without digging through spreadsheets, inboxes or scattered records.</p>
-				<p>That is where Kalyan AI came from.</p>
-				<p>Not from chasing an AI trend, but from seeing how much stronger a business can become when the right systems are built around how it actually works.</p>
+			<div class="about-principles">
+				{deliveryPrinciples.map((principle, index) => (
+					<article class:list={['about-principle', index === 1 && 'about-principle--offset']}>
+						<span>{String(index + 1).padStart(2, '0')}</span>
+						<h3>{principle.title}</h3>
+						<p>{principle.copy}</p>
+					</article>
+				))}
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What makes the work different</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Kalyan AI does not build demo systems that look good for a presentation and then break when real people use them.</p>
-				<p>Every serious system is approached with the expectation that it needs to work in the real world.</p>
-				<p>That means understanding the business first, defining what the system is meant to improve, planning the build properly, testing the important failure points, protecting the data, and supporting the system after it goes live.</p>
-				<p>Kalyan AI's focus is on production-grade business systems, not quick experiments.</p>
-				<p>The work is planned, reviewed, tested and delivered in controlled phases so the business owner knows what is being built, why it matters, and how it will be used.</p>
+	<section class="ka-section ka-section-white about-credibility">
+		<div class="ka-wrap">
+			<div class="about-credibility__grid">
+				<SectionHeading
+					eyebrow="Close to where AI is going"
+					title="Useful capability matters more than novelty."
+					highlight="Useful capability"
+					lead="Kalyan AI stays close to new AI capability, but client work remains focused on what is practical, reliable and useful today."
+				/>
+				<div class="about-credibility__items">
+					{credibilityPoints.map((point) => (
+						<article>
+							<h3>{point.title}</h3>
+							<p>{point.copy}</p>
+						</article>
+					))}
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Built around value, not hype</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Kalyan AI will not recommend a system just because AI can be used somewhere.</p>
-				<p>Before any meaningful project starts, the outcome is agreed clearly: what the system should improve, what it should make easier, and what success should look like when the work is complete.</p>
-				<p>That agreement becomes the delivery target.</p>
-				<p>Kalyan AI does not treat delivery as &ldquo;build it and disappear.&rdquo; Real systems often need small adjustments once they meet real users, so support after delivery is part of making sure the agreed outcome is actually achieved.</p>
+	<section class="ka-section ka-section-paper about-cta">
+		<div class="ka-wrap">
+			<div class="about-cta__inner">
+				<Eyebrow>Start here</Eyebrow>
+				<h2>Start with clarity before a larger build.</h2>
+				<p>The Business AI Blueprint is the focused paid review that helps identify where AI can make your business easier to run, control and grow, and what system would be worth building first.</p>
+				<ButtonPrimary href="/blueprint" label="Start with the Blueprint" data-plausible="BookACall" />
 			</div>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Where Kalyan AI can help</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Kalyan AI does not start by assuming what your business needs.</p>
-				<p>The first step is to understand how your business actually operates: how work moves, where decisions happen, what information people rely on, where time is lost, and where better systems could create real value.</p>
-				<p>The opportunity could be in any part of the business. What matters is not fitting your business into a preset category. What matters is finding where AI can make a practical difference, create measurable value, and make the business easier to run, control and grow.</p>
-				<p>The point is to understand the business first, then decide what system, if any, is worth building.</p>
-			</div>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Close to where AI is going</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Alongside Kalyan AI, Zax is also a shareholder and contributor at Nuvo Labs, a deep-tech AI company working on breakthrough AI infrastructure and compute architecture.</p>
-				<p>That connection keeps Kalyan AI close to where AI is heading, while the client work remains focused on what is practical, reliable and useful today.</p>
-				<p>Zax also keeps daily track of new AI models, tools and capabilities, testing what is relevant against real business use cases. The aim is not to chase every new release, but to separate useful progress from noise.</p>
-			</div>
-		</section>
-
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Start with the right first step</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p class="text-lg text-[var(--primary)] max-md:text-[15px]">Most businesses do not need to start with a large AI build.</p>
-				<p>They need to understand where AI can genuinely earn its keep.</p>
-				<p>That is why Kalyan AI starts with the Business AI Blueprint: a focused paid review showing where AI can make the business easier to run, control and grow, what system would be worth building first, and where the return can come from.</p>
-				<p>There is no obligation to continue after the Blueprint. The first goal is clarity.</p>
-				<p>If there is a strong business case and Kalyan AI is the right partner to build the recommended system, the next step can be discussed from there.</p>
-			</div>
-			<a
-				class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]"
-				href="/blueprint"
-				data-plausible="BookACall"
-			>
-				Start with the Blueprint
-			</a>
-		</section>
-	</main>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.about-hero {
+		background:
+			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 20%, rgba(8, 20, 40, 0.78) 62%, rgba(8, 20, 40, 0.98) 100%),
+			radial-gradient(circle at 78% 24%, rgba(0, 183, 198, 0.23), transparent 36%),
+			var(--navy-deep);
+		color: var(--white);
+	}
+
+	.about-hero__inner {
+		max-width: 860px;
+		padding: 116px 0 132px;
+		text-align: left;
+	}
+
+	.about-hero h1 {
+		max-width: 14ch;
+		margin: 0 0 24px;
+		color: var(--white);
+		font-size: clamp(48px, 6vw, 78px);
+		font-weight: 500;
+	}
+
+	.about-hero__line {
+		max-width: 28ch;
+		margin-bottom: 18px;
+		color: var(--teal-soft);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: clamp(26px, 3vw, 36px);
+		font-weight: 500;
+		line-height: 1.12;
+	}
+
+	.about-hero__copy {
+		max-width: 54ch;
+		color: var(--body-light);
+		font-size: 18px;
+		line-height: 1.66;
+	}
+
+	.about-founder__grid,
+	.about-origin__grid,
+	.about-credibility__grid {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 64px;
+		align-items: center;
+	}
+
+	.about-founder__photo {
+		position: relative;
+		margin: 0;
+		overflow: hidden;
+		aspect-ratio: 4 / 4.75;
+		border: 1px solid var(--line-light);
+		border-radius: 18px;
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.10), var(--white) 58%);
+		box-shadow: 0 34px 72px -44px rgba(11, 18, 32, 0.42);
+	}
+
+	.about-founder__photo::after {
+		content: "";
+		position: absolute;
+		inset: 18px;
+		border: 1px solid rgba(255, 255, 255, 0.54);
+		border-radius: 12px;
+		pointer-events: none;
+	}
+
+	.about-founder__photo img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 12%;
+	}
+
+	.about-copy-stack {
+		display: grid;
+		gap: 18px;
+		max-width: 60ch;
+		margin-top: 24px;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.68;
+		text-align: left;
+	}
+
+	.about-copy-stack--compact {
+		margin-top: 22px;
+	}
+
+	.about-origin__grid {
+		grid-template-columns: 0.8fr 1.2fr;
+	}
+
+	.about-origin__quote {
+		padding: 34px;
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: var(--white);
+		box-shadow: 0 28px 58px -44px rgba(11, 18, 32, 0.30);
+	}
+
+	.about-origin__quote p {
+		margin: 0;
+		color: var(--teal-deep);
+		font-family: "Fraunces", Georgia, serif;
+		font-size: clamp(34px, 4vw, 52px);
+		font-style: italic;
+		font-weight: 500;
+		line-height: 1.06;
+	}
+
+	.about-anchor {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.about-anchor::before {
+		content: "";
+		position: absolute;
+		inset: auto -8% -34% 48%;
+		width: 760px;
+		height: 560px;
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.14), transparent 68%);
+		pointer-events: none;
+	}
+
+	.about-anchor__head {
+		max-width: 720px;
+	}
+
+	.about-principles {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1.05fr 0.9fr 1.05fr;
+		gap: 18px;
+		margin-top: 56px;
+		align-items: start;
+	}
+
+	.about-principle {
+		padding: 26px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.045);
+		text-align: left;
+	}
+
+	.about-principle--offset {
+		margin-top: 54px;
+	}
+
+	.about-principle span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 34px;
+		height: 34px;
+		margin-bottom: 22px;
+		border: 1px solid rgba(63, 216, 227, 0.34);
+		border-radius: 9px;
+		background: rgba(0, 183, 198, 0.13);
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+	}
+
+	.about-principle h3,
+	.about-credibility__items h3 {
+		margin: 0 0 12px;
+		color: var(--white);
+		font-size: 25px;
+		font-weight: 600;
+	}
+
+	.about-principle p {
+		color: var(--body-light);
+		font-size: 15px;
+		line-height: 1.62;
+	}
+
+	.about-credibility__grid {
+		align-items: start;
+	}
+
+	.about-credibility__items {
+		display: grid;
+		gap: 16px;
+	}
+
+	.about-credibility__items article,
+	.about-cta__inner {
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: var(--white);
+		box-shadow: 0 28px 58px -48px rgba(11, 18, 32, 0.28);
+		text-align: left;
+	}
+
+	.about-credibility__items article {
+		padding: 24px;
+	}
+
+	.about-credibility__items h3 {
+		color: var(--ink);
+		font-size: 24px;
+	}
+
+	.about-credibility__items p {
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.62;
+	}
+
+	.about-cta {
+		position: relative;
+		overflow: hidden;
+		border-top: 1px solid var(--line-light);
+	}
+
+	.about-cta::before {
+		content: "";
+		position: absolute;
+		bottom: -220px;
+		left: 50%;
+		width: 780px;
+		height: 540px;
+		transform: translateX(-50%);
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.10), transparent 64%);
+		pointer-events: none;
+	}
+
+	.about-cta__inner {
+		position: relative;
+		z-index: 2;
+		max-width: 46ch;
+		padding: 34px;
+	}
+
+	.about-cta h2 {
+		margin: 0 0 18px;
+		color: var(--ink);
+		font-size: clamp(30px, 3.7vw, 42px);
+		font-weight: 500;
+	}
+
+	.about-cta p {
+		margin-bottom: 30px;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.62;
+	}
+
+	@media (max-width: 900px) {
+		.about-founder__grid,
+		.about-origin__grid,
+		.about-credibility__grid,
+		.about-principles {
+			grid-template-columns: 1fr;
+		}
+
+		.about-principle--offset {
+			margin-top: 0;
+		}
+
+		.about-founder__photo {
+			max-width: 420px;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.about-hero__inner {
+			padding: 78px 0 92px;
+		}
+
+		.about-founder__grid,
+		.about-origin__grid,
+		.about-credibility__grid {
+			gap: 38px;
+		}
+
+		.about-origin__quote,
+		.about-principle,
+		.about-credibility__items article,
+		.about-cta__inner {
+			padding: 22px;
+		}
+	}
+</style>
