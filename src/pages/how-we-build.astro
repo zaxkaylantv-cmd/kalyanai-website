@@ -1,156 +1,660 @@
 ---
+import CTASection from '../components/CTASection.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 
-const protections = [
-	'Customers or staff do something unexpected and the system has no clear fallback.',
-	'Nobody documented how the system works, what it depends on, or who owns each decision.',
-	'There is no monitoring, so failures happen silently until the business notices the impact.',
-	'The source of truth is unclear, making data, approvals, and workflow state hard to trust.',
-	'The original builder has moved on and the business cannot safely maintain or extend the system.',
+const risks = [
+	{
+		title: 'Unexpected use',
+		copy: 'Customers or staff do something unexpected and the system has no clear fallback.',
+	},
+	{
+		title: 'Missing ownership',
+		copy: 'Nobody documented how the system works, what it depends on, or who owns each decision.',
+	},
+	{
+		title: 'Silent failure',
+		copy: 'There is no monitoring, so failures happen quietly until the business notices the impact.',
+	},
+	{
+		title: 'Unclear source of truth',
+		copy: 'The source of truth is unclear, making data, approvals, and system state hard to trust.',
+	},
+	{
+		title: 'No safe handover',
+		copy: 'The original builder has moved on and the business cannot safely maintain or extend the system.',
+	},
 ];
 
-const frameworkSteps = [
+const phases = [
 	{
-		title: 'Understand the business first',
-		copy: 'We map how the work actually happens before deciding what the system should do.',
+		name: 'Understand',
+		intro: 'The system starts with the business, the outcome, the dependencies and the risk.',
+		steps: [
+			{
+				title: 'Understand the business first',
+				copy: 'We map how the work actually happens before deciding what the system should do.',
+			},
+			{
+				title: 'Define the outcome and lock the scope',
+				copy: 'We agree the result, success criteria, boundaries, and what is deliberately out of scope.',
+			},
+			{
+				title: 'Identify dependencies upfront',
+				copy: 'We check the tools, data, people, permissions, and handoffs the system will rely on.',
+			},
+			{
+				title: 'Classify the risk',
+				copy: 'We match the level of control to the sensitivity and importance of the business area.',
+			},
+		],
 	},
 	{
-		title: 'Define the outcome and lock the scope',
-		copy: 'We agree the result, success criteria, boundaries, and what is deliberately out of scope.',
+		name: 'Build',
+		intro: 'Delivery happens in controlled slices, with review and testing built into the work.',
+		steps: [
+			{
+				title: 'Build in controlled phases',
+				copy: 'We deliver in clear slices so each part can be reviewed, tested, and improved.',
+			},
+			{
+				title: 'Test beyond the happy path',
+				copy: 'We check what happens when inputs are missing, users take unexpected routes, or services fail.',
+			},
+			{
+				title: 'Verify at every step',
+				copy: 'We review outputs, approvals, access, and edge cases before the system moves forward.',
+			},
+		],
 	},
 	{
-		title: 'Identify dependencies upfront',
-		copy: 'We check the tools, data, people, permissions, and handoffs the system will rely on.',
+		name: 'Deploy',
+		intro: 'The system is documented and launched with the right handover, access and recovery thinking.',
+		steps: [
+			{
+				title: 'Document the system properly',
+				copy: 'We leave clear notes on business logic, dependencies, decisions, permissions, and support needs.',
+			},
+			{
+				title: 'Deploy carefully',
+				copy: 'We plan launch, access, rollback, and user handover so go-live is controlled.',
+			},
+		],
 	},
 	{
-		title: 'Classify the risk',
-		copy: 'We match the level of control to the sensitivity and importance of the business area.',
-	},
-	{
-		title: 'Build in controlled phases',
-		copy: 'We deliver in clear slices so each part can be reviewed, tested, and improved.',
-	},
-	{
-		title: 'Test beyond the happy path',
-		copy: 'We check what happens when inputs are missing, users take unexpected routes, or services fail.',
-	},
-	{
-		title: 'Verify at every step',
-		copy: 'We review outputs, approvals, access, and edge cases before the system moves forward.',
-	},
-	{
-		title: 'Document the system properly',
-		copy: 'We leave clear notes on business logic, dependencies, decisions, permissions, and support needs.',
-	},
-	{
-		title: 'Deploy carefully',
-		copy: 'We plan launch, access, rollback, and user handover so go-live is controlled.',
-	},
-	{
-		title: 'Monitor and support after go-live',
-		copy: 'We keep the hosted system watched, maintained, and improved as real usage reveals more.',
+		name: 'Support',
+		intro: 'After launch, the system stays watched, maintained and improved as real usage reveals more.',
+		steps: [
+			{
+				title: 'Monitor and support after go-live',
+				copy: 'We keep the hosted system watched, maintained, and improved as real usage reveals more.',
+			},
+		],
 	},
 ];
 
 const assuranceItems = [
-	'OWASP Top 10 awareness and ASVS Level 2 principles where risk justifies it',
-	'Secure authentication, session handling, permissions, and access boundaries',
-	'Server-side validation, parameterised database queries, and CSRF protection where relevant',
-	'Safe error handling, secrets management, audit logging, and controlled deployment',
-	'Backup, rollback, monitoring, and recovery planning matched to the system risk',
+	{
+		label: 'Risk fit',
+		copy: 'OWASP Top 10 awareness and ASVS Level 2 principles where risk justifies it.',
+	},
+	{
+		label: 'Access',
+		copy: 'Secure authentication, session handling, permissions, and access boundaries.',
+	},
+	{
+		label: 'Validation',
+		copy: 'Server-side validation, parameterised database queries, and CSRF protection where relevant.',
+	},
+	{
+		label: 'Operations',
+		copy: 'Safe error handling, secrets management, audit logging, and controlled deployment.',
+	},
+	{
+		label: 'Recovery',
+		copy: 'Backup, rollback, monitoring, and recovery planning matched to the system risk.',
+	},
 ];
 
-const claims = [
-	'We do not claim nothing can ever go wrong.',
-	'We do not claim every small task needs heavy process.',
-	'We do not claim every system needs external developer review.',
-	'We do claim every serious system is planned before it is built, built in verified phases, tested beyond the happy path, documented properly, deployed carefully, and supported after go-live.',
-	'The framework does not eliminate all risk. It makes risk visible, controlled, tested, documented, and monitored.',
+const doItems = [
+	'Plan serious systems before they are built.',
+	'Build in verified phases and test beyond the happy path.',
+	'Document decisions, dependencies, permissions and support needs.',
+	'Deploy carefully and stay involved after go-live.',
+];
+
+const doNotItems = [
+	'Claim nothing can ever go wrong.',
+	'Pretend every small task needs heavy process.',
+	'Claim every system needs external developer review.',
+	'Replace proportionate judgement with ceremony.',
 ];
 ---
 
 <Layout
 	title="How We Build Reliable Systems | Kalyan AI"
 	description="How Kalyan AI plans, scopes, tests, documents, deploys, and supports reliable business systems using a controlled delivery framework."
+	showFinalCta={false}
 >
-	<main class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 pb-10 md:gap-10 md:px-6 md:pb-16">
-		<section class="ka-card mx-auto max-w-5xl space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<p class="inline-flex items-center rounded-full border-2 border-[var(--primary)] bg-white px-3 py-1 text-xs font-medium text-[var(--brand-navy)]">
-				Controlled delivery framework
-			</p>
-			<h1 class="text-3xl font-semibold text-[var(--brand-navy)] md:text-5xl">How We Build Reliable Systems</h1>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px] md:text-lg">
-				<p>Most system problems do not start at go-live.</p>
-				<p>They start earlier, when the business was not understood, the risks were not mapped, and nobody planned how the system would be tested, documented, monitored, or supported.</p>
-				<p class="font-semibold text-[var(--text)]">Kalyan AI exists to prevent that.</p>
+	<section class="hwb-hero">
+		<div class="ka-wrap">
+			<div class="hwb-hero__inner">
+				<Eyebrow tone="dark">Controlled delivery framework</Eyebrow>
+				<h1>How we build reliable systems</h1>
+				<div class="hwb-hero__copy">
+					<p>Most system problems do not start at go-live. They start earlier, when the business was not understood, the risks were not mapped, and nobody planned how the system would be tested, documented, monitored, or supported.</p>
+					<p>Kalyan AI controls the work before, during and after delivery: planning, build, testing, deployment and support are handled deliberately so the business knows what is being built and how it will be used.</p>
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-5 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What this protects you from</h2>
-			<p class="copy-narrow mx-auto text-[var(--primary)] max-md:text-left max-md:text-[15px]">These are the problems we see most often in systems built without a proper framework. They may work in a demo, but once real customers, staff, data, and edge cases are involved, weak foundations start to show.</p>
-			<div class="grid gap-4 md:grid-cols-2">
-				{protections.map((item) => (
-					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 text-left shadow-sm md:p-4">
-						<p class="text-[var(--muted)] max-md:text-[15px]">{item}</p>
-					</div>
+	<section class="ka-section ka-section-white hwb-risks">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="What this protects you from"
+				title="Weak foundations usually show up after the system is live."
+				highlight="after the system is live."
+				lead="These are common problems in systems built without a proper framework. The aim is not to make delivery heavy. The aim is to make the important risks visible before they reach the business."
+			/>
+			<div class="hwb-risk-grid">
+				{risks.map((risk, index) => (
+					<article class:list={['hwb-risk', index === 0 && 'hwb-risk--large']}>
+						<span>{String(index + 1).padStart(2, '0')}</span>
+						<h3>{risk.title}</h3>
+						<p>{risk.copy}</p>
+					</article>
 				))}
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Our controlled delivery framework</h2>
-			<p class="copy-narrow mx-auto text-[var(--primary)] max-md:text-left max-md:text-[15px]">The framework keeps delivery business-readable while making sure risk, ownership, testing, documentation, and support are dealt with deliberately.</p>
-			<div class="grid gap-4 md:grid-cols-2">
-				{frameworkSteps.map((step, index) => (
-					<div class="rounded-2xl border border-[var(--border-subtle)] bg-white/80 p-3 text-left shadow-sm md:p-4">
-						<p class="text-sm font-semibold text-[var(--primary)]">Step {index + 1}</p>
-						<h3 class="mt-1 text-base font-semibold text-[var(--brand-navy)]">{step.title}</h3>
-						<p class="mt-2 text-[var(--muted)] max-md:text-[15px]">{step.copy}</p>
-					</div>
-				))}
+	<section class="ka-section ka-section-deep hwb-journey">
+		<div class="ka-wrap">
+			<SectionHeading
+				eyebrow="Controlled delivery journey"
+				title="A considered path from business context to supported system."
+				lead="The framework keeps delivery business-readable while making sure risk, ownership, testing, documentation and support are dealt with deliberately."
+				tone="dark"
+			/>
+			<div class="hwb-journey__grid">
+				{phases.map((phase, phaseIndex) => {
+					const priorSteps = phases.slice(0, phaseIndex).reduce((count, item) => count + item.steps.length, 0);
+					return (
+						<article class="hwb-phase">
+							<div class="hwb-phase__head">
+								<span>Phase {phaseIndex + 1}</span>
+								<h3>{phase.name}</h3>
+								<p>{phase.intro}</p>
+							</div>
+							<div class="hwb-phase__steps">
+								{phase.steps.map((step, stepIndex) => (
+									<div class="hwb-step">
+										<span>{String(priorSteps + stepIndex + 1).padStart(2, '0')}</span>
+										<div>
+											<h4>{step.title}</h4>
+											<p>{step.copy}</p>
+										</div>
+									</div>
+								))}
+							</div>
+						</article>
+					);
+				})}
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Technical assurance for serious systems</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p>For systems that touch customer data, payments, bookings, permissions, or business-critical processes, we apply stronger technical controls.</p>
-				<p>The system must be clear about where data lives, what owns the current state, what happens when something fails, and how it can be recovered or maintained later.</p>
+	<section class="ka-section ka-section-white hwb-assurance">
+		<div class="ka-wrap">
+			<div class="hwb-assurance__grid">
+				<div>
+					<SectionHeading
+						eyebrow="Technical assurance"
+						title="Enough control to trust the system in real use."
+						highlight="real use."
+						lead="For systems that touch customer data, payments, bookings, permissions, or business-critical processes, Kalyan AI applies stronger technical controls. The level of control is matched to the risk."
+					/>
+					<p class="hwb-assurance__note">For higher-risk builds, independent assurance can include dependency scanning, secret scanning, static analysis, security review, multi-model review, or external senior developer or security review where the project justifies it.</p>
+				</div>
+				<ul class="hwb-checklist">
+					{assuranceItems.map((item) => (
+						<li>
+							<span>{item.label}</span>
+							<p>{item.copy}</p>
+						</li>
+					))}
+				</ul>
 			</div>
-			<ul class="mx-auto grid max-w-4xl gap-3 text-left text-[var(--muted)] md:grid-cols-2">
-				{assuranceItems.map((item) => (
-					<li class="flex items-start gap-3 rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm max-md:text-[15px] md:p-4">
-						<span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]"></span>
-						<span>{item}</span>
-					</li>
-				))}
-			</ul>
-			<p class="copy-narrow mx-auto text-[var(--muted)] max-md:text-left max-md:text-[15px]">For higher-risk builds, independent assurance can include dependency scanning, secret scanning, static analysis, security review, multi-model review, or external senior developer/security review where the project justifies it.</p>
-		</section>
+		</div>
+	</section>
 
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Designed to work with your IT team</h2>
-			<p class="copy-narrow mx-auto text-[var(--muted)] max-md:text-left max-md:text-[15px]">Kalyan AI can work with internal IT, outsourced IT, or a technical decision-maker. We can discuss architecture, data flow, hosting model, security controls, access requirements, integrations, monitoring, and recovery approach.</p>
-			<p class="copy-narrow mx-auto text-[var(--primary)] max-md:text-left max-md:text-[15px]">The aim is to build systems that fit safely into the way the business already operates.</p>
-		</section>
-
-		<section class="ka-card space-y-4 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What you are really getting</h2>
-			<div class="copy-narrow mx-auto space-y-3 text-[var(--muted)] max-md:text-left max-md:text-[15px]">
-				<p>A reliable system is not just a build.</p>
-				<p>It is the thinking before the build, the business design, the risk control, the testing, the documentation, the deployment discipline, and the support after launch.</p>
-				<p>That is the difference between a thin demo and a system the business can actually rely on.</p>
+	<section class="ka-section ka-section-paper hwb-closing">
+		<div class="ka-wrap">
+			<div class="hwb-closing__grid">
+				<div class="hwb-closing__intro">
+					<Eyebrow>What you are really getting</Eyebrow>
+					<h2>A reliable system is not just a build.</h2>
+					<p>It is the thinking before the build, the business design, the risk control, the testing, the documentation, the deployment discipline, and the support after launch.</p>
+					<p>Kalyan AI can work with internal IT, outsourced IT, or a technical decision-maker. We can discuss architecture, data flow, hosting model, security controls, access requirements, integrations, monitoring, and recovery approach.</p>
+					<p>The aim is to build systems that fit safely into the way the business already operates.</p>
+				</div>
+				<div class="hwb-claim-grid">
+					<article>
+						<h3>We do</h3>
+						<ul>
+							{doItems.map((item) => <li>{item}</li>)}
+						</ul>
+					</article>
+					<article>
+						<h3>We do not</h3>
+						<ul>
+							{doNotItems.map((item) => <li>{item}</li>)}
+						</ul>
+					</article>
+				</div>
 			</div>
-		</section>
-
-		<section class="ka-card space-y-6 rounded-3xl bg-white/80 p-4 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur max-md:-mx-2 md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">What we do and do not claim</h2>
-			<div class="mx-auto grid max-w-4xl gap-3 text-center text-[var(--muted)]">
-				{claims.map((item) => (
-					<p class="rounded-2xl border border-[var(--border-subtle)] bg-white/70 p-3 shadow-sm max-md:text-left max-md:text-[15px] md:p-4">{item}</p>
-				))}
+			<div class="hwb-framework-note">
+				<p>The framework does not eliminate all risk. It makes risk visible, controlled, tested, documented, and monitored.</p>
 			</div>
-		</section>
-	</main>
+		</div>
+	</section>
+
+	<CTASection />
 </Layout>
+
+<style>
+	.hwb-hero {
+		background:
+			linear-gradient(100deg, rgba(8, 20, 40, 0.96) 20%, rgba(8, 20, 40, 0.78) 58%, rgba(8, 20, 40, 0.96) 100%),
+			radial-gradient(circle at 78% 22%, rgba(0, 183, 198, 0.22), transparent 36%),
+			var(--navy-deep);
+		color: var(--white);
+	}
+
+	.hwb-hero__inner {
+		max-width: 920px;
+		padding: 116px 0 132px;
+		text-align: left;
+	}
+
+	.hwb-hero h1 {
+		max-width: 15ch;
+		margin: 0;
+		color: var(--white);
+		font-size: clamp(46px, 6vw, 76px);
+		font-weight: 500;
+	}
+
+	.hwb-hero__copy {
+		display: grid;
+		max-width: 860px;
+		grid-template-columns: 1fr 1fr;
+		gap: 28px;
+		margin-top: 34px;
+		color: var(--body-light);
+		font-size: 17px;
+		line-height: 1.68;
+	}
+
+	.hwb-risk-grid {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 18px;
+		margin-top: 54px;
+	}
+
+	.hwb-risk {
+		grid-column: span 3;
+		padding: 28px;
+		border: 1px solid var(--line-light);
+		border-radius: 14px;
+		background: var(--white);
+		box-shadow: 0 28px 58px -44px rgba(11, 18, 32, 0.30);
+		text-align: left;
+	}
+
+	.hwb-risk--large {
+		grid-column: span 6;
+		display: grid;
+		grid-template-columns: 88px 0.55fr 1fr;
+		gap: 24px;
+		align-items: start;
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.08), var(--white) 48%);
+	}
+
+	.hwb-risk span {
+		display: inline-flex;
+		width: 46px;
+		height: 46px;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 18px;
+		border: 1px solid rgba(0, 183, 198, 0.22);
+		border-radius: 12px;
+		background: rgba(0, 183, 198, 0.08);
+		color: var(--teal-deep);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 13px;
+	}
+
+	.hwb-risk--large span {
+		margin-bottom: 0;
+	}
+
+	.hwb-risk h3 {
+		margin: 0 0 10px;
+		color: var(--ink);
+		font-size: 22px;
+		font-weight: 600;
+	}
+
+	.hwb-risk p {
+		color: var(--body);
+		font-size: 15.5px;
+		line-height: 1.62;
+	}
+
+	.hwb-journey {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hwb-journey::before {
+		content: "";
+		position: absolute;
+		inset: auto -10% -22% 42%;
+		height: 520px;
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.14), transparent 68%);
+		pointer-events: none;
+	}
+
+	.hwb-journey__grid {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 18px;
+		margin-top: 58px;
+	}
+
+	.hwb-phase {
+		position: relative;
+		display: flex;
+		min-height: 100%;
+		flex-direction: column;
+		padding: 24px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.04);
+		text-align: left;
+	}
+
+	.hwb-phase:not(:last-child)::after {
+		content: "";
+		position: absolute;
+		top: 45px;
+		right: -18px;
+		width: 18px;
+		height: 1px;
+		background: linear-gradient(90deg, rgba(63, 216, 227, 0.5), rgba(63, 216, 227, 0.08));
+	}
+
+	.hwb-phase__head {
+		padding-bottom: 22px;
+		border-bottom: 1px solid var(--line-dark);
+	}
+
+	.hwb-phase__head span,
+	.hwb-step > span,
+	.hwb-checklist > li > span {
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.hwb-phase__head span {
+		color: var(--teal-soft);
+		font-size: 11px;
+	}
+
+	.hwb-phase h3 {
+		margin: 10px 0 10px;
+		color: var(--white);
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.hwb-phase__head p {
+		color: var(--body-light);
+		font-size: 14px;
+		line-height: 1.62;
+	}
+
+	.hwb-phase__steps {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		gap: 16px;
+		padding-top: 22px;
+	}
+
+	.hwb-step {
+		display: grid;
+		grid-template-columns: 42px 1fr;
+		gap: 14px;
+	}
+
+	.hwb-step > span {
+		display: flex;
+		width: 38px;
+		height: 38px;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid rgba(63, 216, 227, 0.34);
+		border-radius: 10px;
+		background: rgba(0, 183, 198, 0.10);
+		color: var(--teal-soft);
+		font-size: 12px;
+	}
+
+	.hwb-step h4 {
+		margin: 0 0 5px;
+		color: var(--white);
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 1.28;
+	}
+
+	.hwb-step p {
+		color: var(--body-light);
+		font-size: 13px;
+		line-height: 1.55;
+	}
+
+	.hwb-assurance__grid {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 62px;
+		align-items: start;
+	}
+
+	.hwb-assurance__note {
+		max-width: 50ch;
+		margin-top: 28px;
+		padding-top: 24px;
+		border-top: 1px solid var(--line-light);
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.68;
+	}
+
+	.hwb-checklist {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.hwb-checklist li {
+		min-height: 180px;
+		padding: 24px;
+		border: 1px solid var(--line-light);
+		border-radius: 14px;
+		background: var(--white);
+		box-shadow: 0 24px 54px -46px rgba(11, 18, 32, 0.24);
+	}
+
+	.hwb-checklist > li > span {
+		display: inline-flex;
+		margin-bottom: 14px;
+		color: var(--teal-deep);
+		font-size: 11px;
+	}
+
+	.hwb-checklist p {
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.62;
+	}
+
+	.hwb-closing__grid {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 62px;
+		align-items: start;
+	}
+
+	.hwb-closing__intro h2 {
+		max-width: 14ch;
+		margin: 0 0 22px;
+		color: var(--ink);
+		font-size: clamp(32px, 4vw, 46px);
+		font-weight: 500;
+	}
+
+	.hwb-closing__intro p {
+		max-width: 54ch;
+		margin-bottom: 16px;
+		color: var(--body);
+		font-size: 16px;
+		line-height: 1.68;
+	}
+
+	.hwb-claim-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+	}
+
+	.hwb-claim-grid article {
+		padding: 28px;
+		border: 1px solid var(--line-light);
+		border-radius: 14px;
+		background: var(--white);
+		text-align: left;
+	}
+
+	.hwb-claim-grid h3 {
+		margin: 0 0 18px;
+		color: var(--ink);
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.hwb-claim-grid ul {
+		display: grid;
+		gap: 14px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.hwb-claim-grid li {
+		position: relative;
+		padding-left: 20px;
+		color: var(--body);
+		font-size: 15px;
+		line-height: 1.55;
+	}
+
+	.hwb-claim-grid li::before {
+		content: "";
+		position: absolute;
+		top: 0.65em;
+		left: 0;
+		width: 7px;
+		height: 7px;
+		border-radius: 999px;
+		background: var(--teal);
+	}
+
+	.hwb-framework-note {
+		max-width: 760px;
+		margin-top: 42px;
+		padding: 24px 0 0;
+		border-top: 1px solid var(--line-light);
+	}
+
+	.hwb-framework-note p {
+		color: var(--body);
+		font-size: 17px;
+		font-weight: 600;
+		line-height: 1.62;
+	}
+
+	@media (max-width: 1040px) {
+		.hwb-journey__grid {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.hwb-phase::after {
+			display: none;
+		}
+	}
+
+	@media (max-width: 860px) {
+		.hwb-hero__copy,
+		.hwb-assurance__grid,
+		.hwb-closing__grid,
+		.hwb-claim-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hwb-risk-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hwb-risk,
+		.hwb-risk--large {
+			grid-column: auto;
+			display: block;
+		}
+
+		.hwb-risk--large span {
+			margin-bottom: 18px;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.hwb-hero__inner {
+			padding: 78px 0 92px;
+		}
+
+		.hwb-journey__grid,
+		.hwb-checklist {
+			grid-template-columns: 1fr;
+		}
+
+		.hwb-phase,
+		.hwb-risk,
+		.hwb-claim-grid article,
+		.hwb-checklist li {
+			padding: 22px;
+		}
+	}
+</style>
