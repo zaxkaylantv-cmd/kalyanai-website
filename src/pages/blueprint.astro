@@ -35,20 +35,6 @@ const deliverables = [
 	'A written blueprint you keep, specific to your business and not a generic template.',
 ];
 
-const proofPoints = [
-	{
-		title: 'Spa by Kaajal',
-		copy: 'A finance admin and visibility system that reduced weekly finance admin from around 4 hours to around 30 minutes, with invoices, receipts, tips, missing items and accountant ready exports in one place.',
-	},
-	{
-		title: 'Jas\'s School of Spice',
-		copy: 'A booking and operations system for cookery classes, covering bookings, payments, vouchers, reminders, customer communication, owner alerts and protected operations management.',
-	},
-	{
-		title: 'Kalyan AI Internal Operating Stack',
-		copy: 'Kalyan AI also runs its own business through controlled AI systems for managing relationships, outreach, reminders, reporting and owner visibility.',
-	},
-];
 ---
 
 <Layout
@@ -146,33 +132,6 @@ const proofPoints = [
 						<span>{principle.copy}</span>
 					</article>
 				))}
-			</div>
-		</div>
-	</section>
-
-	<section class="ka-section ka-section-dark blueprint-proof">
-		<div class="ka-wrap">
-			<SectionHeading
-				eyebrow="Built from real delivery experience"
-				title="The Blueprint comes from building systems that are already in use."
-				highlight="already in use."
-				lead="Kalyan AI builds systems around how real businesses actually work. The Blueprint uses the same delivery thinking in a focused first step."
-				tone="dark"
-			/>
-			<div class="blueprint-proof__grid">
-				<article class="blueprint-proof__lead">
-					<h3>{proofPoints[0].title}</h3>
-					<strong class="blueprint-proof__stat">30 min</strong>
-					<p>{proofPoints[0].copy}</p>
-				</article>
-				<div class="blueprint-proof__stack">
-					{proofPoints.slice(1).map((proof) => (
-						<article>
-							<h3>{proof.title}</h3>
-							<p>{proof.copy}</p>
-						</article>
-					))}
-				</div>
 			</div>
 		</div>
 	</section>
@@ -315,7 +274,7 @@ const proofPoints = [
 	.blueprint-principle--wide {
 		display: grid;
 		grid-column: span 2;
-		grid-template-columns: 0.45fr 1fr;
+		grid-template-columns: 1fr;
 		gap: 28px;
 		align-items: start;
 		background: linear-gradient(135deg, rgba(0, 183, 198, 0.13), rgba(255, 255, 255, 0.04) 58%);
@@ -387,68 +346,6 @@ const proofPoints = [
 
 	.blueprint-deliverables {
 		border-bottom: 1px solid var(--line-light);
-	}
-
-	.blueprint-proof {
-		background: var(--navy-2);
-		border-bottom: 1px solid var(--line-dark);
-		color: var(--white);
-	}
-
-	.blueprint-proof__grid {
-		display: grid;
-		grid-template-columns: 1.15fr 0.85fr;
-		gap: 18px;
-		margin-top: 54px;
-	}
-
-	.blueprint-proof__lead,
-	.blueprint-proof__stack article {
-		border: 1px solid var(--line-dark);
-		border-radius: 16px;
-		background: rgba(255, 255, 255, 0.04);
-		text-align: left;
-	}
-
-	.blueprint-proof__lead {
-		padding: 34px;
-		background: linear-gradient(135deg, rgba(0, 183, 198, 0.10), rgba(255, 255, 255, 0.04) 56%);
-	}
-
-	.blueprint-proof__stack {
-		display: grid;
-		gap: 18px;
-	}
-
-	.blueprint-proof__stack article {
-		padding: 26px;
-	}
-
-	.blueprint-proof h3 {
-		margin: 0 0 12px;
-		color: var(--white);
-		font-size: 24px;
-		font-weight: 600;
-	}
-
-	.blueprint-proof__stat {
-		display: inline-flex;
-		margin-bottom: 14px;
-		color: var(--gold-soft);
-		font-family: "Fraunces", Georgia, serif;
-		font-size: 38px;
-		font-weight: 700;
-		line-height: 1;
-	}
-
-	.blueprint-proof p {
-		color: var(--body-light);
-		font-size: 15.5px;
-		line-height: 1.64;
-	}
-
-	.blueprint-proof__lead p {
-		max-width: 56ch;
 	}
 
 	:global(.ka-final-cta) {
