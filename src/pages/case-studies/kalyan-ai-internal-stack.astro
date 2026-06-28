@@ -1,7 +1,6 @@
 ---
 import ButtonPrimary from '../../components/ButtonPrimary.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
-import Frame from '../../components/Frame.astro';
 import Layout from '../../layouts/Layout.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 
@@ -18,26 +17,30 @@ const operatingAreas = [
 	'follow-up tasks and reminders',
 	'relationship notes',
 	'business activity visibility',
-	'RAG context',
+	'reference context',
 	'system health checks',
 ];
 
 const phases = [
 	{
 		title: 'Prepare',
-		steps: ['Lead generation', 'Prospect information prepared', 'Controlled outreach sent'],
+		start: 1,
+		steps: ['Lead generation', 'Prospect information prepared', 'Outreach prepared'],
 	},
 	{
-		title: 'Protect',
-		steps: ['Bounces monitored', 'Rejections handled', 'Opt-outs protected'],
+		title: 'Send and protect',
+		start: 4,
+		steps: ['Controlled outreach sent', 'Bounces monitored', 'Rejections and opt-outs handled'],
 	},
 	{
 		title: 'Review',
+		start: 7,
 		steps: ['Replies monitored', 'Telegram alerts raised', 'Human approval kept in the loop'],
 	},
 	{
 		title: 'Follow through',
-		steps: ['Meeting booked', 'CRM handoff', 'Follow-up controlled'],
+		start: 10,
+		steps: ['Meeting booked', 'Follow-up controlled'],
 	},
 ];
 ---
@@ -53,7 +56,7 @@ const phases = [
 				<div>
 					<Eyebrow tone="dark">Internal proof system</Eyebrow>
 					<h1>Kalyan AI Internal Operating Stack</h1>
-					<p>Kalyan AI's own controlled operating system for lead generation, outreach, replies, CRM, business visibility, RAG, system health and owner control.</p>
+					<p>Kalyan AI's own controlled operating system for lead generation, outreach, replies, CRM, business visibility, reference context, system health and owner control.</p>
 				</div>
 				<div class="case-hero__panel">
 					<span>Controlled operating proof</span>
@@ -63,18 +66,19 @@ const phases = [
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-white">
+	<section class="ka-section ka-section-dark case-context">
 		<div class="ka-wrap">
 			<div class="case-two-col">
 				<SectionHeading
 					eyebrow="Why we built it"
 					title="Kalyan AI needed the same thing many owner-led businesses need."
 					highlight="many owner-led businesses need."
+					tone="dark"
 				/>
 				<div class="case-copy">
 					<p>Kalyan AI needed a clearer way to see what is happening, what needs attention, what is moving forward and what is slipping.</p>
 					<p>Instead of relying on scattered tools, inboxes, memory and disconnected spreadsheets, we built an internal operating system around how the business actually works.</p>
-					<p>The aim was simple: keep lead generation, outreach, replies, booked meetings, CRM follow-up, reminders, business activity, RAG context and system health visible in one controlled place.</p>
+					<p>The aim was simple: keep lead generation, outreach, replies, booked meetings, CRM follow-up, reminders, business activity, reference context and system health visible in one controlled place.</p>
 					<p>This is not a demo system. It is the live operating stack Kalyan AI uses to manage its own commercial activity.</p>
 				</div>
 			</div>
@@ -97,20 +101,25 @@ const phases = [
 						))}
 					</ul>
 				</div>
-				<div class="case-frame-stack">
-					<Frame
-						src="/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png"
-						alt="Kalyan AI internal operating dashboard showing commercial activity, follow-up and system health."
-						label="Internal operating dashboard"
-						loading="eager"
-					/>
-					<Frame
-						src="/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-outreach-activity-dashboard.png"
-						alt="Kalyan AI outreach activity dashboard showing activity trends and follow-up visibility."
-						label="Outreach activity dashboard"
-						loading="eager"
-					/>
-				</div>
+				<figure class="internal-shot">
+					<div class="internal-shot__chrome" aria-hidden="true">
+						<span></span>
+						<span></span>
+						<span></span>
+						<div></div>
+					</div>
+					<div class="internal-shot__screen">
+						<img
+							src="/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png"
+							alt="Kalyan AI internal operating dashboard showing commercial activity, follow-up and system health."
+							width="1487"
+							height="964"
+							loading="eager"
+							fetchpriority="high"
+						/>
+					</div>
+					<figcaption>Internal operating dashboard</figcaption>
+				</figure>
 			</div>
 		</div>
 	</section>
@@ -131,7 +140,7 @@ const phases = [
 						<ul>
 							{phase.steps.map((step, stepIndex) => (
 								<li>
-									<strong>{String(stepIndex + 1).padStart(2, '0')}</strong>
+									<strong>{String(phase.start + stepIndex).padStart(2, '0')}</strong>
 									<p>{step}</p>
 								</li>
 							))}
@@ -156,21 +165,40 @@ const phases = [
 					/>
 					<div class="case-copy">
 						<p>This internal system proves the same principle Kalyan AI applies for clients: understand how the business actually works, find where visibility is weak, and build a practical system around a real operating need.</p>
-						<p>For Kalyan AI, that means commercial activity, outreach, replies, meetings, CRM follow-up, reminders, RAG context and system health.</p>
+						<p>For Kalyan AI, that means commercial activity, outreach, replies, meetings, CRM follow-up, reminders, reference context and system health.</p>
 						<p>For another business, it may be bookings, finance, customer communication, operations, reporting or delivery control. The system changes depending on the business. The principle stays the same.</p>
 					</div>
 				</div>
-				<div class="case-proof-panel">
-					<Eyebrow>Built with control</Eyebrow>
-					<h3>Clear boundaries, human approval and ongoing monitoring.</h3>
-					<p>The system is operated with clear boundaries, human approval, source-of-truth ownership and ongoing monitoring.</p>
-					<p>It is built around the idea that the right information should be visible and the right decisions should stay under human control.</p>
-				</div>
+				<figure class="internal-shot">
+					<div class="internal-shot__chrome" aria-hidden="true">
+						<span></span>
+						<span></span>
+						<span></span>
+						<div></div>
+					</div>
+					<div class="internal-shot__screen">
+						<img
+							src="/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-outreach-activity-dashboard.png"
+							alt="Kalyan AI outreach activity dashboard showing activity trends and follow-up visibility."
+							width="1465"
+							height="959"
+							loading="eager"
+							fetchpriority="high"
+						/>
+					</div>
+					<figcaption>Outreach activity dashboard</figcaption>
+				</figure>
+			</div>
+			<div class="case-proof-panel">
+				<Eyebrow>Built with control</Eyebrow>
+				<h3>Clear boundaries, human approval and ongoing monitoring.</h3>
+				<p>The system is operated with clear boundaries, human approval, source-of-truth ownership and ongoing monitoring.</p>
+				<p>It is built around the idea that the right information should be visible and the right decisions should stay under human control.</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-paper case-cta">
+	<section class="ka-section ka-section-deep case-cta">
 		<div class="ka-wrap">
 			<div class="case-cta__inner">
 				<Eyebrow>Start here</Eyebrow>
@@ -188,6 +216,7 @@ const phases = [
 			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 22%, rgba(8, 20, 40, 0.76) 62%, rgba(8, 20, 40, 0.98) 100%),
 			radial-gradient(circle at 80% 24%, rgba(0, 183, 198, 0.22), transparent 34%),
 			var(--navy-deep);
+		border-bottom: 1px solid var(--line-dark);
 		color: var(--white);
 	}
 
@@ -226,18 +255,27 @@ const phases = [
 		color: var(--teal-soft);
 		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 		font-size: 11px;
-		letter-spacing: 0.09em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 	}
 
 	.case-hero__panel strong {
 		display: block;
 		margin-top: 14px;
-		color: var(--white);
+		color: var(--gold-soft);
 		font-family: "Fraunces", Georgia, serif;
 		font-size: clamp(28px, 3vw, 42px);
 		font-weight: 600;
 		line-height: 1.08;
+	}
+
+	.case-context {
+		background: var(--navy);
+		border-bottom: 1px solid var(--line-dark);
+	}
+
+	.case-context .case-copy {
+		color: var(--body-light);
 	}
 
 	.case-two-col,
@@ -262,9 +300,13 @@ const phases = [
 	.case-feature-list {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 14px;
+		gap: 12px 18px;
 		margin: 34px 0 0;
-		padding: 0;
+		padding: 24px;
+		border: 1px solid var(--line-light);
+		border-radius: 14px;
+		background: var(--white);
+		box-shadow: 0 24px 54px -46px rgba(11, 18, 32, 0.32);
 		list-style: none;
 	}
 
@@ -272,10 +314,6 @@ const phases = [
 		display: grid;
 		grid-template-columns: 16px 1fr;
 		gap: 12px;
-		padding: 18px;
-		border: 1px solid var(--line-light);
-		border-radius: 14px;
-		background: var(--white);
 		color: var(--body);
 		font-size: 15px;
 		line-height: 1.55;
@@ -290,14 +328,71 @@ const phases = [
 		background: var(--teal);
 	}
 
-	.case-frame-stack {
-		display: grid;
-		gap: 22px;
+	.internal-shot {
+		margin: 0;
+	}
+
+	.internal-shot__chrome {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 10px 12px;
+		border: 1px solid var(--line-light);
+		border-bottom: 0;
+		border-radius: 13px 13px 0 0;
+		background: var(--white);
+	}
+
+	.internal-shot__chrome span {
+		width: 9px;
+		height: 9px;
+		border-radius: 999px;
+		background: #d8e0ea;
+	}
+
+	.internal-shot__chrome div {
+		height: 8px;
+		flex: 1;
+		max-width: 180px;
+		margin-left: 10px;
+		border-radius: 999px;
+		background: #eef3f7;
+	}
+
+	.internal-shot__screen {
+		border: 1px solid var(--line-light);
+		border-radius: 0 0 13px 13px;
+		background: #f6f9fc;
+		box-shadow: 0 30px 58px -34px rgba(11, 18, 32, 0.38);
+	}
+
+	.internal-shot__screen img {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		object-fit: contain;
+		object-position: top center;
+		position: static;
+		opacity: 1;
+		filter: none;
+	}
+
+	.internal-shot figcaption {
+		margin-top: 9px;
+		color: #7c8b9c;
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		line-height: 1.5;
+		text-align: left;
 	}
 
 	.case-flow-band {
 		position: relative;
 		overflow: hidden;
+		border-top: 1px solid var(--line-dark);
+		border-bottom: 1px solid var(--line-dark);
+		background: var(--navy-deep);
 	}
 
 	.case-flow-band::before {
@@ -327,10 +422,10 @@ const phases = [
 	}
 
 	.internal-phase-grid article > span {
-		color: var(--teal-soft);
+		color: var(--gold-soft);
 		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 		font-size: 11px;
-		letter-spacing: 0.08em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 	}
 
@@ -396,6 +491,8 @@ const phases = [
 	}
 
 	.case-proof-panel {
+		max-width: 72ch;
+		margin-top: 46px;
 		padding: 30px;
 	}
 
@@ -416,20 +513,31 @@ const phases = [
 	.case-cta__inner {
 		max-width: 56ch;
 		padding: 34px;
+		border-color: var(--line-dark);
+		background: rgba(255, 255, 255, 0.04);
+		box-shadow: none;
 	}
 
 	.case-cta h2 {
 		margin: 0 0 18px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: clamp(30px, 4vw, 44px);
 		font-weight: 500;
 	}
 
 	.case-cta p {
 		margin-bottom: 28px;
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 16px;
 		line-height: 1.66;
+	}
+
+	.case-cta :global(.ka-eyebrow--light) {
+		color: var(--teal-soft);
+	}
+
+	.case-cta :global(.ka-eyebrow--light)::before {
+		background: var(--gold-soft);
 	}
 
 	@media (max-width: 1040px) {
