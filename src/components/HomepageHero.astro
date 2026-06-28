@@ -33,9 +33,15 @@ import ButtonPrimary from './ButtonPrimary.astro';
 	.ka-home-hero {
 		position: relative;
 		overflow: hidden;
-		min-height: calc(100dvh - 92px);
+		min-height: clamp(480px, 52dvh, 560px);
 		background: var(--navy-deep);
 		color: var(--white);
+	}
+
+	.ka-home-hero > .ka-wrap {
+		display: flex;
+		min-height: inherit;
+		align-items: center;
 	}
 
 	.ka-home-hero::before,
@@ -59,13 +65,14 @@ import ButtonPrimary from './ButtonPrimary.astro';
 		position: relative;
 		z-index: 4;
 		max-width: 820px;
-		padding: 96px 0 112px;
+		margin-left: clamp(0px, 4vw, 44px);
+		padding: 88px 0 68px;
 		text-align: left;
 	}
 
 	.ka-home-hero h1 {
 		max-width: 16ch;
-		margin: 0 0 26px;
+		margin: 0 0 36px;
 		color: var(--white);
 		font-size: clamp(44px, 6vw, 74px);
 		font-weight: 500;
@@ -90,11 +97,18 @@ import ButtonPrimary from './ButtonPrimary.astro';
 			min-height: auto;
 		}
 
+		.ka-home-hero > .ka-wrap {
+			display: block;
+			min-height: 0;
+		}
+
 		.ka-home-hero__content {
-			padding: 72px 0 84px;
+			margin-left: 0;
+			padding: 50px 0 38px;
 		}
 
 		.ka-home-hero h1 {
+			margin-bottom: 30px;
 			font-size: clamp(42px, 14vw, 58px);
 		}
 	}

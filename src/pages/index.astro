@@ -66,13 +66,13 @@ const processSteps = [
 		<div class="ka-wrap">
 			<div class="ka-trust-strip__inner">
 				{trustItems.map((item) => (
-					<p><strong>{item.lead}</strong>, {item.rest}</p>
+					<p><strong>{item.lead}</strong>{item.lead === 'Production grade' ? ', ' : ' '}{item.rest}</p>
 				))}
 			</div>
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-paper ka-approach">
+	<section class="ka-section ka-section-dark ka-approach">
 		<div class="ka-wrap">
 			<div class="ka-approach__grid">
 				<div>
@@ -124,7 +124,6 @@ const processSteps = [
 				<Frame
 					src="/images/case-studies/after-dashboard.png"
 					alt="Spa by Kaajal finance dashboard showing invoices, receipts, cashflow, tips and overdue items in one place."
-					label="Real sanitised screenshot"
 					loading="eager"
 				/>
 			</div>
@@ -141,9 +140,8 @@ const processSteps = [
 				<Frame
 					src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png"
 					alt="Jas's School of Spice customer homepage showing class booking options."
-					label="Live client system screenshot"
 					badge="Live system"
-					imageFit="cover"
+					imageFit="contain"
 					loading="eager"
 				/>
 			</div>
@@ -160,7 +158,7 @@ const processSteps = [
 				<Frame
 					src="/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png"
 					alt="Kalyan AI internal operating dashboard showing business activity and system health."
-					label="Sanitised internal operating screenshot"
+					imageFit="contain"
 					loading="eager"
 				/>
 			</div>
@@ -217,8 +215,9 @@ const processSteps = [
 
 <style>
 	.ka-trust-strip {
-		background: var(--white);
-		border-bottom: 1px solid var(--line-light);
+		background: var(--navy-2);
+		border-top: 1px solid var(--line-dark);
+		border-bottom: 1px solid var(--line-dark);
 	}
 
 	.ka-trust-strip__inner {
@@ -230,14 +229,20 @@ const processSteps = [
 	}
 
 	.ka-trust-strip p {
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 14px;
 		line-height: 1.5;
 	}
 
 	.ka-trust-strip strong {
-		color: var(--ink);
+		color: var(--white);
 		font-weight: 700;
+	}
+
+	.ka-approach {
+		background: var(--navy);
+		border-bottom: 1px solid var(--line-dark);
+		color: var(--white);
 	}
 
 	.ka-approach__grid {
@@ -250,19 +255,19 @@ const processSteps = [
 	.ka-approach h2 {
 		max-width: 20ch;
 		margin: 0;
-		color: var(--ink);
+		color: var(--white);
 		font-size: clamp(30px, 3.7vw, 42px);
 		font-weight: 500;
 	}
 
 	.ka-approach h2 span {
-		color: var(--teal-deep);
+		color: var(--teal-soft);
 	}
 
 	.ka-approach__lead {
 		max-width: 50ch;
-		margin-bottom: 8px;
-		color: var(--body);
+		margin-bottom: 36px;
+		color: var(--body-light);
 		font-size: 17px;
 		line-height: 1.62;
 	}
@@ -274,27 +279,27 @@ const processSteps = [
 
 	.ka-approach article {
 		padding: 26px 0;
-		border-top: 1px solid var(--line-light);
+		border-top: 1px solid var(--line-dark);
 		text-align: left;
 	}
 
 	.ka-approach article:last-child {
-		border-bottom: 1px solid var(--line-light);
+		border-bottom: 1px solid var(--line-dark);
 	}
 
 	.ka-approach article p {
 		margin-bottom: 10px;
-		color: var(--teal-deep);
+		color: var(--teal-soft);
 		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 		font-size: 11px;
 		font-weight: 500;
-		letter-spacing: 0.08em;
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
 	}
 
 	.ka-approach article h3 {
 		margin: 0 0 7px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: 20px;
 		font-weight: 600;
 	}
@@ -302,13 +307,13 @@ const processSteps = [
 	.ka-approach article span {
 		display: block;
 		max-width: 46ch;
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 15px;
 		line-height: 1.6;
 	}
 
 	.ka-proof__heading {
-		margin-bottom: 60px;
+		margin-bottom: 76px;
 	}
 
 	.ka-proof__item {
@@ -316,7 +321,7 @@ const processSteps = [
 		grid-template-columns: 1fr 1fr;
 		gap: 54px;
 		align-items: center;
-		margin-bottom: 76px;
+		margin-bottom: 104px;
 	}
 
 	.ka-proof__item:last-child {
@@ -373,7 +378,7 @@ const processSteps = [
 	}
 
 	.ka-proof__to {
-		color: var(--ink);
+		color: var(--gold);
 		font-family: "Fraunces", Georgia, serif;
 		font-size: 40px;
 		font-weight: 700;
@@ -414,14 +419,28 @@ const processSteps = [
 		gap: 24px;
 	}
 
+	.ka-reviews {
+		background: var(--navy-2);
+		border-top: 1px solid var(--line-dark);
+	}
+
+	.ka-process {
+		border-top: 1px solid var(--line-dark);
+	}
+
 	@media (max-width: 860px) {
 		.ka-approach__grid,
 		.ka-proof__item {
 			grid-template-columns: 1fr;
 		}
 
+		.ka-approach__grid {
+			gap: 34px;
+		}
+
 		.ka-proof__item {
 			gap: 28px;
+			margin-bottom: 78px;
 		}
 
 		.ka-proof__item--flip .ka-proof__copy {
@@ -432,6 +451,29 @@ const processSteps = [
 	@media (max-width: 760px) {
 		.ka-reviews__grid {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.ka-trust-strip__inner {
+			padding: 20px 0;
+		}
+
+		.ka-approach__lead {
+			margin-bottom: 32px;
+		}
+
+		.ka-approach article {
+			padding: 24px 0;
+		}
+
+		.ka-proof__heading {
+			margin-bottom: 56px;
+		}
+
+		.ka-proof__item {
+			gap: 26px;
+			margin-bottom: 72px;
 		}
 	}
 </style>
