@@ -1,30 +1,40 @@
 ---
 import ButtonPrimary from '../../components/ButtonPrimary.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
-import Frame from '../../components/Frame.astro';
 import Layout from '../../layouts/Layout.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 
-const features = [
-	'class browsing and online booking',
-	'secure online payments through Stripe',
-	'gift voucher purchase',
-	'customer enquiry handling',
-	'confirmation and reminder emails',
-	'Telegram alerts when attention is needed',
-	'protected operational controls for class dates, booking changes, voucher handling and customer communication',
-	'ongoing support from Kalyan AI behind the scenes',
+const builtGroups = [
+	{
+		title: 'Customer booking',
+		items: ['Class browsing and online booking', 'Secure online payments through Stripe', 'Confirmation and reminder emails'],
+	},
+	{
+		title: 'Gift vouchers and enquiries',
+		items: ['Gift voucher purchase', 'Customer enquiry handling', 'Telegram alerts when attention is needed'],
+	},
+	{
+		title: 'Owner controls',
+		items: ['Protected controls for class dates, booking changes, voucher handling and customer communication', 'Ongoing support from Kalyan AI behind the scenes'],
+	},
 ];
 
-const customerSteps = [
-	'View available classes',
-	'Choose a date',
-	'Book a place',
-	'Pay online',
-	'Receive confirmation',
-	'Receive a reminder before the class',
-	'Buy vouchers',
-	'Ask a question before booking',
+const journeyPhases = [
+	{
+		phase: 'Explore',
+		summary: 'Customers can understand the class options and ask questions before booking.',
+		steps: ['View available classes', 'Choose a date', 'Ask a question before booking'],
+	},
+	{
+		phase: 'Book',
+		summary: 'The booking flow handles the key customer actions while interest is active.',
+		steps: ['Book a place', 'Pay online', 'Buy vouchers'],
+	},
+	{
+		phase: 'Attend',
+		summary: 'The system keeps the customer informed and gives the owner clearer operational visibility.',
+		steps: ['Receive confirmation', 'Receive a reminder before the class'],
+	},
 ];
 ---
 
@@ -49,13 +59,14 @@ const customerSteps = [
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-white">
+	<section class="ka-section ka-section-dark case-context">
 		<div class="ka-wrap">
 			<div class="case-two-col">
 				<SectionHeading
 					eyebrow="Business context"
 					title="The school needed more than a simple booking page."
 					highlight="more than a simple booking page."
+					tone="dark"
 				/>
 				<div class="case-copy">
 					<p>The school needed a cleaner way for customers to view class dates, book places, pay securely, buy vouchers and ask questions without every step depending on manual messages.</p>
@@ -76,29 +87,39 @@ const customerSteps = [
 						highlight="operations system."
 						lead="Kalyan AI built a live system covering the customer journey and the protected controls needed to run it properly."
 					/>
-					<ul class="case-feature-list">
-						{features.map((feature) => (
-							<li><span></span>{feature}</li>
+					<div class="case-feature-list">
+						{builtGroups.map((group) => (
+							<article>
+								<h3>{group.title}</h3>
+								<ul>
+									{group.items.map((item) => (
+										<li><span></span>{item}</li>
+									))}
+								</ul>
+							</article>
 						))}
-					</ul>
+					</div>
 				</div>
-				<div class="case-frame-stack">
-					<Frame
-						src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png"
-						alt="Jas's School of Spice customer homepage showing class options and booking calls to action."
-						label="Customer booking homepage"
-						badge="Live system"
-						imageFit="contain"
-						loading="eager"
-					/>
-					<Frame
-						src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-gift-voucher-page.png"
-						alt="Jas's School of Spice gift voucher page showing online voucher purchase options."
-						label="Gift voucher page"
-						imageFit="contain"
-						loading="eager"
-					/>
-				</div>
+				<figure class="jas-shot">
+					<div class="jas-shot__chrome" aria-hidden="true">
+						<span></span>
+						<span></span>
+						<span></span>
+						<div></div>
+						<strong>Live system</strong>
+					</div>
+					<div class="jas-shot__screen">
+						<img
+							src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png"
+							alt="Jas's School of Spice customer homepage showing class options and booking calls to action."
+							width="891"
+							height="946"
+							loading="eager"
+							fetchpriority="high"
+						/>
+					</div>
+					<figcaption>Customer booking homepage</figcaption>
+				</figure>
 			</div>
 		</div>
 	</section>
@@ -107,17 +128,53 @@ const customerSteps = [
 		<div class="ka-wrap">
 			<SectionHeading
 				eyebrow="Customer journey"
-				title="The customer can move from interest to booking online."
+				title="A connected journey from interest to class attendance."
 				lead="The public journey is connected to protected operational controls behind the scenes, so the owner keeps clearer control of classes, capacity and communication."
 				tone="dark"
 			/>
 			<div class="jas-flow">
-				{customerSteps.map((step, index) => (
-					<article>
-						<span>{String(index + 1).padStart(2, '0')}</span>
-						<p>{step}</p>
+				{journeyPhases.map((phase, phaseIndex) => (
+					<article class="jas-flow__phase">
+						<div class="jas-flow__phase-head">
+							<span>{phase.phase}</span>
+							<p>{phase.summary}</p>
+						</div>
+						<ol>
+							{phase.steps.map((step, stepIndex) => (
+								<li>
+									<strong>{String(phaseIndex * 3 + stepIndex + 1).padStart(2, '0')}</strong>
+									<p>{step}</p>
+								</li>
+							))}
+						</ol>
 					</article>
 				))}
+			</div>
+			<div class="case-dark-feature case-dark-feature--voucher">
+				<div>
+					<Eyebrow tone="dark">Voucher path</Eyebrow>
+					<h3>Gift vouchers sit inside the same customer flow.</h3>
+					<p>Customers can buy vouchers online without the owner needing to manually arrange the purchase at the moment interest appears.</p>
+				</div>
+				<figure class="jas-shot jas-shot--dark">
+					<div class="jas-shot__chrome" aria-hidden="true">
+						<span></span>
+						<span></span>
+						<span></span>
+						<div></div>
+					</div>
+					<div class="jas-shot__screen">
+						<img
+							src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-gift-voucher-page.png"
+							alt="Jas's School of Spice gift voucher page showing online voucher purchase options."
+							width="936"
+							height="991"
+							loading="eager"
+							fetchpriority="high"
+						/>
+					</div>
+					<figcaption>Gift voucher page</figcaption>
+				</figure>
 			</div>
 			<div class="case-dark-feature">
 				<div>
@@ -125,13 +182,25 @@ const customerSteps = [
 					<h3>The public booking journey is only one part of the system.</h3>
 					<p>Behind it sits protected operational control for class dates, booking visibility, booking changes, voucher handling and customer communication.</p>
 				</div>
-				<Frame
-					src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-ops-class-dates.png"
-					alt="Protected operations screen for Jas's School of Spice class dates and availability."
-					label="Protected operations screen"
-					imageFit="cover"
-					loading="eager"
-				/>
+				<figure class="jas-shot jas-shot--dark">
+					<div class="jas-shot__chrome" aria-hidden="true">
+						<span></span>
+						<span></span>
+						<span></span>
+						<div></div>
+					</div>
+					<div class="jas-shot__screen">
+						<img
+							src="/images/case-studies/jas-school-of-spice/jas-school-of-spice-ops-class-dates.png"
+							alt="Protected operations screen for Jas's School of Spice class dates and availability."
+							width="1280"
+							height="812"
+							loading="eager"
+							fetchpriority="high"
+						/>
+					</div>
+					<figcaption>Class date controls</figcaption>
+				</figure>
 			</div>
 		</div>
 	</section>
@@ -154,13 +223,13 @@ const customerSteps = [
 				<article class="case-review">
 					<p class="case-stars" aria-label="Five star review">*****</p>
 					<blockquote>I cannot recommend Zax highly enough. He exceeded my expectations in every way and genuinely went above and beyond throughout the entire process. From the very beginning, he took the time to fully understand my business and clearly explained exactly what I would be getting. The new booking system has transformed how my business operates, making it much easier for customers to book classes and purchase gift vouchers online. Most importantly, the system has freed up a significant amount of my time. Instead of spending hours answering the same questions and responding to enquiries, I can focus on the parts of my business that I truly enjoy. Because the system works 24/7, customers can get the information they need and make bookings at any time, meaning I no longer lose potential customers who might otherwise have moved on while waiting for a reply. I was thoroughly supported throughout the setup and handover process, and nothing ever felt too much trouble.</blockquote>
-					<footer>Jas, Jas's School of Spice</footer>
+					<footer>Jas Dhillon, Jas's School of Spice</footer>
 				</article>
 			</div>
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-paper case-cta">
+	<section class="ka-section ka-section-deep case-cta">
 		<div class="ka-wrap">
 			<div class="case-cta__inner">
 				<Eyebrow>Start here</Eyebrow>
@@ -178,6 +247,7 @@ const customerSteps = [
 			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 22%, rgba(8, 20, 40, 0.76) 62%, rgba(8, 20, 40, 0.98) 100%),
 			radial-gradient(circle at 80% 24%, rgba(0, 183, 198, 0.22), transparent 34%),
 			var(--navy-deep);
+		border-bottom: 1px solid var(--line-dark);
 		color: var(--white);
 	}
 
@@ -216,18 +286,27 @@ const customerSteps = [
 		color: var(--teal-soft);
 		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 		font-size: 11px;
-		letter-spacing: 0.09em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 	}
 
 	.case-hero__panel strong {
 		display: block;
 		margin-top: 14px;
-		color: var(--white);
+		color: var(--gold-soft);
 		font-family: "Fraunces", Georgia, serif;
 		font-size: clamp(28px, 3vw, 42px);
 		font-weight: 600;
 		line-height: 1.08;
+	}
+
+	.case-context {
+		background: var(--navy);
+		border-bottom: 1px solid var(--line-dark);
+	}
+
+	.case-context .case-copy {
+		color: var(--body-light);
 	}
 
 	.case-two-col,
@@ -252,9 +331,42 @@ const customerSteps = [
 
 	.case-feature-list {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 14px;
+		grid-template-columns: 1fr;
+		gap: 0;
 		margin: 34px 0 0;
+		padding: 22px;
+		border: 1px solid var(--line-light);
+		border-radius: 14px;
+		background: var(--white);
+		box-shadow: 0 24px 54px -46px rgba(11, 18, 32, 0.32);
+	}
+
+	.case-feature-list article {
+		padding: 18px 0;
+		border-top: 1px solid var(--line-light);
+		text-align: left;
+	}
+
+	.case-feature-list article:first-child {
+		padding-top: 0;
+		border-top: 0;
+	}
+
+	.case-feature-list article:last-child {
+		padding-bottom: 0;
+	}
+
+	.case-feature-list h3 {
+		margin: 0 0 14px;
+		color: var(--ink);
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.case-feature-list ul {
+		display: grid;
+		gap: 11px;
+		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
@@ -263,14 +375,9 @@ const customerSteps = [
 		display: grid;
 		grid-template-columns: 16px 1fr;
 		gap: 12px;
-		padding: 18px;
-		border: 1px solid var(--line-light);
-		border-radius: 14px;
-		background: var(--white);
 		color: var(--body);
 		font-size: 15px;
 		line-height: 1.55;
-		text-align: left;
 	}
 
 	.case-feature-list span {
@@ -286,9 +393,98 @@ const customerSteps = [
 		gap: 22px;
 	}
 
+	.jas-shot {
+		margin: 0;
+	}
+
+	.jas-shot__chrome {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 10px 12px;
+		border: 1px solid var(--line-light);
+		border-bottom: 0;
+		border-radius: 13px 13px 0 0;
+		background: var(--white);
+	}
+
+	.jas-shot--dark .jas-shot__chrome {
+		border-color: rgba(255, 255, 255, 0.16);
+		background: #f8fafc;
+	}
+
+	.jas-shot__chrome span {
+		width: 9px;
+		height: 9px;
+		border-radius: 999px;
+		background: #d8e0ea;
+	}
+
+	.jas-shot__chrome div {
+		height: 8px;
+		flex: 1;
+		max-width: 180px;
+		margin-left: 10px;
+		border-radius: 999px;
+		background: #eef3f7;
+	}
+
+	.jas-shot__chrome strong {
+		padding: 5px 8px;
+		border-radius: 5px;
+		background: rgba(7, 17, 31, 0.72);
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.jas-shot__screen {
+		border: 1px solid var(--line-light);
+		border-radius: 0 0 13px 13px;
+		background: #f6f9fc;
+		box-shadow: 0 30px 58px -34px rgba(11, 18, 32, 0.38);
+	}
+
+	.jas-shot--dark .jas-shot__screen {
+		border-color: rgba(255, 255, 255, 0.16);
+		box-shadow: 0 30px 58px -34px rgba(0, 0, 0, 0.62);
+	}
+
+	.jas-shot__screen img {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		object-fit: contain;
+		object-position: top center;
+		position: static;
+		opacity: 1;
+		filter: none;
+	}
+
+	.jas-shot figcaption {
+		margin-top: 9px;
+		color: #7c8b9c;
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		line-height: 1.5;
+		text-align: left;
+	}
+
+	.jas-shot--dark figcaption {
+		color: var(--body-light);
+	}
+
 	.case-flow-band {
 		position: relative;
 		overflow: hidden;
+		border-top: 1px solid var(--line-dark);
+		border-bottom: 1px solid var(--line-dark);
+		background: var(--navy-deep);
 	}
 
 	.case-flow-band::before {
@@ -304,41 +500,76 @@ const customerSteps = [
 		position: relative;
 		z-index: 2;
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 16px;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 18px;
 		margin-top: 58px;
 	}
 
-	.jas-flow article {
+	.jas-flow__phase {
 		position: relative;
-		min-height: 132px;
-		padding: 22px;
+		padding: 24px;
 		border: 1px solid var(--line-dark);
 		border-radius: 16px;
 		background: rgba(255, 255, 255, 0.04);
 		text-align: left;
 	}
 
-	.jas-flow span {
-		display: inline-flex;
-		width: 38px;
-		height: 38px;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: 18px;
-		border: 1px solid rgba(63, 216, 227, 0.34);
-		border-radius: 10px;
-		background: rgba(0, 183, 198, 0.10);
-		color: var(--teal-soft);
-		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-		font-size: 12px;
+	.jas-flow__phase-head {
+		padding-bottom: 20px;
+		border-bottom: 1px solid var(--line-dark);
 	}
 
-	.jas-flow p,
+	.jas-flow__phase-head span {
+		display: inline-flex;
+		margin-bottom: 12px;
+		color: var(--gold-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.jas-flow__phase-head p,
 	.case-dark-feature p {
 		color: var(--body-light);
 		font-size: 15px;
 		line-height: 1.62;
+	}
+
+	.jas-flow ol {
+		display: grid;
+		gap: 14px;
+		margin: 20px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.jas-flow li {
+		display: grid;
+		grid-template-columns: 38px 1fr;
+		gap: 12px;
+		align-items: start;
+	}
+
+	.jas-flow strong {
+		display: inline-flex;
+		width: 34px;
+		height: 34px;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid rgba(63, 216, 227, 0.34);
+		border-radius: 9px;
+		background: rgba(0, 183, 198, 0.1);
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		font-weight: 600;
+	}
+
+	.jas-flow li p {
+		color: var(--white);
+		font-size: 15px;
+		line-height: 1.5;
 	}
 
 	.case-dark-feature {
@@ -395,25 +626,36 @@ const customerSteps = [
 	.case-cta__inner {
 		max-width: 56ch;
 		padding: 34px;
+		border-color: var(--line-dark);
+		background: rgba(255, 255, 255, 0.04);
+		box-shadow: none;
 	}
 
 	.case-cta h2 {
 		margin: 0 0 18px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: clamp(30px, 4vw, 44px);
 		font-weight: 500;
 	}
 
 	.case-cta p {
 		margin-bottom: 28px;
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 16px;
 		line-height: 1.66;
 	}
 
+	.case-cta :global(.ka-eyebrow--light) {
+		color: var(--teal-soft);
+	}
+
+	.case-cta :global(.ka-eyebrow--light)::before {
+		background: var(--gold-soft);
+	}
+
 	@media (max-width: 960px) {
 		.jas-flow {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 1fr;
 		}
 	}
 
