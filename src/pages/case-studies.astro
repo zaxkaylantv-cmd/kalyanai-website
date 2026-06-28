@@ -1,7 +1,6 @@
 ---
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import Eyebrow from '../components/Eyebrow.astro';
-import Frame from '../components/Frame.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
@@ -12,10 +11,12 @@ const caseStudies = [
 		system: 'Finance admin and visibility system',
 		summary: 'A system built around salon finance work, bringing invoices, receipts, tips, missing items and accountant-ready exports into one clearer place.',
 		proof: 'Finance admin reduced from around 4 hours weekly to around 30 minutes.',
-		href: '/case-studies/spa-by-kaajal',
+		href: '/case-studies/spa-by-kaajal/',
 		image: '/images/case-studies/after-dashboard.png',
 		alt: 'Spa by Kaajal finance dashboard showing invoices, receipts, cashflow, tips and overdue items in one place.',
 		label: 'Finance dashboard with demo data',
+		width: 872,
+		height: 572,
 	},
 	{
 		sector: 'Live booking and operations',
@@ -23,25 +24,27 @@ const caseStudies = [
 		system: 'Customer booking and operations system',
 		summary: 'A live system for cookery classes covering bookings, payments, vouchers, reminders, customer messages, owner alerts and protected operational controls.',
 		proof: 'Live booking and operations flow for customers and the owner behind the scenes.',
-		href: '/case-studies/jas-school-of-spice',
+		href: '/case-studies/jas-school-of-spice/',
 		image: '/images/case-studies/jas-school-of-spice/jas-school-of-spice-customer-homepage.png',
 		alt: 'Jas\'s School of Spice customer homepage showing class booking options.',
 		label: 'Live customer booking homepage',
 		badge: 'Live system',
-		imageFit: 'cover',
+		width: 891,
+		height: 946,
 	},
 	{
 		sector: 'Internal operating proof',
 		title: 'Kalyan AI Internal Operating Stack',
 		system: 'Controlled commercial operating system',
-		summary: 'Kalyan AI’s own system for lead generation, outreach, replies, CRM, business visibility, RAG, system health and owner control.',
+		summary: 'Kalyan AI’s own system for lead generation, outreach, replies, CRM, business visibility, reference context, system health and owner control.',
 		proof: 'Internal proof that the same operating principles are used inside Kalyan AI.',
-		href: '/case-studies/kalyan-ai-internal-stack',
+		href: '/case-studies/kalyan-ai-internal-stack/',
 		image: '/images/case-studies/kalyan-ai-internal-stack/kalyan-ai-internal-operating-dashboard.png',
 		alt: 'Kalyan AI internal operating dashboard showing business activity and system health.',
 		label: 'Internal operating dashboard',
 		badge: 'Protected view',
-		imageFit: 'contain',
+		width: 1487,
+		height: 964,
 	},
 ];
 
@@ -87,6 +90,7 @@ const commonThreads = [
 					eyebrow="Proof overview"
 					title="The proof comes from real client systems and Kalyan AI’s own operating stack."
 					highlight="real client systems"
+					tone="dark"
 				/>
 				<div class="cases-copy-stack">
 					<p>These case studies show systems built around real business operations: finance admin, customer booking, owner alerts, protected controls, commercial visibility and ongoing operational support.</p>
@@ -105,52 +109,41 @@ const commonThreads = [
 				highlight="real operational use."
 				lead="Each example is tied to a specific business setting, a specific operating need and a factual proof point."
 			/>
-			<div class="cases-editorial">
-				<article class="case-feature case-feature--lead">
-					<div class="case-feature__content">
-						<p class="case-feature__sector">{caseStudies[0].sector}</p>
-						<h2>{caseStudies[0].title}</h2>
-						<p class="case-feature__system">{caseStudies[0].system}</p>
-						<p class="case-feature__summary">{caseStudies[0].summary}</p>
-						<div class="case-feature__proof">
-							<span>Proof point</span>
-							<strong>{caseStudies[0].proof}</strong>
-						</div>
-						<a href={caseStudies[0].href}>Read the case study</a>
-					</div>
-					<Frame
-						src={caseStudies[0].image}
-						alt={caseStudies[0].alt}
-						label={caseStudies[0].label}
-						loading="eager"
-					/>
-				</article>
-
-				<div class="cases-side-stack">
-					{caseStudies.slice(1).map((study) => (
-						<article class="case-feature case-feature--compact">
-							<div class="case-feature__content">
-								<p class="case-feature__sector">{study.sector}</p>
-								<h2>{study.title}</h2>
-								<p class="case-feature__system">{study.system}</p>
-								<p class="case-feature__summary">{study.summary}</p>
-								<div class="case-feature__proof">
-									<span>Proof point</span>
-									<strong>{study.proof}</strong>
-								</div>
-								<a href={study.href}>Read the case study</a>
+			<div class="cases-grid">
+				{caseStudies.map((study, index) => (
+					<article class="case-card">
+						<figure class="case-shot">
+							<div class="case-shot__chrome" aria-hidden="true">
+								<span></span>
+								<span></span>
+								<span></span>
+								<div></div>
+								{study.badge && <strong>{study.badge}</strong>}
 							</div>
-							<Frame
-								src={study.image}
-								alt={study.alt}
-								label={study.label}
-								badge={study.badge}
-								loading="eager"
-								imageFit={study.imageFit}
-							/>
-						</article>
-					))}
-				</div>
+							<div class="case-shot__screen">
+								<img
+									src={study.image}
+									alt={study.alt}
+									width={study.width}
+									height={study.height}
+									loading="eager"
+									fetchpriority={index === 0 ? 'high' : 'auto'}
+								/>
+							</div>
+							<figcaption>{study.label}</figcaption>
+						</figure>
+						<div class="case-card__body">
+							<p class="case-card__sector">{study.sector}</p>
+							<h2>{study.title}</h2>
+							<p class="case-card__summary">{study.summary}</p>
+							<div class:list={['case-card__proof', index === 0 && 'case-card__proof--gold']}>
+								<span>Proof point</span>
+								<strong>{study.proof}</strong>
+							</div>
+							<a href={study.href}>Read the case study</a>
+						</div>
+					</article>
+				))}
 			</div>
 		</div>
 	</section>
@@ -195,6 +188,7 @@ const commonThreads = [
 			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 20%, rgba(8, 20, 40, 0.78) 62%, rgba(8, 20, 40, 0.98) 100%),
 			radial-gradient(circle at 78% 24%, rgba(0, 183, 198, 0.23), transparent 36%),
 			var(--navy-deep);
+		border-bottom: 1px solid var(--line-dark);
 		color: var(--white);
 	}
 
@@ -219,6 +213,16 @@ const commonThreads = [
 		line-height: 1.66;
 	}
 
+	.cases-overview {
+		background: var(--navy);
+		border-bottom: 1px solid var(--line-dark);
+		color: var(--white);
+	}
+
+	.cases-overview .cases-copy-stack {
+		color: var(--body-light);
+	}
+
 	.cases-overview__grid,
 	.cases-thread__grid {
 		display: grid;
@@ -237,22 +241,20 @@ const commonThreads = [
 		text-align: left;
 	}
 
-	.cases-editorial {
+	.cases-grid {
 		display: grid;
-		grid-template-columns: minmax(0, 1.28fr) minmax(330px, 0.72fr);
-		gap: 22px;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 20px;
 		margin-top: 54px;
-		align-items: start;
+		align-items: stretch;
 	}
 
-	.cases-side-stack {
+	.case-card {
 		display: grid;
+		grid-template-rows: auto 1fr;
 		gap: 22px;
-	}
-
-	.case-feature {
-		display: grid;
-		gap: 24px;
+		min-height: 100%;
+		padding: 22px;
 		border: 1px solid var(--line-light);
 		border-radius: 16px;
 		background: var(--white);
@@ -260,21 +262,14 @@ const commonThreads = [
 		text-align: left;
 	}
 
-	.case-feature--lead {
-		padding: 34px;
-	}
-
-	.case-feature--compact {
-		padding: 24px;
-	}
-
-	.case-feature__content {
+	.case-card__body {
 		display: grid;
+		grid-template-rows: auto auto 1fr auto auto;
 		gap: 14px;
 	}
 
-	.case-feature__sector,
-	.case-feature__proof span {
+	.case-card__sector,
+	.case-card__proof span {
 		margin: 0;
 		color: var(--teal-deep);
 		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -284,51 +279,41 @@ const commonThreads = [
 		text-transform: uppercase;
 	}
 
-	.case-feature h2 {
-		max-width: 13ch;
+	.case-card h2 {
 		margin: 0;
 		color: var(--ink);
-		font-size: clamp(31px, 4vw, 48px);
+		font-size: clamp(25px, 2.3vw, 33px);
 		font-weight: 500;
 	}
 
-	.case-feature--compact h2 {
-		font-size: clamp(26px, 3vw, 34px);
-	}
-
-	.case-feature__system {
-		color: var(--ink);
-		font-size: 15px;
-		font-weight: 700;
-		line-height: 1.5;
-	}
-
-	.case-feature__summary {
-		max-width: 56ch;
+	.case-card__summary {
 		color: var(--body);
-		font-size: 16px;
-		line-height: 1.66;
+		font-size: 15px;
+		line-height: 1.62;
 	}
 
-	.case-feature__proof {
+	.case-card__proof {
 		display: grid;
 		gap: 8px;
-		margin-top: 4px;
-		padding: 18px;
+		padding: 15px;
 		border: 1px solid rgba(0, 183, 198, 0.22);
 		border-radius: 12px;
 		background: linear-gradient(135deg, rgba(0, 183, 198, 0.08), rgba(255, 255, 255, 0.86));
 	}
 
-	.case-feature__proof strong {
+	.case-card__proof strong {
 		color: var(--ink);
 		font-family: "Fraunces", Georgia, serif;
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: 600;
 		line-height: 1.12;
 	}
 
-	.case-feature a {
+	.case-card__proof--gold strong {
+		color: var(--gold);
+	}
+
+	.case-card a {
 		justify-self: start;
 		display: inline-flex;
 		align-items: center;
@@ -347,14 +332,90 @@ const commonThreads = [
 			box-shadow 150ms ease;
 	}
 
-	.case-feature a:hover {
+	.case-card a:hover {
 		transform: translateY(-2px);
 		box-shadow: 0 20px 44px -16px rgba(0, 183, 198, 0.70);
+	}
+
+	.case-shot {
+		margin: 0;
+	}
+
+	.case-shot__chrome {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 10px 12px;
+		border: 1px solid var(--line-light);
+		border-bottom: 0;
+		border-radius: 13px 13px 0 0;
+		background: var(--white);
+	}
+
+	.case-shot__chrome span {
+		width: 9px;
+		height: 9px;
+		border-radius: 999px;
+		background: #d8e0ea;
+	}
+
+	.case-shot__chrome div {
+		height: 8px;
+		flex: 1;
+		max-width: 180px;
+		margin-left: 10px;
+		border-radius: 999px;
+		background: #eef3f7;
+	}
+
+	.case-shot__chrome strong {
+		padding: 5px 8px;
+		border-radius: 5px;
+		background: rgba(7, 17, 31, 0.72);
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.case-shot__screen {
+		overflow: hidden;
+		aspect-ratio: 16 / 10;
+		border: 1px solid var(--line-light);
+		border-radius: 0 0 13px 13px;
+		background: #f6f9fc;
+		box-shadow: 0 30px 58px -34px rgba(11, 18, 32, 0.38);
+	}
+
+	.case-shot__screen img {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: top center;
+		position: static;
+		opacity: 1;
+		filter: none;
+	}
+
+	.case-shot figcaption {
+		margin-top: 9px;
+		color: #7c8b9c;
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+		line-height: 1.5;
+		text-align: left;
 	}
 
 	.cases-thread {
 		position: relative;
 		overflow: hidden;
+		border-top: 1px solid var(--line-dark);
+		border-bottom: 1px solid var(--line-dark);
 	}
 
 	.cases-thread::before {
@@ -414,7 +475,8 @@ const commonThreads = [
 	.cases-cta {
 		position: relative;
 		overflow: hidden;
-		border-top: 1px solid var(--line-light);
+		background: var(--navy-deep);
+		border-top: 1px solid var(--line-dark);
 	}
 
 	.cases-cta::before {
@@ -434,31 +496,39 @@ const commonThreads = [
 		z-index: 2;
 		max-width: 46ch;
 		padding: 34px;
-		border: 1px solid var(--line-light);
+		border: 1px solid var(--line-dark);
 		border-radius: 16px;
-		background: var(--white);
-		box-shadow: 0 28px 58px -48px rgba(11, 18, 32, 0.28);
+		background: rgba(255, 255, 255, 0.04);
+		box-shadow: none;
 		text-align: left;
 	}
 
 	.cases-cta h2 {
 		margin: 0 0 18px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: clamp(30px, 3.7vw, 42px);
 		font-weight: 500;
 	}
 
 	.cases-cta p {
 		margin-bottom: 30px;
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 17px;
 		line-height: 1.62;
+	}
+
+	.cases-cta :global(.ka-eyebrow--light) {
+		color: var(--teal-soft);
+	}
+
+	.cases-cta :global(.ka-eyebrow--light)::before {
+		background: var(--gold-soft);
 	}
 
 	@media (max-width: 980px) {
 		.cases-overview__grid,
 		.cases-thread__grid,
-		.cases-editorial,
+		.cases-grid,
 		.cases-thread__items {
 			grid-template-columns: 1fr;
 		}
@@ -469,8 +539,7 @@ const commonThreads = [
 			padding: 78px 0 92px;
 		}
 
-		.case-feature--lead,
-		.case-feature--compact,
+		.case-card,
 		.cases-thread__items article,
 		.cases-cta__inner {
 			padding: 22px;
