@@ -1,7 +1,12 @@
----
-export const prerender = true;
-
-export async function GET() {
-	return Response.redirect('/case-studies/', 301);
-}
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=/case-studies/">
+  <link rel="canonical" href="/case-studies/">
+  <title>Redirecting to case studies...</title>
+</head>
+<body>
+  <script>window.location.replace("/case-studies/");</script>
+</body>
+</html>

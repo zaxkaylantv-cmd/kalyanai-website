@@ -34,7 +34,7 @@ function gradientSvg(width, height) {
       <defs>
         <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#0F1F3A" />
-          <stop offset="100%" stop-color="#AB71F7" />
+          <stop offset="100%" stop-color="#00B7C6" />
         </linearGradient>
       </defs>
       <rect width="${width}" height="${height}" fill="url(#bg)" />
@@ -123,7 +123,7 @@ async function createOg() {
       <defs>
         <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#0F1F3A" />
-          <stop offset="100%" stop-color="#AB71F7" />
+          <stop offset="100%" stop-color="#00B7C6" />
         </linearGradient>
       </defs>
       <rect width="${width}" height="${height}" fill="url(#bg)" />
