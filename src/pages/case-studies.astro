@@ -28,6 +28,7 @@ const caseStudies = [
 		alt: 'Jas’s School of Spice customer homepage showing class booking options.',
 		label: 'Live customer booking homepage',
 		badge: 'Live system',
+		imageFit: 'cover',
 	},
 	{
 		sector: 'Internal operating proof',
@@ -40,6 +41,7 @@ const caseStudies = [
 		alt: 'Sanitised Kalyan AI internal operating dashboard showing business activity and system health.',
 		label: 'Sanitised internal operating dashboard',
 		badge: 'Sanitised',
+		imageFit: 'contain',
 	},
 ];
 
@@ -144,7 +146,7 @@ const commonThreads = [
 								label={study.label}
 								badge={study.badge}
 								loading="eager"
-								imageFit="contain"
+								imageFit={study.imageFit}
 							/>
 						</article>
 					))}
