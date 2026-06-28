@@ -150,13 +150,14 @@ const doNotItems = [
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-white hwb-risks">
+	<section class="ka-section ka-section-dark hwb-risks">
 		<div class="ka-wrap">
 			<SectionHeading
 				eyebrow="What this protects you from"
 				title="Weak foundations usually show up after the system is live."
 				highlight="after the system is live."
 				lead="These are common problems in systems built without a proper framework. The aim is not to make delivery heavy. The aim is to make the important risks visible before they reach the business."
+				tone="dark"
 			/>
 			<div class="hwb-risk-grid">
 				{risks.map((risk, index) => (
@@ -230,7 +231,7 @@ const doNotItems = [
 		</div>
 	</section>
 
-	<section class="ka-section ka-section-paper hwb-closing">
+	<section class="ka-section ka-section-dark hwb-closing">
 		<div class="ka-wrap">
 			<div class="hwb-closing__grid">
 				<div class="hwb-closing__intro">
@@ -270,6 +271,7 @@ const doNotItems = [
 			linear-gradient(100deg, rgba(8, 20, 40, 0.96) 20%, rgba(8, 20, 40, 0.78) 58%, rgba(8, 20, 40, 0.96) 100%),
 			radial-gradient(circle at 78% 22%, rgba(0, 183, 198, 0.22), transparent 36%),
 			var(--navy-deep);
+		border-bottom: 1px solid var(--line-dark);
 		color: var(--white);
 	}
 
@@ -305,13 +307,17 @@ const doNotItems = [
 		margin-top: 54px;
 	}
 
+	.hwb-risks {
+		background: var(--navy);
+		border-bottom: 1px solid var(--line-dark);
+	}
+
 	.hwb-risk {
 		grid-column: span 3;
 		padding: 28px;
-		border: 1px solid var(--line-light);
+		border: 1px solid var(--line-dark);
 		border-radius: 14px;
-		background: var(--white);
-		box-shadow: 0 28px 58px -44px rgba(11, 18, 32, 0.30);
+		background: rgba(255, 255, 255, 0.04);
 		text-align: left;
 	}
 
@@ -321,7 +327,7 @@ const doNotItems = [
 		grid-template-columns: 88px 0.55fr 1fr;
 		gap: 24px;
 		align-items: start;
-		background: linear-gradient(135deg, rgba(0, 183, 198, 0.08), var(--white) 48%);
+		background: linear-gradient(135deg, rgba(0, 183, 198, 0.08), rgba(255, 255, 255, 0.04) 48%);
 	}
 
 	.hwb-risk span {
@@ -345,13 +351,13 @@ const doNotItems = [
 
 	.hwb-risk h3 {
 		margin: 0 0 10px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: 22px;
 		font-weight: 600;
 	}
 
 	.hwb-risk p {
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 15.5px;
 		line-height: 1.62;
 	}
@@ -359,6 +365,8 @@ const doNotItems = [
 	.hwb-journey {
 		position: relative;
 		overflow: hidden;
+		border-bottom: 1px solid var(--line-dark);
+		background: var(--navy-deep);
 	}
 
 	.hwb-journey::before {
@@ -411,18 +419,29 @@ const doNotItems = [
 	.hwb-checklist > li > span {
 		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 		font-weight: 500;
-		letter-spacing: 0.08em;
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
 	}
 
 	.hwb-phase__head span {
-		color: var(--teal-soft);
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		color: var(--gold-soft);
 		font-size: 11px;
+	}
+
+	.hwb-phase__head span::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		flex: 0 0 auto;
+		background: var(--gold-soft);
 	}
 
 	.hwb-phase h3 {
 		margin: 10px 0 10px;
-		color: var(--white);
+		color: var(--gold-soft);
 		font-size: 24px;
 		font-weight: 600;
 	}
@@ -481,6 +500,10 @@ const doNotItems = [
 		align-items: start;
 	}
 
+	.hwb-assurance {
+		border-bottom: 1px solid var(--line-light);
+	}
+
 	.hwb-assurance__note {
 		max-width: 50ch;
 		margin-top: 28px;
@@ -501,12 +524,25 @@ const doNotItems = [
 	}
 
 	.hwb-checklist li {
+		position: relative;
 		min-height: 180px;
-		padding: 24px;
+		padding: 24px 24px 24px 50px;
 		border: 1px solid var(--line-light);
 		border-radius: 14px;
 		background: var(--white);
 		box-shadow: 0 24px 54px -46px rgba(11, 18, 32, 0.24);
+	}
+
+	.hwb-checklist li::before {
+		content: "";
+		position: absolute;
+		top: 27px;
+		left: 24px;
+		width: 10px;
+		height: 16px;
+		border-right: 2px solid var(--teal-deep);
+		border-bottom: 2px solid var(--teal-deep);
+		transform: rotate(45deg);
 	}
 
 	.hwb-checklist > li > span {
@@ -529,10 +565,16 @@ const doNotItems = [
 		align-items: start;
 	}
 
+	.hwb-closing {
+		background: var(--navy-2);
+		border-bottom: 1px solid var(--line-dark);
+		color: var(--white);
+	}
+
 	.hwb-closing__intro h2 {
 		max-width: 14ch;
 		margin: 0 0 22px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: clamp(32px, 4vw, 46px);
 		font-weight: 500;
 	}
@@ -540,7 +582,7 @@ const doNotItems = [
 	.hwb-closing__intro p {
 		max-width: 54ch;
 		margin-bottom: 16px;
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 16px;
 		line-height: 1.68;
 	}
@@ -553,15 +595,15 @@ const doNotItems = [
 
 	.hwb-claim-grid article {
 		padding: 28px;
-		border: 1px solid var(--line-light);
+		border: 1px solid var(--line-dark);
 		border-radius: 14px;
-		background: var(--white);
+		background: rgba(255, 255, 255, 0.04);
 		text-align: left;
 	}
 
 	.hwb-claim-grid h3 {
 		margin: 0 0 18px;
-		color: var(--ink);
+		color: var(--white);
 		font-size: 24px;
 		font-weight: 600;
 	}
@@ -577,7 +619,7 @@ const doNotItems = [
 	.hwb-claim-grid li {
 		position: relative;
 		padding-left: 20px;
-		color: var(--body);
+		color: var(--body-light);
 		font-size: 15px;
 		line-height: 1.55;
 	}
@@ -597,14 +639,36 @@ const doNotItems = [
 		max-width: 760px;
 		margin-top: 42px;
 		padding: 24px 0 0;
-		border-top: 1px solid var(--line-light);
+		border-top: 1px solid var(--line-dark);
 	}
 
 	.hwb-framework-note p {
-		color: var(--body);
+		color: #d6e2ee;
 		font-size: 17px;
 		font-weight: 600;
 		line-height: 1.62;
+	}
+
+	.hwb-closing :global(.ka-eyebrow--light) {
+		color: var(--teal-soft);
+	}
+
+	.hwb-closing :global(.ka-eyebrow--light)::before {
+		background: var(--gold-soft);
+	}
+
+	:global(.ka-final-cta) {
+		background: var(--navy-deep);
+		border-top: 1px solid var(--line-dark);
+		color: var(--white);
+	}
+
+	:global(.ka-final-cta h2) {
+		color: var(--white) !important;
+	}
+
+	:global(.ka-final-cta p) {
+		color: var(--body-light) !important;
 	}
 
 	@media (max-width: 1040px) {
@@ -655,6 +719,10 @@ const doNotItems = [
 		.hwb-claim-grid article,
 		.hwb-checklist li {
 			padding: 22px;
+		}
+
+		.hwb-checklist li {
+			padding-left: 48px;
 		}
 	}
 </style>
