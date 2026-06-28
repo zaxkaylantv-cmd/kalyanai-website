@@ -1,5 +1,27 @@
 ---
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const fitPoints = [
+	{
+		title: 'Owner-led businesses',
+		copy: 'The work is best suited to businesses where the owner wants clearer control, better visibility and practical systems around real operations.',
+	},
+	{
+		title: 'Practical systems',
+		copy: 'Kalyan AI is focused on systems that make work easier to run, control and grow, not generic AI ideas looking for somewhere to fit.',
+	},
+	{
+		title: 'Clarity before spend',
+		copy: 'The Blueprint exists to understand the business first, then decide what, if anything, is worth building.',
+	},
+	{
+		title: 'Real business case',
+		copy: 'A larger build only makes sense when there is a clear problem, a useful first system and a reason for that system to exist.',
+	},
+];
 ---
 
 <Layout
@@ -7,41 +29,339 @@ import Layout from '../layouts/Layout.astro';
 	description="Start with the Business AI Blueprint to discuss where AI could make your business easier to run, control and grow."
 	showFinalCta={false}
 >
-	<main class="mx-auto w-full max-w-6xl space-y-8 px-6">
-		<header class="space-y-2">
-			<h1 class="text-3xl font-semibold text-[var(--brand-navy)]">Talk to us</h1>
-			<p class="copy-narrow max-w-2xl text-[var(--muted)]">
-				Talk to us about where AI could make your business easier to run, control and grow.
-			</p>
-		</header>
-
-		<section class="grid gap-6 lg:grid-cols-[2fr,1fr]">
-			<div class="flex flex-col gap-4 rounded-2xl border border-[var(--border)] bg-white/80 p-6 shadow-sm backdrop-blur">
-				<h2 class="text-xl font-semibold text-[var(--brand-navy)]">How to book</h2>
-				<p class="text-[var(--muted)]">
-					Start with the Business AI Blueprint. We’ll come prepared to understand your business and where the right system could help.
-				</p>
-				<a class="inline-flex w-fit items-center justify-center rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/blueprint" data-plausible="BookACall">
-					Start with the Blueprint
-				</a>
-				<p class="text-sm text-[var(--muted)]">
-					Prefer email? <a class="text-[var(--brand-navy)] hover:text-[var(--brand-navy-light)]" href="mailto:hello@kalyanai.io" data-plausible="EmailClick">hello@kalyanai.io</a>
-				</p>
-
-				<div class="space-y-1 text-[var(--muted)]">
-					<p class="text-sm font-semibold text-[var(--text)]">Email</p>
-					<a class="text-[var(--brand-navy)] hover:text-[var(--brand-navy-light)]" href="mailto:hello@kalyanai.io" data-plausible="EmailClick">hello@kalyanai.io</a>
-				</div>
-
+	<section class="contact-hero">
+		<div class="ka-wrap">
+			<div class="contact-hero__inner">
+				<Eyebrow tone="dark">Contact</Eyebrow>
+				<h1>Start the right AI conversation</h1>
+				<p>If you want to understand where AI fits in your business, the best first step is the Business AI Blueprint: a focused paid review before any larger build is discussed.</p>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section id="book" class="space-y-4 rounded-3xl bg-white/80 p-6 text-center shadow-[0_10px_50px_-40px_rgba(0,0,0,0.5)] backdrop-blur md:p-8">
-			<h2 class="text-2xl font-semibold text-[var(--brand-navy)]">Start with the Business AI Blueprint</h2>
-			<p class="copy-narrow mx-auto text-[var(--muted)]">A focused paid review showing where AI can make your business easier to run, control and grow, what system would be worth building first, and where the return can come from.</p>
-			<a class="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--secondary)]" href="/blueprint" data-plausible="BookACall">
-				Start with the Business AI Blueprint
-			</a>
-		</section>
-	</main>
+	<section class="ka-section ka-section-white contact-route">
+		<div class="ka-wrap">
+			<div class="contact-route__grid">
+				<SectionHeading
+					eyebrow="Best first step"
+					title="Start with the Blueprint when you need clear commercial direction."
+					highlight="clear commercial direction."
+					lead="The Blueprint is for owners who can see AI may matter, but want to know where it belongs, what would be worth building first and what should not be built yet."
+				/>
+				<div class="contact-route__panel">
+					<h2>When to book</h2>
+					<ul>
+						<li><span></span>You want a practical view of where AI can create value in your business.</li>
+						<li><span></span>You need clarity before committing time or budget to a larger system.</li>
+						<li><span></span>You want the first system to be tied to a real operating problem.</li>
+					</ul>
+					<ButtonPrimary href="/blueprint" label="Start with the Blueprint" data-plausible="BookACall" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-paper contact-direct">
+		<div class="ka-wrap">
+			<div class="contact-direct__grid">
+				<div class="contact-direct__card">
+					<Eyebrow>Direct contact</Eyebrow>
+					<h2>Email Kalyan AI</h2>
+					<a href="mailto:hello@kalyanai.io" data-plausible="EmailClick">hello@kalyanai.io</a>
+					<p>Kalyan AI Ltd builds practical AI systems for owner-led businesses through focused review, controlled delivery and support where the system needs it.</p>
+				</div>
+				<div class="contact-direct__note">
+					<p>The Blueprint is usually the cleanest route because it creates shared context before a larger system is considered.</p>
+					<p>Email is still available for direct questions, existing relationships or anything that does not fit the Blueprint route.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-deep contact-fit">
+		<div class="ka-wrap">
+			<div class="contact-fit__grid">
+				<SectionHeading
+					eyebrow="Fit"
+					title="Kalyan AI is best suited to owners who want practical systems and clear judgement."
+					lead="The work starts with business context. The aim is to find whether AI has a useful role, where that role should sit and whether there is a strong enough case to move forward."
+					tone="dark"
+				/>
+				<div class="contact-fit__items">
+					{fitPoints.map((point, index) => (
+						<article>
+							<span>{String(index + 1).padStart(2, '0')}</span>
+							<h3>{point.title}</h3>
+							<p>{point.copy}</p>
+						</article>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ka-section ka-section-paper contact-cta">
+		<div class="ka-wrap">
+			<div class="contact-cta__inner">
+				<Eyebrow>Start here</Eyebrow>
+				<h2>Find where AI earns its keep in your business.</h2>
+				<p>The Business AI Blueprint is a focused paid review that helps identify where AI can create real value, what system is worth building first and whether there is a clear business case before a larger build.</p>
+				<ButtonPrimary href="/blueprint" label="Start with the Blueprint" data-plausible="BookACall" />
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.contact-hero {
+		background:
+			linear-gradient(100deg, rgba(8, 20, 40, 0.98) 20%, rgba(8, 20, 40, 0.78) 62%, rgba(8, 20, 40, 0.98) 100%),
+			radial-gradient(circle at 78% 24%, rgba(0, 183, 198, 0.23), transparent 36%),
+			var(--navy-deep);
+		color: var(--white);
+	}
+
+	.contact-hero__inner {
+		max-width: 850px;
+		padding: 116px 0 132px;
+		text-align: left;
+	}
+
+	.contact-hero h1 {
+		max-width: 13ch;
+		margin: 0 0 24px;
+		color: var(--white);
+		font-size: clamp(48px, 6vw, 78px);
+		font-weight: 500;
+	}
+
+	.contact-hero p {
+		max-width: 54ch;
+		color: var(--body-light);
+		font-size: 18px;
+		line-height: 1.66;
+	}
+
+	.contact-route__grid,
+	.contact-direct__grid,
+	.contact-fit__grid {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 64px;
+		align-items: start;
+	}
+
+	.contact-route__panel,
+	.contact-direct__card,
+	.contact-cta__inner {
+		border: 1px solid var(--line-light);
+		border-radius: 16px;
+		background: var(--white);
+		box-shadow: 0 28px 58px -48px rgba(11, 18, 32, 0.28);
+		text-align: left;
+	}
+
+	.contact-route__panel {
+		display: grid;
+		gap: 24px;
+		padding: 30px;
+	}
+
+	.contact-route__panel h2,
+	.contact-direct__card h2 {
+		margin: 0;
+		color: var(--ink);
+		font-size: 31px;
+		font-weight: 600;
+	}
+
+	.contact-route__panel ul {
+		display: grid;
+		gap: 15px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.contact-route__panel li {
+		display: grid;
+		grid-template-columns: 18px 1fr;
+		gap: 12px;
+		color: var(--body);
+		font-size: 16px;
+		line-height: 1.62;
+	}
+
+	.contact-route__panel li span {
+		width: 8px;
+		height: 8px;
+		margin-top: 0.65em;
+		border-radius: 999px;
+		background: var(--teal);
+	}
+
+	.contact-direct__grid {
+		grid-template-columns: 0.82fr 1.18fr;
+		align-items: stretch;
+	}
+
+	.contact-direct__card {
+		padding: 34px;
+	}
+
+	.contact-direct__card a {
+		display: inline-flex;
+		margin: 16px 0 24px;
+		color: var(--teal-deep);
+		font-size: clamp(24px, 3vw, 36px);
+		font-weight: 800;
+		line-height: 1.1;
+		text-decoration: none;
+	}
+
+	.contact-direct__card p,
+	.contact-direct__note p {
+		color: var(--body);
+		font-size: 16px;
+		line-height: 1.66;
+	}
+
+	.contact-direct__note {
+		display: grid;
+		align-content: center;
+		gap: 18px;
+		max-width: 58ch;
+		text-align: left;
+	}
+
+	.contact-fit {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.contact-fit::before {
+		content: "";
+		position: absolute;
+		inset: auto -8% -34% 48%;
+		width: 760px;
+		height: 560px;
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.14), transparent 68%);
+		pointer-events: none;
+	}
+
+	.contact-fit__items {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+	}
+
+	.contact-fit__items article {
+		padding: 24px;
+		border: 1px solid var(--line-dark);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.045);
+		text-align: left;
+	}
+
+	.contact-fit__items span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 34px;
+		height: 34px;
+		margin-bottom: 22px;
+		border: 1px solid rgba(63, 216, 227, 0.34);
+		border-radius: 9px;
+		background: rgba(0, 183, 198, 0.13);
+		color: var(--teal-soft);
+		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 11px;
+	}
+
+	.contact-fit__items h3 {
+		margin: 0 0 10px;
+		color: var(--white);
+		font-size: 23px;
+		font-weight: 600;
+	}
+
+	.contact-fit__items p {
+		color: var(--body-light);
+		font-size: 15px;
+		line-height: 1.62;
+	}
+
+	.contact-cta {
+		position: relative;
+		overflow: hidden;
+		border-top: 1px solid var(--line-light);
+	}
+
+	.contact-cta::before {
+		content: "";
+		position: absolute;
+		bottom: -220px;
+		left: 50%;
+		width: 780px;
+		height: 540px;
+		transform: translateX(-50%);
+		background: radial-gradient(circle, rgba(0, 183, 198, 0.10), transparent 64%);
+		pointer-events: none;
+	}
+
+	.contact-cta__inner {
+		position: relative;
+		z-index: 2;
+		max-width: 46ch;
+		padding: 34px;
+	}
+
+	.contact-cta h2 {
+		margin: 0 0 18px;
+		color: var(--ink);
+		font-size: clamp(30px, 3.7vw, 42px);
+		font-weight: 500;
+	}
+
+	.contact-cta p {
+		margin-bottom: 30px;
+		color: var(--body);
+		font-size: 17px;
+		line-height: 1.62;
+	}
+
+	@media (max-width: 900px) {
+		.contact-route__grid,
+		.contact-direct__grid,
+		.contact-fit__grid,
+		.contact-fit__items {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.contact-hero__inner {
+			padding: 78px 0 92px;
+		}
+
+		.contact-route__grid,
+		.contact-direct__grid,
+		.contact-fit__grid {
+			gap: 38px;
+		}
+
+		.contact-route__panel,
+		.contact-direct__card,
+		.contact-fit__items article,
+		.contact-cta__inner {
+			padding: 22px;
+		}
+
+		.contact-direct__card a {
+			font-size: 24px;
+			overflow-wrap: anywhere;
+		}
+	}
+</style>
