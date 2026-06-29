@@ -1,19 +1,19 @@
 {
-    "name": "Website Name",
-    "short_name": "About Website",
+    "name": "Kalyan AI",
+    "short_name": "Kalyan AI",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
+            "src": "/apple-touch-icon-180x180.png",
+            "sizes": "180x180",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
+            "src": "/favicon-48x48.png",
+            "sizes": "48x48",
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#0F1F3A",
     "background_color": "#ffffff",
     "display": "standalone"
 }
