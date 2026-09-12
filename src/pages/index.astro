@@ -83,16 +83,50 @@ const processSteps = [
 					<p class="ka-approach__lead">
 						AI is everywhere now, but doing something with AI is not the same as doing the right thing. We start by understanding how your business actually runs, then find where a system would earn its keep. Whatever shape your business is in, there is usually value worth building toward.
 					</p>
-					<div class="ka-approach__points">
-						{approachItems.map((item) => (
-							<article>
-								<p>{item.tag}</p>
-								<h3>{item.title}</h3>
-								<span>{item.copy}</span>
-							</article>
-						))}
+				</div>
+			</div>
+
+			<div class="ka-system">
+				<div class="ka-system__intro">
+					<div class="ka-system__heading">
+						<Eyebrow tone="dark">What we actually do</Eyebrow>
+						<h3>We build the system your business needs.</h3>
+					</div>
+					<div class="ka-system__intro-copy">
+						<p>Kalyan AI does not start with a fixed product. We first understand how your business actually works, where time and control are being lost, and what the system needs to improve.</p>
+						<p>We then design and build the right system around your tools, data, people, processes and decisions.</p>
 					</div>
 				</div>
+
+				<div class="ka-system__details">
+					<div class="ka-system__steps">
+						<article>
+							<h4>Understand</h4>
+							<span>We map how the work actually happens, what the business relies on, where pressure builds and what outcome the system needs to support.</span>
+						</article>
+						<article>
+							<h4>Build</h4>
+							<span>We bring the right tools, data, processes and AI together into one working system, built around the way your business operates.</span>
+						</article>
+						<article>
+							<h4>Run and support</h4>
+							<span>We put the system into real use, monitor it, maintain it and stay involved after launch so it keeps working as the business changes.</span>
+						</article>
+					</div>
+					<p class="ka-system__result">The result is not another generic product for you to manage. It is a practical production system built to do useful work inside your business.</p>
+				</div>
+			</div>
+
+			<h3 class="ka-approach__outcomes-heading">What this gives your business</h3>
+
+			<div class="ka-approach__points">
+				{approachItems.map((item) => (
+					<article>
+						<p>{item.tag}</p>
+						<h3>{item.title}</h3>
+						<span>{item.copy}</span>
+					</article>
+				))}
 			</div>
 		</div>
 	</section>
@@ -265,28 +299,104 @@ const processSteps = [
 
 	.ka-approach__lead {
 		max-width: 50ch;
-		margin-bottom: 36px;
 		color: var(--body-light);
 		font-size: 17px;
 		line-height: 1.62;
 	}
 
-	.ka-approach__points {
-		display: flex;
-		flex-direction: column;
+	.ka-system {
+		margin-top: 72px;
+		padding-top: 72px;
+		border-top: 1px solid var(--line-dark);
 	}
 
-	.ka-approach article {
-		padding: 26px 0;
+	.ka-system__intro {
+		display: grid;
+		grid-template-columns: 0.85fr 1fr;
+		gap: 60px;
+		align-items: start;
+	}
+
+	.ka-system__intro h3 {
+		max-width: 20ch;
+		margin: 0;
+		color: var(--white);
+		font-size: clamp(26px, 3vw, 34px);
+		font-weight: 500;
+	}
+
+	.ka-system__intro-copy {
+		display: grid;
+		gap: 16px;
+		max-width: 50ch;
+		color: var(--body-light);
+		font-size: 16px;
+		line-height: 1.65;
+	}
+
+	.ka-system__steps {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 32px;
+		margin-top: 64px;
+	}
+
+	.ka-system__steps article {
+		min-width: 0;
+		padding: 28px 0 0;
 		border-top: 1px solid var(--line-dark);
 		text-align: left;
 	}
 
-	.ka-approach article:last-child {
+	.ka-system__steps h4 {
+		margin: 0 0 7px;
+		color: var(--white);
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.ka-system__steps span,
+	.ka-approach__points article span {
+		display: block;
+		max-width: 46ch;
+		color: var(--body-light);
+		font-size: 15px;
+		line-height: 1.6;
+	}
+
+	.ka-system__result {
+		margin-top: 56px;
+		padding-top: 32px;
+		border-top: 1px solid var(--line-dark);
+		color: var(--white);
+		font-size: 16px;
+		line-height: 1.65;
+	}
+
+	.ka-approach__outcomes-heading {
+		max-width: 20ch;
+		margin: 80px 0 0;
+		color: var(--white);
+		font-size: clamp(26px, 3vw, 34px);
+		font-weight: 500;
+	}
+
+	.ka-approach__points {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 32px;
+		margin-top: 32px;
 		border-bottom: 1px solid var(--line-dark);
 	}
 
-	.ka-approach article p {
+	.ka-approach__points article {
+		min-width: 0;
+		padding: 28px 0 32px;
+		border-top: 1px solid var(--line-dark);
+		text-align: left;
+	}
+
+	.ka-approach__points article p {
 		margin-bottom: 10px;
 		color: var(--teal-soft);
 		font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -296,19 +406,11 @@ const processSteps = [
 		text-transform: uppercase;
 	}
 
-	.ka-approach article h3 {
+	.ka-approach__points article h3 {
 		margin: 0 0 7px;
 		color: var(--white);
 		font-size: 20px;
 		font-weight: 600;
-	}
-
-	.ka-approach article span {
-		display: block;
-		max-width: 46ch;
-		color: var(--body-light);
-		font-size: 15px;
-		line-height: 1.6;
 	}
 
 	.ka-proof__heading {
@@ -437,6 +539,35 @@ const processSteps = [
 			gap: 34px;
 		}
 
+		.ka-system {
+			margin-top: 48px;
+			padding-top: 48px;
+		}
+
+		.ka-system__intro,
+		.ka-system__steps,
+		.ka-approach__points {
+			grid-template-columns: 1fr;
+		}
+
+		.ka-system__intro {
+			gap: 24px;
+		}
+
+		.ka-system__steps {
+			gap: 0;
+			margin-top: 36px;
+		}
+
+		.ka-system__result {
+			margin-top: 24px;
+		}
+
+		.ka-approach__points {
+			gap: 0;
+			margin-top: 56px;
+		}
+
 		.ka-proof__item {
 			gap: 28px;
 			margin-bottom: 78px;
@@ -458,12 +589,30 @@ const processSteps = [
 			padding: 20px 0;
 		}
 
-		.ka-approach__lead {
-			margin-bottom: 32px;
+		.ka-system {
+			margin-top: 24px;
+			padding-top: 24px;
 		}
 
-		.ka-approach article {
+		.ka-system__intro {
+			gap: 20px;
+		}
+
+		.ka-system__steps {
+			margin-top: 24px;
+		}
+
+		.ka-system__result {
+			margin-top: 0;
+		}
+
+		.ka-system__steps article,
+		.ka-approach__points article {
 			padding: 24px 0;
+		}
+
+		.ka-approach__points {
+			margin-top: 48px;
 		}
 
 		.ka-proof__heading {
@@ -473,6 +622,179 @@ const processSteps = [
 		.ka-proof__item {
 			gap: 26px;
 			margin-bottom: 72px;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.ka-approach {
+			--ka-mobile-gutter: 36px;
+		}
+
+		.ka-approach__grid,
+		.ka-system__intro,
+		.ka-system__steps,
+		.ka-approach__points {
+			grid-template-columns: 1fr;
+		}
+
+		.ka-approach__grid {
+			gap: 36px;
+		}
+
+		.ka-system {
+			position: relative;
+			z-index: 0;
+			isolation: isolate;
+			margin-top: 60px;
+			padding: 56px 0 0;
+			border-top: 0;
+		}
+
+		.ka-system::before {
+			position: absolute;
+			inset-block: 0;
+			left: 50%;
+			z-index: -1;
+			width: 100vw;
+			border-top: 1px solid var(--line-dark);
+			border-bottom: 1px solid var(--line-dark);
+			background: var(--navy-2);
+			content: '';
+			transform: translateX(-50%);
+		}
+
+		.ka-system__intro {
+			gap: 28px;
+			padding-bottom: 44px;
+		}
+
+		.ka-system__intro-copy {
+			gap: 18px;
+		}
+
+		.ka-system__steps {
+			gap: 0;
+			margin-top: 0;
+			counter-reset: ka-system-step;
+		}
+
+		.ka-system__steps article {
+			display: grid;
+			grid-template-columns: 34px minmax(0, 1fr);
+			gap: 8px 14px;
+			padding: 32px 0;
+			border-top: 1px solid var(--line-dark);
+			counter-increment: ka-system-step;
+		}
+
+		.ka-system__steps article::before {
+			grid-column: 1;
+			grid-row: 1;
+			padding-top: 3px;
+			border-left: 2px solid var(--gold-soft);
+			color: var(--teal-soft);
+			font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+			font-size: 10px;
+			font-weight: 600;
+			letter-spacing: 0.12em;
+			line-height: 1.4;
+			text-align: right;
+			content: counter(ka-system-step, decimal-leading-zero);
+		}
+
+		.ka-system__steps h4 {
+			grid-column: 2;
+			grid-row: 1;
+			margin: 0;
+		}
+
+		.ka-system__steps span {
+			grid-column: 2;
+			grid-row: 2;
+		}
+
+		.ka-system__result {
+			margin: 0 calc(50% - 50vw);
+			padding: 38px var(--ka-mobile-gutter) 42px;
+			border-top: 1px solid var(--line-dark);
+			border-bottom: 1px solid var(--line-dark);
+			background: var(--navy-deep);
+			font-size: 17px;
+		}
+
+		.ka-system__result::before {
+			display: block;
+			margin-bottom: 14px;
+			color: var(--gold-soft);
+			font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+			font-size: 10px;
+			font-weight: 600;
+			letter-spacing: 0.16em;
+			line-height: 1.4;
+			text-transform: uppercase;
+			content: 'Result';
+		}
+
+		.ka-approach__points {
+			gap: 0;
+			margin-top: 28px;
+			border-bottom: 1px solid var(--line-dark);
+		}
+
+		.ka-approach__outcomes-heading {
+			margin-top: 72px;
+		}
+
+		.ka-approach__points article {
+			padding: 36px 0 38px 18px;
+			border-top: 1px solid var(--line-dark);
+			border-left: 2px solid rgba(63, 216, 227, 0.42);
+		}
+
+		.ka-approach__points article p {
+			margin-bottom: 12px;
+		}
+
+		@media (max-width: 640px) {
+			.ka-approach {
+				--ka-mobile-gutter: 22px;
+			}
+
+			.ka-approach__grid {
+				gap: 30px;
+			}
+
+			.ka-system {
+				margin-top: 52px;
+				padding-top: 50px;
+			}
+
+			.ka-system__intro {
+				gap: 24px;
+				padding-bottom: 40px;
+			}
+
+			.ka-system__steps article {
+				padding: 30px 0;
+			}
+
+			.ka-system__result {
+				padding-top: 36px;
+				padding-bottom: 40px;
+			}
+
+			.ka-approach__points {
+				margin-top: 28px;
+			}
+
+			.ka-approach__outcomes-heading {
+				margin-top: 64px;
+			}
+
+			.ka-approach__points article {
+				padding-top: 32px;
+				padding-bottom: 34px;
+			}
 		}
 	}
 </style>
