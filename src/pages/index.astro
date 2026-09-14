@@ -529,6 +529,27 @@ const processSteps = [
 		border-top: 1px solid var(--line-dark);
 	}
 
+	@media (min-width: 901px) {
+		.ka-system__result {
+			padding: 38px 32px 42px;
+			border-bottom: 1px solid var(--line-dark);
+			background: var(--navy-deep);
+		}
+
+		.ka-system__result::before {
+			display: block;
+			margin-bottom: 14px;
+			color: var(--gold-soft);
+			font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+			font-size: 10px;
+			font-weight: 600;
+			letter-spacing: 0.16em;
+			line-height: 1.4;
+			text-transform: uppercase;
+			content: 'Result';
+		}
+	}
+
 	@media (max-width: 860px) {
 		.ka-approach__grid,
 		.ka-proof__item {
